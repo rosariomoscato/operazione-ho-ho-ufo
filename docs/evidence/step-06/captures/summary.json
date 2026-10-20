@@ -1,0 +1,325 @@
+{
+  "pass": true,
+  "runs": [
+    {
+      "scenario": "intro",
+      "pass": true,
+      "errors": [],
+      "maxCalls": 40,
+      "maxTriangles": 70748
+    },
+    {
+      "scenario": "training",
+      "pass": true,
+      "errors": [],
+      "maxCalls": 44,
+      "maxTriangles": 70956
+    },
+    {
+      "scenario": "battle-a",
+      "pass": true,
+      "errors": [],
+      "maxCalls": 53,
+      "maxTriangles": 78374
+    },
+    {
+      "scenario": "first-wrap",
+      "pass": true,
+      "errors": [],
+      "maxCalls": 55,
+      "maxTriangles": 78330
+    },
+    {
+      "scenario": "battle-b",
+      "pass": true,
+      "errors": [],
+      "maxCalls": 64,
+      "maxTriangles": 85840
+    },
+    {
+      "scenario": "battle-c",
+      "pass": true,
+      "errors": [],
+      "maxCalls": 76,
+      "maxTriangles": 93314
+    },
+    {
+      "scenario": "anchor",
+      "pass": true,
+      "errors": [],
+      "maxCalls": 41,
+      "maxTriangles": 70828
+    },
+    {
+      "scenario": "complete",
+      "pass": true,
+      "errors": [],
+      "maxCalls": 40,
+      "maxTriangles": 70508
+    },
+    {
+      "scenario": "battle-c-1080p-default",
+      "pass": true,
+      "errors": [],
+      "visualAudit": {
+        "pass": true,
+        "palette": {
+          "pass": true,
+          "allowed": [
+            "#e94750",
+            "#7cbf56",
+            "#7062b8",
+            "#e1eff5",
+            "#fff0d5",
+            "#f4ba93",
+            "#202d42",
+            "#f8be55",
+            "#596a9b",
+            "#987562",
+            "#a4f8d9",
+            "#9b6547",
+            "#a5585b",
+            "#182c49"
+          ],
+          "invalidColors": []
+        },
+        "typography": {
+          "pass": true,
+          "checks": [
+            {
+              "text": "Libera il cortile · 3 difensori",
+              "contrast": 10.010112067814882,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "Percorso ↑ Ancoraggio · 5.0 m · 0/3",
+              "contrast": 14.971145186095898,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "Salute ▮▮▯▯▯▯",
+              "contrast": 14.971145186095898,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "Spazio · Schivata pronta · ◇ Protetto",
+              "contrast": 14.971145186095898,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "Rettiliano 2/2 · Regali ∞",
+              "contrast": 14.971145186095898,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "! Settore a terra: esci di lato o schiva. Due regali impacchettano un ",
+              "contrast": 12.53369330491466,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "WASD: muovi · Destro trascinato: mira al + · Clic: tira al +, non al m",
+              "contrast": 14.971145186095898,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "◎ MIRATO",
+              "contrast": 14.971145186095898,
+              "capHeight": 25,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "✚ Cura +2",
+              "contrast": 14.971145186095898,
+              "capHeight": 25,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "▮▮",
+              "contrast": 12.53369330491466,
+              "capHeight": 25,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "▮▮",
+              "contrast": 12.53369330491466,
+              "capHeight": 25,
+              "minCapHeight": 24,
+              "pass": true
+            }
+          ],
+          "note": "Accessible DOM text only; aria-hidden graphic glyphs are excluded and require visual/outline checks. 24px cap-height gate applies at 1080p. Canvas text needs a separate measured contract."
+        },
+        "flashes": [
+          {
+            "view": "player",
+            "fps": 12,
+            "samples": 73,
+            "events": [],
+            "maxAffectedFraction": 0.0013503086419753086,
+            "maxEventsPerSecond": 0,
+            "pass": true
+          }
+        ],
+        "notes": [
+          "12 Hz full-loop screening is not a clinical photosensitivity certification; inspect new fast VFX separately.",
+          "Color-blind PNG is a diagnostic preview; gameplay must also use shape, text and position."
+        ]
+      },
+      "fpsProbe": {
+        "samples": 45,
+        "meanMs": 27.09111111111112,
+        "fps": 36.91247641702895,
+        "note": "Headless smoke test only; not proof of laptop performance."
+      }
+    },
+    {
+      "scenario": "battle-c-1080p-swiftshader",
+      "pass": true,
+      "errors": [],
+      "visualAudit": {
+        "pass": true,
+        "palette": {
+          "pass": true,
+          "allowed": [
+            "#e94750",
+            "#7cbf56",
+            "#7062b8",
+            "#e1eff5",
+            "#fff0d5",
+            "#f4ba93",
+            "#202d42",
+            "#f8be55",
+            "#596a9b",
+            "#987562",
+            "#a4f8d9",
+            "#9b6547",
+            "#a5585b",
+            "#182c49"
+          ],
+          "invalidColors": []
+        },
+        "typography": {
+          "pass": true,
+          "checks": [
+            {
+              "text": "Libera il cortile · 3 difensori",
+              "contrast": 10.010112067814882,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "Percorso ↑ Ancoraggio · 5.0 m · 0/3",
+              "contrast": 14.971145186095898,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "Salute ▮▮▯▯▯▯",
+              "contrast": 14.971145186095898,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "Spazio · Schivata pronta · ◇ Protetto",
+              "contrast": 14.971145186095898,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "Rettiliano 2/2 · Regali ∞",
+              "contrast": 14.971145186095898,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "! Settore a terra: esci di lato o schiva. Due regali impacchettano un ",
+              "contrast": 12.53369330491466,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "WASD: muovi · Destro trascinato: mira al + · Clic: tira al +, non al m",
+              "contrast": 14.971145186095898,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "◎ MIRATO",
+              "contrast": 14.971145186095898,
+              "capHeight": 25,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "✚ Cura +2",
+              "contrast": 14.971145186095898,
+              "capHeight": 25,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "▮▮",
+              "contrast": 12.53369330491466,
+              "capHeight": 25,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "▮▮",
+              "contrast": 12.53369330491466,
+              "capHeight": 25,
+              "minCapHeight": 24,
+              "pass": true
+            }
+          ],
+          "note": "Accessible DOM text only; aria-hidden graphic glyphs are excluded and require visual/outline checks. 24px cap-height gate applies at 1080p. Canvas text needs a separate measured contract."
+        },
+        "flashes": [
+          {
+            "view": "player",
+            "fps": 12,
+            "samples": 73,
+            "events": [],
+            "maxAffectedFraction": 0.0011574074074074073,
+            "maxEventsPerSecond": 0,
+            "pass": true
+          }
+        ],
+        "notes": [
+          "12 Hz full-loop screening is not a clinical photosensitivity certification; inspect new fast VFX separately.",
+          "Color-blind PNG is a diagnostic preview; gameplay must also use shape, text and position."
+        ]
+      },
+      "fpsProbe": {
+        "samples": 45,
+        "meanMs": 2352.4066666666663,
+        "fps": 0.4250965677703119,
+        "note": "Headless smoke test only; not proof of laptop performance."
+      }
+    }
+  ]
+}

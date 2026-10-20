@@ -1,0 +1,721 @@
+{
+  "page": "index.html",
+  "scenario": "anchor",
+  "size": [
+    1280,
+    720
+  ],
+  "gpu": "default",
+  "frames": [
+    {
+      "view": "player",
+      "time": 0,
+      "file": "00-player-0.png",
+      "stats": {
+        "renderFrame": 8,
+        "drawCalls": 33,
+        "triangles": 69122,
+        "geometries": 39,
+        "textures": 3,
+        "lights": 3,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "audio": {
+          "loaded": false,
+          "activeEffects": 0,
+          "error": null
+        }
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "santa feet floor (m)",
+            "value": 0,
+            "limit": 0.002,
+            "pass": true
+          },
+          {
+            "name": "player collider penetration",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "enemy collider penetration",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "committed attacks",
+            "value": 0,
+            "limit": 1,
+            "pass": true
+          },
+          {
+            "name": "unique level registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "level registry contains courtyard",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "swept collider regression",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "wall ray regression",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "draw calls",
+            "value": 33,
+            "limit": 150,
+            "pass": true
+          },
+          {
+            "name": "triangles",
+            "value": 69122,
+            "limit": 150000,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "telegraph < 1 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "recovery < 1.2 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "duplicate damage by attack ID",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          }
+        ],
+        "stats": {
+          "renderFrame": 9,
+          "drawCalls": 33,
+          "triangles": 69122,
+          "geometries": 39,
+          "textures": 3,
+          "lights": 3,
+          "shadowLights": 0,
+          "postPasses": 0,
+          "audio": {
+            "loaded": false,
+            "activeEffects": 0,
+            "error": null
+          }
+        },
+        "notes": [
+          "Hand contacts are owned by visual actor; not inferred from a passing feet check.",
+          "Performance is draw/triangle budget, not a laptop FPS claim."
+        ]
+      },
+      "state": {
+        "beat": "anchor",
+        "group": 0,
+        "player": {
+          "x": 0,
+          "z": -5.5,
+          "hp": 6,
+          "invulnerableUntil": 1.25,
+          "dodgeUntil": 0,
+          "dodgeReady": 0,
+          "dx": 0,
+          "dz": -1
+        },
+        "camera": {
+          "yaw": 0,
+          "pitch": 0.3,
+          "view": "player"
+        },
+        "droneHit": true,
+        "dodgeUsed": true,
+        "remaining": 0,
+        "pending": 0,
+        "neutralized": 6,
+        "healAvailable": false,
+        "healed": false,
+        "firstWrapped": true,
+        "review": true,
+        "playing": false,
+        "time": 0,
+        "enemies": [],
+        "objective": "Spegni il primo ancoraggio: E",
+        "checkpoint": {
+          "version": 1,
+          "boundary": "anchor",
+          "healed": false,
+          "firstWrapped": true
+        },
+        "eventLog": [],
+        "storageAvailable": true
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "player",
+      "time": 1,
+      "file": "01-player-1.png",
+      "stats": {
+        "renderFrame": 12,
+        "drawCalls": 33,
+        "triangles": 69122,
+        "geometries": 39,
+        "textures": 3,
+        "lights": 3,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "audio": {
+          "loaded": false,
+          "activeEffects": 0,
+          "error": null
+        }
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "santa feet floor (m)",
+            "value": 0,
+            "limit": 0.002,
+            "pass": true
+          },
+          {
+            "name": "player collider penetration",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "enemy collider penetration",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "committed attacks",
+            "value": 0,
+            "limit": 1,
+            "pass": true
+          },
+          {
+            "name": "unique level registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "level registry contains courtyard",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "swept collider regression",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "wall ray regression",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "draw calls",
+            "value": 33,
+            "limit": 150,
+            "pass": true
+          },
+          {
+            "name": "triangles",
+            "value": 69122,
+            "limit": 150000,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "telegraph < 1 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "recovery < 1.2 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "duplicate damage by attack ID",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          }
+        ],
+        "stats": {
+          "renderFrame": 13,
+          "drawCalls": 33,
+          "triangles": 69122,
+          "geometries": 39,
+          "textures": 3,
+          "lights": 3,
+          "shadowLights": 0,
+          "postPasses": 0,
+          "audio": {
+            "loaded": false,
+            "activeEffects": 0,
+            "error": null
+          }
+        },
+        "notes": [
+          "Hand contacts are owned by visual actor; not inferred from a passing feet check.",
+          "Performance is draw/triangle budget, not a laptop FPS claim."
+        ]
+      },
+      "state": {
+        "beat": "anchor",
+        "group": 0,
+        "player": {
+          "x": 0,
+          "z": -5.5,
+          "hp": 6,
+          "invulnerableUntil": 1.25,
+          "dodgeUntil": 0,
+          "dodgeReady": 0,
+          "dx": 0,
+          "dz": -1
+        },
+        "camera": {
+          "yaw": 0,
+          "pitch": 0.3,
+          "view": "player"
+        },
+        "droneHit": true,
+        "dodgeUsed": true,
+        "remaining": 0,
+        "pending": 0,
+        "neutralized": 6,
+        "healAvailable": false,
+        "healed": false,
+        "firstWrapped": true,
+        "review": true,
+        "playing": false,
+        "time": 1,
+        "enemies": [],
+        "objective": "Spegni il primo ancoraggio: E",
+        "checkpoint": {
+          "version": 1,
+          "boundary": "anchor",
+          "healed": false,
+          "firstWrapped": true
+        },
+        "eventLog": [],
+        "storageAvailable": true
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "diorama",
+      "time": 0,
+      "file": "02-diorama-0.png",
+      "stats": {
+        "renderFrame": 16,
+        "drawCalls": 41,
+        "triangles": 70828,
+        "geometries": 39,
+        "textures": 3,
+        "lights": 3,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "audio": {
+          "loaded": false,
+          "activeEffects": 0,
+          "error": null
+        }
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "santa feet floor (m)",
+            "value": 0,
+            "limit": 0.002,
+            "pass": true
+          },
+          {
+            "name": "player collider penetration",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "enemy collider penetration",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "committed attacks",
+            "value": 0,
+            "limit": 1,
+            "pass": true
+          },
+          {
+            "name": "unique level registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "level registry contains courtyard",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "swept collider regression",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "wall ray regression",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "draw calls",
+            "value": 41,
+            "limit": 150,
+            "pass": true
+          },
+          {
+            "name": "triangles",
+            "value": 70828,
+            "limit": 150000,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "telegraph < 1 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "recovery < 1.2 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "duplicate damage by attack ID",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          }
+        ],
+        "stats": {
+          "renderFrame": 17,
+          "drawCalls": 41,
+          "triangles": 70828,
+          "geometries": 39,
+          "textures": 3,
+          "lights": 3,
+          "shadowLights": 0,
+          "postPasses": 0,
+          "audio": {
+            "loaded": false,
+            "activeEffects": 0,
+            "error": null
+          }
+        },
+        "notes": [
+          "Hand contacts are owned by visual actor; not inferred from a passing feet check.",
+          "Performance is draw/triangle budget, not a laptop FPS claim."
+        ]
+      },
+      "state": {
+        "beat": "anchor",
+        "group": 0,
+        "player": {
+          "x": 0,
+          "z": -5.5,
+          "hp": 6,
+          "invulnerableUntil": 1.25,
+          "dodgeUntil": 0,
+          "dodgeReady": 0,
+          "dx": 0,
+          "dz": -1
+        },
+        "camera": {
+          "yaw": 0,
+          "pitch": 0.3,
+          "view": "diorama"
+        },
+        "droneHit": true,
+        "dodgeUsed": true,
+        "remaining": 0,
+        "pending": 0,
+        "neutralized": 6,
+        "healAvailable": false,
+        "healed": false,
+        "firstWrapped": true,
+        "review": true,
+        "playing": false,
+        "time": 0,
+        "enemies": [],
+        "objective": "Spegni il primo ancoraggio: E",
+        "checkpoint": {
+          "version": 1,
+          "boundary": "anchor",
+          "healed": false,
+          "firstWrapped": true
+        },
+        "eventLog": [],
+        "storageAvailable": true
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "diorama",
+      "time": 1,
+      "file": "03-diorama-1.png",
+      "stats": {
+        "renderFrame": 20,
+        "drawCalls": 41,
+        "triangles": 70828,
+        "geometries": 39,
+        "textures": 3,
+        "lights": 3,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "audio": {
+          "loaded": false,
+          "activeEffects": 0,
+          "error": null
+        }
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "santa feet floor (m)",
+            "value": 0,
+            "limit": 0.002,
+            "pass": true
+          },
+          {
+            "name": "player collider penetration",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "enemy collider penetration",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "committed attacks",
+            "value": 0,
+            "limit": 1,
+            "pass": true
+          },
+          {
+            "name": "unique level registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "level registry contains courtyard",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "swept collider regression",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "wall ray regression",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "draw calls",
+            "value": 41,
+            "limit": 150,
+            "pass": true
+          },
+          {
+            "name": "triangles",
+            "value": 70828,
+            "limit": 150000,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "telegraph < 1 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "recovery < 1.2 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "duplicate damage by attack ID",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          }
+        ],
+        "stats": {
+          "renderFrame": 21,
+          "drawCalls": 41,
+          "triangles": 70828,
+          "geometries": 39,
+          "textures": 3,
+          "lights": 3,
+          "shadowLights": 0,
+          "postPasses": 0,
+          "audio": {
+            "loaded": false,
+            "activeEffects": 0,
+            "error": null
+          }
+        },
+        "notes": [
+          "Hand contacts are owned by visual actor; not inferred from a passing feet check.",
+          "Performance is draw/triangle budget, not a laptop FPS claim."
+        ]
+      },
+      "state": {
+        "beat": "anchor",
+        "group": 0,
+        "player": {
+          "x": 0,
+          "z": -5.5,
+          "hp": 6,
+          "invulnerableUntil": 1.25,
+          "dodgeUntil": 0,
+          "dodgeReady": 0,
+          "dx": 0,
+          "dz": -1
+        },
+        "camera": {
+          "yaw": 0,
+          "pitch": 0.3,
+          "view": "diorama"
+        },
+        "droneHit": true,
+        "dodgeUsed": true,
+        "remaining": 0,
+        "pending": 0,
+        "neutralized": 6,
+        "healAvailable": false,
+        "healed": false,
+        "firstWrapped": true,
+        "review": true,
+        "playing": false,
+        "time": 1,
+        "enemies": [],
+        "objective": "Spegni il primo ancoraggio: E",
+        "checkpoint": {
+          "version": 1,
+          "boundary": "anchor",
+          "healed": false,
+          "firstWrapped": true
+        },
+        "eventLog": [],
+        "storageAvailable": true
+      },
+      "budgetPass": true
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "pass": true,
+  "deterministic": true,
+  "fpsProbe": {
+    "samples": 45,
+    "meanMs": 17.071111111111126,
+    "fps": 58.578495183545904,
+    "note": "Headless smoke test only; not proof of laptop performance."
+  }
+}
