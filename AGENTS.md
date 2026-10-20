@@ -8,7 +8,8 @@ Progetto basato sulla pipeline in 10 passi della skill `build-a-game`. Iniziare 
 
 - `docs/HANDOFF.md`: stato, decisioni, domande aperte e demo.
 - `docs/GAME_DESIGN.md`: concept approvato, storia, meccaniche e livelli.
-- `docs/SCRIPT.md`: prima sceneggiatura derivata dal concept; battute con ID e stato audio. Doppiaggio ancora da decidere. Mai rigenerare audio già registrato.
+- `docs/SCRIPT.md`: prima sceneggiatura derivata dal concept; battute con ID stabili. Scelta utente: solo testi, nessun doppiaggio.
+- `docs/AUDIO.md`: audio gratuito offline, manifest, cache, livelli, controlli e pagina ascolto. Nessuna API o chiave necessaria.
 - `docs/DESIGN_SYSTEM.md`: stile scelto A, Vinile morbido; regole per palette, materiali, personaggi, luci, UI e verifiche.
 - `design/styles/vinyl.html`: riferimento grafico eseguibile; sorgente `tools/build-style-mockups.mjs`. Conservare anche le varianti B e C.
 - `docs/TECH_PLAN.md`, `docs/LEVEL_LAYOUT.md`: da creare al passo 6.

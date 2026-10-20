@@ -6,15 +6,28 @@ import { pathToFileURL } from 'node:url';
 
 export async function serve(root = process.cwd(), port = 0) {
   const base = resolve(root);
-  const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.mjs': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.png': 'image/png', '.svg': 'image/svg+xml' };
+  const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.mjs': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.png': 'image/png', '.svg': 'image/svg+xml', '.wav': 'audio/wav' };
   const server = createServer(async (req, res) => {
     try {
       const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
       const file = resolve(base, `.${pathname === '/' ? '/tools/testscene.html' : pathname}`);
       if (!file.startsWith(base + sep)) { res.writeHead(403).end(); return; }
-      if (!(await stat(file)).isFile()) { res.writeHead(404).end(); return; }
-      res.writeHead(200, { 'Content-Type': types[extname(file)] ?? 'application/octet-stream', 'Cache-Control': 'no-store' });
-      const stream = createReadStream(file);
+      const info = await stat(file);
+      if (!info.isFile()) { res.writeHead(404).end(); return; }
+      const headers = { 'Content-Type': types[extname(file)] ?? 'application/octet-stream', 'Cache-Control': 'no-store', 'Accept-Ranges': 'bytes' };
+      let start = 0, end = info.size - 1, status = 200;
+      if (req.headers.range) {
+        const match = /^bytes=(\d*)-(\d*)$/.exec(req.headers.range);
+        if (!match || (!match[1] && !match[2])) { res.writeHead(416, { 'Content-Range': `bytes */${info.size}` }).end(); return; }
+        start = match[1] ? Number(match[1]) : Math.max(0, info.size - Number(match[2]));
+        end = match[1] && match[2] ? Math.min(Number(match[2]), info.size - 1) : info.size - 1;
+        if (start >= info.size || start > end) { res.writeHead(416, { 'Content-Range': `bytes */${info.size}` }).end(); return; }
+        status = 206; headers['Content-Range'] = `bytes ${start}-${end}/${info.size}`;
+      }
+      headers['Content-Length'] = Math.max(0, end - start + 1);
+      res.writeHead(status, headers);
+      if (req.method === 'HEAD' || info.size === 0) { res.end(); return; }
+      const stream = createReadStream(file, { start, end });
       stream.on('error', () => res.destroy());
       stream.pipe(res);
     } catch { res.writeHead(404).end(); }

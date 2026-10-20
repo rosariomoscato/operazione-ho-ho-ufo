@@ -9,8 +9,8 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | 1 | Storia, personaggi e luoghi | Completato | Concept approvato; SCRIPT e BACKLOG scritti |
 | 2 | Debug visivo | Completato | Catture verificate, errore da 5 cm rilevato, test software passato |
 | 3 | Stile e design system | Completato | A — Vinile morbido scelto, design system scritto e audit 1080p superato |
-| 4 | Voci, suoni e musica | Non iniziato | Nessuna spesa autorizzata |
-| 5 | Demo personaggio parlante | Non iniziato | |
+| 4 | Voci, suoni e musica | In corso | Percorso gratuito Natale arcade; 11 asset e pagina ascolto pronti, attesa approvazione utente |
+| 5 | Demo personaggio parlante | Saltato | Percorso gratuito scelto: dialoghi solo a testo, niente voci o labiale |
 | 6 | Vertical slice | Non iniziato | |
 | 7 | Playtest | Non iniziato | |
 | 8 | Gioco completo | Non iniziato | |
@@ -29,12 +29,14 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | 2026-10-20 | Identità Git locale: Rosario Moscato, ros.moscato@gmail.com | Utente |
 | 2026-10-20 | Direzione grafica da esplorare: Giocattoli 3D | Utente |
 | 2026-10-20 | Stile finale A — Vinile morbido | Utente: «A» |
+| 2026-10-20 | Audio gratuito offline; dialoghi solo a testo, niente casting/labiale | Utente |
+| 2026-10-20 | Atmosfera musicale Natale arcade | Utente |
 
-**Passo corrente:** 3 completato. Scelta A — Vinile morbido; riferimento `design/styles/vinyl.html` e regole in `docs/DESIGN_SYSTEM.md`. Attendiamo conferma per il passo 4 (audio, nessuna spesa autorizzata). SCRIPT è una prima stesura derivata dal concept, non un'approvazione delle singole battute.
+**Passo corrente:** 4, proposta audio gratuita pronta per l'ascolto. Attendere feedback sui file prima di completare il passo. Passo 5 saltato per percorso gratuito; alla conferma audio procedere al passo 6. SCRIPT è una prima stesura derivata dal concept, non un'approvazione delle singole battute.
 
 ## 3. Domande aperte
 
-- Doppiaggio ancora da decidere al passo 4; nessun acquisto autorizzato. La prima sceneggiatura mantiene poche battute e tutti i testi leggibili senza audio.
+- L'utente approva le due musiche e gli effetti della pagina ascolto, o desidera modifiche?
 
 ## 4. Demo
 
@@ -47,6 +49,7 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | A — Vinile morbido | http://127.0.0.1:5173/design/styles/vinyl.html | `design/styles/vinyl.html` |
 | B — Bottega di legno | http://127.0.0.1:5173/design/styles/wood.html | `design/styles/wood.html` |
 | C — Action figure spaziali | http://127.0.0.1:5173/design/styles/action.html | `design/styles/action.html` |
+| Ascolto audio gratuito | http://127.0.0.1:5173/tools/audio/audition.html | `tools/audio/audition.html`, `tools/audio/audition.mjs`, `public/audio/` |
 
 Non è ancora un gioco giocabile. A è il riferimento scelto; B/C restano come confronto storico. Il laboratorio tecnico conserva `?lift=0.05` per riprodurre l'errore senza alterare la scena corretta.
 
@@ -80,12 +83,20 @@ Comando generale: `node tools/capture.mjs <page.html> --times 0,2.4,5 --views di
 
 ## 5. Audio e costi
 
-Nessuna generazione eseguita, nessun credito speso, nessun budget autorizzato. Eventuali voci ElevenLabs facoltative richiedono un preventivo e un sì esplicito.
+Percorso gratuito esplicitamente scelto: **0 crediti, 0 API, nessun account richiesto**. 11 file statici generati offline (2 musiche, vento e 8 effetti). Nessun doppiaggio. Manifest `tools/audio/manifest/opening.json`, indice `public/audio/index.json`, registro `tools/audio/ledger/opening-free.json`, dettagli in `docs/AUDIO.md`.
+
+- `audio:plan` verificato prima della generazione; seconda esecuzione dry-run rileva tutti gli asset in cache.
+- `npm.cmd test`: 6 test passati, incluse tutte le ricette audio deterministiche, peak, durata, clipping, salti alle estremità e cache key.
+- `node tools/check-audio.mjs`: tutti gli 11 WAV caricati e avviati in Edge; prova di 12 s completa, reset/stop verificati, nessun errore e nessun overflow a 390 px. Report e screenshot in `docs/evidence/step-04/`.
+- Corretto il server locale con lunghezza file e byte-range: prima i file lunghi davano durata infinita nel browser. Test HTTP aggiunti.
+- Screenshot e waveform osservati. Verifiche tecniche non equivalgono ad approvazione d'ascolto: chiedere feedback all'utente.
+- Server locale riavviato su porta 5173 per caricare i nuovi header audio; nessuna modifica alle policy di sistema.
+- Qualsiasi futuro percorso a pagamento richiede decisione separata, preventivo e sì esplicito; non è implementato nel renderer gratuito.
 
 ## 6. Prossimi passi
 
-1. Mostrare lo stile scelto e comunicare completamento del passo 3.
-2. Alla conferma leggere `references/04-voices.md`: chiedere preferenze per doppiaggio, suoni e musica; offrire percorso senza voci a pagamento.
-3. Nessun acquisto, chiamata ElevenLabs o pubblicazione senza approvazione esplicita del relativo preventivo.
+1. Mostrare pagina ascolto e chiedere approvazione/modifiche. Non avanzare finché non risponde.
+2. Dopo l'approvazione segnare passo 4 completo, mantenere passo 5 saltato e leggere `references/06-vertical-slice.md` e `references/team.md`.
+3. Preparare piano tecnico e team del primo segmento giocabile, comunicando all'utente il carico previsto prima di eseguire una sessione multi-agente pesante.
 
 Ambiente verificato: Node v22.23.1 e git 2.54.0.windows.1 disponibili; progetto inizialmente vuoto salvo la skill installata.

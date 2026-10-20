@@ -1,0 +1,67 @@
+{
+  "pass": true,
+  "errors": [],
+  "checks": [
+    "All 11 static WAV files load and start playback in Edge",
+    "12-second static-file preview finishes and stops every audio track",
+    "Restart and stop controls reset all tracks",
+    "Listening page has no horizontal overflow at 390px"
+  ],
+  "assets": [
+    {
+      "id": "music.village",
+      "duration": 16,
+      "canPlay": true
+    },
+    {
+      "id": "music.combat",
+      "duration": 16,
+      "canPlay": true
+    },
+    {
+      "id": "ambience.snow",
+      "duration": 8,
+      "canPlay": true
+    },
+    {
+      "id": "sfx.throw",
+      "duration": 0.5,
+      "canPlay": true
+    },
+    {
+      "id": "sfx.wrap",
+      "duration": 0.9,
+      "canPlay": true
+    },
+    {
+      "id": "sfx.dodge",
+      "duration": 0.35,
+      "canPlay": true
+    },
+    {
+      "id": "sfx.alien",
+      "duration": 0.65,
+      "canPlay": true
+    },
+    {
+      "id": "sfx.anchor",
+      "duration": 1.4,
+      "canPlay": true
+    },
+    {
+      "id": "sfx.checkpoint",
+      "duration": 1,
+      "canPlay": true
+    },
+    {
+      "id": "sfx.hurt",
+      "duration": 0.4,
+      "canPlay": true
+    },
+    {
+      "id": "sfx.heal",
+      "duration": 0.9,
+      "canPlay": true
+    }
+  ]
+}

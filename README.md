@@ -19,6 +19,18 @@ Stile scelto: **A — Vinile morbido**. Regole in `docs/DESIGN_SYSTEM.md`.
 
 Per rigenerare gli HTML: `node tools/build-style-mockups.mjs`. Per verificare i controlli del confronto e delle anteprime: `node tools/check-styles.mjs`.
 
+## Audio gratuito
+
+Ascolto: http://127.0.0.1:5173/tools/audio/audition.html. Due musiche originali, vento e otto effetti; dialoghi solo a testo, zero API. In attesa di approvazione d'ascolto.
+
+```powershell
+npm.cmd run audio:plan
+npm.cmd run audio:build
+node tools/check-audio.mjs
+```
+
+File statici in `public/audio/`, regole in `docs/AUDIO.md`. Se avevi già avviato il server prima dell'aggiunta audio, riavvialo per il supporto a durate e seek.
+
 ## Controlli
 
 ```powershell

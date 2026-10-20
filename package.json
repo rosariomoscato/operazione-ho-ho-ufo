@@ -6,7 +6,9 @@
   "scripts": {
     "dev": "node tools/serve.mjs",
     "capture": "node tools/capture.mjs tools/testscene.html --times 0,2.4,5 --views diorama,fp --out captures/testscene --selftest",
-    "test": "node --test tools/capture.test.mjs"
+    "test": "node --test tools/capture.test.mjs tools/audio/audio.test.mjs",
+    "audio:plan": "node tools/gen-audio.mjs tools/audio/manifest/opening.json --dry-run",
+    "audio:build": "node tools/gen-audio.mjs tools/audio/manifest/opening.json"
   },
   "dependencies": {
     "three": "^0.186.1"

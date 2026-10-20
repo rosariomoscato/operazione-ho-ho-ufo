@@ -1,0 +1,53 @@
+{
+  "route": "free-offline",
+  "generator": "free-arcade-v1",
+  "projectCreditCeiling": 0,
+  "creditsSpent": 0,
+  "networkRequests": 0,
+  "assets": [
+    {
+      "id": "music.village",
+      "hash": "8046db8a0df9917ce2890980ce79337831b0cf7a01686f30fe6ceb406aa4ff26"
+    },
+    {
+      "id": "music.combat",
+      "hash": "e196557514e98978c513dd131c6eb2048f00f93635c6bf2f8629d20c2f20f84a"
+    },
+    {
+      "id": "ambience.snow",
+      "hash": "39593835c570da54be63df1396b30396ff8acb5baf9bebd6ef2b4734c71ce2fa"
+    },
+    {
+      "id": "sfx.throw",
+      "hash": "f41a222e201e89224f7e33fc425da8b06e4f804305d828154e3316b7d7173d19"
+    },
+    {
+      "id": "sfx.wrap",
+      "hash": "0f6ab030aa6d2e41b7192bc5e58cf99ad83810ec66837a26415be10cf40cf0a6"
+    },
+    {
+      "id": "sfx.dodge",
+      "hash": "33cd1e877bf001c7e6521c6ad10ac5183c0c92313718e189704c18867725382f"
+    },
+    {
+      "id": "sfx.alien",
+      "hash": "8dad4a3fb13f4ff85728bd6741ddd44eb766274526e1391f33b144add204888c"
+    },
+    {
+      "id": "sfx.anchor",
+      "hash": "1e61f5fdb873d9122adeab570f8d3f8a48b99462c233130b45ee564275efac67"
+    },
+    {
+      "id": "sfx.checkpoint",
+      "hash": "5c72d974639e73410a351b12184687902f6e514df9cf40230cbc6476c7cd08c3"
+    },
+    {
+      "id": "sfx.hurt",
+      "hash": "74dece6a67c759ace275bd2735dec8ec341e686b5d99638ee81bcc7f82c970f8"
+    },
+    {
+      "id": "sfx.heal",
+      "hash": "a32a6e6f9fe4783878a6fd94aeb67c66a4684754e1e87562716a35465ed71f45"
+    }
+  ]
+}
