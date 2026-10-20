@@ -8,6 +8,7 @@
     "dev:labs": "node tools/serve.mjs",
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host 127.0.0.1 --port 5175 --strictPort",
+    "snapshot:m1": "node tools/serve-snapshot.mjs",
     "capture": "node tools/capture.mjs tools/testscene.html --times 0,2.4,5 --views diorama,fp --out captures/testscene --selftest",
     "test": "node --test tools/capture.test.mjs tools/audio/audio.test.mjs tools/game.test.mjs",
     "audio:plan": "node tools/gen-audio.mjs tools/audio/manifest/opening.json --dry-run",

@@ -1,6 +1,6 @@
 # Operazione Ho Ho UFO
 
-Action comico 3D per browser. **Primo cortile giocabile pronto per il playtest utente** (passo 7), non ancora l'avventura completa.
+Action comico 3D per browser. **Primo cortile giocabile approvato e congelato** (passo 7 completato), non ancora l'avventura completa.
 
 ## Avvio locale
 
@@ -21,6 +21,10 @@ npm.cmd run preview
 Aprire **http://127.0.0.1:5175/**. Build, 11 test, suite visiva, review combinata e playtest indipendente completati; stato e limiti in `docs/HANDOFF.md`.
 
 Comandi: **WASD** muovi, **destro trascinato** guarda, **clic sinistro** regalo, **Spazio** schiva, **E** dispositivo, **Esc** pausa. Finisce al primo ancoraggio **1/3**; la via dei giocattoli e il boss non sono ancora implementati. Progressi e opzioni restano nel browser locale.
+
+### Copia approvata, immutabile
+
+`npm.cmd run snapshot:m1` → **http://127.0.0.1:5176/**. Serve `snapshots/m1-slice/` senza ricostruirla: questa copia non va mai modificata o sovrascritta, anche quando il gioco principale cambia.
 
 Le demo dei passi precedenti restano disponibili: `npm.cmd run dev:labs`, poi http://127.0.0.1:5173/tools/testscene.html per il laboratorio tecnico.
 

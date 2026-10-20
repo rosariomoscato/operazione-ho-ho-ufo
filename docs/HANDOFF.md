@@ -12,7 +12,7 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | 4 | Voci, suoni e musica | Completato | Proposta audio gratuita approvata dall'utente |
 | 5 | Demo personaggio parlante | Saltato | Percorso gratuito scelto: dialoghi solo a testo, niente voci o labiale |
 | 6 | Vertical slice | Completato | Build/test/catture/review/fresh-eyes e rerun finali PASS |
-| 7 | Playtest | In corso | Preview stabile pronta; attesa feedback utente, nessuno snapshot congelato ancora |
+| 7 | Playtest | Completato | Utente: «va bene»; snapshot M1 congelato e verificato su5176 |
 | 8 | Gioco completo | Non iniziato | |
 | 9 | Rifinitura | Non iniziato | |
 | 10 | Deploy | Non iniziato | Nessuna pubblicazione autorizzata |
@@ -33,12 +33,13 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | 2026-10-20 | Atmosfera musicale Natale arcade | Utente |
 | 2026-10-20 | Audio proposto approvato | Utente: «va bene» |
 | 2026-10-20 | Primo segmento: il cortile; revisioni snelle; TypeScript + Vite + Three.js | Utente |
+| 2026-10-20 | Primo cortile approvato dopo consegna del link giocabile | Utente: «va bene» |
 
-**Passo corrente:** 7, il direttore prova il cortile. M1 ha superato i gate; review combinata **SHIP / LANDS / ON TRACK**, fresh-eyes completato e importanti risolti. Link consigliato **http://127.0.0.1:5175/** (preview statica senza HMR). Attendere feedback utente prima di costruire il resto. Non dichiarare approvazione utente o snapshot congelato finché non li abbiamo.
+**Passo corrente:** 7 completato; prossimo8, ancora da iniziare. L'utente ha approvato il cortile con «va bene». Snapshot immutabile **http://127.0.0.1:5176/**, cartella `snapshots/m1-slice/`: non rigenerare, correggere o sovrascrivere. La preview corrente5175 può cambiare con le prossime build; M1 congelato deve restare indipendente. Nessuna approvazione di pubblicazione o spesa.
 
 ## 3. Domande aperte
 
-- Feedback utente su movimento, mira, fluidità, chiarezza, grafica e audio del primo cortile.
+- All'avvio del passo8: scegliere autonomia con check-in per atto oppure check-in a ogni decisione; scegliere isolamento Git per collaboratori. Non ripetere domande su stile, audio gratuito, PC o review snella già scelti.
 
 ## 4. Demo
 
@@ -54,8 +55,9 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | Ascolto audio gratuito | http://127.0.0.1:5173/tools/audio/audition.html | `tools/audio/audition.html`, `tools/audio/audition.mjs`, `public/audio/` |
 | Primo cortile giocabile (verifica M1) | `npm.cmd run dev`, http://127.0.0.1:5174/ | `index.html`, `src/`; build produzione `dist/` |
 | Preview stabile per l'utente | `npm.cmd run build`, poi `npm.cmd run preview`, http://127.0.0.1:5175/ | Build statica senza HMR |
+| Cortile M1 approvato, congelato | `npm.cmd run snapshot:m1`, http://127.0.0.1:5176/ | `snapshots/m1-slice/`, server read-only `tools/serve-snapshot.mjs` |
 
-Non è ancora un gioco giocabile. A è il riferimento scelto; B/C restano come confronto storico. Il laboratorio tecnico conserva `?lift=0.05` per riprodurre l'errore senza alterare la scena corretta.
+Il cortile è giocabile; l'avventura completa non è ancora implementata. A è il riferimento grafico scelto; B/C restano come confronto storico. Il laboratorio tecnico conserva `?lift=0.05` per riprodurre l'errore senza alterare la scena corretta.
 
 ### Verifiche passo 2
 
@@ -99,10 +101,10 @@ Percorso gratuito esplicitamente scelto: **0 crediti, 0 API, nessun account rich
 
 ## 6. Prossimi passi
 
-1. Salvare commit M1, mostrare preview produzione5175 e comandi; preview è avviata e HTTP index/3bundle/audio-index verificati.
-2. Raccogliere feedback testuale dell'utente in BACKLOG, chiarire note ambigue e correggere cause. Verificare i cambiamenti prima del replay.
-3. Quando l'utente dice che il segmento va bene: build e copia immutabile in `snapshots/m1-slice/`, demo su porta separata e HANDOFF aggiornato; solo allora completare passo7 e andare al passo8. Riferimento07-playtest letto.
-4. Nessuna pubblicazione o spesa autorizzata. Non garantire5minuti o60fps: durata fresh non misurata, prestazioni reali da giudicare sul PC utente.
+1. All'avvio passo8 raccogliere scelte su autonomia/check-in e isolamento Git; mantenere review snella e audio gratuito già scelti. Riferimento08-full-build letto, rileggerlo se serve nella nuova sessione.
+2. Pianificare M2 via dei giocattoli con due ancoraggi, poi M3 piazza/Squamakk/finale; far giocare l'utente dopo ogni atto, non consegnare tutto senza check-in.
+3. Prima del parallelo ridurre accoppiamento del gameplay M1: registri add-a-file per atti/cast/sistemi, contratti/coordinate espliciti, proprietà dei file e suite per area. Pochi collaboratori persistenti, non micro-agenti.
+4. Conservare M1 congelato intatto. Nessuna pubblicazione o spesa autorizzata. Non garantire5minuti o60fps: durata fresh non misurata, prestazioni reali da giudicare sul PC utente.
 
 ## 7. Evidenze M1
 
@@ -125,5 +127,13 @@ Percorso gratuito esplicitamente scelto: **0 crediti, 0 API, nessun account rich
 - Correzioni post-playtest: istruzioni reticolo/non-puntatore, markerMIRATO+cerchio, avviso lati/dietro, labelcura, prefissoPercorso, singolare1difensore. Anche con assist disattivato il marker indica allineamento ma non sposta la traiettoria. Restano MINOR di sovrapposizione fra marker e fascia inferiore UI.
 - L'interruzione HMR durante retest è documentata; consegnare preview statica5175 per evitare ricariche da modifiche sorgente. Nessun ritorno spontaneo al titolo riprodotto nei test produzione.
 - Rerun finale dopo tutti i cambiamenti UI: **PASS** suite42catture/default/software1080, E2E A/B/C+1/3 e melee/cura/retry. Copie dei report finali aggiornate in `docs/evidence/step-06/captures/`; integration finale8lanci,57.136s wallclock di combattimento inclusi retry/reload, non durata fresh.
+
+## 8. Chiusura playtest e snapshot M1
+
+- Approvazione utente registrata il2026-10-20, senza richieste di modifica aggiuntive.
+- `npm.cmd run build`: PASS, stesso bundle approvato (`index-CnKfY3Uc.js`). Copiati27file da dist allo snapshot; SHA256 confrontati uno per uno, identici.
+- Snapshot creato solo dopo verifica che la destinazione non esistesse; nessuna sovrascrittura. I suoi asset sono autonomi, inclusi JS/CSS/audio locali.
+- `npm.cmd run snapshot:m1` serve solo lo snapshot su5176, senza build. Non usa la cartella dist e non si aggiorna con Vite/HMR.
+- Smoke test: `node tools/capture.mjs index.html --url http://127.0.0.1:5176/ --scenario training --times 0 --views player --out captures/snapshot-m1 --selftest` → PASS,1fotogramma,0errori. Prove permanenti `docs/evidence/step-07/`.
 
 Ambiente verificato: Node v22.23.1 e git 2.54.0.windows.1 disponibili; progetto inizialmente vuoto salvo la skill installata.
