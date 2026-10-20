@@ -1,0 +1,68 @@
+{
+  "page": "tools/testscene.html?lift=0.05",
+  "size": [
+    1280,
+    720
+  ],
+  "gpu": "default",
+  "frames": [
+    {
+      "view": "diorama",
+      "time": 0,
+      "file": "00-diorama-0.png",
+      "stats": {
+        "drawCalls": 8,
+        "triangles": 568,
+        "geometries": 8,
+        "textures": 1,
+        "programs": 1
+      },
+      "selfTest": {
+        "pass": false,
+        "checks": [
+          {
+            "name": "box-to-floor (m)",
+            "value": 0.04999997317790987,
+            "limit": 0.001,
+            "pass": false
+          },
+          {
+            "name": "stick-to-box (m)",
+            "value": 1.1920928855158053e-8,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "stick-to-floor (m)",
+            "value": 2.980232241545089e-9,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "stick contact inside box face",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "box geometry valid",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "pass": false,
+  "deterministic": true,
+  "fpsProbe": {
+    "samples": 45,
+    "meanMs": 19.99555555555556,
+    "fps": 50.01111358079572,
+    "note": "Headless smoke test only; not proof of laptop performance."
+  }
+}

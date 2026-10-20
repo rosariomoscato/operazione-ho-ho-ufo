@@ -1,0 +1,24 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="icon" href="data:,">
+  <title>Ho Ho UFO · Laboratorio visivo</title>
+  <style>
+    * { box-sizing: border-box; } body { margin: 0; background: #101c2a; color: #f6f3e7; font: 16px system-ui; }
+    canvas { display: block; width: 100vw; height: 100vh; }
+    header { position: absolute; top: 28px; left: 32px; pointer-events: none; }
+    small { color: #8fdfce; text-transform: uppercase; letter-spacing: .18em; }
+    h1 { margin: 8px 0; font-size: 30px; } p { margin: 6px 0; color: #c3ced9; }
+    footer { position: absolute; bottom: 24px; left: 32px; right: 32px; display: flex; align-items: center; gap: 12px; }
+    button { background: #193343; border: 1px solid #577a8a; border-radius: 8px; color: white; padding: 10px 16px; cursor: pointer; }
+    button:focus-visible { outline: 3px solid #ffd47a; } #status { margin-left: auto; color: #8fdfce; }
+  </style>
+</head>
+<body>
+  <header><small>Operazione Ho Ho UFO / Passo 02</small><h1>Laboratorio visivo</h1><p>Scena tecnica di controllo · non è lo stile definitivo del gioco</p></header>
+  <footer><button data-view="diorama">Diorama</button><button data-view="fp">Dettaglio</button><button id="toggle">Pausa</button><span id="status">Preparazione…</span></footer>
+  <script type="module" src="./testscene.mjs"></script>
+</body>
+</html>

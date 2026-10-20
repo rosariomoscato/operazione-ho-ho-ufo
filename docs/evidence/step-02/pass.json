@@ -1,0 +1,308 @@
+{
+  "page": "tools/testscene.html",
+  "size": [
+    1280,
+    720
+  ],
+  "gpu": "default",
+  "frames": [
+    {
+      "view": "diorama",
+      "time": 0,
+      "file": "00-diorama-0.png",
+      "stats": {
+        "drawCalls": 8,
+        "triangles": 568,
+        "geometries": 8,
+        "textures": 1,
+        "programs": 1
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "box-to-floor (m)",
+            "value": 2.68220901739058e-8,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "stick-to-box (m)",
+            "value": 1.1920928855158053e-8,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "stick-to-floor (m)",
+            "value": 2.980232241545089e-9,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "stick contact inside box face",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "box geometry valid",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "diorama",
+      "time": 2.4,
+      "file": "01-diorama-2.4.png",
+      "stats": {
+        "drawCalls": 8,
+        "triangles": 568,
+        "geometries": 8,
+        "textures": 1,
+        "programs": 1
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "box-to-floor (m)",
+            "value": 2.68220901739058e-8,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "stick-to-box (m)",
+            "value": 1.1920928855158053e-8,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "stick-to-floor (m)",
+            "value": 2.980232241545089e-9,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "stick contact inside box face",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "box geometry valid",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "diorama",
+      "time": 5,
+      "file": "02-diorama-5.png",
+      "stats": {
+        "drawCalls": 8,
+        "triangles": 568,
+        "geometries": 8,
+        "textures": 1,
+        "programs": 1
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "box-to-floor (m)",
+            "value": 2.68220901739058e-8,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "stick-to-box (m)",
+            "value": 1.1920928855158053e-8,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "stick-to-floor (m)",
+            "value": 2.980232241545089e-9,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "stick contact inside box face",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "box geometry valid",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "fp",
+      "time": 0,
+      "file": "03-fp-0.png",
+      "stats": {
+        "drawCalls": 8,
+        "triangles": 568,
+        "geometries": 8,
+        "textures": 1,
+        "programs": 1
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "box-to-floor (m)",
+            "value": 2.68220901739058e-8,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "stick-to-box (m)",
+            "value": 1.1920928855158053e-8,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "stick-to-floor (m)",
+            "value": 2.980232241545089e-9,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "stick contact inside box face",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "box geometry valid",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "fp",
+      "time": 2.4,
+      "file": "04-fp-2.4.png",
+      "stats": {
+        "drawCalls": 8,
+        "triangles": 568,
+        "geometries": 8,
+        "textures": 1,
+        "programs": 1
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "box-to-floor (m)",
+            "value": 2.68220901739058e-8,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "stick-to-box (m)",
+            "value": 1.1920928855158053e-8,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "stick-to-floor (m)",
+            "value": 2.980232241545089e-9,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "stick contact inside box face",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "box geometry valid",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "fp",
+      "time": 5,
+      "file": "05-fp-5.png",
+      "stats": {
+        "drawCalls": 8,
+        "triangles": 568,
+        "geometries": 8,
+        "textures": 1,
+        "programs": 1
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "box-to-floor (m)",
+            "value": 2.68220901739058e-8,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "stick-to-box (m)",
+            "value": 1.1920928855158053e-8,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "stick-to-floor (m)",
+            "value": 2.980232241545089e-9,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "stick contact inside box face",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "box geometry valid",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "pass": true,
+  "deterministic": true,
+  "fpsProbe": {
+    "samples": 45,
+    "meanMs": 16.67333333333334,
+    "fps": 59.97600959616152,
+    "note": "Headless smoke test only; not proof of laptop performance."
+  }
+}
