@@ -4,9 +4,12 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "node tools/serve.mjs",
+    "dev": "vite --host 127.0.0.1 --port 5174 --strictPort",
+    "dev:labs": "node tools/serve.mjs",
+    "build": "tsc --noEmit && vite build",
+    "preview": "vite preview --host 127.0.0.1 --port 5175 --strictPort",
     "capture": "node tools/capture.mjs tools/testscene.html --times 0,2.4,5 --views diorama,fp --out captures/testscene --selftest",
-    "test": "node --test tools/capture.test.mjs tools/audio/audio.test.mjs",
+    "test": "node --test tools/capture.test.mjs tools/audio/audio.test.mjs tools/game.test.mjs",
     "audio:plan": "node tools/gen-audio.mjs tools/audio/manifest/opening.json --dry-run",
     "audio:build": "node tools/gen-audio.mjs tools/audio/manifest/opening.json"
   },
@@ -14,7 +17,10 @@
     "three": "^0.186.1"
   },
   "devDependencies": {
+    "@types/three": "^0.186.0",
     "playwright-core": "^1.64.1",
-    "sharp": "^0.35.5"
+    "sharp": "^0.35.5",
+    "typescript": "^7.0.2",
+    "vite": "^8.3.4"
   }
 }

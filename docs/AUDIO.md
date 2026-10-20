@@ -4,7 +4,7 @@ Scelta utente del 2026-10-20: **percorso gratuito**, **Natale arcade**. Solo dia
 
 ## Stato
 
-Prima proposta pronta per l'ascolto, **non ancora approvata musicalmente dall'utente**. Controlli tecnici e playback browser verificati, ma non sostituiscono il suo giudizio d'ascolto. Nessun gioco ancora implementato.
+Proposta **approvata dall'utente** il 2026-10-20 con «va bene», dopo la presentazione della pagina ascolto. Controlli tecnici e playback browser verificati. Nessun gioco ancora implementato.
 
 ## File e strumenti
 
@@ -60,4 +60,4 @@ I dialoghi in SCRIPT sono obbligatoriamente leggibili senza audio, con nome del 
 - Server locale aggiornato con Content-Length, MIME WAV e richieste byte-range per durata/seek affidabili.
 - Pagina senza overflow a 390 px, waveform osservate. Screenshot e report: `docs/evidence/step-04/`.
 
-Approvazione richiesta: mantenere o modificare musica, timbri, ritmo, volume relativo ed effetti prima di iniziare il primo segmento giocabile.
+Audio approvato per iniziare il primo segmento giocabile. Eventuali modifiche successive vengono registrate nel backlog senza sovrascrivere gli asset delle demo storiche.

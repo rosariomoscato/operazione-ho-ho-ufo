@@ -1,17 +1,28 @@
 # Operazione Ho Ho UFO
 
-Action comico 3D per browser. Concept approvato, strumenti di verifica e tre anteprime grafiche pronti; gioco non ancora implementato.
+Action comico 3D per browser. **Primo cortile giocabile pronto per il playtest utente** (passo 7), non ancora l'avventura completa.
 
 ## Avvio locale
 
-Richiede Node 20+ e Chrome/Edge installato.
+Richiede Node 22.13+ e Chrome/Edge installato (ambiente verificato: Node 22.23.1). I test di integrazione usano la rimozione nativa dei tipi TypeScript di Node, ancora contrassegnata sperimentale.
 
 ```powershell
 npm.cmd ci
 npm.cmd run dev
 ```
 
-Aprire http://127.0.0.1:5173/tools/testscene.html per il laboratorio tecnico (non è lo stile definitivo).
+Sviluppo su http://127.0.0.1:5174/. Per giocare senza ricariche automatiche da modifiche sorgente:
+
+```powershell
+npm.cmd run build
+npm.cmd run preview
+```
+
+Aprire **http://127.0.0.1:5175/**. Build, 11 test, suite visiva, review combinata e playtest indipendente completati; stato e limiti in `docs/HANDOFF.md`.
+
+Comandi: **WASD** muovi, **destro trascinato** guarda, **clic sinistro** regalo, **Spazio** schiva, **E** dispositivo, **Esc** pausa. Finisce al primo ancoraggio **1/3**; la via dei giocattoli e il boss non sono ancora implementati. Progressi e opzioni restano nel browser locale.
+
+Le demo dei passi precedenti restano disponibili: `npm.cmd run dev:labs`, poi http://127.0.0.1:5173/tools/testscene.html per il laboratorio tecnico.
 
 Confronto delle tre varianti giocattoli 3D: http://127.0.0.1:5173/design/styles/index.html. Le demo interattive richiedono Internet per Three.js da CDN; le immagini del confronto sono locali.
 
@@ -21,7 +32,7 @@ Per rigenerare gli HTML: `node tools/build-style-mockups.mjs`. Per verificare i 
 
 ## Audio gratuito
 
-Ascolto: http://127.0.0.1:5173/tools/audio/audition.html. Due musiche originali, vento e otto effetti; dialoghi solo a testo, zero API. In attesa di approvazione d'ascolto.
+Ascolto: http://127.0.0.1:5173/tools/audio/audition.html. Due musiche originali, vento e otto effetti; dialoghi solo a testo, zero API. Audio approvato.
 
 ```powershell
 npm.cmd run audio:plan
@@ -29,7 +40,7 @@ npm.cmd run audio:build
 node tools/check-audio.mjs
 ```
 
-File statici in `public/audio/`, regole in `docs/AUDIO.md`. Se avevi già avviato il server prima dell'aggiunta audio, riavvialo per il supporto a durate e seek.
+File statici in `public/audio/`, regole in `docs/AUDIO.md`. Audio approvato dall'utente. Se avevi già avviato il server prima dell'aggiunta audio, riavvialo per il supporto a durate e seek.
 
 ## Controlli
 
@@ -45,3 +56,13 @@ L'ultimo comando **deve fallire**: riproduce un pacco sollevato di 5 cm. Senza i
 Su Windows usare `npm.cmd` se PowerShell blocca `npm.ps1`. Non è necessario cambiare la execution policy. Per un browser in posizione diversa impostare `BROWSER_PATH`.
 
 Stato e prossimi passi in `docs/HANDOFF.md`; regole in `AGENTS.md`.
+
+## Build e catture del gioco
+
+```powershell
+npm.cmd run build
+npm.cmd run preview
+node tools/capture-game.mjs
+```
+
+Preview produzione su porta 5175. Cattura di uno scenario specifico: `node tools/capture.mjs index.html --build --scenario battle-c --views player,diorama --times 0,1 --out captures/game/manual --selftest`. `--url http://127.0.0.1:5174/` usa invece il server di sviluppo già acceso; non combinarlo con `--build`.

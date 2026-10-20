@@ -6,11 +6,12 @@ import { pathToFileURL } from 'node:url';
 
 export async function serve(root = process.cwd(), port = 0) {
   const base = resolve(root);
+  const defaultPage = base === resolve(process.cwd()) ? '/tools/testscene.html' : '/index.html';
   const types = { '.html': 'text/html; charset=utf-8', '.js': 'text/javascript', '.mjs': 'text/javascript', '.css': 'text/css', '.json': 'application/json', '.png': 'image/png', '.svg': 'image/svg+xml', '.wav': 'audio/wav' };
   const server = createServer(async (req, res) => {
     try {
       const pathname = decodeURIComponent(new URL(req.url, 'http://localhost').pathname);
-      const file = resolve(base, `.${pathname === '/' ? '/tools/testscene.html' : pathname}`);
+      const file = resolve(base, `.${pathname === '/' ? defaultPage : pathname}`);
       if (!file.startsWith(base + sep)) { res.writeHead(403).end(); return; }
       const info = await stat(file);
       if (!info.isFile()) { res.writeHead(404).end(); return; }

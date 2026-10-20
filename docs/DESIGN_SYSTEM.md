@@ -38,7 +38,7 @@ Portare `toyMaterial(color, extra)` dal mockup: `MeshStandardMaterial`, roughnes
 
 - Vestiti, pelle e neve mantengono finitura da vinile; le forme, non texture fotorealistiche, distinguono le parti.
 - `glow`: base mint, emissive `#46c9b2`, intensità **0.4**. Il colore emissivo non è una luce reale.
-- Ombre di contatto: funzione `shadow`, texture radiale costruita su canvas, piano a y=0.004, depthWrite false. Non sovrapporre decal coplanari.
+- Ombre di contatto: funzione `shadow` nel mockup, `contactShadow` nel runtime; texture radiale costruita su canvas, tinta materiale ink, piano a y=0.004, depthWrite false. Non sovrapporre decal coplanari.
 - Riutilizzare `mesh`, `ball`, `cube`, `cylinder`, `link`; condividere geometrie/materiali e instanziare gli oggetti ripetuti nel gioco. Il mockup non è già una soluzione ottimizzata per folle.
 
 ## 4. Personaggi
@@ -47,7 +47,7 @@ Coordinate in metri, pavimento y=0. Babbo Natale alto circa 3.01 m inclusi cappe
 
 Il rettiliano è più piccolo (circa 2.1 m), verde con tuta viola, muso allungato, grandi occhi gialli a pupilla verticale, cresta e coda. Non confonderlo con un umano mascherato. Niente denti realistici o sangue.
 
-Rig a gruppi: corpo, testa, braccia/mani, regalo. Per i dialoghi futuri prevedere bocca separata sotto i baffi; il mockup attuale **non implementa lip-sync**. Forme previste: riposo, A aperta, E larga, O tonda, M/B/P chiusa; da provare nel passo 5, non considerate già approvate o funzionanti.
+Rig a gruppi: corpo, testa, braccia/mani, regalo. Il percorso audio gratuito scelto al passo 4 prevede dialoghi solo a testo: **nessun lip-sync o demo labiale**, passo 5 saltato. Non aggiungere automaticamente bocche animate o voci. Un futuro cambio richiede una nuova decisione dell'utente.
 
 Guanti sferici raggio .115 m. Il regalo .54 × .44 × .42 m tocca i guanti sulle due facce laterali; misurare il contatto nelle coordinate locali, non con AABB globali di oggetti ruotati. Personaggi lontani: eliminare baffi/dita/nastri secondari, conservare silhouette e colori principali.
 
@@ -69,6 +69,8 @@ Zero passaggi post nel riferimento, massimo tre nel gioco. Nessun blur, profondi
 
 VFX regali: nastri curvi, stelle, pacco che si chiude; non una grande esplosione bianca. Raggio alieno telegrafato con zona a terra, bordo riconoscibile e simbolo, mai solo colore. Particelle istanziate, niente luci per ogni proiettile. I nuovi VFX richiedono test propri prima di essere accettati.
 
+Leggibilità del primo impacchettamento: se il corpo di Babbo copre il muso/pacco nella vista gameplay, rendere temporaneamente traslucidi solo i suoi materiali clonati (opacity .18, senza depth write), poi ripristinarli. Nessun cambio camera o spostamento del rettiliano; identico comportamento con riduzione movimento. Etichetta locale «Pacco rettiliano», poi «↑ Spedito alla nave». Il reticolo è un simbolo grafico aria-hidden con ink e contorno crema (contrasto fra i due 12.32:1); non un testo dialogo. Verificarlo sulle scene, non attribuirgli un contrasto DOM contro un fondo canvas presunto.
+
 Camera terza persona: FOV riferimento **53°**, distanza sufficiente a mostrare stivali e nemico; offset laterale per non coprire il bersaglio con il sacco. Diorama 38°, turntable 36°, volto 32°. In turntable/volto nascondere scenografia che ostacola il personaggio e intestazione che copre il cappello. La camera gameplay futura deve gestire collisioni con muri; non ancora implementata.
 
 Oggetti ispezionabili leggibili da vicino; nessun indizio dipende da una texture minuscola. Le anteprime conservano tutte le viste, controlli e timeline.
@@ -78,6 +80,8 @@ Oggetti ispezionabili leggibili da vicino; nessun indizio dipende da una texture
 Pannelli scuri opachi, testo crema, accento oro e focus ben visibile. Nel riferimento: pannello `#121d32`, pulsante `#293c58`, testo `#fff5df`, evidenza `#ffda88`. Non mettere testo chiaro direttamente sulla neve. Contrasto minimo **4.5:1**, anche per testo secondario. A 1080p altezza delle maiuscole almeno **24 px**: nel mockup font 36 px per testi/controlli e 48 px per titolo. Non assumere che font-size 24 equivalga a maiuscola alta 24.
 
 Obiettivo persistente, contatore ancoraggi, vita e conferme d'interazione nel gioco; non fingere che siano già nel mockup. Sottotitoli e audio indipendenti dal colore. Tasti utilizzabili da tastiera, focus visibile, pausa e controlli volume. Il supporto smartphone riguarda solo leggibilità della pagina confronto, non gameplay touch.
+
+Nel cortile implementato: spiegare «tira al +, non al mouse» prima del primo tiro; marker MIRATO e piccolo cerchio sul bersaglio, distinto dal cerchio di esplosione. Etichette su pannelli opachi sopra i personaggi, senza coprirne il volto. Avvisi testuali/direzionali per nemici vicini fuori dal fronte di tiro, «Percorso» per la navigazione e «Cura+2» sull'oggetto quando feriti. Non affidarsi solo a un testo in alto a destra. Con mira assistita disattivata il marker non modifica la traiettoria. Sovrapposizioni fra marker vicini restano un MINOR da rifinire dopo feedback utente.
 
 ## 9. Budget
 
@@ -103,4 +107,4 @@ Obiettivo persistente, contatore ancoraggi, vita e conferme d'interazione nel gi
 
 Comando: `node tools/capture.mjs design/styles/vinyl.html --times 0,1.5,3,4.5 --views diorama,player,turntable,face --size 1920x1080 --out captures/styles/vinyl-approved --selftest --visual-checks`.
 
-Report e immagini approvate in `docs/evidence/step-03/approved/`. La scelta A è approvata; eventuale doppiaggio e costi restano da decidere al passo 4.
+Report e immagini approvate in `docs/evidence/step-03/approved/`. Scelta A approvata; al passo 4 sono stati approvati musica ed effetti gratuiti offline, senza doppiaggio o costi.

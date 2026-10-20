@@ -15,6 +15,7 @@ export async function visualAudit(page, views, out) {
     const luminance = rgb => rgb.slice(0, 3).map(v => { v /= 255; return v <= .04045 ? v / 12.92 : ((v + .055) / 1.055) ** 2.4; }).reduce((sum, v, i) => sum + v * [.2126, .7152, .0722][i], 0);
     const checks = [];
     for (const node of document.querySelectorAll('body *')) {
+      if (node.closest('[aria-hidden="true"]')) continue;
       if (!Array.from(node.childNodes).some(child => child.nodeType === Node.TEXT_NODE && child.textContent.trim())) continue;
       const style = getComputedStyle(node), rect = node.getBoundingClientRect();
       if (rect.width < 2 || rect.height < 2 || style.display === 'none' || style.visibility === 'hidden') continue;
@@ -29,7 +30,7 @@ export async function visualAudit(page, views, out) {
       const minCapHeight = innerHeight >= 1080 ? 24 : 0;
       checks.push({ text: node.textContent.trim().slice(0, 70), contrast, capHeight, minCapHeight, pass: contrast >= 4.5 && capHeight >= minCapHeight });
     }
-    return { pass: checks.length > 0 && checks.every(check => check.pass), checks, note: 'DOM text only; 24px cap-height gate applies at 1080p. Canvas text must have a separate measured contract.' };
+    return { pass: checks.length > 0 && checks.every(check => check.pass), checks, note: 'Accessible DOM text only; aria-hidden graphic glyphs are excluded and require visual/outline checks. 24px cap-height gate applies at 1080p. Canvas text needs a separate measured contract.' };
   });
   const flashes = [];
   for (const view of views) {

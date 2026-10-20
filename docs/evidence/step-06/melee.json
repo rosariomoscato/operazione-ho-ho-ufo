@@ -1,0 +1,313 @@
+{
+  "pass": true,
+  "errors": [],
+  "checks": [
+    "Live AI: full 1-second windup, ~0.8s locked warning, ≥1.2s recovery, unique damage per attack",
+    "Review scenario and live simulation do not write the actual checkpoint",
+    "Real heal event grants +2 once; checkpoint retry preserves consumption and restores 6HP"
+  ],
+  "lockWindows": [
+    {
+      "attackId": 1,
+      "secondsAfterLock": 0.7990000000000002
+    },
+    {
+      "attackId": 2,
+      "secondsAfterLock": 0.8009999999999997
+    }
+  ],
+  "state": {
+    "beat": "battle",
+    "group": 1,
+    "player": {
+      "x": 0,
+      "z": 3,
+      "hp": 4,
+      "invulnerableUntil": 5.4814333333333245,
+      "dodgeUntil": 0,
+      "dodgeReady": 0,
+      "dx": 0,
+      "dz": -1
+    },
+    "camera": {
+      "yaw": 0,
+      "pitch": 0.3,
+      "view": "player"
+    },
+    "droneHit": true,
+    "dodgeUsed": true,
+    "remaining": 6,
+    "pending": 5,
+    "neutralized": 0,
+    "healAvailable": false,
+    "healed": false,
+    "firstWrapped": false,
+    "review": true,
+    "playing": false,
+    "time": 4.264799999999991,
+    "enemies": [
+      {
+        "id": 1,
+        "x": 0,
+        "z": 0.4089799999999981,
+        "hp": 2,
+        "status": "active",
+        "since": 4.214766666666658,
+        "attackId": 2,
+        "angle": 0,
+        "hit": true
+      }
+    ],
+    "objective": "Libera il cortile · 6 difensori",
+    "checkpoint": {
+      "version": 1,
+      "boundary": "A",
+      "healed": false,
+      "firstWrapped": false
+    },
+    "eventLog": [
+      {
+        "time": 0,
+        "type": "group-enter",
+        "group": 1
+      },
+      {
+        "time": 0.799,
+        "type": "attack-windup",
+        "id": 1,
+        "attackId": 1
+      },
+      {
+        "time": 1.015,
+        "type": "attack-lock",
+        "id": 1,
+        "attackId": 1,
+        "angle": 0
+      },
+      {
+        "time": 1.814,
+        "type": "attack-active",
+        "id": 1,
+        "attackId": 1,
+        "windup": 1.0142666666666653,
+        "angle": 0
+      },
+      {
+        "time": 1.83,
+        "type": "player-hurt",
+        "hp": 5,
+        "attackId": 1
+      },
+      {
+        "time": 2.014,
+        "type": "attack-recovery",
+        "id": 1,
+        "attackId": 1
+      },
+      {
+        "time": 3.214,
+        "type": "recovery-end",
+        "id": 1,
+        "elapsed": 1.2003333333333321
+      },
+      {
+        "time": 3.214,
+        "type": "attack-windup",
+        "id": 1,
+        "attackId": 2
+      },
+      {
+        "time": 3.414,
+        "type": "attack-lock",
+        "id": 1,
+        "attackId": 2,
+        "angle": 0
+      },
+      {
+        "time": 4.215,
+        "type": "attack-active",
+        "id": 1,
+        "attackId": 2,
+        "windup": 1.0005666666666633,
+        "angle": 0
+      },
+      {
+        "time": 4.231,
+        "type": "player-hurt",
+        "hp": 4,
+        "attackId": 2
+      }
+    ],
+    "storageAvailable": true
+  },
+  "healState": {
+    "beat": "battle",
+    "group": 3,
+    "player": {
+      "x": 0,
+      "z": -4,
+      "hp": 4,
+      "invulnerableUntil": 1.25,
+      "dodgeUntil": 0,
+      "dodgeReady": 0,
+      "dx": 0,
+      "dz": -1
+    },
+    "camera": {
+      "yaw": 0,
+      "pitch": 0.3,
+      "view": "player"
+    },
+    "droneHit": true,
+    "dodgeUsed": true,
+    "remaining": 3,
+    "pending": 0,
+    "neutralized": 3,
+    "healAvailable": false,
+    "healed": true,
+    "firstWrapped": true,
+    "review": true,
+    "playing": false,
+    "time": 0.15,
+    "enemies": [
+      {
+        "id": 4,
+        "x": 2.745441558772842,
+        "z": -6.745441558772842,
+        "hp": 2,
+        "status": "approach",
+        "since": 0,
+        "attackId": 0,
+        "angle": -0.7853981633974483,
+        "hit": false
+      },
+      {
+        "id": 5,
+        "x": -2.784,
+        "z": -7.712,
+        "hp": 2,
+        "status": "approach",
+        "since": 0,
+        "attackId": 0,
+        "angle": 0.6435011087932844,
+        "hit": false
+      },
+      {
+        "id": 6,
+        "x": 0,
+        "z": -10.640000000000008,
+        "hp": 2,
+        "status": "approach",
+        "since": 0,
+        "attackId": 0,
+        "angle": 0,
+        "hit": false
+      }
+    ],
+    "objective": "Libera il cortile · 3 difensori",
+    "checkpoint": {
+      "version": 1,
+      "boundary": "C",
+      "healed": true,
+      "firstWrapped": true
+    },
+    "eventLog": [
+      {
+        "time": 0,
+        "type": "group-enter",
+        "group": 3
+      },
+      {
+        "time": 0.017,
+        "type": "heal",
+        "hp": 4
+      }
+    ],
+    "storageAvailable": true
+  },
+  "retryState": {
+    "beat": "battle",
+    "group": 3,
+    "player": {
+      "x": 0,
+      "z": -4,
+      "hp": 6,
+      "invulnerableUntil": 1.25,
+      "dodgeUntil": 0,
+      "dodgeReady": 0,
+      "dx": 0,
+      "dz": -1
+    },
+    "camera": {
+      "yaw": 0,
+      "pitch": 0.3,
+      "view": "player"
+    },
+    "droneHit": true,
+    "dodgeUsed": true,
+    "remaining": 3,
+    "pending": 0,
+    "neutralized": 3,
+    "healAvailable": false,
+    "healed": true,
+    "firstWrapped": true,
+    "review": true,
+    "playing": false,
+    "time": 0.21679999999999927,
+    "enemies": [
+      {
+        "id": 4,
+        "x": 9.518984132932829,
+        "z": -10.801614924881893,
+        "hp": 2,
+        "status": "approach",
+        "since": 0,
+        "attackId": 0,
+        "angle": -1.179621101340173,
+        "hit": false
+      },
+      {
+        "id": 5,
+        "x": 7.632078199613016,
+        "z": -11.632078199613025,
+        "hp": 2,
+        "status": "approach",
+        "since": 0,
+        "attackId": 0,
+        "angle": -0.7853981633974477,
+        "hit": false
+      },
+      {
+        "id": 6,
+        "x": 0.312191999999999,
+        "z": -12.583744000000001,
+        "hp": 2,
+        "status": "approach",
+        "since": 0,
+        "attackId": 0,
+        "angle": 0.6435011087932844,
+        "hit": false
+      }
+    ],
+    "objective": "Libera il cortile · 3 difensori",
+    "checkpoint": {
+      "version": 1,
+      "boundary": "C",
+      "healed": true,
+      "firstWrapped": true
+    },
+    "eventLog": [
+      {
+        "time": 0,
+        "type": "group-enter",
+        "group": 3
+      },
+      {
+        "time": 0,
+        "type": "retry",
+        "boundary": "C"
+      }
+    ],
+    "storageAvailable": true
+  }
+}

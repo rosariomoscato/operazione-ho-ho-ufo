@@ -98,3 +98,50 @@ Direzione espressiva dei testi: Babbo Natale bonario e asciutto; Briciola rapida
 | ui.load.error | — | Caricamento non riuscito. Riprova. | Errore recuperabile, pulsante Riprova | UI | — |
 
 Le variabili come `{count}` vengono sostituite dal gioco; non sono battute da registrare. Nuovi testi emersi durante lo sviluppo vanno aggiunti qui con nuovi ID prima della registrazione.
+
+## Primo segmento — varianti e testi di servizio
+
+Implementazione del cortile, stessi eventi della storia approvata. Le varianti brevi mantengono il significato senza introdurre nuove regole. Dialoghi e UI solo a testo; nessuna registrazione prevista. Le parentesi `{...}` indicano variabili.
+
+| ID | Personaggio | Testo | Direzione | Tipo | Stato |
+|---|---|---|---|---|---|
+| vo.briciola.theft.short | Briciola | Hanno rubato il nucleo per aprire un portale sulla Terra! | Introduzione compatta | radio | — |
+| vo.briciola.training | Briciola | Hanno rubato il nucleo! Il portale minaccia la Terra. Proviamo i regali sul drone. | Dopo skip o fine introduzione | radio | — |
+| vo.briciola.heal | Briciola | Campanello al centro! Se sei ferito, raccoglilo per recuperare 2 punti. | Cura facoltativa dopo il gruppo B | radio | — |
+| vo.briciola.clear | Briciola | Area libera! Vai al dispositivo e premi E. | Sei difensori neutralizzati | radio | — |
+| ui.new | — | Nuova partita | Reset scelto esplicitamente | UI | — |
+| ui.continue | — | Continua | Solo checkpoint valido | UI | — |
+| ui.restart.checkpoint | — | Ricomincia checkpoint | Pausa/sconfitta | UI | — |
+| ui.title.return | — | Titolo | Menu | UI | — |
+| ui.slice.replay | — | Rigioca il cortile | Fine segmento | UI | — |
+| ui.slice.end | — | Fine del primo segmento · La via dei giocattoli non è ancora giocabile. | Non promettere accesso al seguito | UI | — |
+| ui.slice.anchor | — | Ancoraggio 1/3 · Cortile liberato | Successo parziale, non fine del mondo | UI | — |
+| ui.controls.pc | — | WASD: muovi · Destro trascinato: mira al + · Clic: tira al +, non al mouse · Spazio: schiva · E: dispositivo · Esc: pausa | Comandi permanenti | UI | — |
+| ui.objective.training | — | Allinea il drone al + centrale e lancia | Tutorial | UI | — |
+| ui.objective.dodge | — | Prova la schivata: Spazio | Tutorial | UI | — |
+| ui.objective.battle | — | Libera il cortile · {count} difensori | Include gruppi non ancora entrati | UI | — |
+| ui.objective.anchor | — | Spegni il primo ancoraggio: E | Tutti i difensori neutralizzati | UI | — |
+| ui.anchor.protected | — | Ancoraggio protetto · {count} difensori da impacchettare | E premuto prima di liberare area | UI | — |
+| ui.anchor.range | — | Ancoraggio a {distance} m · avvicinati a meno di 2,2 m | E fuori portata | UI | — |
+| ui.drone.done | — | Drone disattivato · 1/1 | Feedback distinto da alieno sconfitto | UI | — |
+| ui.gift.wait | — | Regalo in preparazione · {seconds} s | Cadenza, nessun input silenzioso | UI | — |
+| ui.gift.air | — | I pacchi sono in volo: riprova fra un istante. | Pool pieno | UI | — |
+| ui.gift.miss | — | Il regalo va al + centrale, non al mouse. Gira con il destro e avvicinati (12 m). | Nessun colpo riuscito | UI | — |
+| ui.gift.hit | — | Colpito · 1 tacca rimasta | Primo danno a rettiliano | UI | — |
+| ui.dodge.protected | — | Schivata · protetto | Schivata riuscita | UI | — |
+| ui.dodge.cooldown | — | Schivata in recupero · {seconds} s | Recupero | UI | — |
+| ui.hurt | — | Colpito · −1 salute · protetto 1,25 s | Invulnerabilità senza lampeggi | UI | — |
+| ui.heal | — | Campanello raccolto · +2 salute | Solo se ferito | UI | — |
+| ui.storage.unavailable | — | Salvataggio non disponibile: puoi continuare questa partita. | Storage negato, niente promesse di persistenza | UI | — |
+| ui.retry.checkpoint | — | Si riparte dal checkpoint · salute ripristinata | Gruppi precedenti conservati | UI | — |
+| ui.settings.master | — | Volume generale | Impostazione | UI | — |
+| ui.settings.reduced | — | Riduci movimento | Impostazione | UI | — |
+| ui.settings.assist | — | Mira assistita | Impostazione | UI | — |
+| ui.wrap.parcel | — | Pacco rettiliano | Etichetta durante impacchettamento | UI | — |
+| ui.wrap.shipped | — | ↑ Spedito alla nave | Conferma locale prima del teletrasporto | UI | — |
+| ui.aim.locked | — | ◎ MIRATO | Indicatore collegato al bersaglio nella scena | UI | — |
+| ui.aim.training | — | Destro trascinato: porta il drone al +. Poi CLIC quando è MIRATO. | Spiegare la mira, non il puntatore mouse | UI | — |
+| ui.threat.side | — | ! {direction} · Destro: gira e mira | Rettiliano vicino fuori dal fronte di tiro | UI | — |
+| ui.heal.marker | — | ✚ Cura +2 | Etichetta collegata alla cura quando feriti | UI | — |
+
+I testi tecnici di reticolo, distanza, HP e recupero sono indicatori dinamici, non battute. La presenza di una riga in questa sezione non certifica che l'interazione sia stata verificata: prove nel report M1.

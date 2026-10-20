@@ -13,6 +13,14 @@ test('capture CLI parses options', () => {
 test('invalid CLI options fail', () => {
   for (const args of [[], ['x', '--times', 'oops'], ['x', '--size', '0x720'], ['x', '--unknown'], ['x', '--gpu', 'magic']]) assert.throws(() => parseArgs(args));
 });
+test('game capture scenarios and localhost-only URLs', () => {
+  const options = parseArgs(['index.html', '--build', '--scenario', 'battle-c']);
+  assert.equal(options.build, true);
+  assert.equal(options.scenario, 'battle-c');
+  assert.equal(parseArgs(['index.html', '--url', 'http://127.0.0.1:5174/']).url, 'http://127.0.0.1:5174/');
+  assert.throws(() => parseArgs(['index.html', '--url', 'https://example.com']));
+  assert.throws(() => parseArgs(['index.html', '--build', '--url', 'http://localhost:5174']));
+});
 test('local server serves files and rejects traversal', async () => {
   const { server, url } = await serve();
   try {

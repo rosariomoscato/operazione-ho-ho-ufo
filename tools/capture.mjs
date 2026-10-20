@@ -3,6 +3,7 @@ import sharp from 'sharp';
 import { access, mkdir, writeFile } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
+import { execSync } from 'node:child_process';
 import { serve } from './serve.mjs';
 import { visualAudit } from './visual-audit.mjs';
 
@@ -13,7 +14,8 @@ export function parseArgs(args) {
     const key = args[i];
     if (key === '--selftest') { options.selftest = true; continue; }
     if (key === '--visual-checks') { options.visualChecks = true; continue; }
-    if (!['--times', '--views', '--out', '--size', '--gpu'].includes(key)) throw new Error(`Unknown option: ${key}`);
+    if (key === '--build') { options.build = true; continue; }
+    if (!['--times', '--views', '--out', '--size', '--gpu', '--url', '--scenario'].includes(key)) throw new Error(`Unknown option: ${key}`);
     const value = args[++i];
     if (!value || value.startsWith('--')) throw new Error(`Missing value for ${key}`);
     if (key === '--times') options.times = value.split(',').map(Number);
@@ -21,10 +23,17 @@ export function parseArgs(args) {
     if (key === '--out') options.out = value;
     if (key === '--size') options.size = value.split('x').map(Number);
     if (key === '--gpu') options.gpu = value;
+    if (key === '--url') options.url = value;
+    if (key === '--scenario') options.scenario = value;
   }
   if (options.times.some(t => !Number.isFinite(t) || t < 0)) throw new Error('Times must be finite and nonnegative');
   if (options.size.length !== 2 || options.size.some(n => !Number.isInteger(n) || n < 64 || n > 7680)) throw new Error('Invalid size');
   if (options.gpu && options.gpu !== 'swiftshader') throw new Error('Only --gpu swiftshader is supported');
+  if (options.url) {
+    const target = new URL(options.url);
+    if (target.protocol !== 'http:' || !['localhost', '127.0.0.1', '[::1]'].includes(target.hostname)) throw new Error('--url must target a local HTTP server');
+  }
+  if (options.build && options.url) throw new Error('--build and --url cannot be combined');
   return options;
 }
 
@@ -43,10 +52,12 @@ export async function findBrowser() {
 export async function capture(options) {
   const out = resolve(options.out);
   await mkdir(out, { recursive: true });
-  const report = { page: options.page, size: options.size, gpu: options.gpu ?? 'default', frames: [], errors: [], warnings: [], pass: false };
+  const report = { page: options.page, scenario: options.scenario ?? null, size: options.size, gpu: options.gpu ?? 'default', frames: [], errors: [], warnings: [], pass: false };
   let browser, server;
   try {
-    const local = await serve(); server = local.server;
+    if (options.build) execSync(process.platform === 'win32' ? 'npm.cmd run build' : 'npm run build', { stdio: 'inherit' });
+    const local = options.url ? { url: new URL(options.url).origin } : await serve(options.build ? resolve('dist') : process.cwd());
+    server = local.server;
     const args = options.gpu === 'swiftshader' ? ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] : [];
     browser = await chromium.launch({ executablePath: await findBrowser(), headless: true, args });
     const page = await browser.newPage({ viewport: { width: options.size[0], height: options.size[1] }, deviceScaleFactor: 1 });
@@ -56,18 +67,19 @@ export async function capture(options) {
       if (message.type() === 'warning') report.warnings.push(message.text());
     });
     page.on('requestfailed', request => report.errors.push(`${request.url()}: ${request.failure()?.errorText}`));
-    const url = new URL(options.page.replaceAll('\\', '/'), `${local.url}/`);
+    const url = options.url ? new URL(options.url) : new URL(options.page.replaceAll('\\', '/'), `${local.url}/`);
     if (url.origin !== local.url) throw new Error('Only local project pages are allowed');
     const response = await page.goto(url.href);
     if (!response?.ok()) throw new Error(`Page failed: ${response?.status()}`);
     await page.waitForFunction(() => window.LC?.ready === true, null, { timeout: 30000 });
+    if (options.scenario) await page.evaluate(scenario => { if (typeof LC.goto !== 'function') throw new Error('Scenario capture requires LC.goto'); LC.goto(scenario); }, options.scenario);
     await page.evaluate(() => window.LC.pause());
     const views = options.views ?? await page.evaluate(() => window.LC.views);
     const tiles = [];
     for (const view of views) for (const time of options.times) {
       const frame = await page.evaluate(({ view, time, selftest }) => {
         const lc = window.LC; lc.setView(view); lc.seek(time); lc.renderNow();
-        return { stats: lc.getStats(), selfTest: selftest ? lc.selfTest() : null };
+        return { stats: lc.getStats(), selfTest: selftest ? lc.selfTest() : null, state: typeof lc.state === 'function' ? lc.state() : null };
       }, { view, time, selftest: options.selftest });
       const file = `${String(report.frames.length).padStart(2, '0')}-${view.replace(/[^a-z0-9_-]/gi, '_')}-${time}.png`;
       await page.screenshot({ path: join(out, file) });
@@ -97,7 +109,6 @@ export async function capture(options) {
     });
     if (options.visualChecks) report.visualAudit = await visualAudit(page, views, out);
     const sheet = await browser.newPage({ viewport: { width: 960, height: Math.ceil(tiles.length / 2) * 298 }, deviceScaleFactor: 1 });
-    await sheet.goto(`${local.url}/tools/testscene.html`);
     await sheet.setContent('<html><body style="margin:0;background:#101c2a;color:#f6f3e7;font:16px system-ui;display:grid;grid-template-columns:480px 480px"></body></html>');
     const composites = [];
     for (let i = 0; i < tiles.length; i++) {
@@ -128,6 +139,11 @@ export async function capture(options) {
     if (!frame.budgetPass) console.error(`${frame.view}: invalid stats or rendering budget exceeded`);
   }
   for (const error of report.errors) console.error(error);
+  if (report.visualAudit && !report.visualAudit.pass) {
+    for (const check of report.visualAudit.typography.checks.filter(check => !check.pass)) console.error(`Text audit: ${JSON.stringify(check)}`);
+    if (!report.visualAudit.palette.pass) console.error(`Palette audit: ${JSON.stringify(report.visualAudit.palette.invalidColors)}`);
+    for (const probe of report.visualAudit.flashes.filter(probe => !probe.pass)) console.error(`Brightness audit: ${JSON.stringify(probe)}`);
+  }
   return report;
 }
 

@@ -1,0 +1,596 @@
+{
+  "pass": true,
+  "errors": [],
+  "checks": [
+    "Title, skip, drone throw and dodge tutorial complete with actual controls",
+    "Pause freezes the simulation clock and resumes explicitly",
+    "All 1+2+3 defenders defeated using only physical mouse/keyboard events",
+    "Actual A/B/C boundaries each survive checkpoint retry and reload/Continue without replaying earlier groups",
+    "Anchor 1/3 is saved and Continue restores completion after a real reload",
+    "Storage write failure is nonfatal and reported honestly"
+  ],
+  "shots": 8,
+  "boundaries": [
+    {
+      "group": 1,
+      "checkpoint": {
+        "version": 1,
+        "boundary": "A",
+        "healed": false,
+        "firstWrapped": false
+      },
+      "hp": 6,
+      "enemyIds": [
+        1
+      ]
+    },
+    {
+      "group": 2,
+      "checkpoint": {
+        "version": 1,
+        "boundary": "B",
+        "healed": false,
+        "firstWrapped": true
+      },
+      "hp": 6,
+      "enemyIds": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": 3,
+      "checkpoint": {
+        "version": 1,
+        "boundary": "C",
+        "healed": false,
+        "firstWrapped": true
+      },
+      "hp": 6,
+      "enemyIds": [
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "liveWrap": {
+    "beat": "battle",
+    "group": 2,
+    "player": {
+      "x": 0,
+      "z": -0.6541399999999984,
+      "hp": 6,
+      "invulnerableUntil": 1.25,
+      "dodgeUntil": 0,
+      "dodgeReady": 0,
+      "dx": 0,
+      "dz": -1
+    },
+    "camera": {
+      "yaw": 0,
+      "pitch": 0.3,
+      "view": "player"
+    },
+    "droneHit": true,
+    "dodgeUsed": true,
+    "remaining": 5,
+    "pending": 3,
+    "neutralized": 1,
+    "healAvailable": false,
+    "healed": false,
+    "firstWrapped": true,
+    "review": false,
+    "playing": true,
+    "time": 10.164300000000068,
+    "enemies": [
+      {
+        "id": 1,
+        "x": 0,
+        "z": -2.828740000000067,
+        "hp": 0,
+        "status": "gone",
+        "since": 7.800899999999987,
+        "attackId": 2,
+        "angle": 0,
+        "hit": false
+      },
+      {
+        "id": 2,
+        "x": -5.065489184444906,
+        "z": -5.914290305481835,
+        "hp": 2,
+        "status": "approach",
+        "since": 7.800899999999987,
+        "attackId": 0,
+        "angle": 0.7665481866079206,
+        "hit": false
+      },
+      {
+        "id": 3,
+        "x": -3.92414099110217,
+        "z": -6.734237687107967,
+        "hp": 2,
+        "status": "approach",
+        "since": 7.800899999999987,
+        "attackId": 0,
+        "angle": 0.5731400115009897,
+        "hit": false
+      }
+    ],
+    "objective": "Libera il cortile · 5 difensori",
+    "checkpoint": {
+      "version": 1,
+      "boundary": "B",
+      "healed": false,
+      "firstWrapped": true
+    },
+    "eventLog": [
+      {
+        "time": 0,
+        "type": "group-enter",
+        "group": 1
+      },
+      {
+        "time": 5.418,
+        "type": "attack-windup",
+        "id": 1,
+        "attackId": 1
+      },
+      {
+        "time": 5.635,
+        "type": "attack-lock",
+        "id": 1,
+        "attackId": 1,
+        "angle": 0
+      },
+      {
+        "time": 5.752,
+        "type": "throw",
+        "target": 1,
+        "x": 0,
+        "z": -3.2483800000000644
+      },
+      {
+        "time": 6.384,
+        "type": "enemy-hit",
+        "id": 1,
+        "hp": 1
+      },
+      {
+        "time": 6.384,
+        "type": "explosion",
+        "x": 0,
+        "z": -2.635834155294164,
+        "radius": 2,
+        "hits": 1
+      },
+      {
+        "time": 7.001,
+        "type": "attack-windup",
+        "id": 1,
+        "attackId": 2
+      },
+      {
+        "time": 7.201,
+        "type": "attack-lock",
+        "id": 1,
+        "attackId": 2,
+        "angle": 0
+      },
+      {
+        "time": 7.217,
+        "type": "throw",
+        "target": 1,
+        "x": 0,
+        "z": -2.828740000000067
+      },
+      {
+        "time": 7.801,
+        "type": "enemy-hit",
+        "id": 1,
+        "hp": 0
+      },
+      {
+        "time": 7.801,
+        "type": "wrap",
+        "id": 1
+      },
+      {
+        "time": 7.801,
+        "type": "dialogue",
+        "id": "vo.santa.wrapped"
+      },
+      {
+        "time": 7.801,
+        "type": "explosion",
+        "x": 0,
+        "z": -2.187872588235341,
+        "radius": 2,
+        "hits": 1
+      },
+      {
+        "time": 7.801,
+        "type": "group-enter",
+        "group": 2
+      },
+      {
+        "time": 7.801,
+        "type": "checkpoint",
+        "boundary": "B",
+        "persisted": true
+      },
+      {
+        "time": 9.214,
+        "type": "teleport",
+        "id": 1
+      }
+    ],
+    "storageAvailable": true
+  },
+  "combatWallSeconds": 57.136,
+  "finalState": {
+    "beat": "complete",
+    "group": 3,
+    "player": {
+      "x": -0.23720846176994245,
+      "z": -8.201890764723938,
+      "hp": 4,
+      "invulnerableUntil": 10.317600000000025,
+      "dodgeUntil": 0,
+      "dodgeReady": 0,
+      "dx": 0,
+      "dz": -1
+    },
+    "camera": {
+      "yaw": -0.28400000000000025,
+      "pitch": 0.3,
+      "view": "player"
+    },
+    "droneHit": true,
+    "dodgeUsed": true,
+    "remaining": 0,
+    "pending": 0,
+    "neutralized": 6,
+    "healAvailable": false,
+    "healed": true,
+    "firstWrapped": true,
+    "review": false,
+    "playing": true,
+    "time": 20.86900000000013,
+    "enemies": [
+      {
+        "id": 4,
+        "x": 1.1847027878523249,
+        "z": -5.378950333162485,
+        "hp": 0,
+        "status": "gone",
+        "since": 7.466166666666651,
+        "attackId": 3,
+        "angle": -0.7283930023794416,
+        "hit": true
+      },
+      {
+        "id": 5,
+        "x": -0.7212780489794732,
+        "z": -3.7293825212716207,
+        "hp": 0,
+        "status": "gone",
+        "since": 10.516300000000067,
+        "attackId": 5,
+        "angle": -1.3517527741797026,
+        "hit": false
+      },
+      {
+        "id": 6,
+        "x": -0.22231617878477253,
+        "z": -4.981118085174436,
+        "hp": 0,
+        "status": "gone",
+        "since": 7.466166666666651,
+        "attackId": 1,
+        "angle": -0.5480482414857365,
+        "hit": true
+      }
+    ],
+    "objective": "Ancoraggio 1/3 · Cortile liberato",
+    "checkpoint": {
+      "version": 1,
+      "boundary": "complete",
+      "healed": true,
+      "firstWrapped": true
+    },
+    "eventLog": [
+      {
+        "time": 0,
+        "type": "group-enter",
+        "group": 3
+      },
+      {
+        "time": 2.984,
+        "type": "attack-windup",
+        "id": 6,
+        "attackId": 1
+      },
+      {
+        "time": 3.185,
+        "type": "attack-lock",
+        "id": 6,
+        "attackId": 1,
+        "angle": -0.2391502528557291
+      },
+      {
+        "time": 3.999,
+        "type": "attack-active",
+        "id": 6,
+        "attackId": 1,
+        "windup": 1.0147666666666635,
+        "angle": -0.2391502528557291
+      },
+      {
+        "time": 4.016,
+        "type": "player-hurt",
+        "hp": 5,
+        "attackId": 1
+      },
+      {
+        "time": 4.016,
+        "type": "heal",
+        "hp": 6
+      },
+      {
+        "time": 4.016,
+        "type": "checkpoint",
+        "boundary": "C",
+        "persisted": true
+      },
+      {
+        "time": 4.2,
+        "type": "attack-recovery",
+        "id": 6,
+        "attackId": 1
+      },
+      {
+        "time": 4.533,
+        "type": "throw",
+        "target": 6,
+        "x": 0.6131151885627448,
+        "z": -6.514660845844308
+      },
+      {
+        "time": 4.8,
+        "type": "attack-windup",
+        "id": 4,
+        "attackId": 2
+      },
+      {
+        "time": 5,
+        "type": "attack-lock",
+        "id": 4,
+        "attackId": 2,
+        "angle": -0.7099812862270154
+      },
+      {
+        "time": 5.167,
+        "type": "enemy-hit",
+        "id": 4,
+        "hp": 1
+      },
+      {
+        "time": 5.167,
+        "type": "enemy-hit",
+        "id": 6,
+        "hp": 1
+      },
+      {
+        "time": 5.167,
+        "type": "explosion",
+        "x": 0.469550059507523,
+        "z": -5.9258357513134685,
+        "radius": 2,
+        "hits": 2
+      },
+      {
+        "time": 5.402,
+        "type": "recovery-end",
+        "id": 6,
+        "elapsed": 1.2028333333333299
+      },
+      {
+        "time": 5.784,
+        "type": "attack-windup",
+        "id": 4,
+        "attackId": 3
+      },
+      {
+        "time": 5.984,
+        "type": "attack-lock",
+        "id": 4,
+        "attackId": 3,
+        "angle": -0.7283930023794416
+      },
+      {
+        "time": 6.784,
+        "type": "attack-active",
+        "id": 4,
+        "attackId": 3,
+        "windup": 1.0002999999999975,
+        "angle": -0.7283930023794416
+      },
+      {
+        "time": 6.801,
+        "type": "player-hurt",
+        "hp": 5,
+        "attackId": 3
+      },
+      {
+        "time": 6.999,
+        "type": "attack-recovery",
+        "id": 4,
+        "attackId": 3
+      },
+      {
+        "time": 7.15,
+        "type": "throw",
+        "target": 5,
+        "x": 0.4841752615950143,
+        "z": -4.160283545298172
+      },
+      {
+        "time": 7.466,
+        "type": "enemy-hit",
+        "id": 4,
+        "hp": 0
+      },
+      {
+        "time": 7.466,
+        "type": "wrap",
+        "id": 4
+      },
+      {
+        "time": 7.466,
+        "type": "enemy-hit",
+        "id": 5,
+        "hp": 1
+      },
+      {
+        "time": 7.466,
+        "type": "enemy-hit",
+        "id": 6,
+        "hp": 0
+      },
+      {
+        "time": 7.466,
+        "type": "wrap",
+        "id": 6
+      },
+      {
+        "time": 7.466,
+        "type": "explosion",
+        "x": -0.0350417334908702,
+        "z": -3.9874247036324575,
+        "radius": 2,
+        "hits": 3
+      },
+      {
+        "time": 8.066,
+        "type": "attack-windup",
+        "id": 5,
+        "attackId": 4
+      },
+      {
+        "time": 8.283,
+        "type": "attack-lock",
+        "id": 5,
+        "attackId": 4,
+        "angle": -1.3517527741797026
+      },
+      {
+        "time": 8.467,
+        "type": "teleport",
+        "id": 4
+      },
+      {
+        "time": 8.467,
+        "type": "teleport",
+        "id": 6
+      },
+      {
+        "time": 9.067,
+        "type": "attack-active",
+        "id": 5,
+        "attackId": 4,
+        "windup": 1.0003666666667055,
+        "angle": -1.3517527741797026
+      },
+      {
+        "time": 9.068,
+        "type": "player-hurt",
+        "hp": 4,
+        "attackId": 4
+      },
+      {
+        "time": 9.267,
+        "type": "attack-recovery",
+        "id": 5,
+        "attackId": 4
+      },
+      {
+        "time": 10.201,
+        "type": "throw",
+        "target": 5,
+        "x": -0.7212780489794732,
+        "z": -3.7293825212716207
+      },
+      {
+        "time": 10.483,
+        "type": "recovery-end",
+        "id": 5,
+        "elapsed": 1.2161000000000328
+      },
+      {
+        "time": 10.5,
+        "type": "attack-windup",
+        "id": 5,
+        "attackId": 5
+      },
+      {
+        "time": 10.516,
+        "type": "enemy-hit",
+        "id": 5,
+        "hp": 0
+      },
+      {
+        "time": 10.516,
+        "type": "wrap",
+        "id": 5
+      },
+      {
+        "time": 10.516,
+        "type": "explosion",
+        "x": -1.256643331839187,
+        "z": -3.6102019856640553,
+        "radius": 2,
+        "hits": 1
+      },
+      {
+        "time": 10.516,
+        "type": "checkpoint",
+        "boundary": "anchor",
+        "persisted": true
+      },
+      {
+        "time": 10.516,
+        "type": "dialogue",
+        "id": "vo.briciola.clear"
+      },
+      {
+        "time": 10.516,
+        "type": "beat",
+        "beat": "anchor"
+      },
+      {
+        "time": 11.517,
+        "type": "teleport",
+        "id": 5
+      },
+      {
+        "time": 18.468,
+        "type": "checkpoint",
+        "boundary": "complete",
+        "persisted": true
+      },
+      {
+        "time": 18.468,
+        "type": "anchor-off",
+        "anchors": 1
+      },
+      {
+        "time": 18.468,
+        "type": "dialogue",
+        "id": "vo.briciola.route"
+      }
+    ],
+    "storageAvailable": true
+  }
+}

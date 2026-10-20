@@ -1,0 +1,50 @@
+{
+  "pass": true,
+  "runs": [
+    {
+      "reducedMotion": false,
+      "time": 0.25,
+      "file": "wrap-normal-0.25.png",
+      "label": "Pacco rettiliano",
+      "enemyPosition": [
+        0,
+        -1
+      ],
+      "pass": true
+    },
+    {
+      "reducedMotion": false,
+      "time": 0.9,
+      "file": "wrap-normal-0.9.png",
+      "label": "↑ Spedito alla nave",
+      "enemyPosition": [
+        0,
+        -1
+      ],
+      "pass": true
+    },
+    {
+      "reducedMotion": true,
+      "time": 0.25,
+      "file": "wrap-reduced-0.25.png",
+      "label": "Pacco rettiliano",
+      "enemyPosition": [
+        0,
+        -1
+      ],
+      "pass": true
+    },
+    {
+      "reducedMotion": true,
+      "time": 0.9,
+      "file": "wrap-reduced-0.9.png",
+      "label": "↑ Spedito alla nave",
+      "enemyPosition": [
+        0,
+        -1
+      ],
+      "pass": true
+    }
+  ],
+  "errors": []
+}
