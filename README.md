@@ -15,6 +15,8 @@ Aprire http://127.0.0.1:5173/tools/testscene.html per il laboratorio tecnico (no
 
 Confronto delle tre varianti giocattoli 3D: http://127.0.0.1:5173/design/styles/index.html. Le demo interattive richiedono Internet per Three.js da CDN; le immagini del confronto sono locali.
 
+Stile scelto: **A — Vinile morbido**. Regole in `docs/DESIGN_SYSTEM.md`.
+
 Per rigenerare gli HTML: `node tools/build-style-mockups.mjs`. Per verificare i controlli del confronto e delle anteprime: `node tools/check-styles.mjs`.
 
 ## Controlli
@@ -22,6 +24,7 @@ Per rigenerare gli HTML: `node tools/build-style-mockups.mjs`. Per verificare i 
 ```powershell
 npm.cmd test
 npm.cmd run capture
+node tools/capture.mjs design/styles/vinyl.html --views diorama,player,turntable,face --size 1920x1080 --selftest --visual-checks --out captures/style-a
 node tools/capture.mjs "tools/testscene.html?lift=0.05" --selftest --out captures/planted-error
 ```
 

@@ -8,7 +8,7 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 |---|---|---|---|
 | 1 | Storia, personaggi e luoghi | Completato | Concept approvato; SCRIPT e BACKLOG scritti |
 | 2 | Debug visivo | Completato | Catture verificate, errore da 5 cm rilevato, test software passato |
-| 3 | Stile e design system | In corso | Tre varianti realizzate e verificate; attesa scelta A/B/C prima del design system |
+| 3 | Stile e design system | Completato | A — Vinile morbido scelto, design system scritto e audit 1080p superato |
 | 4 | Voci, suoni e musica | Non iniziato | Nessuna spesa autorizzata |
 | 5 | Demo personaggio parlante | Non iniziato | |
 | 6 | Vertical slice | Non iniziato | |
@@ -28,12 +28,12 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | 2026-10-20 | Usare Git locale e salvare una versione dopo ogni passo; nessuna pubblicazione | Utente |
 | 2026-10-20 | Identità Git locale: Rosario Moscato, ros.moscato@gmail.com | Utente |
 | 2026-10-20 | Direzione grafica da esplorare: Giocattoli 3D | Utente |
+| 2026-10-20 | Stile finale A — Vinile morbido | Utente: «A» |
 
-**Passo corrente:** 3, confronto visivo pronto. L'utente ha selezionato solo Giocattoli 3D: realizzate tre varianti coerenti (vinile, legno, action figure), senza imporre feltro o fumetto. Attendere scelta A/B/C o richieste di modifica. Non scrivere il design system definitivo prima della scelta. SCRIPT è una prima stesura derivata dal concept, non un'approvazione delle singole battute.
+**Passo corrente:** 3 completato. Scelta A — Vinile morbido; riferimento `design/styles/vinyl.html` e regole in `docs/DESIGN_SYSTEM.md`. Attendiamo conferma per il passo 4 (audio, nessuna spesa autorizzata). SCRIPT è una prima stesura derivata dal concept, non un'approvazione delle singole battute.
 
 ## 3. Domande aperte
 
-- Quale variante giocattoli 3D usare: A vinile morbido (consigliata), B legno, C action figure? Sono ammesse modifiche e combinazioni richieste dall'utente.
 - Doppiaggio ancora da decidere al passo 4; nessun acquisto autorizzato. La prima sceneggiatura mantiene poche battute e tutti i testi leggibili senza audio.
 
 ## 4. Demo
@@ -48,7 +48,7 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | B — Bottega di legno | http://127.0.0.1:5173/design/styles/wood.html | `design/styles/wood.html` |
 | C — Action figure spaziali | http://127.0.0.1:5173/design/styles/action.html | `design/styles/action.html` |
 
-Non è ancora un gioco giocabile e non rappresenta lo stile definitivo. La demo conserva il parametro `?lift=0.05` per riprodurre l'errore senza alterare la scena corretta.
+Non è ancora un gioco giocabile. A è il riferimento scelto; B/C restano come confronto storico. Il laboratorio tecnico conserva `?lift=0.05` per riprodurre l'errore senza alterare la scena corretta.
 
 ### Verifiche passo 2
 
@@ -73,7 +73,10 @@ Comando generale: `node tools/capture.mjs <page.html> --times 0,2.4,5 --views di
 - Autocritica e correzioni: isolato il personaggio nelle viste turntable/face per evitare occlusioni; ampliata la turntable per mantenere il cappello in quadro; corretta la camera player in vera terza persona e spostata lateralmente per rendere visibile il rettiliano.
 - `node tools/check-styles.mjs`: pulsanti confronto, immagini locali, quattro viste, scrubber, pausa/riproduzione e contatti verificati; niente overflow della pagina confronto a 390 px. Report e screenshot in `docs/evidence/step-03/`.
 - Esempio cattura: `node tools/capture.mjs design/styles/vinyl.html --times 0,1.5,3,4.5 --views diorama,player,turntable,face --out captures/styles/vinyl --selftest`.
-- Check di contrasto/testi, fotosensibilità e palette definitiva ancora da completare dopo la scelta, insieme al design system. Il semplice conteggio attuale dei colori non è un palette lint completo.
+- Dopo scelta A: aggiunto `tools/visual-audit.mjs`, attivato con `--visual-checks` in capture. Verifica palette dichiarata contro colori effettivi dei materiali, contrasto DOM e maiuscole, screening luminosità del loop a 12 Hz per vista, PNG diagnostico deuteranopia dalla vista giocatore. Limiti documentati nel design system: non certifica fotosensibilità, texture/canvas text futuri vanno controllati separatamente.
+- Audit A a 1920×1080: 16 fotogrammi positivi, contrasto minimo 10.29:1, maiuscole minime 26 px, zero eventi di variazione luminosa estesa, 0 errori browser. Contact sheet e report permanenti in `docs/evidence/step-03/approved/`.
+- Rifiniture successive alla scelta: pannello testo opaco, testo più grande a 1080p, intestazione nascosta nei close-up, cono del cappello centrato e ridotto per evitare una linea rossa attraverso il bordo crema; camera volto allargata per contenere il pompon. Nessuna modifica alla direzione artistica scelta.
+- Tutti i controlli nuovi descrivono solo la sera innevata attualmente implementata. Non dichiarare coperti VFX, mood o gameplay futuri.
 
 ## 5. Audio e costi
 
@@ -81,8 +84,8 @@ Nessuna generazione eseguita, nessun credito speso, nessun budget autorizzato. E
 
 ## 6. Prossimi passi
 
-1. Mostrare pagina confronto e attendere la scelta A/B/C o modifiche.
-2. Dopo la scelta scrivere `docs/DESIGN_SYSTEM.md`, estendere i controlli visivi e aggiornare AGENTS con le regole per nuovi asset.
-3. Terminare il passo 3 con conferma; non iniziare ancora gioco completo, voci o deploy.
+1. Mostrare lo stile scelto e comunicare completamento del passo 3.
+2. Alla conferma leggere `references/04-voices.md`: chiedere preferenze per doppiaggio, suoni e musica; offrire percorso senza voci a pagamento.
+3. Nessun acquisto, chiamata ElevenLabs o pubblicazione senza approvazione esplicita del relativo preventivo.
 
 Ambiente verificato: Node v22.23.1 e git 2.54.0.windows.1 disponibili; progetto inizialmente vuoto salvo la skill installata.

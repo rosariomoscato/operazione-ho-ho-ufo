@@ -4,10 +4,11 @@ import { parseArgs } from './capture.mjs';
 import { serve } from './serve.mjs';
 
 test('capture CLI parses options', () => {
-  const options = parseArgs(['tools/testscene.html', '--times', '0,2.4,5', '--views', 'diorama,fp', '--selftest', '--gpu', 'swiftshader']);
+  const options = parseArgs(['tools/testscene.html', '--times', '0,2.4,5', '--views', 'diorama,fp', '--selftest', '--visual-checks', '--gpu', 'swiftshader']);
   assert.deepEqual(options.times, [0, 2.4, 5]);
   assert.deepEqual(options.views, ['diorama', 'fp']);
   assert.equal(options.selftest, true);
+  assert.equal(options.visualChecks, true);
 });
 test('invalid CLI options fail', () => {
   for (const args of [[], ['x', '--times', 'oops'], ['x', '--size', '0x720'], ['x', '--unknown'], ['x', '--gpu', 'magic']]) assert.throws(() => parseArgs(args));

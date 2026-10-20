@@ -4,6 +4,7 @@ import { access, mkdir, writeFile } from 'node:fs/promises';
 import { resolve, join } from 'node:path';
 import { pathToFileURL } from 'node:url';
 import { serve } from './serve.mjs';
+import { visualAudit } from './visual-audit.mjs';
 
 export function parseArgs(args) {
   const options = { page: args[0], times: [0], views: null, out: 'captures/default', selftest: false, size: [1280, 720] };
@@ -11,6 +12,7 @@ export function parseArgs(args) {
   for (let i = 1; i < args.length; i++) {
     const key = args[i];
     if (key === '--selftest') { options.selftest = true; continue; }
+    if (key === '--visual-checks') { options.visualChecks = true; continue; }
     if (!['--times', '--views', '--out', '--size', '--gpu'].includes(key)) throw new Error(`Unknown option: ${key}`);
     const value = args[++i];
     if (!value || value.startsWith('--')) throw new Error(`Missing value for ${key}`);
@@ -93,6 +95,7 @@ export async function capture(options) {
       const meanMs = samples.reduce((a, b) => a + b, 0) / samples.length;
       return { samples: samples.length, meanMs, fps: 1000 / meanMs, note: 'Headless smoke test only; not proof of laptop performance.' };
     });
+    if (options.visualChecks) report.visualAudit = await visualAudit(page, views, out);
     const sheet = await browser.newPage({ viewport: { width: 960, height: Math.ceil(tiles.length / 2) * 298 }, deviceScaleFactor: 1 });
     await sheet.goto(`${local.url}/tools/testscene.html`);
     await sheet.setContent('<html><body style="margin:0;background:#101c2a;color:#f6f3e7;font:16px system-ui;display:grid;grid-template-columns:480px 480px"></body></html>');
@@ -110,7 +113,7 @@ export async function capture(options) {
     }, { base64: base.toString('base64'), tiles });
     await sheet.evaluate(() => Promise.all([...document.images].map(img => img.decode())));
     await sheet.screenshot({ path: join(out, '_contact-sheet.png') });
-    report.pass = report.frames.length > 0 && report.errors.length === 0 && report.deterministic && report.frames.every(f => f.budgetPass && (!options.selftest || f.selfTest?.pass === true));
+    report.pass = report.frames.length > 0 && report.errors.length === 0 && report.deterministic && report.frames.every(f => f.budgetPass && (!options.selftest || f.selfTest?.pass === true)) && (!options.visualChecks || report.visualAudit?.pass === true);
   } catch (error) { report.errors.push(error.stack ?? String(error)); }
   finally {
     await browser?.close();

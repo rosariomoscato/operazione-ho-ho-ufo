@@ -9,7 +9,8 @@ Progetto basato sulla pipeline in 10 passi della skill `build-a-game`. Iniziare 
 - `docs/HANDOFF.md`: stato, decisioni, domande aperte e demo.
 - `docs/GAME_DESIGN.md`: concept approvato, storia, meccaniche e livelli.
 - `docs/SCRIPT.md`: prima sceneggiatura derivata dal concept; battute con ID e stato audio. Doppiaggio ancora da decidere. Mai rigenerare audio già registrato.
-- `docs/DESIGN_SYSTEM.md`: da creare al passo 3, insieme ai mockup conservati in `design/styles/`.
+- `docs/DESIGN_SYSTEM.md`: stile scelto A, Vinile morbido; regole per palette, materiali, personaggi, luci, UI e verifiche.
+- `design/styles/vinyl.html`: riferimento grafico eseguibile; sorgente `tools/build-style-mockups.mjs`. Conservare anche le varianti B e C.
 - `docs/TECH_PLAN.md`, `docs/LEVEL_LAYOUT.md`: da creare al passo 6.
 - `docs/BACKLOG.md`: feedback e difetti da verificare.
 - Reviewer dal passo 6: critico, direttore degli incontri/comicità, direttore narrativo.
@@ -29,6 +30,7 @@ Progetto basato sulla pipeline in 10 passi della skill `build-a-game`. Iniziare 
 11. Nessuna spesa o pubblicazione senza consenso esplicito, anche in autonomia. Decisioni autonome registrate come tali.
 12. Quando previsti dalla skill, pochi collaboratori persistenti per area, non decine di micro-agenti.
 13. Se si approva il doppiaggio, misurare la chiarezza delle voci rispetto al mix e abbassare musica/effetti durante le battute (obiettivo almeno 8 dB di margine).
+14. Prima di creare qualunque asset visivo leggere DESIGN_SYSTEM, riusare le funzioni materiali del mockup A, catturare ogni mood implementato da distanza gameplay e da vicino, verificare contatti e budget con selfTest e ottenere revisione prevista per il passo. Non reinventare lo stile o introdurre blur nel gameplay.
 
 ## Debug visivo (previsto al passo 2)
 

@@ -105,8 +105,8 @@ for (const x of [-.13, .13]) {
 }
 ball(head, skin, [0, -.025, .385], [.085, .085, .075]);
 const brim = cylinder(head, cream, [0, .29, 0], .41, .41, .12); brim.scale.z = .86;
-const hat = mesh(head, new THREE.ConeGeometry(.38, .66, seg), red, [.075, .63, -.025]); hat.rotation.z = -.23;
-ball(head, cream, [.15, .95, -.025], [.12, .12, .12]);
+const hat = mesh(head, new THREE.ConeGeometry(.35, .66, seg), red, [0, .66, -.025]);
+ball(head, cream, [0, 1.0, -.025], [.12, .12, .12]);
 // Gift is held between two spherical mittens, then offered forward in a short loop.
 const gift = new THREE.Group(); santa.add(gift);
 cube(gift, purple, [0, 0, 0], [.54, .44, .42]);
@@ -192,10 +192,11 @@ function seek(seconds) {
   const target = new THREE.Vector3();
   const focusOnly = currentView === 'turntable' || currentView === 'face';
   environment.forEach(object => { object.visible = !focusOnly; });
+  document.querySelector('header').style.visibility = focusOnly ? 'hidden' : 'visible';
   if (currentView === 'diorama') { camera.fov = 38; camera.position.set(8, 6.2, 10.5); target.set(0, .85, -.4); }
   if (currentView === 'player') { camera.fov = 53; camera.position.set(-4.7, 3.1, 4.2); target.set(.65, 1.1, -.25); }
   if (currentView === 'turntable') { const angle = t / 6 * TAU + santa.rotation.y; camera.fov = 36; camera.position.set(-1.1 + Math.sin(angle) * 6.3, 2.5, .55 + Math.cos(angle) * 6.3); target.set(-1.1, 1.42, .55); }
-  if (currentView === 'face') { camera.fov = 32; camera.position.copy(santa.localToWorld(new THREE.Vector3(0, 2.05, 3.35))); target.copy(santa.localToWorld(new THREE.Vector3(0, 1.96, .35))); }
+  if (currentView === 'face') { camera.fov = 32; camera.position.copy(santa.localToWorld(new THREE.Vector3(0, 2.15, 3.75))); target.copy(santa.localToWorld(new THREE.Vector3(0, 2.02, .35))); }
   camera.updateProjectionMatrix(); camera.lookAt(target);
   const timeline = document.querySelector('#timeline'); if (timeline) timeline.value = t;
   const label = document.querySelector('#time'); if (label) label.textContent = t.toFixed(1) + ' s';
@@ -226,7 +227,11 @@ function selfTest() {
   for (const check of checks) check.pass = Number.isFinite(check.value) && check.value <= check.limit;
   return { pass: checks.every(c => c.pass), checks };
 }
-window.LC = { ready: false, duration: 6, views, setView, seek, renderNow, getStats, selfTest, play() { playing = true; previous = undefined; }, pause() { playing = false; previous = undefined; } };
+function visualMetadata() {
+  const allowed = [config.red, config.green, config.purple, config.snow, '#fff0d5', '#f4ba93', '#202d42', '#f8be55', wood ? '#8b5544' : '#596a9b', wood ? '#b48a60' : '#987562', '#a4f8d9', '#9b6547', wood ? '#8b6246' : '#a5585b'];
+  return { palette: allowed, materialColors: materials.map(m => '#' + m.color.getHexString()), canvasSelector: '#stage canvas', mood: 'snowy-evening' };
+}
+window.LC = { ready: false, duration: 6, views, setView, seek, renderNow, getStats, selfTest, visualMetadata, play() { playing = true; previous = undefined; }, pause() { playing = false; previous = undefined; } };
 document.querySelectorAll('[data-view]').forEach(button => button.onclick = () => { setView(button.dataset.view); renderNow(); });
 document.querySelector('#timeline').oninput = event => { LC.pause(); seek(Number(event.target.value)); renderNow(); document.querySelector('#play').textContent = 'Riproduci'; };
 document.querySelector('#play').onclick = event => { if (playing) LC.pause(); else LC.play(); event.target.textContent = playing ? 'Pausa' : 'Riproduci'; };
@@ -243,6 +248,8 @@ for (const config of variants) {
 <html lang="it"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="data:,"><title>${config.title} · Ho Ho UFO</title>
 <style>
 *{box-sizing:border-box}body{margin:0;background:${config.sky};color:#fff7e8;font:16px system-ui}canvas{display:block;width:100vw;height:100vh}header{position:absolute;top:26px;left:32px;pointer-events:none;text-shadow:0 2px 10px #101729}small{color:#ffda88;letter-spacing:.16em;text-transform:uppercase;font-size:12px}h1{margin:8px 0;font-size:30px}p{margin:0;color:#e5e9f4;font-size:15px}.controls{position:absolute;bottom:20px;left:24px;right:24px;display:flex;gap:8px;align-items:center;padding:12px 14px;background:#121d32f2;border:1px solid #60718d;border-radius:14px}button,a{font:inherit;color:#fff5df;background:#293c58;border:1px solid #7990b0;border-radius:7px;padding:8px 12px;text-decoration:none;cursor:pointer}button:focus-visible,a:focus-visible,input:focus-visible{outline:3px solid #ffda88}input{flex:1;min-width:50px;accent-color:#ffda88}label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}#time{font-variant-numeric:tabular-nums;font-size:14px;min-width:34px}@media(max-width:850px){.controls{flex-wrap:wrap}header{left:20px}h1{font-size:24px}button,a{font-size:13px;padding:8px}}
+header{background:${config.sky};padding:10px 14px;border-radius:10px}#time{color:#fff5df}
+@media(min-height:900px){small,header p,button,a,#time{font-size:36px}h1{font-size:48px}.controls{gap:10px}input{min-width:80px}}
 </style>
 <script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.186.1/build/three.module.js"}}</script>
 </head><body><div id="stage"></div><header><small>Operazione Ho Ho UFO / Studio giocattoli 3D</small><h1>${config.title}</h1><p>${config.tagline}</p></header><nav class="controls" aria-label="Controlli anteprima"><a href="index.html">Confronta</a><button data-view="diorama">Diorama</button><button data-view="player">Giocatore</button><button data-view="turntable">Personaggio</button><button data-view="face">Volto</button><button id="play">Pausa</button><label for="timeline">Tempo animazione</label><input id="timeline" type="range" min="0" max="6" step="0.01" value="0"><span id="time">0.0 s</span></nav><script type="module">${sceneCode(config)}</script></body></html>`;
