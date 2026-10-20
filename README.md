@@ -1,6 +1,6 @@
 # Operazione Ho Ho UFO
 
-Action comico 3D per browser. Concept approvato, strumenti di verifica pronti; gioco non ancora implementato.
+Action comico 3D per browser. Concept approvato, strumenti di verifica e tre anteprime grafiche pronti; gioco non ancora implementato.
 
 ## Avvio locale
 
@@ -12,6 +12,10 @@ npm.cmd run dev
 ```
 
 Aprire http://127.0.0.1:5173/tools/testscene.html per il laboratorio tecnico (non è lo stile definitivo).
+
+Confronto delle tre varianti giocattoli 3D: http://127.0.0.1:5173/design/styles/index.html. Le demo interattive richiedono Internet per Three.js da CDN; le immagini del confronto sono locali.
+
+Per rigenerare gli HTML: `node tools/build-style-mockups.mjs`. Per verificare i controlli del confronto e delle anteprime: `node tools/check-styles.mjs`.
 
 ## Controlli
 

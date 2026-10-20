@@ -1,0 +1,28 @@
+<!doctype html>
+<html lang="it">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><link rel="icon" href="data:,">
+  <title>Scegli il tuo Natale · Operazione Ho Ho UFO</title>
+  <style>
+    *{box-sizing:border-box}body{margin:0;background:#0d1829;color:#fff5e3;font:16px/1.55 system-ui}main{max-width:1560px;padding:48px 32px 64px;margin:auto}small{color:#ffcf78;text-transform:uppercase;letter-spacing:.17em;font-size:12px}h1{font-size:clamp(30px,4vw,52px);line-height:1.12;margin:16px 0}header p{color:#c1cddd;max-width:790px}nav{display:flex;gap:8px;flex-wrap:wrap;margin:26px 0}button,a{font:inherit}button{padding:9px 18px;border:1px solid #637690;border-radius:24px;background:#17263e;color:#f8f2e9;cursor:pointer}button[aria-pressed=true]{background:#ffcf78;color:#142039;border-color:#ffcf78}button:focus-visible,a:focus-visible{outline:3px solid #b5f2de;outline-offset:4px}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:20px}.card{background:#17243b;border:1px solid #3a4c66;border-radius:18px;overflow:hidden}.info{padding:22px}.info h2{margin:0 0 8px;font-size:24px}.info p{margin:0 0 20px;color:#c1cddd;min-height:74px}.tag{color:#ffcf78;font-size:12px;letter-spacing:.1em;text-transform:uppercase}.card img{width:100%;display:block;aspect-ratio:16/9}.open{display:inline-block;padding:10px 16px;background:#ffcf78;border-radius:8px;color:#142039;text-decoration:none;font-weight:700}.metrics{font-size:13px;color:#b4c5d9;margin:14px 0 0!important;min-height:0!important}.note{border-left:3px solid #7cdbc5;padding:8px 18px;margin-top:32px;color:#c1cddd}.sheet{color:#c1e9ff;display:block;margin-top:12px}footer{margin-top:40px;color:#a8bad0;font-size:14px}@media(max-width:900px){.grid{grid-template-columns:1fr}.info p{min-height:0}main{padding:30px 18px}.card img{max-height:440px;object-fit:contain;background:#101c30}}
+  </style>
+</head>
+<body><main>
+  <header><small>Operazione Ho Ho UFO / Direzione artistica</small><h1>Un Natale. Tre tipi di giocattolo.</h1><p>Hai scelto i giocattoli 3D. Ecco tre interpretazioni della stessa scena, con gli stessi personaggi, la stessa animazione e le stesse inquadrature. Queste sono prove di stile, non ancora il gioco.</p></header>
+  <nav aria-label="Inquadratura a confronto">
+    <button data-view="player" aria-pressed="true">Vista di gioco</button><button data-view="diorama" aria-pressed="false">Diorama</button><button data-view="turntable" aria-pressed="false">Personaggio</button><button data-view="face" aria-pressed="false">Volto</button>
+  </nav>
+  <section class="grid" aria-label="Le tre varianti grafiche">
+    <article class="card" data-style="vinyl"><img src="frames/vinyl/04-player-0.png" alt="Babbo Natale e alieno nella variante vinile morbido"><div class="info"><span class="tag">A / Consigliata</span><h2>Vinile morbido</h2><p>Forme panciute, colori allegri e superfici morbide. La variante più accogliente e adatta alle gag natalizie.</p><a class="open" href="vinyl.html">Esplora in 3D →</a><p class="metrics">Massimo rilevato: 94 draw call · 23.016 triangoli</p><a class="sheet" href="frames/vinyl/_contact-sheet.png">Tutte le inquadrature</a></div></article>
+    <article class="card" data-style="wood"><img src="frames/wood/04-player-0.png" alt="Babbo Natale e alieno intagliati nel legno"><div class="info"><span class="tag">B / Artigianale</span><h2>Bottega di legno</h2><p>Superfici sfaccettate e venature procedurali. Sembra un villaggio di giocattoli dipinti, caldo e fatto a mano.</p><a class="open" href="wood.html">Esplora in 3D →</a><p class="metrics">Massimo rilevato: 94 draw call · 4.544 triangoli</p><a class="sheet" href="frames/wood/_contact-sheet.png">Tutte le inquadrature</a></div></article>
+    <article class="card" data-style="action"><img src="frames/action/04-player-0.png" alt="Babbo Natale con spalline dorate e alieno in plastica lucida"><div class="info"><span class="tag">C / Eroica</span><h2>Action figure spaziali</h2><p>Plastica lucida, spalline dorate e cappotto squadrato. Un Babbo Natale più supereroe, pronto alla battaglia.</p><a class="open" href="action.html">Esplora in 3D →</a><p class="metrics">Massimo rilevato: 96 draw call · 11.156 triangoli</p><a class="sheet" href="frames/action/_contact-sheet.png">Tutte le inquadrature</a></div></article>
+  </section>
+  <p class="note">Ogni anteprima offre quattro viste e una timeline di 6 secondi. Babbo Natale porge un regalo al rettiliano. Contatti mani–regalo e piedi–suolo verificati entro 1 mm; 48 fotogrammi controllati, nessun errore del browser.</p>
+  <footer>Nessuno stile definitivo è stato scelto. Puoi scegliere A, B o C, oppure chiedere una modifica. Le anteprime 3D caricano Three.js 0.186.1 da CDN; questa pagina di confronto usa immagini locali e funziona senza CDN.</footer>
+</main><script>
+  const files = { diorama: '00-diorama-0.png', player: '04-player-0.png', turntable: '08-turntable-0.png', face: '12-face-0.png' };
+  document.querySelectorAll('[data-view]').forEach(button => button.addEventListener('click', () => {
+    document.querySelectorAll('[data-view]').forEach(other => other.setAttribute('aria-pressed', String(other === button)));
+    document.querySelectorAll('[data-style]').forEach(card => { card.querySelector('img').src = 'frames/' + card.dataset.style + '/' + files[button.dataset.view]; });
+  }));
+</script></body></html>

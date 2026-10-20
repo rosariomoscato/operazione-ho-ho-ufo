@@ -1,0 +1,1268 @@
+{
+  "page": "design/styles/vinyl.html",
+  "size": [
+    1280,
+    720
+  ],
+  "gpu": "default",
+  "frames": [
+    {
+      "view": "diorama",
+      "time": 0,
+      "file": "00-diorama-0.png",
+      "stats": {
+        "drawCalls": 94,
+        "triangles": 23016,
+        "geometries": 94,
+        "textures": 2,
+        "programs": 2
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "foot-0-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-1-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-2-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-3-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-0-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-1-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow-casting lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "post-processing passes",
+            "value": 0,
+            "limit": 3,
+            "pass": true
+          },
+          {
+            "name": "palette tokens",
+            "value": 13,
+            "limit": 20,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "diorama",
+      "time": 1.5,
+      "file": "01-diorama-1.5.png",
+      "stats": {
+        "drawCalls": 94,
+        "triangles": 23016,
+        "geometries": 94,
+        "textures": 2,
+        "programs": 2
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "foot-0-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-1-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-2-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-3-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-0-gift (m)",
+            "value": 9.71445146547012e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-1-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow-casting lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "post-processing passes",
+            "value": 0,
+            "limit": 3,
+            "pass": true
+          },
+          {
+            "name": "palette tokens",
+            "value": 13,
+            "limit": 20,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "diorama",
+      "time": 3,
+      "file": "02-diorama-3.png",
+      "stats": {
+        "drawCalls": 94,
+        "triangles": 23016,
+        "geometries": 94,
+        "textures": 2,
+        "programs": 2
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "foot-0-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-1-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-2-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-3-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-0-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-1-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow-casting lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "post-processing passes",
+            "value": 0,
+            "limit": 3,
+            "pass": true
+          },
+          {
+            "name": "palette tokens",
+            "value": 13,
+            "limit": 20,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "diorama",
+      "time": 4.5,
+      "file": "03-diorama-4.5.png",
+      "stats": {
+        "drawCalls": 94,
+        "triangles": 23016,
+        "geometries": 94,
+        "textures": 2,
+        "programs": 2
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "foot-0-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-1-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-2-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-3-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-0-gift (m)",
+            "value": 4.163336342344337e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-1-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow-casting lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "post-processing passes",
+            "value": 0,
+            "limit": 3,
+            "pass": true
+          },
+          {
+            "name": "palette tokens",
+            "value": 13,
+            "limit": 20,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "player",
+      "time": 0,
+      "file": "04-player-0.png",
+      "stats": {
+        "drawCalls": 94,
+        "triangles": 23016,
+        "geometries": 94,
+        "textures": 2,
+        "programs": 2
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "foot-0-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-1-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-2-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-3-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-0-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-1-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow-casting lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "post-processing passes",
+            "value": 0,
+            "limit": 3,
+            "pass": true
+          },
+          {
+            "name": "palette tokens",
+            "value": 13,
+            "limit": 20,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "player",
+      "time": 1.5,
+      "file": "05-player-1.5.png",
+      "stats": {
+        "drawCalls": 94,
+        "triangles": 23016,
+        "geometries": 94,
+        "textures": 2,
+        "programs": 2
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "foot-0-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-1-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-2-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-3-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-0-gift (m)",
+            "value": 9.71445146547012e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-1-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow-casting lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "post-processing passes",
+            "value": 0,
+            "limit": 3,
+            "pass": true
+          },
+          {
+            "name": "palette tokens",
+            "value": 13,
+            "limit": 20,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "player",
+      "time": 3,
+      "file": "06-player-3.png",
+      "stats": {
+        "drawCalls": 94,
+        "triangles": 23016,
+        "geometries": 94,
+        "textures": 2,
+        "programs": 2
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "foot-0-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-1-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-2-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-3-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-0-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-1-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow-casting lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "post-processing passes",
+            "value": 0,
+            "limit": 3,
+            "pass": true
+          },
+          {
+            "name": "palette tokens",
+            "value": 13,
+            "limit": 20,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "player",
+      "time": 4.5,
+      "file": "07-player-4.5.png",
+      "stats": {
+        "drawCalls": 94,
+        "triangles": 23016,
+        "geometries": 94,
+        "textures": 2,
+        "programs": 2
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "foot-0-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-1-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-2-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-3-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-0-gift (m)",
+            "value": 4.163336342344337e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-1-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow-casting lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "post-processing passes",
+            "value": 0,
+            "limit": 3,
+            "pass": true
+          },
+          {
+            "name": "palette tokens",
+            "value": 13,
+            "limit": 20,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "turntable",
+      "time": 0,
+      "file": "08-turntable-0.png",
+      "stats": {
+        "drawCalls": 39,
+        "triangles": 13392,
+        "geometries": 94,
+        "textures": 2,
+        "programs": 2
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "foot-0-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-1-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-2-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-3-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-0-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-1-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow-casting lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "post-processing passes",
+            "value": 0,
+            "limit": 3,
+            "pass": true
+          },
+          {
+            "name": "palette tokens",
+            "value": 13,
+            "limit": 20,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "turntable",
+      "time": 1.5,
+      "file": "09-turntable-1.5.png",
+      "stats": {
+        "drawCalls": 39,
+        "triangles": 13392,
+        "geometries": 94,
+        "textures": 2,
+        "programs": 2
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "foot-0-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-1-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-2-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-3-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-0-gift (m)",
+            "value": 9.71445146547012e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-1-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow-casting lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "post-processing passes",
+            "value": 0,
+            "limit": 3,
+            "pass": true
+          },
+          {
+            "name": "palette tokens",
+            "value": 13,
+            "limit": 20,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "turntable",
+      "time": 3,
+      "file": "10-turntable-3.png",
+      "stats": {
+        "drawCalls": 39,
+        "triangles": 13392,
+        "geometries": 94,
+        "textures": 2,
+        "programs": 2
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "foot-0-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-1-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-2-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-3-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-0-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-1-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow-casting lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "post-processing passes",
+            "value": 0,
+            "limit": 3,
+            "pass": true
+          },
+          {
+            "name": "palette tokens",
+            "value": 13,
+            "limit": 20,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "turntable",
+      "time": 4.5,
+      "file": "11-turntable-4.5.png",
+      "stats": {
+        "drawCalls": 39,
+        "triangles": 13392,
+        "geometries": 94,
+        "textures": 2,
+        "programs": 2
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "foot-0-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-1-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-2-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-3-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-0-gift (m)",
+            "value": 4.163336342344337e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-1-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow-casting lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "post-processing passes",
+            "value": 0,
+            "limit": 3,
+            "pass": true
+          },
+          {
+            "name": "palette tokens",
+            "value": 13,
+            "limit": 20,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "face",
+      "time": 0,
+      "file": "12-face-0.png",
+      "stats": {
+        "drawCalls": 32,
+        "triangles": 11076,
+        "geometries": 94,
+        "textures": 2,
+        "programs": 2
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "foot-0-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-1-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-2-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-3-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-0-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-1-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow-casting lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "post-processing passes",
+            "value": 0,
+            "limit": 3,
+            "pass": true
+          },
+          {
+            "name": "palette tokens",
+            "value": 13,
+            "limit": 20,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "face",
+      "time": 1.5,
+      "file": "13-face-1.5.png",
+      "stats": {
+        "drawCalls": 32,
+        "triangles": 11076,
+        "geometries": 94,
+        "textures": 2,
+        "programs": 2
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "foot-0-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-1-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-2-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-3-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-0-gift (m)",
+            "value": 9.71445146547012e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-1-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow-casting lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "post-processing passes",
+            "value": 0,
+            "limit": 3,
+            "pass": true
+          },
+          {
+            "name": "palette tokens",
+            "value": 13,
+            "limit": 20,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "face",
+      "time": 3,
+      "file": "14-face-3.png",
+      "stats": {
+        "drawCalls": 34,
+        "triangles": 12132,
+        "geometries": 94,
+        "textures": 2,
+        "programs": 2
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "foot-0-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-1-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-2-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-3-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-0-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-1-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow-casting lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "post-processing passes",
+            "value": 0,
+            "limit": 3,
+            "pass": true
+          },
+          {
+            "name": "palette tokens",
+            "value": 13,
+            "limit": 20,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "face",
+      "time": 4.5,
+      "file": "15-face-4.5.png",
+      "stats": {
+        "drawCalls": 32,
+        "triangles": 11076,
+        "geometries": 94,
+        "textures": 2,
+        "programs": 2
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "foot-0-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-1-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-2-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "foot-3-floor (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-0-gift (m)",
+            "value": 4.163336342344337e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "mitten-1-gift (m)",
+            "value": 1.3877787807814457e-17,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow-casting lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "post-processing passes",
+            "value": 0,
+            "limit": 3,
+            "pass": true
+          },
+          {
+            "name": "palette tokens",
+            "value": 13,
+            "limit": 20,
+            "pass": true
+          }
+        ]
+      },
+      "budgetPass": true
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "pass": true,
+  "deterministic": true,
+  "fpsProbe": {
+    "samples": 45,
+    "meanMs": 16.668888888888898,
+    "fps": 59.99200106652443,
+    "note": "Headless smoke test only; not proof of laptop performance."
+  }
+}

@@ -1,0 +1,11 @@
+{
+  "pass": true,
+  "errors": [],
+  "checks": [
+    "All comparison view buttons and local image assets pass",
+    "Comparison has no horizontal overflow at 390px",
+    "vinyl: view, scrubber, play/pause and contacts pass",
+    "wood: view, scrubber, play/pause and contacts pass",
+    "action: view, scrubber, play/pause and contacts pass"
+  ]
+}
