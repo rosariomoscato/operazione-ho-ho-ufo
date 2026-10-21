@@ -63,6 +63,13 @@ test('approved M1 snapshot remains byte-for-byte unchanged', async () => {
     assert.equal(createHash('sha256').update(bytes).digest('hex'), file.sha256, file.path);
   }
 });
+test('approved M2 snapshot remains byte-for-byte unchanged', async () => {
+  const manifest = JSON.parse(await readFile('docs/evidence/step-08/m2-snapshot-baseline.json', 'utf8'));
+  assert.equal(manifest.files.length, 27);
+  for (const file of manifest.files) {
+    assert.equal(createHash('sha256').update(await readFile(`snapshots/m2-street/${file.path}`)).digest('hex'), file.sha256, file.path);
+  }
+});
 
 test('legacy M1 saves migrate without overwriting their original bytes', () => {
   const values = new Map();
@@ -71,7 +78,7 @@ test('legacy M1 saves migrate without overwriting their original bytes', () => {
     const original = JSON.stringify({ version: 1, boundary, healed: true, firstWrapped: true });
     values.set(storage.LEGACY_KEY, original);
     const migrated = storage.readCheckpoint();
-    assert.equal(migrated.version, 2);
+    assert.equal(migrated.version, storage.emptyCheckpoint().version);
     assert.equal(migrated.chapter, 'courtyard');
     assert.equal(migrated.boundary, boundary);
     assert.deepEqual(migrated.disabledAnchors, boundary === 'complete' ? ['courtyard'] : []);

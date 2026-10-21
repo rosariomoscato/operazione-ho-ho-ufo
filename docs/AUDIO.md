@@ -4,7 +4,7 @@ Scelta utente del 2026-10-20: **percorso gratuito**, **Natale arcade**. Solo dia
 
 ## Stato
 
-Proposta **approvata dall'utente** il 2026-10-20 con «va bene», dopo la presentazione della pagina ascolto. Controlli tecnici e playback browser verificati. Nessun gioco ancora implementato.
+Proposta **approvata dall'utente** il 2026-10-20 con «va bene», dopo la presentazione della pagina ascolto. M1 e M2 sono ora implementati e approvati; il mixer è in `src/audio.ts`. M3 in costruzione riusa gli stessi11file, senza nuove generazioni o spese. I test UI-only in muto non sono nuove prove d'ascolto.
 
 ## File e strumenti
 
@@ -45,9 +45,9 @@ Musica originale di 8 battute, 4/4, 120 BPM; nessuna citazione di brani natalizi
 
 ## Mix e interazione
 
-Anteprima: musica .30, vento .20, effetto .65. Singoli asset al volume iniziale .55. Iniziare a volume moderato. Musica ed effetti hanno controlli indipendenti nei player di prova; mixer gameplay separato da costruire al passo 6.
+Anteprima: musica .30, vento .20, effetto .65. Singoli asset al volume iniziale .55. Iniziare a volume moderato. Musica ed effetti hanno controlli indipendenti nei player di prova e nel mixer gameplay implementato.
 
-Solo file statici riprodotti con HTMLAudio: nessun oscillatore/API generativa nel browser. Avvio dopo clic, stop e reset di tutti i player, stop se la scheda diventa nascosta. La prova usa il tempo della traccia per le didascalie; non è sincronizzazione musicale di gameplay. La musica va in pausa insieme al gioco in futuro.
+Solo file statici riprodotti con HTMLAudio: nessun oscillatore/API generativa nel browser. Avvio dopo clic, stop e reset di tutti i player, stop se la scheda diventa nascosta. La prova usa il tempo della traccia per le didascalie; non è sincronizzazione musicale di gameplay. Nel gioco implementato musica ed effetti sono sospesi con pausa/scheda nascosta; estendere la stessa regola a boss/finale e verificarla, senza assumere il nuovo atto già coperto.
 
 I dialoghi in SCRIPT sono obbligatoriamente leggibili senza audio, con nome del personaggio. Non applicare ducking vocale fittizio: non ci sono voci. Suoni di pericolo e conferme devono avere anche feedback visivo.
 
@@ -61,3 +61,7 @@ I dialoghi in SCRIPT sono obbligatoriamente leggibili senza audio, con nome del 
 - Pagina senza overflow a 390 px, waveform osservate. Screenshot e report: `docs/evidence/step-04/`.
 
 Audio approvato per iniziare il primo segmento giocabile. Eventuali modifiche successive vengono registrate nel backlog senza sovrascrivere gli asset delle demo storiche.
+
+## Riuso M3 previsto
+
+Village per piazza sicura/restituzione/finale; combat durante Squamakk. `sfx.alien` per la carica, throw/dodge/hurt/wrap per azioni già note, anchor/checkpoint per conferme. Nessun suono nuovo per il raggio o la sciarpa generato nel browser. Battute tutte a testo con gli ID SCRIPT; nessun ducking vocale o beat-sync fittizio. Verificare pausa, ripresa e che gli effetti non si accumulino nelle sequenze1/2/3; niente claim di ascolto dal solo numero di tracce caricate.

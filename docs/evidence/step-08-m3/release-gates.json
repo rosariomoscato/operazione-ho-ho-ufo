@@ -1,0 +1,17 @@
+{
+  "pass": true,
+  "build": "D86qgQyq",
+  "reviewAccepted": true,
+  "review": "docs/reviews/m3-final-review.md#8-chiusura-condizioni--integratore",
+  "playtestCompleted": true,
+  "playtest": "docs/reviews/m3-fresh-eyes.md",
+  "playtestScope": "UI-only M3 on 6Gx4PZDE with real pauses between actions; final input/UI changes retested with nine controlled cases, full real-input playthrough and capture suite on D86qgQyq",
+  "unitTests": 38,
+  "controlledCases": 9,
+  "captureFrames": 31,
+  "fullPlaythrough": "docs/evidence/step-08-m3/final/report.json",
+  "sourceManifest": "docs/evidence/step-08-m3/final/source-manifest.json",
+  "userApprovedFullGame": false,
+  "publishingAuthorized": false,
+  "spendingAuthorized": false
+}

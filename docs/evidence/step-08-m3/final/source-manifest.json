@@ -1,0 +1,150 @@
+{
+  "build": "D86qgQyq",
+  "html": "<!doctype html>\n<html lang=\"it\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"icon\" href=\"data:,\"><title>Operazione Ho Ho UFO · Il cortile</title>  <script type=\"module\" crossorigin src=\"/assets/index-D86qgQyq.js\"></script>\n  <link rel=\"modulepreload\" crossorigin href=\"/assets/three-DjPfJOhV.js\">\n  <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CTggsI1K.css\">\n</head><body><div id=\"app\"></div></body></html>\n",
+  "files": [
+    {
+      "path": "src/acts/courtyard.ts",
+      "sha256": "a7bc0afbbf7fa650b2ec92cade1822f1e26e01f2c2edb194352fa9858ab7dac3"
+    },
+    {
+      "path": "src/acts/square.ts",
+      "sha256": "82ca21fa36cfbb80b3d424d04088328a746f287682d86ab3e979d32d37e9bcbc"
+    },
+    {
+      "path": "src/acts/toystreet.ts",
+      "sha256": "502dd5b3ebc58d0ee38c4ebc305be28972945d3e3b12b4126624a72d81c48f6e"
+    },
+    {
+      "path": "src/audio.ts",
+      "sha256": "01365e59cde90f5b471608ebc0cf444e15fbfb359c57469fc080f94eaf996928"
+    },
+    {
+      "path": "src/characters/cast/alien.ts",
+      "sha256": "631eac6d525be70c6cd09e4d5d15acfd29743dc3439167c128a39c2f010aa4a4"
+    },
+    {
+      "path": "src/characters/cast/drone.ts",
+      "sha256": "c01bbeefef491450e728efe188b97cf9bf7964fe704b88ad6491ff143b2c81d9"
+    },
+    {
+      "path": "src/characters/cast/santa.ts",
+      "sha256": "3e032b0582e5d69db5287f1a3ad111370a3fd6d0ce5c70e8c979d02407db0d05"
+    },
+    {
+      "path": "src/characters/cast/shooter.ts",
+      "sha256": "0a55cddd1eb92e5df24e46e1dfc5accb4c460f3bcf06bb9982b0736e3127915c"
+    },
+    {
+      "path": "src/characters/cast/squamakk.ts",
+      "sha256": "596b05a87d9741a948aad859f4b49755edb214022c46e2f8c92bcb94c68b8be5"
+    },
+    {
+      "path": "src/characters/index.ts",
+      "sha256": "93f0a9f590aa0c3ea58c54d6d2c358417261cc0d9bf8e8e692651932820d4d46"
+    },
+    {
+      "path": "src/contracts.ts",
+      "sha256": "fd37aba9db6f8003bd46ffd90506eba1e889258f3aec6e085875adde114a4312"
+    },
+    {
+      "path": "src/engine/math.ts",
+      "sha256": "f54bfb9c6659821857f9cc2c2c1a1478404a3542143422f81bdce9a3072b2432"
+    },
+    {
+      "path": "src/game.ts",
+      "sha256": "1a1b8b8ffd45670e589f15ac6eb9b303dd0f58494fe267185f8a1440710220f3"
+    },
+    {
+      "path": "src/gameplay/boss.ts",
+      "sha256": "f179f759eafacc8f1e0db1d6b140ca9d9b13ac9f6fd74eb9913ecb0e3a1ab75a"
+    },
+    {
+      "path": "src/gameplay/bossChapter.ts",
+      "sha256": "28f97e910b9292865a547b444b85251232b5a4214de383091de3643058aabeed"
+    },
+    {
+      "path": "src/gameplay/bossVisual.ts",
+      "sha256": "a70d4604ac2a83fb59fe31f6f10f77e0e3ab046757d13a344a0d8cde36607e10"
+    },
+    {
+      "path": "src/gameplay/systems/ranged.ts",
+      "sha256": "925ad68baaa5eed951539eaf5679e9af34f09009db57fc839e364cea8021ad98"
+    },
+    {
+      "path": "src/gameplay/types.ts",
+      "sha256": "f4fe02d0e68d72192c3f104be7e6bffe5849a3230b8ef3cda9662f427ea51d8d"
+    },
+    {
+      "path": "src/input.ts",
+      "sha256": "847fd546adf51263ca8db6a616bbac89c661c501d1267f8a6861aa601d917446"
+    },
+    {
+      "path": "src/levels/courtyard.ts",
+      "sha256": "e7465c5c7bb2a855102a6774da4840649549a3e6aeab8ea6ba74e742f86cdf29"
+    },
+    {
+      "path": "src/levels/square.ts",
+      "sha256": "8e4effd3e3d68a32ea118add328137a6251afe61b1cfb74d72b8b8e946f73139"
+    },
+    {
+      "path": "src/levels/toystreet.ts",
+      "sha256": "3f2efd6f7344aa9aecfcb77288c8042a651a9eaa48ae874516098fc78d92f5e6"
+    },
+    {
+      "path": "src/main.ts",
+      "sha256": "5bf182ef8448779100f18af40c722022abd502205c4aa8f0d9dc19e3210317e6"
+    },
+    {
+      "path": "src/registries.ts",
+      "sha256": "34be5f56c1e67406f49bb5554bbd364c374d106d516a1e72bd1d49505b8c05ba"
+    },
+    {
+      "path": "src/scenarios/courtyard.ts",
+      "sha256": "5a1047ab3f777e84e55b82dd7f0a5a8d6ffee565d20bd7914e5bd4d3ba76001f"
+    },
+    {
+      "path": "src/scenarios/square.ts",
+      "sha256": "417c8f8b2785f1dd7411e680905fe2739ba528c2edf72f2fa16fe7c81aa83486"
+    },
+    {
+      "path": "src/scenarios/toystreet.ts",
+      "sha256": "51e628c5cd71cc43aef295726318fc4d1418a59f7b62d3144909e4787409503b"
+    },
+    {
+      "path": "src/scenarios/types.ts",
+      "sha256": "ae20e6b5dcb58f799d186a9ed19875a8a1f1d35b13d1427461ce7dbaec1c843c"
+    },
+    {
+      "path": "src/storage.ts",
+      "sha256": "64e118694a4ac1219a21ff81f74e4990f90317f884f79d370e7c51de3852f17b"
+    },
+    {
+      "path": "src/style.css",
+      "sha256": "bc1b87842ebcc483f9aed06be7fda277a1e7c4b8fe3e7641721d638f0b2938fd"
+    },
+    {
+      "path": "src/texts.ts",
+      "sha256": "38dfbdd60d0d9e71d177aee744c1c21c9119b56411036524e3c8660d43fe1a69"
+    },
+    {
+      "path": "src/visual/actors.ts",
+      "sha256": "6739227626e3c53b7550562394763b9ac3776556f1043e1528f055acbd56b58c"
+    },
+    {
+      "path": "src/visual/square-batch.ts",
+      "sha256": "9d231dbfa4e197dc8330d0332dcd76a0dd536879215672fa736778b5a466764e"
+    },
+    {
+      "path": "src/visual/style.ts",
+      "sha256": "627f129efc6fdcb376bccb54b14be6af9938f69c0325abfec31b443c0264fe0d"
+    }
+  ],
+  "controlledSourceHashes": {
+    "src/game.ts": "1a1b8b8ffd45670e589f15ac6eb9b303dd0f58494fe267185f8a1440710220f3",
+    "src/gameplay/boss.ts": "f179f759eafacc8f1e0db1d6b140ca9d9b13ac9f6fd74eb9913ecb0e3a1ab75a",
+    "src/gameplay/bossChapter.ts": "28f97e910b9292865a547b444b85251232b5a4214de383091de3643058aabeed",
+    "src/gameplay/bossVisual.ts": "a70d4604ac2a83fb59fe31f6f10f77e0e3ab046757d13a344a0d8cde36607e10",
+    "src/storage.ts": "64e118694a4ac1219a21ff81f74e4990f90317f884f79d370e7c51de3852f17b",
+    "src/levels/square.ts": "8e4effd3e3d68a32ea118add328137a6251afe61b1cfb74d72b8b8e946f73139"
+  }
+}

@@ -1,0 +1,475 @@
+{
+  "pass": true,
+  "kind": "controlled-real-Game-update-not-playthrough",
+  "sourceHashes": {
+    "src/game.ts": "1a1b8b8ffd45670e589f15ac6eb9b303dd0f58494fe267185f8a1440710220f3",
+    "src/gameplay/boss.ts": "f179f759eafacc8f1e0db1d6b140ca9d9b13ac9f6fd74eb9913ecb0e3a1ab75a",
+    "src/gameplay/bossChapter.ts": "28f97e910b9292865a547b444b85251232b5a4214de383091de3643058aabeed",
+    "src/gameplay/bossVisual.ts": "a70d4604ac2a83fb59fe31f6f10f77e0e3ab046757d13a344a0d8cde36607e10",
+    "src/storage.ts": "aa615f2e119742037a1cc3744a36227be46433f53f90944a8641219bfb74810f",
+    "src/levels/square.ts": "8e4effd3e3d68a32ea118add328137a6251afe61b1cfb74d72b8b8e946f73139"
+  },
+  "tests": [
+    {
+      "name": "approach saves before first real windup and a real cone damages once",
+      "pass": true,
+      "evidence": {
+        "encounter": {
+          "time": 0.01,
+          "type": "boss-encounter",
+          "checkpointBeforeAttack": true
+        },
+        "active": {
+          "time": 1.41,
+          "type": "boss-active",
+          "attackId": 1,
+          "angle": 0,
+          "windup": 1.400000000000001,
+          "lockedFor": 1.100000000000001
+        },
+        "hurt": [
+          {
+            "time": 1.42,
+            "type": "player-hurt",
+            "hp": 5,
+            "attackId": 1,
+            "kind": "boss"
+          }
+        ],
+        "window": {
+          "phase": "vulnerable",
+          "segments": 0,
+          "cycle": 1,
+          "cone": 1,
+          "pattern": 1,
+          "attempt": 1,
+          "windowId": 1,
+          "windowConsumed": false,
+          "windowStarted": 1.7600000000000013,
+          "windowUntil": 7.260000000000002,
+          "remaining": 5.5,
+          "since": 1.7600000000000013,
+          "until": 7.260000000000002,
+          "angle": 0,
+          "attackId": 1,
+          "lockedAt": 0.3100000000000001,
+          "attackContactConsumed": true,
+          "defeated": false,
+          "defeatedAt": null,
+          "committed": false,
+          "config": {
+            "segments": 3,
+            "range": 22,
+            "halfAngle": 0.2,
+            "bodyRadius": 0.48,
+            "windup": 1.4,
+            "tracking": 0.3,
+            "minimumLocked": 0.8,
+            "active": 0.35,
+            "gap": 0.5,
+            "window": 5.5,
+            "giftRange": 12,
+            "giftRadius": 2
+          }
+        }
+      }
+    },
+    {
+      "name": "real dodge protects a cone contact and preserves completed segments",
+      "pass": true,
+      "evidence": {
+        "hp": 6,
+        "avoided": [
+          {
+            "time": 1.42,
+            "type": "hit-avoided",
+            "attackId": 1,
+            "kind": "boss"
+          }
+        ],
+        "dodge": {
+          "time": 1.36,
+          "type": "dodge"
+        }
+      }
+    },
+    {
+      "name": "real gift prefire is rejected and two valid launches cannot double-hit one window",
+      "pass": true,
+      "evidence": {
+        "segments": 1,
+        "hits": [
+          {
+            "time": 3.18,
+            "type": "boss-segment-hit",
+            "segments": 1,
+            "windowId": 1,
+            "launchedAt": 2.4099999999999926,
+            "impactAt": 3.179999999999976
+          }
+        ],
+        "rejected": [
+          {
+            "time": 2.18,
+            "type": "boss-gift-rejected",
+            "reason": "Regalo fuori finestra: attendi il nucleo esposto e lancia di nuovo",
+            "launchWindowId": null,
+            "currentWindowId": 1,
+            "phase": "vulnerable",
+            "consumed": false,
+            "launchedAt": 1.410000000000001,
+            "impactAt": 2.1799999999999975
+          },
+          {
+            "time": 3.74,
+            "type": "boss-gift-rejected",
+            "reason": "Scudo del generale attivo · schiva il raggio",
+            "launchWindowId": 1,
+            "currentWindowId": 1,
+            "phase": "windup",
+            "consumed": true,
+            "launchedAt": 2.9699999999999807,
+            "impactAt": 3.7399999999999642
+          }
+        ]
+      }
+    },
+    {
+      "name": "late real gift misses its launch window without losing previous progress",
+      "pass": true,
+      "evidence": {
+        "phase": "windup",
+        "segments": 0,
+        "miss": [
+          {
+            "time": 7.27,
+            "type": "boss-window-miss",
+            "windowId": 1,
+            "cycle": 1,
+            "duration": 5.509999999999888
+          }
+        ],
+        "rejected": [
+          {
+            "time": 7.74,
+            "type": "boss-gift-rejected",
+            "reason": "Scudo del generale attivo · schiva il raggio",
+            "launchWindowId": 1,
+            "currentWindowId": 1,
+            "phase": "windup",
+            "consumed": false,
+            "launchedAt": 6.969999999999896,
+            "impactAt": 7.739999999999879
+          }
+        ]
+      }
+    },
+    {
+      "name": "core cannot be skipped; pickup, return and terminal Continue persist",
+      "pass": true,
+      "evidence": {
+        "saved": {
+          "version": 3,
+          "chapter": "square",
+          "boundary": "ending",
+          "healed": false,
+          "firstWrapped": true,
+          "disabledAnchors": [
+            "workshop",
+            "carousel"
+          ],
+          "clearedArenas": [
+            "workshop",
+            "carousel"
+          ],
+          "activatedArenas": [
+            "workshop",
+            "carousel"
+          ],
+          "defeatedEnemies": [],
+          "bossSegments": 3,
+          "bossDefeated": true,
+          "coreCarried": true,
+          "coreReturned": true
+        },
+        "state": {
+          "phase": "defeated",
+          "segments": 3,
+          "cycle": 3,
+          "cone": 0,
+          "pattern": 3,
+          "attempt": 0,
+          "windowId": 0,
+          "windowConsumed": false,
+          "windowStarted": 0,
+          "windowUntil": 0,
+          "remaining": 0,
+          "since": 0,
+          "until": 0,
+          "angle": 0,
+          "attackId": 0,
+          "lockedAt": null,
+          "attackContactConsumed": false,
+          "defeated": true,
+          "defeatedAt": -2,
+          "committed": false,
+          "config": {
+            "segments": 3,
+            "range": 22,
+            "halfAngle": 0.2,
+            "bodyRadius": 0.48,
+            "windup": 1.4,
+            "tracking": 0.3,
+            "minimumLocked": 0.8,
+            "active": 0.35,
+            "gap": 0.5,
+            "window": 5.5,
+            "giftRange": 12,
+            "giftRadius": 2
+          },
+          "bossSegments": 3,
+          "bossDefeated": true,
+          "coreCarried": true,
+          "coreReturned": true,
+          "completed": true,
+          "endingStarted": -8,
+          "endingElapsed": 8,
+          "portalClosed": true,
+          "visual": {
+            "castFallback": false,
+            "scarfVisible": false,
+            "onShip": true,
+            "signal": {
+              "baseRange": 22,
+              "baseHalfAngle": 0.2,
+              "bodyMargin": 0.48,
+              "visualMargin": 0.49144293825640945
+            },
+            "parcel": {
+              "width": 1.6,
+              "height": 1.15,
+              "depth": 1.25
+            },
+            "scarf": {
+              "width": 0.42,
+              "thickness": 0.055,
+              "length": 0.55,
+              "tail": 0.76
+            }
+          }
+        }
+      }
+    },
+    {
+      "name": "real parcel/scarf supports and world withdrawal are measured across ending poses",
+      "pass": true,
+      "evidence": {
+        "frames": [
+          {
+            "time": 0,
+            "shipVisible": true,
+            "portalVisible": true,
+            "scarf": [],
+            "support": [
+              {
+                "name": "parcel bottom to ship deck (m)",
+                "value": 0,
+                "limit": 0.001
+              },
+              {
+                "name": "parcel within ship support width",
+                "value": 0,
+                "limit": 0
+              },
+              {
+                "name": "parcel within ship support depth",
+                "value": 0,
+                "limit": 0
+              }
+            ]
+          },
+          {
+            "time": 1.5,
+            "shipVisible": true,
+            "portalVisible": true,
+            "scarf": [
+              {
+                "name": "scarf top supported by actual parcel lid (m)",
+                "value": 0,
+                "limit": 0.001
+              },
+              {
+                "name": "scarf back supported by actual parcel face (m)",
+                "value": 0,
+                "limit": 0.001
+              }
+            ],
+            "support": [
+              {
+                "name": "parcel bottom to ship deck (m)",
+                "value": 0,
+                "limit": 0.001
+              },
+              {
+                "name": "parcel within ship support width",
+                "value": 0,
+                "limit": 0
+              },
+              {
+                "name": "parcel within ship support depth",
+                "value": 0,
+                "limit": 0
+              }
+            ]
+          },
+          {
+            "time": 3.5,
+            "shipVisible": true,
+            "portalVisible": true,
+            "scarf": [
+              {
+                "name": "scarf top supported by actual parcel lid (m)",
+                "value": 1.9860273225978185e-15,
+                "limit": 0.001
+              },
+              {
+                "name": "scarf back supported by actual parcel face (m)",
+                "value": 8.881784197001252e-16,
+                "limit": 0.001
+              }
+            ],
+            "support": [
+              {
+                "name": "parcel bottom to ship deck (m)",
+                "value": 0,
+                "limit": 0.001
+              },
+              {
+                "name": "parcel within ship support width",
+                "value": 0,
+                "limit": 0
+              },
+              {
+                "name": "parcel within ship support depth",
+                "value": 0,
+                "limit": 0
+              }
+            ]
+          },
+          {
+            "time": 5,
+            "shipVisible": false,
+            "portalVisible": false,
+            "scarf": [],
+            "support": []
+          },
+          {
+            "time": 8,
+            "shipVisible": false,
+            "portalVisible": false,
+            "scarf": [],
+            "support": []
+          },
+          {
+            "time": 1.5,
+            "shipVisible": true,
+            "portalVisible": true,
+            "scarf": [
+              {
+                "name": "scarf top supported by actual parcel lid (m)",
+                "value": 0,
+                "limit": 0.001
+              },
+              {
+                "name": "scarf back supported by actual parcel face (m)",
+                "value": 0,
+                "limit": 0.001
+              }
+            ],
+            "support": [
+              {
+                "name": "parcel bottom to ship deck (m)",
+                "value": 0,
+                "limit": 0.001
+              },
+              {
+                "name": "parcel within ship support width",
+                "value": 0,
+                "limit": 0
+              },
+              {
+                "name": "parcel within ship support depth",
+                "value": 0,
+                "limit": 0
+              }
+            ]
+          }
+        ]
+      }
+    },
+    {
+      "name": "15/30/45 help ladder fires before approach and progress resets it",
+      "pass": true,
+      "evidence": {
+        "hints": [
+          {
+            "time": 15.01,
+            "type": "help",
+            "stage": 1,
+            "reason": "square-no-progress",
+            "stalled": 15.009999999999724,
+            "text": "Percorso ↑ Avanti · raggiungi il cerchio davanti al generale · 8.0m"
+          },
+          {
+            "time": 30,
+            "type": "help",
+            "stage": 2,
+            "reason": "square-no-progress",
+            "stalled": 30.00000000000189,
+            "text": "Percorso ↑ Avanti · raggiungi il cerchio davanti al generale · 8.0m"
+          },
+          {
+            "time": 45.01,
+            "type": "help",
+            "stage": 3,
+            "reason": "square-no-progress",
+            "stalled": 45.009999999999614,
+            "text": "Percorso ↑ Avanti · raggiungi il cerchio davanti al generale · 8.0m"
+          }
+        ],
+        "lastProgress": 45.109999999999594,
+        "time": 45.109999999999594
+      }
+    },
+    {
+      "name": "real Esc pause freezes the vulnerable boss clock/window and resumes explicitly",
+      "pass": true,
+      "evidence": {
+        "pausedTime": 0.15080000000000018,
+        "afterPauseTime": 0.15080000000000018,
+        "resumedTime": 0.38380000000000025,
+        "windowUntil": 5.5
+      }
+    },
+    {
+      "name": "first input after resume survives the initial zero-delta animation frame",
+      "pass": true,
+      "evidence": {
+        "pass": true,
+        "pendingAfterFirst": true,
+        "throws": 1,
+        "corePicked": true,
+        "kind": "controlled first-RAF gift/E input queue, no clock timing claim"
+      }
+    }
+  ],
+  "errors": [],
+  "sourceHashesAfter": {
+    "src/game.ts": "1a1b8b8ffd45670e589f15ac6eb9b303dd0f58494fe267185f8a1440710220f3",
+    "src/gameplay/boss.ts": "f179f759eafacc8f1e0db1d6b140ca9d9b13ac9f6fd74eb9913ecb0e3a1ab75a",
+    "src/gameplay/bossChapter.ts": "28f97e910b9292865a547b444b85251232b5a4214de383091de3643058aabeed",
+    "src/gameplay/bossVisual.ts": "a70d4604ac2a83fb59fe31f6f10f77e0e3ab046757d13a344a0d8cde36607e10",
+    "src/storage.ts": "aa615f2e119742037a1cc3744a36227be46433f53f90944a8641219bfb74810f",
+    "src/levels/square.ts": "8e4effd3e3d68a32ea118add328137a6251afe61b1cfb74d72b8b8e946f73139"
+  }
+}

@@ -1,0 +1,324 @@
+[
+  {
+    "sequence": 1,
+    "command": {
+      "type": "snapshot"
+    },
+    "elapsedWallSeconds": 23.599
+  },
+  {
+    "sequence": 2,
+    "command": {
+      "type": "button",
+      "name": "Prova la piazza e Squamakk"
+    },
+    "elapsedWallSeconds": 43.666
+  },
+  {
+    "sequence": 3,
+    "command": {
+      "type": "key",
+      "key": "KeyW",
+      "duration": 900
+    },
+    "elapsedWallSeconds": 57.691
+  },
+  {
+    "sequence": 4,
+    "command": {
+      "type": "key",
+      "key": "KeyD",
+      "duration": 1100
+    },
+    "elapsedWallSeconds": 74.853
+  },
+  {
+    "sequence": 5,
+    "command": {
+      "type": "key",
+      "key": "KeyW",
+      "duration": 1100
+    },
+    "elapsedWallSeconds": 82.83
+  },
+  {
+    "sequence": 6,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360,
+      "button": "left"
+    },
+    "elapsedWallSeconds": 95.916
+  },
+  {
+    "sequence": 7,
+    "command": {
+      "type": "wait",
+      "duration": 900
+    },
+    "elapsedWallSeconds": 106.201
+  },
+  {
+    "sequence": 8,
+    "command": {
+      "type": "key",
+      "key": "KeyA",
+      "duration": 1100
+    },
+    "elapsedWallSeconds": 124.544
+  },
+  {
+    "sequence": 9,
+    "command": {
+      "type": "key",
+      "key": "KeyD",
+      "duration": 1100
+    },
+    "elapsedWallSeconds": 146.139
+  },
+  {
+    "sequence": 10,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360,
+      "button": "left"
+    },
+    "elapsedWallSeconds": 155.977
+  },
+  {
+    "sequence": 11,
+    "command": {
+      "type": "wait",
+      "duration": 900
+    },
+    "elapsedWallSeconds": 162.551
+  },
+  {
+    "sequence": 12,
+    "command": {
+      "type": "key",
+      "key": "KeyD",
+      "duration": 800
+    },
+    "elapsedWallSeconds": 167.975
+  },
+  {
+    "sequence": 13,
+    "command": {
+      "type": "wait",
+      "duration": 600
+    },
+    "elapsedWallSeconds": 180.051
+  },
+  {
+    "sequence": 14,
+    "command": {
+      "type": "key",
+      "key": "KeyA",
+      "duration": 1400
+    },
+    "elapsedWallSeconds": 189.384
+  },
+  {
+    "sequence": 15,
+    "command": {
+      "type": "drag",
+      "dx": -70,
+      "dy": 0
+    },
+    "elapsedWallSeconds": 202.579
+  },
+  {
+    "sequence": 16,
+    "command": {
+      "type": "key",
+      "key": "KeyD",
+      "duration": 1100
+    },
+    "elapsedWallSeconds": 212.615
+  },
+  {
+    "sequence": 17,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360,
+      "button": "left"
+    },
+    "elapsedWallSeconds": 223.01
+  },
+  {
+    "sequence": 18,
+    "command": {
+      "type": "wait",
+      "duration": 900
+    },
+    "elapsedWallSeconds": 230.322
+  },
+  {
+    "sequence": 19,
+    "command": {
+      "type": "key",
+      "key": "KeyE",
+      "duration": 1
+    },
+    "elapsedWallSeconds": 242.501
+  },
+  {
+    "sequence": 20,
+    "command": {
+      "type": "key",
+      "key": "KeyW",
+      "duration": 1800
+    },
+    "elapsedWallSeconds": 251.21
+  },
+  {
+    "sequence": 21,
+    "command": {
+      "type": "key",
+      "key": "KeyA",
+      "duration": 800
+    },
+    "elapsedWallSeconds": 264.148
+  },
+  {
+    "sequence": 22,
+    "command": {
+      "type": "key",
+      "key": "KeyE",
+      "duration": 1
+    },
+    "elapsedWallSeconds": 271.414
+  },
+  {
+    "sequence": 23,
+    "command": {
+      "type": "key",
+      "key": "KeyD",
+      "duration": 1100
+    },
+    "elapsedWallSeconds": 284.036
+  },
+  {
+    "sequence": 24,
+    "command": {
+      "type": "key",
+      "key": "KeyS",
+      "duration": 700
+    },
+    "elapsedWallSeconds": 298.04
+  },
+  {
+    "sequence": 25,
+    "command": {
+      "type": "key",
+      "key": "KeyE",
+      "duration": 1
+    },
+    "elapsedWallSeconds": 306.196
+  },
+  {
+    "sequence": 26,
+    "command": {
+      "type": "key",
+      "key": "KeyE",
+      "duration": 100
+    },
+    "elapsedWallSeconds": 314.884
+  },
+  {
+    "sequence": 27,
+    "command": {
+      "type": "wait",
+      "duration": 900
+    },
+    "elapsedWallSeconds": 329.483
+  },
+  {
+    "sequence": 28,
+    "command": {
+      "type": "key",
+      "key": "KeyW",
+      "duration": 100
+    },
+    "elapsedWallSeconds": 340.782
+  },
+  {
+    "sequence": 29,
+    "command": {
+      "type": "key",
+      "key": "KeyE",
+      "duration": 500
+    },
+    "elapsedWallSeconds": 347.986
+  },
+  {
+    "sequence": 30,
+    "command": {
+      "type": "key",
+      "key": "KeyA",
+      "duration": 400
+    },
+    "elapsedWallSeconds": 354.146
+  },
+  {
+    "sequence": 31,
+    "command": {
+      "type": "key",
+      "key": "KeyD",
+      "duration": 300
+    },
+    "elapsedWallSeconds": 360.2
+  },
+  {
+    "sequence": 32,
+    "command": {
+      "type": "key",
+      "key": "KeyE",
+      "duration": 1000
+    },
+    "elapsedWallSeconds": 368.892
+  },
+  {
+    "sequence": 33,
+    "command": {
+      "type": "wait",
+      "duration": 2000
+    },
+    "elapsedWallSeconds": 382.476
+  },
+  {
+    "sequence": 34,
+    "command": {
+      "type": "wait",
+      "duration": 2500
+    },
+    "elapsedWallSeconds": 396.63
+  },
+  {
+    "sequence": 35,
+    "command": {
+      "type": "wait",
+      "duration": 3000
+    },
+    "elapsedWallSeconds": 409.502
+  },
+  {
+    "sequence": 36,
+    "command": {
+      "type": "button",
+      "name": "Nuova avventura"
+    },
+    "elapsedWallSeconds": 422.259
+  },
+  {
+    "sequence": 37,
+    "command": {
+      "type": "close"
+    },
+    "elapsedWallSeconds": 434.153
+  }
+]

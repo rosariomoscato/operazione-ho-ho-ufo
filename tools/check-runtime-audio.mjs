@@ -10,6 +10,7 @@ const source = await readFile('src/audio.ts', 'utf8');
 const compiled = stripTypeScriptTypes(source, { mode: 'strip' });
 const { server, url } = await serve('public'); let browser;
 const report = { pass: false, errors: [], checks: [] };
+const evidence = process.env.GAME_EVIDENCE ?? 'docs/evidence/step-06';
 try {
   browser = await chromium.launch({ executablePath: await findBrowser(), headless: true });
   const page = await browser.newPage();
@@ -51,7 +52,7 @@ try {
 } catch (error) { report.errors.push(error.stack ?? String(error)); process.exitCode = 1; }
 finally {
   await browser?.close(); await new Promise(done => server.close(done));
-  await mkdir('docs/evidence/step-06', { recursive: true });
-  await writeFile('docs/evidence/step-06/runtime-audio.json', JSON.stringify(report, null, 2));
+  await mkdir(evidence, { recursive: true });
+  await writeFile(`${evidence}/runtime-audio.json`, JSON.stringify(report, null, 2));
 }
 console.log(JSON.stringify(report, null, 2));

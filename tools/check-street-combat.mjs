@@ -8,7 +8,7 @@ import { findBrowser } from './capture.mjs';
 // No source/dist edits, damage overrides, visibility stubs or external server.
 const target=new URL(process.env.COMBAT_URL??'http://127.0.0.1:5174/');
 assert.ok(['127.0.0.1','localhost','[::1]'].includes(target.hostname),'Only a local Vite server is allowed');
-const output='captures/street-combat',permanent='docs/evidence/step-08/combat';
+const output='captures/street-combat',permanent=process.env.GAME_EVIDENCE??'docs/evidence/step-08/combat';
 await Promise.all([mkdir(output,{recursive:true}),mkdir(permanent,{recursive:true})]);
 const sourceFiles=['src/game.ts','src/gameplay/systems/ranged.ts','src/engine/math.ts','src/storage.ts','src/levels/toystreet.ts','src/contracts.ts'];
 async function hashes(){return Object.fromEntries(await Promise.all(sourceFiles.map(async file=>[file,createHash('sha256').update(await readFile(file)).digest('hex')])));}
@@ -19,7 +19,7 @@ try{
   const context=await browser.newContext({viewport:{width:960,height:540}});
   const page=await context.newPage();page.on('pageerror',error=>report.pageErrors.push(error.message));
   page.setDefaultTimeout(20000);
-  await page.route(/\/src\/main\.ts(?:\?.*)?$/,route=>{report.entryIntercepted=true;return route.fulfill({contentType:'application/javascript',body:"import '/src/style.css'; import { Game } from '/src/game.ts'; window.__testGame = new Game(document.querySelector('#app'));"});});
+   await page.route(/\/src\/main\.ts(?:\?.*)?$/,route=>{report.entryIntercepted=true;return route.fulfill({contentType:'application/javascript',body:"import '/src/style.css'; import { Game } from '/src/game.ts'; import { SAVE_KEY } from '/src/storage.ts'; window.__checkpointKey = SAVE_KEY; window.__testGame = new Game(document.querySelector('#app'));"});});
   await page.goto(target.href,{waitUntil:'domcontentloaded'});
   await page.waitForFunction(()=>window.__testGame&&window.LC?.ready);
   const results=await page.evaluate(()=>{
@@ -90,7 +90,7 @@ try{
 
     run('5: healing +2, cap6, no farm after actual retry/Continue',()=>{
       fixture('street-left-clear');Object.assign(g.player,{x:0,z:0,hp:3});g.review=false;tick();g.review=true;
-      check(g.player.hp===5&&g.healed&&!g.healAvailable,'Pickup did not heal3→5 and consume once');const pickupHP=g.player.hp,saved=JSON.parse(localStorage.getItem('ho-ho-ufo.checkpoint.v2'));check(saved.healed===true&&saved.chapter==='toystreet','Automatic pickup boundary was not persisted');tick(20);check(g.player.hp===5,'Standing on consumed pickup healed again');
+      check(g.player.hp===5&&g.healed&&!g.healAvailable,'Pickup did not heal3→5 and consume once');const pickupHP=g.player.hp,saved=JSON.parse(localStorage.getItem(window.__checkpointKey));check(saved.healed===true&&saved.chapter==='toystreet','Automatic pickup boundary was not persisted');tick(20);check(g.player.hp===5,'Standing on consumed pickup healed again');
       g.retry();freeze();check(g.act.id==='toystreet'&&g.player.hp===6&&g.healed&&!g.healAvailable,'Retry lost healing flag or chapter');Object.assign(g.player,{x:0,z:0,hp:3});tick();check(g.player.hp===3,'Retry recreated consumed cure');const retry={chapter:g.act.id,hp:g.player.hp,healed:g.healed,available:g.healAvailable};
       g.continueGame();freeze();check(g.act.id==='toystreet'&&g.healed&&!g.healAvailable,'Continue lost consumed cure');Object.assign(g.player,{x:0,z:0,hp:3});tick();check(g.player.hp===3,'Continue recreated consumed cure');const continued={chapter:g.act.id,hp:g.player.hp,healed:g.healed,available:g.healAvailable};
       fixture('street-left-clear');Object.assign(g.player,{x:0,z:0,hp:6});tick();check(g.player.hp===6&&!g.healed&&g.healAvailable,'Full health consumed the cure');g.player.hp=5;tick();check(g.player.hp===6&&g.healed&&!g.healAvailable,'Cure exceeded cap6 or failed5→6');

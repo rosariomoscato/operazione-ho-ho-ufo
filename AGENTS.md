@@ -15,6 +15,8 @@ Progetto basato sulla pipeline in 10 passi della skill `build-a-game`. Iniziare 
 - `docs/TECH_PLAN.md`, `docs/LEVEL_LAYOUT.md`: architettura, proprietà dei file, gate e coordinate condivise del cortile (passo 6).
 - `docs/set-pieces/courtyard.md`: specifica dell'incontro e dei segnali di combattimento prima dell'implementazione.
 - `docs/ACT_02_PLAN.md`, `docs/set-pieces/toystreet.md`: piano e incontri M2, due arene in ordine libero; fermarsi al playtest prima di M3.
+- `docs/ACT_03_PLAN.md`, `docs/set-pieces/square.md`: piano M3 e design approvato per Squamakk, nucleo, albero e finale; fonti coordinate in `src/acts/square.ts`.
+- `docs/reviews/m3-final-review.md` e `docs/evidence/step-08-m3/`: gate della release candidate D86qgQyq, sorgenti/prove/freeze; attendere feedback dell'avventura completa prima del passo9.
 - `.claude/agents/*.md`: tre prospettive di review; nel percorso snello un singolo reviewer le combina.
 - `docs/BACKLOG.md`: feedback e difetti da verificare.
 - Reviewer dal passo 6: critico, direttore degli incontri/comicità, direttore narrativo.
@@ -38,6 +40,8 @@ Progetto basato sulla pipeline in 10 passi della skill `build-a-game`. Iniziare 
 15. Dal passo8: obiettivo persistente in parole semplici, scheda del nuovo comando finché usato una volta, indicatore di destinazione distinto dalla mira e aiuti a15/30/45s senza progresso più tasto aiuto. Verificare che gli aiuti scattino davvero e che pausa/progresso fermino o azzerino il timer; mai introdurre attese per mostrarli.
 16. Progressione e interazioni si misurano: arene/ancoraggi/cure indipendenti, nessun doppio conteggio o pickup duplicato dopo retry/Continua. Nuovi atti devono migrare i salvataggi precedenti senza alterare la copia congelata. Interagire fuori portata o con oggetto protetto dà sempre una ragione visibile.
 17. `snapshots/m1-slice/` è immutabile e approvato: non modificarlo, rigenerarlo o sovrascriverlo. Il test di hash in `tools/street.test.mjs` deve restare positivo.
+18. Anche `snapshots/m2-street/` è approvato e immutabile; server5177, manifest SHA256 in `docs/evidence/step-08/m2-snapshot-baseline.json`. Non cambiare i file né i testi storici della copia. Gli hash di entrambe le copie sono gate di regressione.
+19. `snapshots/release-candidate/` è congelata per il playtest dell'avventura completa su5179, non ancora approvata dall'utente. Non modificarla o sovrascriverla; hash in `tools/release.test.mjs`. Fix e polish vanno nel sorgente e in una nuova milestone, non nella RC conservata.
 
 ## Debug visivo disponibile
 

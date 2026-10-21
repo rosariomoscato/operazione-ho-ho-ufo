@@ -36,3 +36,17 @@ Stati: aperto, in corso, risolto (con verifica), non risolto (motivazione approv
 
 - Verificare la meccanica distintiva nella normale vista di gioco: un close-up non dimostra che il protagonista non copra il risultato.
 - Spiegare se il clic spara al reticolo o al puntatore: non presumere che i giocatori conoscano il modello di mira. Evidenziare aggancio e minacce laterali.
+
+## Verifiche M3 in costruzione
+
+| ID | Fonte | Nota | Causa | Soluzione | Stato |
+|---|---|---|---|---|---|
+| M3-S1 | Test save3 | Versione stringa «3» accettata produce ending con boss0 e nucleo non restituito | Coercizione `Number(version)` al primo filtro, poi confronto stretto nel ramo flag | Accettare solo versioni numeriche2/3; invalidi rifiutati senza nuova partita automatica | Risolto dal builder: rerun `square-storage.test.mjs`5/5PASS |
+| M3-V1 | Review visuale parziale | Slitta/renne leggibili meglio di lato che all'ingresso | Composizione frontale, non asset rotto | Raccordare ripresa partenza con renne/pattini visibili | MINOR / verifica integrazione |
+| M3-V2 | Review visuale parziale | Appoggi pacco/sciarpa e nucleo nella sede da verificare sul core reale | Scena isolata non contiene quegli oggetti per ownership corretta | Misurare fondo pacco→supporto e sciarpa, allineare nucleo a sede locale(0,1.5,.825) dell'albero | Verificato: appoggi entro1mm,9fixture e31frame finali PASS; asset sciarpa realmente visibile |
+| M3-I1 | Prima build BFh1iWzC | Render/selfTest numerici PASS, ma preset vulnerable mostra scudo; ending non ritira nave/portale né mostra pacco/sciarpa | Integrazione pose/seed/stato ancora incompleta durante lavoro builder | Completare bridge Game↔BossChapter e verificare immagini, fasi effettive e finale | Risolto:31frame semantici D86qgQyq PASS e immagini guardate; sciarpa/ritiro reali |
+| M3-I2 | Full bot BFh1iWzC | Nuova partita→M1→M2→piazza riuscito, poi manca LC.state().boss per la verifica | API debug finale ancora non esportata nella build intermedia | Esporre fase/segmenti/flag reali, poi rieseguire senza seed o salti | Risolto: fullbot Nuova partita→fine D86qgQyq PASS20lanci1retry,nessun seed/goto/danno iniettato |
+| M3-I3 | Test frame/input + fresh-eyes | Primo clic/E dopo ripresa può essere ignorato | Primo RAF con lastFrame0 produce dt0, salta update ma cancella gli input con endFrame | Preservare coda nel frame0 fino al primo update reale, senza cambiare tempi boss | Risolto:9/9controlli PASS inclusi click/E e pausaEsc; causa esatta dell'E esitante nel vecchio fresh-eyes non attribuita retroattivamente |
+| M3-F1 | Fresh-eyes | Camera molto vicina presso tronco, Santa in parte sotto chioma nel quadro finale | Collisione camera/chioma e composizione | Rifinire pivot/inquadratura nel passo9, senza cambiare collider o obiettivo | MINOR aperto, recuperabile senza danno o stallo |
+| M3-F2 | Fresh-eyes | Messaggio fuori portata mantiene distanza vecchia finché si entra nel raggio | Feedback temporaneo dopo E | Aggiornare il valore o abbreviarlo durante movimento | MINOR aperto; il prompt si sblocca in portata |
+| M3-F3 | Fresh-eyes | MIRATO permissivo e «riallinea davanti» poco preciso | Assistenza e soglia di acquisizione rispetto alla proiezione camera | Chiarire aggancio e «centra meglio con il destro» in rifinitura | MINOR aperto, completato0morti/5HP |

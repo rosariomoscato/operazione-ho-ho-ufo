@@ -3,3 +3,4 @@
 .target-lock{border:2px solid #f8be55;color:#fff0d5}.heal-label{border:2px solid #a4f8d9;color:#fff0d5}.threat{position:absolute;top:4.5rem;left:.65rem;max-width:45%;color:#ffda88;line-height:1.2}
 .overlay[data-chapter="toystreet"] .threat{top:6rem;max-width:45%}.overlay[data-chapter="toystreet"] .objective{max-width:64%}.arena-routes{line-height:1.23}.howto{border-color:#a4f8d9;color:#fff0d5}.overlay[data-chapter="toystreet"] .bottom .dialogue{max-width:100%!important}
 .panel{box-shadow:none}
+.boss-status{position:absolute;top:4.5rem;left:.65rem;max-width:62%;line-height:1.22}.overlay[data-chapter="square"] .objective{max-width:66%}.overlay[data-chapter="square"] .target{max-width:33%}.overlay[data-chapter="square"] .dialogue{max-width:100%!important}

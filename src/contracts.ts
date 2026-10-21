@@ -1,6 +1,6 @@
 import type { Group, Scene, Vector3 } from 'three';
 
-export type Beat = 'intro' | 'training' | 'battle' | 'anchor' | 'complete' | 'street' | 'street-complete';
+export type Beat = 'intro' | 'training' | 'battle' | 'anchor' | 'complete' | 'street' | 'street-complete' | 'square' | 'boss' | 'core' | 'return-core' | 'ending';
 export interface Obstacle { id: string; minX: number; maxX: number; minZ: number; maxZ: number }
 export interface VisualActor {
   root: Group;
@@ -13,6 +13,7 @@ export interface CourtyardWorld {
   obstacles: Obstacle[];
   anchors?: Record<string, Group>;
   setAnchors?(disabled: readonly string[], time: number): void;
+  setStoryState?(state: 'battle' | 'core' | 'carrying' | 'ending', time: number): void;
   update(time: number, beat: Beat, reducedMotion: boolean): void;
 }
 export interface AudioSettings { master: number; music: number; effects: number }
@@ -29,7 +30,7 @@ export interface GameAudio {
 }
 export type CreateWorld = (scene: Scene) => CourtyardWorld;
 
-export type ActId = 'courtyard' | 'toystreet';
+export type ActId = 'courtyard' | 'toystreet' | 'square';
 export interface ActAnchor { id: string; name: string; x: number; z: number; arenaId?: string }
 export interface ActEnemy { kind: 'melee' | 'ranged'; x: number; z: number }
 export interface ActArena { id: string; name: string; x: number; z: number; radius: number; enemies: ActEnemy[] }

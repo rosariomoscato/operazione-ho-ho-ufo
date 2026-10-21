@@ -1,0 +1,21 @@
+{
+  "pass": true,
+  "build": "D86qgQyq",
+  "unitTests": 38,
+  "controlledCases": 9,
+  "captureFrames": 31,
+  "fullPlaythrough": {
+    "shots": 20,
+    "deaths": [
+      {
+        "chapter": "square",
+        "boundary": "boss",
+        "segments": 2
+      }
+    ],
+    "wallSeconds": 125.645
+  },
+  "maxCalls": 63,
+  "maxTriangles": 53588,
+  "sourceFiles": 34
+}

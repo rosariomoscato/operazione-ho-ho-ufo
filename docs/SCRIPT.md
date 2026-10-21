@@ -165,3 +165,26 @@ Testi implementati nella versione corrente; non cambiano lo snapshot M1. Le dura
 | ui.street.goal.ready | — | Spegni l’ancoraggio pronto: E · Ancoraggi {count}/3 | Il lato indicato è libero ma ancora acceso | UI | — |
 
 `ui.slice.end` rimane testo storico della copia congelata; non descrive più il raccordo corrente dal cortile alla via. Review e prove M2 devono verificare separatamente quanto dichiarato qui.
+
+## Terzo segmento — testi runtime e continuità finale
+
+La variante `vo.briciola.square` della sezione M2 resta nello snapshot approvato. Nella versione corrente con M3 accessibile viene sostituita dal testo sotto; stesso ID narrativo, nessuna voce. Boss sconfitto e nucleo raccolto **non** significano ancora vittoria: restituzione all'albero e chiusura effettiva del portale vengono prima di `vo.briciola.saved`.
+
+| ID | Personaggio | Testo | Direzione | Tipo | Stato |
+|---|---|---|---|---|---|
+| vo.briciola.square | Briciola | Scudo spento! La nave scende verso la piazza. Il nucleo è ancora là: raggiungi il cancello e premi E! | Variante corrente, accessoM3 | radio | — |
+| ui.square.approach | — | Avvicinati al generale nella piazza | Prima del cerchio encounter | UI | — |
+| ui.square.boss | — | Schiva il cono; poi colpisci il nucleo esposto | Obiettivo persistente durante boss | UI | — |
+| ui.square.howto | — | Esci dal cono, poi porta il nucleo al+ e lancia quando è esposto. Un regalo valido per ciclo. | Finché non riesce il primo colpo | hint | — |
+| ui.square.shield | — | Scudo del generale attivo · schiva il raggio | Scudo personale, non ancoraggi da ripetere | UI | — |
+| ui.square.range | — | Avvicinati al nucleo: portata12m | Regalo fuori portata | UI | — |
+| ui.square.hit | — | Colpo riuscito {count}/3 | Un solo segmento per finestra | UI | — |
+| ui.square.miss | — | Finestra mancata: stesso ciclo. Schiva e riprova, nessun segmento perso. | Ripetizione senza perdere progressi | UI | — |
+| ui.square.core | — | Recupera il nucleo libero: E | Dopo terzo colpo, interazione immediata | UI | — |
+| ui.square.tree | — | Riporta il nucleo all’albero: E | Nucleo al sicuro, punto E fuori dal tronco | UI | — |
+| ui.square.already | — | Nucleo già al sicuro: portalo all’albero. | Nessun pickup duplicato | UI | — |
+| ui.square.returned | — | Nucleo restituito · un regalo anche per Squamakk | Prima della chiusura effettiva | UI | — |
+| ui.square.skip | — | Salta finale | Stesso stato terminale e stesso salvataggio | UI | — |
+| ui.square.replay | — | Nuova avventura | Reset esplicito dopo conclusione | UI | — |
+
+Il finale riusa `vo.squamakk.defeat`, `vo.santa.scarf`, `vo.briciola.saved` e `ui.ending` già previsti. La sciarpa è visiva sul pacco prima del ritiro della nave; portale chiuso, partenza slitta e vittoria seguono in quest'ordine. Gli aiutiH/15/30/45 e i messaggi di distanza sono feedback dinamici, non battute doppiate. Tempi del bot/tester remoto non sono durata umana promessa.

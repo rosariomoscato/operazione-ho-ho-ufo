@@ -1,0 +1,315 @@
+{
+  "pass": true,
+  "act": "square",
+  "html": "<!doctype html>\n<html lang=\"it\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"icon\" href=\"data:,\"><title>Operazione Ho Ho UFO · Il cortile</title>  <script type=\"module\" crossorigin src=\"/assets/index-D86qgQyq.js\"></script>\n  <link rel=\"modulepreload\" crossorigin href=\"/assets/three-DjPfJOhV.js\">\n  <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CTggsI1K.css\">\n</head><body><div id=\"app\"></div></body></html>\n",
+  "runs": [
+    {
+      "scenario": "square-entry",
+      "pass": true,
+      "renderPass": true,
+      "errors": [],
+      "coverageErrors": [],
+      "maxCalls": 52,
+      "maxTriangles": 51000
+    },
+    {
+      "scenario": "boss-cycle-1",
+      "pass": true,
+      "renderPass": true,
+      "errors": [],
+      "coverageErrors": [],
+      "maxCalls": 59,
+      "maxTriangles": 51425
+    },
+    {
+      "scenario": "boss-cycle-2",
+      "pass": true,
+      "renderPass": true,
+      "errors": [],
+      "coverageErrors": [],
+      "maxCalls": 59,
+      "maxTriangles": 51425
+    },
+    {
+      "scenario": "boss-cycle-3",
+      "pass": true,
+      "renderPass": true,
+      "errors": [],
+      "coverageErrors": [],
+      "maxCalls": 59,
+      "maxTriangles": 51425
+    },
+    {
+      "scenario": "boss-locked",
+      "pass": true,
+      "renderPass": true,
+      "errors": [],
+      "coverageErrors": [],
+      "maxCalls": 59,
+      "maxTriangles": 51425
+    },
+    {
+      "scenario": "boss-vulnerable",
+      "pass": true,
+      "renderPass": true,
+      "errors": [],
+      "coverageErrors": [],
+      "maxCalls": 57,
+      "maxTriangles": 51816
+    },
+    {
+      "scenario": "boss-wrapped",
+      "pass": true,
+      "renderPass": true,
+      "errors": [],
+      "coverageErrors": [],
+      "maxCalls": 58,
+      "maxTriangles": 51692
+    },
+    {
+      "scenario": "square-core",
+      "pass": true,
+      "renderPass": true,
+      "errors": [],
+      "coverageErrors": [],
+      "maxCalls": 58,
+      "maxTriangles": 51692
+    },
+    {
+      "scenario": "square-carrying",
+      "pass": true,
+      "renderPass": true,
+      "errors": [],
+      "coverageErrors": [],
+      "maxCalls": 58,
+      "maxTriangles": 51692
+    },
+    {
+      "scenario": "square-ending",
+      "pass": true,
+      "renderPass": true,
+      "errors": [],
+      "coverageErrors": [],
+      "maxCalls": 63,
+      "maxTriangles": 53588
+    },
+    {
+      "scenario": "audit-boss-vulnerable",
+      "pass": true,
+      "errors": [],
+      "audit": {
+        "pass": true,
+        "palette": {
+          "pass": true,
+          "allowed": [
+            "#e94750",
+            "#7cbf56",
+            "#7062b8",
+            "#e1eff5",
+            "#fff0d5",
+            "#f4ba93",
+            "#202d42",
+            "#f8be55",
+            "#596a9b",
+            "#987562",
+            "#a4f8d9",
+            "#9b6547",
+            "#a5585b",
+            "#182c49"
+          ],
+          "invalidColors": []
+        },
+        "typography": {
+          "pass": true,
+          "checks": [
+            {
+              "text": "Schiva il cono; poi colpisci il nucleo esposto",
+              "contrast": 10.010112067814882,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "Percorso ↑ Nucleo sul generale · 11.0m · Ancoraggi3/3",
+              "contrast": 14.971145186095898,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "Salute ▮▮▮▮▮▮",
+              "contrast": 14.971145186095898,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "Spazio · Schivata pronta",
+              "contrast": 14.971145186095898,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "Generale Squamakk · ▮▮▮ · 0/3 colpi riusciti · Ciclo1Nucleo esposto · ",
+              "contrast": 14.971145186095898,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "Nucleo esposto · 5.5s",
+              "contrast": 14.971145186095898,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "◎ MIRATO · nucleo vulnerabile",
+              "contrast": 14.971145186095898,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "Esci dal cono, poi porta il nucleo al+ e lancia quando è esposto. Un r",
+              "contrast": 14.971145186095898,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "Nucleo esposto: porta il bersaglio al+ e lancia",
+              "contrast": 12.53369330491466,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "WASD: muovi · Destro: mira al+ · Clic: tira · Spazio: schiva · E: usa ",
+              "contrast": 14.971145186095898,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "◎ MIRATO · nucleo esposto",
+              "contrast": 14.971145186095898,
+              "capHeight": 25,
+              "minCapHeight": 24,
+              "pass": true
+            }
+          ],
+          "note": "Accessible DOM text only; aria-hidden graphic glyphs are excluded and require visual/outline checks. 24px cap-height gate applies at 1080p. Canvas text needs a separate measured contract."
+        },
+        "flashes": [
+          {
+            "view": "player",
+            "fps": 12,
+            "samples": 97,
+            "events": [],
+            "maxAffectedFraction": 0.00019290123456790122,
+            "maxEventsPerSecond": 0,
+            "pass": true
+          }
+        ],
+        "notes": [
+          "12 Hz full-loop screening is not a clinical photosensitivity certification; inspect new fast VFX separately.",
+          "Color-blind PNG is a diagnostic preview; gameplay must also use shape, text and position."
+        ]
+      }
+    },
+    {
+      "scenario": "audit-square-ending",
+      "pass": true,
+      "errors": [],
+      "audit": {
+        "pass": true,
+        "palette": {
+          "pass": true,
+          "allowed": [
+            "#e94750",
+            "#7cbf56",
+            "#7062b8",
+            "#e1eff5",
+            "#fff0d5",
+            "#f4ba93",
+            "#202d42",
+            "#f8be55",
+            "#596a9b",
+            "#987562",
+            "#a4f8d9",
+            "#9b6547",
+            "#a5585b",
+            "#182c49"
+          ],
+          "invalidColors": []
+        },
+        "typography": {
+          "pass": true,
+          "checks": [
+            {
+              "text": "Nucleo restituito · un regalo anche per Squamakk",
+              "contrast": 10.010112067814882,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "Nucleo restituito · Ancoraggi3/3",
+              "contrast": 14.971145186095898,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "Una sciarpa per il generale · Invio: salta finale",
+              "contrast": 12.53369330491466,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "Presentazione finale · Invio: salta · Esc: pausa",
+              "contrast": 14.971145186095898,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            },
+            {
+              "text": "Salta finale",
+              "contrast": 9.92635032999549,
+              "capHeight": 26,
+              "minCapHeight": 24,
+              "pass": true
+            }
+          ],
+          "note": "Accessible DOM text only; aria-hidden graphic glyphs are excluded and require visual/outline checks. 24px cap-height gate applies at 1080p. Canvas text needs a separate measured contract."
+        },
+        "flashes": [
+          {
+            "view": "player",
+            "fps": 12,
+            "samples": 97,
+            "events": [
+              1,
+              2.5
+            ],
+            "maxAffectedFraction": 0.5217978395061729,
+            "maxEventsPerSecond": 1,
+            "pass": true
+          }
+        ],
+        "notes": [
+          "12 Hz full-loop screening is not a clinical photosensitivity certification; inspect new fast VFX separately.",
+          "Color-blind PNG is a diagnostic preview; gameplay must also use shape, text and position."
+        ]
+      }
+    },
+    {
+      "scenario": "software",
+      "pass": true,
+      "errors": []
+    }
+  ]
+}

@@ -13,7 +13,7 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | 5 | Demo personaggio parlante | Saltato | Percorso gratuito scelto: dialoghi solo a testo, niente voci o labiale |
 | 6 | Vertical slice | Completato | Build/test/catture/review/fresh-eyes e rerun finali PASS |
 | 7 | Playtest | Completato | Utente: «va bene»; snapshot M1 congelato e verificato su5176 |
-| 8 | Gioco completo | In corso | M2 pronto per playtest utente; gate superati, attendere feedback prima di M3 |
+| 8 | Gioco completo | In corso | Avventura completa/RC locale pronta; attesa playtest utente prima del passo9 |
 | 9 | Rifinitura | Non iniziato | |
 | 10 | Deploy | Non iniziato | Nessuna pubblicazione autorizzata |
 
@@ -36,8 +36,45 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | 2026-10-20 | Primo cortile approvato dopo consegna del link giocabile | Utente: «va bene» |
 | 2026-10-21 | Avviare M2 e fermarsi per prova prima del boss; restano review snella e audio gratuito | Utente: «prosegui», «continua»; continuità delle scelte precedenti |
 | 2026-10-21 | Cartella unica con proprietà separate, nessun nuovo worktree dopo questionario interrotto | Default conservativo dell'integratore, come M1 |
+| 2026-10-21 | Via dei giocattoli approvata; procedere con piazza, Squamakk e finale già previsti | Utente: «va bene, continua» |
+| 2026-10-21 | M3 usa tre cicli1/2/3coni sequenziali, segmenti persistenti e interazioni nucleo/albero; coordinate tecniche scelte dentro concept | Autonomo, DESIGN PASS reviewer `docs/set-pieces/square.md` |
 
-**Passo corrente:** 8, **M2 pronto per il playtest utente**. Build finale `index-DpZTJjdp.js` su **http://127.0.0.1:5175/**: scegliere **Prova la via dei giocattoli** (non sostituisce il salvataggio), oppure entrare dal cancello dopo il cortile. Due arene in ordine libero, fine segmento a3/3. Gate tecnici e review superati; aspettare feedback prima di M3. Nessuna autorizzazione a spesa/pubblicazione. Snapshot M1 su5176 intatto,27hash PASS.
+**Passo corrente:** 8, **avventura completa pronta per il playtest utente**. Release candidate immutabile **http://127.0.0.1:5179/** (`npm.cmd run snapshot:release`), cartella `snapshots/release-candidate/`, build **D86qgQyq**. **Nuova partita** per percorso completo; **Prova la piazza e Squamakk** per il nuovo atto senza sostituire progressi. M1 e M2 approvati restano su5176/5177. Nessuna pubblicazione o spesa autorizzata. Non passare al9 finché l'utente non prova/approva l'avventura completa.
+
+### Consegna avventura completa — gate finali
+
+- **SHIP / LANDS / ON TRACK**, condizioni chiuse in `docs/reviews/m3-final-review.md`§8. Nessun BLOCKER/MAJOR aperto; review/fresh-eyes precedono la consegna.
+- Typecheck/build **D86qgQyq PASS**;38test sorgente PASS più1test hashRC PASS (ora39 nel comando globale). M1/M2/RC immutabili, manifest27+27+27file. Nuovo source manifest di34file, hash coerenti col test controllato e HTMLbundle uguale fra catture/fullbot/dist.
+- **9/9 controlli Game reale PASS**: telegraph/checkpoint/danno singolo, schivata, regali prefire/doppi/late, nucleo→albero e checkpoint/Continua, appoggi pacco/sciarpa/ritiro, aiuti, pausaEsc/resume e primo clic/E dopo frame0. Corretto bug input perduto, nessun delta fittizio.
+- **Fullbot reale Nuova partita→fine PASS**,20lanci,1morteM3 a2segmenti conservati,125.645swall con retry (non durata umana). Nessun seed/goto/danno/clock iniettato; checkpoint finali coreReturned/boss.completed/portalClosed veri.
+- **31frame finali PASS** (semantica+render+determinismo+audit1080+software), max63call/53.588triangoli in M3;3luci,0post. Guardate PNG boss/scarf1.5/finale8 e foto finale del bot. Non garanzia60fps o picco di ogni sovrapposizione.
+- Fresh-eyes M3 **completato0morti/retry,5HP**, finale guardato senza skip e Nuovaavventura verificata→M1. SoloUI su6Gx4, pause reali fra azioni per latenza, audio muto; varianti finali UI/input collaudate con nuove prove D86qgQyq. Non primo playthrough umano continuo né durata umana. `docs/reviews/m3-fresh-eyes.md`.
+- Regressione controllataM2 7/7PASS e mixerHTMLAudio vero PASS; file statici gratuiti originali, nessuna nuova approvazione d'ascolto dal test in muto.
+- FreezeRC27file byte-identici e smoke5179 PASS: Nuova partita/M1, provaM3, sciarpa close-up e terminale con nodi nave/portale/slitta invisibili, selfTest e0errori. Prove sotto `docs/evidence/step-08-m3/final/`, `release-smoke/` e `release-gates.json`.
+- MINOR di camera vicino albero/props, aggancio permissivo e avvisi distanza temporanei restano in BACKLOG per feedback/rifinitura. Non rigenerare o sovrascrivere la RC; eventuali fix/polish nel sorgente e in nuova copia di milestone.
+
+### Cronologia costruzione M3 (ownership ora libera; stati intermedi storici)
+
+- Gameplay `ses_ea5402239ffeHy4Z4AqMv6HIKM`: game/storage/testi/input/CSS, moduli boss/scenari/registri e status gameplay-m3. Non sovrascrivere finché non libera ownership. Schema3 previsto; integratore aggiorna unit test esistenti quando API consegnata.
+- Visuale `ses_ea540d802ffeAYczibcpB2Yy95` **concluso/ownership libera**: `docs/production/status/visual-m3.md`, mondo23call28.200tri/boss17call11.738tri,3luci. Immagini guardate e conservate in `docs/evidence/step-08-m3/visual/`. Raccordi concreti muzzleLocal/supporto pacco e sede albero nello status/review.
+- Reviewer `ses_ea543ccebffeuVAiKb5J2usMih`: spec M3 conclusa DESIGN PASS; riutilizzare per review finale. Playtester persistente `ses_ea2c6727affencuvI80D9dBNtm` non avviato suM3: soloUI quando gate pronti, pausa fra decisioni.
+- Main: test/catture/releasebot/documenti/freeze. Nessun M3 già dichiarato funzionante; stage8 completo solo dopo gate, bot Nuova partita→finale e prova utente dell'avventura. Non saltare al polish/deploy.
+- M2 congelato salvato in commit `13490ee`, bytes esclusi da conversione EOL tramite `.gitattributes`; smoke2frame/selfTest PASS, prove `docs/evidence/step-08/frozen-m2/`. Hash M1+M2 tutti27+27 PASS; dati/percorsi M3 **2test PASS**, non test del boss.
+- Strumenti main preparati: `tools/square.test.mjs` (dati/accessibilità), `tools/capture-square.mjs`/`npm.cmd run capture:square` (da eseguire solo dopo implementazione scenari), `tools/input-driver.mjs` e `tools/playthrough-acts.mjs` (controlli reali/M1→M2→ingressoM3, non ancora eseguiti sul nuovo atto). Driver fresh-eyes accetta `PLAYTEST_AREA=m3` e `PLAYTEST_STEP_MODE=1`; non ancora avviato. Completarne il bot con stato/API boss consegnati dal builder, non inventare PASS o durata.
+- Aggiunto `tools/full-playthrough.mjs` / `npm.cmd run test:playthrough`: nessun seed/goto/seek/danno iniettato, nuovo context→Nuova partita→M1/M2→boss/core/albero/finale, retry reali contati se muore. Sintassi dei3moduli input/playthrough PASS e2test dati M3 PASS. **Non ancora eseguito**: attende build M3 e adattamento al campo phase effettivo del boss; non chiamarlo completamento reale prima del report. API prevista `LC.state().boss.phase`, da confrontare con consegna del builder.
+- Review visuale parziale **PASS provvisorio**, nessunBLOCKER/MAJOR (`docs/reviews/m3-visual-review.md`). Main `test:square`5test PASS dati+mondo reale+timeline/restoreridotto+48pose/veri vertici cast e budget. Test comuni23PASS incluso schema3 e hash M1/M2; non sono gate del combattimento M3.
+- Nuovo `tools/square-storage.test.mjs`: migrazioniv2/saveboundaries/corruzione/clear4/5PASS; testversionstringaFAIL e statoendingimpossibile (M3-S1) inviato al builder per filtro stretto. Ownershipstorageancoralui, mainnonlo corregge in parallelo.
+- Preparati `tools/freeze-release.mjs`/`serve-release.mjs`: richiedono report reali PASS, review/playtest accettati e HTMLbuildidentico fra capture/fullbot/dist, rifiutano sovrascritture. **Non eseguiti**, nessun releasecandidate ancora creato o promessa di funzionamentoM3. Porta futura5179 solo dopo gate.
+- Primo build integrato M3 **PASS** (`index-BFh1iWzC.js`), copia di lavoro separata in `C:/Users/rosar/AppData/Local/Temp/opencode/m3-candidate-BFh1iWzC/` per non subire modifiche sorgente durante le prove. Capture M3 e full-playthrough su questa candidata avviati in background: esito ancora da ricevere, non contarliPASS. Storage M3-S1 corretto dal builder e rerun5/5PASS; unit globali ora includono tutti i test M3.
+- **Esiti BFh1iWzC:** suite rendering numerico31frame PASS ma **integrazione visiva FAIL** osservata neiPNG: vulnerable ancora scudo, ending conbossvivo/navenonritirata e pacco/sciarpa mancanti. Non consegnare questa build. Copie raw e PNG in `docs/evidence/step-08-m3/pre-integration/`; summary corrente marcato semanticamenteFAIL, non allentati test. `capture-square.mjs` ora richiede vero bossstate/ciclo/fase e checkpoint nucleo restituito, oltre al render.
+- Full bot BFh1iWzC **FAIL al gate API** dopoNuovapartita/M1/M2/ingressoM3 con17lanci0morti,91swall: manca LC.state().boss. Nessun seed/goto/danno introdotto; copia reportpermanente. Riscontri inviati al builder ancora owner. Non riusare questo come completamento finale né come prova di boss ingiocabile.
+- `npm.cmd test` più recente **38/38PASS**: incluse8prove runtimeM3 (FSM vera1/2/3coni,lock ancheframe lungo,prefire/stalewindow/doppiohit,cono finito+margine corpo,miss e visibilità),5save3,2dati e gateprecedenti. Unit non sostituiscono le pose/Game reali ancora da verificare.
+- Preparato `tools/check-square.mjs`:7fixture controllate sul vero Game (approach/checkpoint/cone-damage, dodge reale, regali prefire/doppi/late, presa/restituzione/retry/Continue, sciarpa/supporto/ritiro, aiuti). **Non ancora eseguito**: attende consegna stabile del core. Import SAVE_KEY nella fixture evita hardcodev2/v3; analogo raccordo applicato a check-street-combat. Sourcehash before/after impediscono di accettare un run durante modifiche concorrenti.
+- Build successiva **6Gx4PZDE PASS**, candidata isolata in `C:/Users/rosar/AppData/Local/Temp/opencode/m3-candidate-6Gx4PZDE/`; capture con controlli semantici e fullbot riavviati, esiti ancora attesi. `check-square.mjs` eseguito: **7/7 PASS**, sourcehash invariati prima/dopo,0errori; copia `docs/evidence/step-08-m3/controlled/report.json`. Include veri Game.throwGift/dodge/interact/retry/Continue, ordine nucleo, appoggio sciarpa/pacco/ritiro e aiuti15/30/45. Aggiunta poi8a verifica pausaEsc reale e ripresa (da eseguire al rerun finale). Non promuovere al gate finale i vecchi PNG BFh1iWzC.
+- **Esiti6Gx4 conclusi:** fullbotNuovapartita→finale **PASS22lanci,2morti169.169swall**, una morteM2 e unaM3 a2segmenti che restano salvati; non durataumana. Capture31frame **PASS anche semantico**, boss/cicli/vulnerabilità/ending reali ePNG guardate, sciarpa+ritiro visibili; max63call/53.588triangoli. Prove permanenti `docs/evidence/step-08-m3/playthrough/` e `captures/`.
+- Review combinata `docs/reviews/m3-final-review.md`: **SHIP condizionato/LANDS/ON TRACK**, nonMAJOR da quelleprove; pendingfresh,Esc e allineamentosorgenti (3hash divergenti per altre modifiche core rispetto a6Gx4). FreshM3 ora **completato0morti/retry,5HP**, ha guardato finale senza skip e provatoNuovaavventura→M1; report `docs/reviews/m3-fresh-eyes.md`,37azioni434swallnonhuman, screenshotpermanenti `fresh-eyes/`. NienteMAJORconfermato,Esull'albero esitante risolto riposizionandosi.
+- Nuovi test main: pausaEsc vera/finestravulnerabilità/resume **PASS** (8°caso); 9°caso deterministico **FAIL** primo input dopo resume: Game.frame dt0 svuota coda prima di update, perde click/E. RiscontroM3-I3 inviato al builder ancora owner, mainnonlofixa in parallelo; evidenza `pre-integration/first-frame-input-failed.json`. Aggiornare/rieseguire dopo fix, non congelare RC con questo gate aperto.
+- Regressione controllataM2 sul nuovo source **7/7PASS** (`m2-regression/report.json`), mixerHTMLAudio reale **PASS** (`audio/runtime-audio.json`): pausa/tuttii loop, pool8, cambio musica silente finché resume,stop0. Non è nuova approvazione d'ascolto umano.
 
 ### Consegna M2 — riepilogo verificato
 
@@ -88,6 +125,8 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | Primo cortile giocabile (verifica M1) | `npm.cmd run dev`, http://127.0.0.1:5174/ | `index.html`, `src/`; build produzione `dist/` |
 | Preview stabile per l'utente | `npm.cmd run build`, poi `npm.cmd run preview`, http://127.0.0.1:5175/ | Build statica senza HMR |
 | Via dei giocattoli M2 | http://127.0.0.1:5175/ → **Prova la via dei giocattoli** | Prova non distruttiva; fine3/3, boss escluso |
+| M2 approvato, congelato | `npm.cmd run snapshot:m2`, http://127.0.0.1:5177/ | `snapshots/m2-street/`, immutabile con manifest hash |
+| Avventura completa — release candidate | `npm.cmd run snapshot:release`, http://127.0.0.1:5179/ | `snapshots/release-candidate/`, D86qgQyq, immutabile; main preview5175 può cambiare |
 | Cortile M1 approvato, congelato | `npm.cmd run snapshot:m1`, http://127.0.0.1:5176/ | `snapshots/m1-slice/`, server read-only `tools/serve-snapshot.mjs` |
 
 Il cortile è giocabile; l'avventura completa non è ancora implementata. A è il riferimento grafico scelto; B/C restano come confronto storico. Il laboratorio tecnico conserva `?lift=0.05` per riprodurre l'errore senza alterare la scena corretta.
@@ -134,10 +173,10 @@ Percorso gratuito esplicitamente scelto: **0 crediti, 0 API, nessun account rich
 
 ## 6. Prossimi passi
 
-1. Consegnare link stabile5175 e pulsante **Prova la via dei giocattoli**; raccogliere feedback su mira/scontri/fluidità/chiarezza/audio prima di sviluppare altro.
-2. Registrare feedback in BACKLOG e verificare le correzioni. All'approvazione congelare M2 su cartella/porta nuova, senza toccare M1.
-3. Solo dopo approvazione M2 pianificare M3 piazza/Squamakk/finale. Mantenere registri modulari, pochi collaboratori persistenti e review snella.
-4. Conservare M1 intatto. Nessuna pubblicazione o spesa autorizzata. Non garantire durata umana o60fps: prestazioni reali da giudicare sul PC utente.
+1. Consegnare linkRC5179: Nuova partita oppure Prova la piazza e Squamakk. Lasciare giocare l'utente; raccogliere sensazioni su boss, chiarezza, fluidità, grafica e audio senza un altro ciclo di sviluppo anticipato.
+2. Registrare feedback in BACKLOG, chiarire ambiguità e verificare le correzioni. M1/M2/RC restano intatti; cambiare solo sorgente e nuove milestone, mai sovrascrivere copie congelate.
+3. All'approvazione dell'avventura completa chiudere passo8 e iniziare9 leggendo il suo riferimento; affrontare i MINOR e gli aspetti di polish con review e nuovo check-in. Non ripetere concept/stile/audio/costi già scelti.
+4. Nessuna pubblicazione o spesa autorizzata. Non garantire durata umana o60fps: prestazioni reali da giudicare sul PC utente. Deploy solo dopo consenso esplicito.
 
 ## 7. Evidenze M1
 

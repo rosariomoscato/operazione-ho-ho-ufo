@@ -11,6 +11,9 @@ export const dialogueLines = {
   'vo.briciola.route': ['Briciola', 'Elfi liberi! Gli altri due ancoraggi sono lungo la via dei giocattoli.'],
   'vo.briciola.street': ['Briciola', 'Due ancoraggi: Officina o Giostra, scegli tu. Libera un lato, poi premi E sul suo dispositivo.'],
   'vo.squamakk.gifts': ['Squamakk', 'Smettetela di accettare pacchi dal nemico!'],
-  'vo.briciola.square': ['Briciola', 'Scudo spento! La nave scende verso la piazza. Il nucleo è ancora là: ci fermeremo prima del prossimo scontro.'],
+  'vo.briciola.square': ['Briciola', 'Scudo spento! La nave scende verso la piazza. Il nucleo è ancora là: raggiungi il cancello e premi E!'],
+  'vo.squamakk.defeat': ['Squamakk', 'Protesto! Non ho nemmeno scritto la letterina!'],
+  'vo.santa.scarf': ['Babbo Natale', 'Anche per te, Squamakk. Niente invasioni fino al prossimo Natale.'],
+  'vo.briciola.saved': ['Briciola', 'Portale chiuso. Terra salva. Ma ci sono ancora le consegne!'],
 } as const;
 export type DialogueId = keyof typeof dialogueLines;
