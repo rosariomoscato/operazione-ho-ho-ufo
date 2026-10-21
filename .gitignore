@@ -6,3 +6,5 @@ dist/
 /captures/
 .playwright-mcp/
 *.log
+
+.vercel

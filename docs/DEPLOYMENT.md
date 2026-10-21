@@ -14,7 +14,16 @@
 
 ## Registro risorse
 
-Nessuna risorsa remota creata al momento della stesura. Aggiornare immediatamente dopo ogni creazione.
+| Risorsa | Dove | Costo | Rimozione |
+|---|---|---|---|
+| Repository GitHub privato | https://github.com/rosariomoscato/operazione-ho-ho-ufo | Nessun acquisto | Impostazioni GitHub → eliminazione repository, solo con consenso |
+| Progetto Vercel | `operazione-ho-ho-ufo`, team `ros-projects-592f0548` | Hobby gratuito entro quote, uso personale non commerciale | Settings del progetto → eliminazione, solo con consenso |
+
+Repository e progetto Vercel creati, remote locale `origin` aggiunto. Nessun push o deployment ancora eseguito.
+
+Progetto Vercel ID `prj_6fGbsacHJ7djSleYM0iFUEIE8zeR`. Impostazioni applicate: preset `vite`, install `npm ci`, build `npm run build`, output `dist`. Nessun URL produzione mostrato prima del primo deployment. Collegamento locale in `.vercel/` ignorata da Git. Il comando link ha creato automaticamente `.env.local` con credenziale OIDC locale: contenuto mai letto/stampato, ignorato da Git, nessuna variabile richiesta dal gioco o impostata in produzione. Lista variabili produzione vuota.
+
+La CLI ha aggiunto `.vercel` a `.gitignore`; rimosso solo il pattern ridondante `.env*` aggiunto dalla CLI, mantenendo i pattern esistenti e l'eccezione `.env.example`.
 
 ## Controlli preliminari
 
