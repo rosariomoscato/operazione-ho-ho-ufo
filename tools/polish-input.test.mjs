@@ -19,3 +19,13 @@ test('capture intercepts Escape, while normal Escape always pauses and browser c
 test('blur clears dragging, throw, held keys and deltas; endFrame preserves held movement',()=>{
   const {input,send}=fixture();send('keydown',{code:'KeyW'});input.endFrame();assert.ok(input.keys.has('KeyW'));assert.equal(input.pressed.size,0);input.dragging=true;input.throwRequested=true;input.dx=10;input.dy=-2;send('blur');assert.equal(input.keys.size,0);assert.equal(input.dragging,false);assert.equal(input.throwRequested,false);assert.equal(input.dx,0);assert.equal(input.dy,0);
 });
+test('focused credits links keep native keyboard activation instead of queuing game input',()=>{
+  const {input}=fixture();
+  class Link extends Element {matches(selector){return selector.split(',').includes('a');}}
+  for(const code of ['Enter','Space','KeyE']){
+    const event=new Event('keydown',{cancelable:true});
+    Object.defineProperties(event,{code:{value:code},target:{value:new Link()}});
+    window.dispatchEvent(event);
+    assert.equal(event.defaultPrevented,false);assert.equal(input.keys.size,0);assert.equal(input.pressed.size,0);
+  }
+});

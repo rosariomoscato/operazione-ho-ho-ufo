@@ -79,6 +79,12 @@ Due reviewer indipendenti hanno ricevuto piano e prove, senza accesso mutativo: 
 
 Il commit finale contiene solo registro, handoff e prove: rimane locale, senza push, per conservare l'unico deployment verificato. Nessun sorgente applicativo cambiato. Il prossimo `git push origin master` sincronizza anche questi documenti e avvia automaticamente la pubblicazione.
 
+### Aggiornamento post-release preparato localmente: README, credits e MIT
+
+Su richiesta dell'utente sono stati preparati README completo con screenshot, credits cliccabili nei menu e nel finale completato e licenza MIT (`LICENSE`, metadati package/lockfile). Build locale **CM79yoZg**,46test+hashpolished e6controlli mirati PASS; review in `docs/reviews/readme-credits-review.md`, prove in `docs/evidence/readme-credits/`. Le quattro copie congelate restano intatte.
+
+Il campo Website del repository è stato verificato via GitHub CLI: è già `https://operazione-ho-ho-ufo.vercel.app`; nessuna modifica remota necessaria. Questo aggiornamento applicativo **non è ancora pushato o pubblicato**. Un push su `master` aggiornerà GitHub e attiverà Vercel; il sito pubblico non è stato ricertificato per i nuovi credits. La licenza MIT non cambia le condizioni d'uso personale/non commerciale del piano hosting Hobby.
+
 ### Aggiornamenti necessari ai riferimenti upstream
 
 L'help ha segnalato `link --team` e argomento posizionale di `env ls` come deprecati: usare `--scope` e `--environment` nei comandi futuri. Il collegamento è comunque riuscito; nessuna configurazione globale modificata. Riferimenti upstream da aggiornare: `preflight.md`, `project-and-url.md` (URL non disponibile prima del primo deploy), `env.md` (sintassi ambiente), `deploy.md` (ramo statico e workflow Git). Nessun file upstream della skill modificato in questa esecuzione.

@@ -7,6 +7,7 @@ import { squareLayout as layout } from '../acts/square';
 import { BossBattle, bossConfig, type BossContext, type BossGift, type BossPhase } from './boss';
 import { BossVisual } from './bossVisual';
 import { dialogueLines } from '../texts';
+import { creditsHTML } from '../ui/credits';
 
 export class BossChapter {
   readonly boss=new BossBattle();readonly visual:BossVisual;
@@ -93,7 +94,7 @@ export class BossChapter {
     const targetText=g.beat==='core'?'◇ Nucleo libero · E':g.beat==='return-core'?'◇ Albero · E':g.beat==='square'?'Avvicinati al generale':liveTarget?'◎ MIRATO · '+(b.phase==='vulnerable'?'nucleo vulnerabile':'scudo del generale'):'Tira al+ · portata12m';
     const navigation=g.beat==='ending'?'Nucleo restituito · Ancoraggi3/3':`Percorso ${arrow} ${destination} · ${d.toFixed(1)}m · Ancoraggi3/3`;
     const html=`<section class="objective panel"><strong>${this.objective()}</strong><div>${navigation}</div></section>${g.beat!=='ending'?`<section class="vitals panel"><div>Salute ${'▮'.repeat(g.player.hp)}${'▯'.repeat(6-g.player.hp)}</div><div>${g.time<g.player.dodgeReady?'Schivata '+(g.player.dodgeReady-g.time).toFixed(1)+'s':'Spazio · Schivata pronta'}</div></section><div class="boss-status panel">Generale Squamakk · ${'▮'.repeat(3-b.segments)}${'▯'.repeat(b.segments)} · ${b.segments}/3 colpi riusciti · Ciclo${b.cycle}<div>${status}</div></div><div class="target panel">${targetText}</div>`:''}<section class="bottom">${guide}<div class="hint panel">${hint}</div>${dialogue?`<div class="dialogue panel">${dialogue}</div>`:''}<div class="controls panel">${g.beat==='ending'?'Presentazione finale · Invio: salta · Esc: pausa':'WASD: muovi · Destro: mira al+ · Clic: tira · Spazio: schiva · E: usa · H: aiuto · Esc: pausa'}</div>${g.beat==='ending'?this.elapsed<8?'<button data-action="skip-ending">Salta finale</button>':'<button data-action="replay">Nuova avventura</button>':''}</section>`;
-    if(html!==g.lastHUD){g.hud.innerHTML=html;g.lastHUD=html;}
+    if(html!==g.lastHUD){g.hud.innerHTML=html;g.lastHUD=html;if(g.beat==='ending'&&this.elapsed>=8)g.hud.querySelector('.bottom')!.insertAdjacentHTML('beforeend',creditsHTML);}
   }
   state(){return {...this.boss.state(this.game.time),...this.fields(),completed:this.coreReturned&&this.portalClosed&&this.elapsed>=8,endingStarted:this.endingStarted,endingElapsed:this.game.beat==='ending'?this.elapsed:null,portalClosed:this.portalClosed,visual:this.visual.metadata()};}
   seedPose(phase:BossPhase,time:number):void {this.boss.reviewPose(phase,time);}

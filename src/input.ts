@@ -17,7 +17,7 @@ export class Input {
       if(this.capture){e.preventDefault();e.stopImmediatePropagation();this.capture(e);return;}
       if(e.code==='Escape' && !e.repeat) {e.preventDefault();this.onPause();return;}
       if(e.altKey||e.ctrlKey||e.metaKey)return;
-      if (e.target instanceof HTMLElement&&e.target.matches('input,button,select')) return;
+      if (e.target instanceof HTMLElement&&e.target.matches('input,button,select,a')) return;
       const code=this.mapCode(e.code);if(!code)return;e.preventDefault();
       if(e.repeat&&!this.physical.has(e.code))return;
       if(!this.physical.has(e.code)&&!e.repeat){this.pressed.add(code);this.physical.set(e.code,code);}this.keys.add(code);this.onGesture();
