@@ -38,4 +38,4 @@ Usare preferibilmente spalla/boom/pivot e volumi3D coerenti con la geometria; se
 
 ## Esito consegna
 
-TmJx2Hx1: gate tecnici, fullbot e freshfull PASS; review SHIP/LANDS/ON TRACK. Nuova `snapshots/polished-1/` congelata27file, hash e smoke5181PASS. Fonte finale `docs/evidence/step-09/source-manifest.json`, riepilogo `release-gates.json`; dettagli in HANDOFF/review finale. MINOR residuo: Santa parzialmente sottochioma nel quadro finale ampio, non confondere con camera gameplay risolta. Attesa approvazione utente su5181; nessun deploy/spesa o chiusura9 già autorizzati.
+TmJx2Hx1: gate tecnici, fullbot e freshfull PASS; review SHIP/LANDS/ON TRACK. Nuova `snapshots/polished-1/` congelata27file, hash e smoke5181PASS. Fonte finale `docs/evidence/step-09/source-manifest.json`, riepilogo `release-gates.json`; dettagli in HANDOFF/review finale. MINOR residuo: Santa parzialmente sottochioma nel quadro finale ampio, non confondere con camera gameplay risolta. Approvazione utente ricevuta: «si, mi sembra pronta»; passo9 completato. Nessun deploy o spesa autorizzati.

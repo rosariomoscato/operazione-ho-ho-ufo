@@ -14,7 +14,7 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | 6 | Vertical slice | Completato | Build/test/catture/review/fresh-eyes e rerun finali PASS |
 | 7 | Playtest | Completato | Utente: «va bene»; snapshot M1 congelato e verificato su5176 |
 | 8 | Gioco completo | Completato | Avventura completa approvata dall'utente: «mi sembra ok»; copia5179 conservata |
-| 9 | Rifinitura | In attesa dell'utente | SHIP/LANDS/ON TRACK; polished-1 TmJx2Hx1 congelata e verificata su5181 |
+| 9 | Rifinitura | Completato | polished-1 TmJx2Hx1 approvata: «si, mi sembra pronta»; copia5181 conservata |
 | 10 | Deploy | Non iniziato | Nessuna pubblicazione autorizzata |
 
 ## 2. Decisioni
@@ -39,8 +39,9 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | 2026-10-21 | Via dei giocattoli approvata; procedere con piazza, Squamakk e finale già previsti | Utente: «va bene, continua» |
 | 2026-10-21 | M3 usa tre cicli1/2/3coni sequenziali, segmenti persistenti e interazioni nucleo/albero; coordinate tecniche scelte dentro concept | Autonomo, DESIGN PASS reviewer `docs/set-pieces/square.md` |
 | 2026-10-21 | Avventura completa approvata dopo consegna della release candidate5179 | Utente: «mi sembra ok»; nessuna nuova modifica richiesta |
+| 2026-10-21 | Versione rifinita polished-1 TmJx2Hx1 approvata; passo9 completato | Utente: «si, mi sembra pronta»; nessuna pubblicazione autorizzata |
 
-**Passo corrente:** **9, rifinitura consegnata, attesa approvazione utente.** Nuova copia immutabile **http://127.0.0.1:5181/** (`npm.cmd run snapshot:polish`), `snapshots/polished-1/`, build **TmJx2Hx1**. Review finale **SHIP / LANDS / ON TRACK**, freeze27file byte-identici, smoke5181PASS. La RC approvata5179/D86qgQyq e M1/M2 su5176/5177 restano intatte. Nessuna pubblicazione o spesa autorizzata; passo10 non avviato.
+**Passo corrente:** **9 completato**, rifinitura approvata con «si, mi sembra pronta». Copia approvata immutabile **http://127.0.0.1:5181/** (`npm.cmd run snapshot:polish`), `snapshots/polished-1/`, build **TmJx2Hx1**. Review finale **SHIP / LANDS / ON TRACK**, freeze27file byte-identici, smoke5181PASS. La RC approvata5179/D86qgQyq e M1/M2 su5176/5177 restano intatte. Prossimo passo10, **non avviato**: pubblicazione e scelta host richiedono consenso esplicito; nessuna spesa autorizzata.
 
 ### Consegna rifinitura — riepilogo finale autorevole
 
@@ -50,7 +51,7 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 - Nuovo freshfullUIonly **0morti/retry**,85richiesteprimachiusura,tuttiatti→finalenonsaltato→Nuovaavventura. PauseEsc reali fraazioni/audio muto/latenza dichiarati;non difficoltàcontinua/durataumana. Sciarpa letta daltester e vista da reviewer/main nel close-upcontrollato1.5s, non attribuire altester dettaglio che non ha distinto.
 - Residuo **MINORnonbloccante**: Santa in parte sottochioma nella ripresa finaleampia; payofftestuale/finale/replaychiari. NessunBLOCKER/MAJOR, nessun cambio storia/difficoltà/mood/audio approvato. Fonti `docs/reviews/polish-final-review.md`, `polish-fresh-eyes.md`, `docs/evidence/step-09/`.
 - Freeze **polished-1**27file byte-identici, baseline `step-09/polished-snapshot-baseline.json`; `node --test tools/polish-snapshot.test.mjs tools/release.test.mjs`2/2PASS. Smoke vero5181PASSNuovapartita/tutorial,7binding/defaultFOV53,close-upsciarpa e finalecompleted/portalclosed/selfTest,0pageerror; PNGguardate in `frozen-smoke/`. Primo tentativo smoke aveva solo confronto stringa° corrotto da pipePowerShell, prova preservata; rerunASCIIescaped pulitoPASS.
-- **Chiedere ora prova/approvazione della versione rifinita5181.** Non chiedere di nuovo approvazione concept/avventuraRC, non chiudere9senza feedback né pubblicare10. Tutti collaboratori conclusi/ownershiplibera; cronologia intermedia sotto conservata come tale.
+- **Approvazione utente ricevuta: «si, mi sembra pronta». Passo9 chiuso.** Nessuna ulteriore modifica richiesta; non richiedere di nuovo approvazione concept/avventura/rifinitura. Tutti collaboratori conclusi/ownershiplibera; cronologia intermedia sotto conservata come tale. Pubblicazione10 ancora non autorizzata.
 
 ### Cronologia costruzione passo9 (ownership ora libera; stati intermedi storici)
 
@@ -160,7 +161,7 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | Via dei giocattoli M2 | http://127.0.0.1:5175/ → **Prova la via dei giocattoli** | Prova non distruttiva; fine3/3, boss escluso |
 | M2 approvato, congelato | `npm.cmd run snapshot:m2`, http://127.0.0.1:5177/ | `snapshots/m2-street/`, immutabile con manifest hash |
 | Avventura completa — release candidate | `npm.cmd run snapshot:release`, http://127.0.0.1:5179/ | `snapshots/release-candidate/`, D86qgQyq, immutabile; main preview5175 può cambiare |
-| Avventura rifinita — polished-1 | `npm.cmd run snapshot:polish`, http://127.0.0.1:5181/ | `snapshots/polished-1/`, TmJx2Hx1, immutabile; attesa approvazione del polish |
+| Avventura rifinita — polished-1 | `npm.cmd run snapshot:polish`, http://127.0.0.1:5181/ | `snapshots/polished-1/`, TmJx2Hx1, immutabile e approvata dall'utente |
 | Cortile M1 approvato, congelato | `npm.cmd run snapshot:m1`, http://127.0.0.1:5176/ | `snapshots/m1-slice/`, server read-only `tools/serve-snapshot.mjs` |
 
 Il cortile è giocabile; l'avventura completa non è ancora implementata. A è il riferimento grafico scelto; B/C restano come confronto storico. Il laboratorio tecnico conserva `?lift=0.05` per riprodurre l'errore senza alterare la scena corretta.
@@ -209,7 +210,7 @@ Percorso gratuito esplicitamente scelto: **0 crediti, 0 API, nessun account rich
 
 1. Approvazione dell'avventura registrata; non richiederla di nuovo. La consegna5179 resta la copia di riferimento, senza modificare i suoi file.
 2. Registrare feedback in BACKLOG, chiarire ambiguità e verificare le correzioni. M1/M2/RC restano intatti; cambiare solo sorgente e nuove milestone, mai sovrascrivere copie congelate.
-3. Attendere prova/approvazione della rifinitura5181; gate tecnici/review/freshfull/freeze completati. Registrare eventuali feedback e fare modifiche solo nel sorgente/nuova milestone, mai nelle quattro copie congelate. Chiudere9 solo dopo sì dell'utente.
+3. Rifinitura5181 approvata e passo9 chiuso. Quando l'utente chiede di proseguire, leggere `references/10-deploy.md` della skill e concordare host/pubblicazione prima di qualsiasi deploy. Eventuali nuove correzioni solo nel sorgente/nuova milestone, mai nelle quattro copie congelate.
 4. Nessuna pubblicazione o spesa autorizzata. Non garantire durata umana o60fps: prestazioni reali da giudicare sul PC utente. Deploy solo dopo consenso esplicito.
 
 ## 7. Evidenze M1

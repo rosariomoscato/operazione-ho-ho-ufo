@@ -1,6 +1,6 @@
 # Prove rifinitura — TmJx2Hx1
 
-Fonte autorevole: `release-gates.json`, `source-manifest.json` e `docs/reviews/polish-final-review.md`. La versione consegnata è `snapshots/polished-1/`, su5181; approvazione utente ancora in attesa.
+Fonte autorevole: `release-gates.json`, `source-manifest.json` e `docs/reviews/polish-final-review.md`. La versione consegnata è `snapshots/polished-1/`, su5181; approvata dall'utente con «si, mi sembra pronta». Passo9 completato, nessuna pubblicazione autorizzata.
 
 - `unit-tests.txt`:45PASS (log PowerShell UTF-16LE).
 - `camera/`, `controls/`, `controlled/`: griglia864pose,7casiUI e9casiM3; hash prima/dopo nei report.

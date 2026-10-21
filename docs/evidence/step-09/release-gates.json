@@ -3,7 +3,8 @@
   "pass": true,
   "reviewAccepted": true,
   "playtestCompleted": true,
-  "userApprovedPolish": false,
+  "userApprovedPolish": true,
+  "userApprovalQuote": "si, mi sembra pronta",
   "snapshotFrozen": true,
   "frozenSmokePass": true,
   "unitTests": { "pass": true, "count": 45, "frozenFiles": 81 },
@@ -14,7 +15,7 @@
   "fullPlaythrough": { "pass": true, "shots": 25, "deaths": 2, "wallSeconds": 279.762, "humanDuration": false },
   "freshEyes": { "pass": true, "uiActions": 85, "deaths": 0, "retries": 0, "pauseBetweenActions": true, "audioMuted": true },
   "audioRuntime": { "pass": true, "subjectiveListeningApproval": false },
-  "pending": ["User approval"],
+  "pending": [],
   "limitations": [
     "No hardware 60fps guarantee or measured human duration",
     "Fresh-eyes uses real Escape pauses between remote actions and muted audio",

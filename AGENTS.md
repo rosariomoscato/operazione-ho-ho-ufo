@@ -18,7 +18,7 @@ Progetto basato sulla pipeline in 10 passi della skill `build-a-game`. Iniziare 
 - `docs/ACT_03_PLAN.md`, `docs/set-pieces/square.md`: piano M3 e design approvato per Squamakk, nucleo, albero e finale; fonti coordinate in `src/acts/square.ts`.
 - `docs/reviews/m3-final-review.md` e `docs/evidence/step-08-m3/`: gate della release candidate D86qgQyq, sorgenti/prove/freeze; attendere feedback dell'avventura completa prima del passo9.
 - `docs/POLISH_PLAN.md`, `docs/reviews/polish-design.md`: passo9 autorizzato; camera, chiarezza, opzioni desktop e gate. Non modificare le tre copie congelate; prossimo snapshot distinto polished-1.
-- `docs/reviews/polish-final-review.md`, `docs/reviews/polish-fresh-eyes.md`, `docs/evidence/step-09/`: rifinitura TmJx2Hx1 SHIP/LANDS/ON TRACK, nuova `snapshots/polished-1/` congelata su5181; attesa approvazione utente prima di chiudere9.
+- `docs/reviews/polish-final-review.md`, `docs/reviews/polish-fresh-eyes.md`, `docs/evidence/step-09/`: rifinitura TmJx2Hx1 SHIP/LANDS/ON TRACK, `snapshots/polished-1/` congelata su5181 e approvata («si, mi sembra pronta»); passo9 completato, deploy non autorizzato.
 - `.claude/agents/*.md`: tre prospettive di review; nel percorso snello un singolo reviewer le combina.
 - `docs/BACKLOG.md`: feedback e difetti da verificare.
 - Reviewer dal passo 6: critico, direttore degli incontri/comicità, direttore narrativo.
@@ -44,7 +44,7 @@ Progetto basato sulla pipeline in 10 passi della skill `build-a-game`. Iniziare 
 17. `snapshots/m1-slice/` è immutabile e approvato: non modificarlo, rigenerarlo o sovrascriverlo. Il test di hash in `tools/street.test.mjs` deve restare positivo.
 18. Anche `snapshots/m2-street/` è approvato e immutabile; server5177, manifest SHA256 in `docs/evidence/step-08/m2-snapshot-baseline.json`. Non cambiare i file né i testi storici della copia. Gli hash di entrambe le copie sono gate di regressione.
 19. `snapshots/release-candidate/` è congelata e approvata dall'utente («mi sembra ok») su5179. Non modificarla o sovrascriverla; hash in `tools/release.test.mjs`. Fix e polish vanno nel sorgente e in una nuova milestone, non nella RC conservata.
-20. `snapshots/polished-1/` è congelata su5181, build TmJx2Hx1, in attesa di approvazione del polish. Non modificarla o sovrascriverla; hash in `tools/polish-snapshot.test.mjs`, baseline `docs/evidence/step-09/polished-snapshot-baseline.json`. Nuove correzioni richiedono sorgente e una milestone distinta.
+20. `snapshots/polished-1/` è congelata e approvata dall'utente («si, mi sembra pronta») su5181, build TmJx2Hx1. Non modificarla o sovrascriverla; hash in `tools/polish-snapshot.test.mjs`, baseline `docs/evidence/step-09/polished-snapshot-baseline.json`. Nuove correzioni richiedono sorgente e una milestone distinta.
 
 ## Debug visivo disponibile
 
