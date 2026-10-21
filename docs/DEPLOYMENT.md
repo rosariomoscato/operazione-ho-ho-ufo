@@ -19,7 +19,7 @@
 | Repository GitHub privato | https://github.com/rosariomoscato/operazione-ho-ho-ufo | Nessun acquisto | Impostazioni GitHub → eliminazione repository, solo con consenso |
 | Progetto Vercel | `operazione-ho-ho-ufo`, team `ros-projects-592f0548` | Hobby gratuito entro quote, uso personale non commerciale | Settings del progetto → eliminazione, solo con consenso |
 
-Repository e progetto Vercel creati, remote locale `origin` aggiunto. Nessun push o deployment ancora eseguito.
+Repository e progetto Vercel creati, remote locale `origin` aggiunto. Primo push `3596a9e` completato prima del collegamento Vercel/GitHub.
 
 Progetto Vercel ID `prj_6fGbsacHJ7djSleYM0iFUEIE8zeR`. Impostazioni applicate: preset `vite`, install `npm ci`, build `npm run build`, output `dist`. Nessun URL produzione mostrato prima del primo deployment. Collegamento locale in `.vercel/` ignorata da Git. Il comando link ha creato automaticamente `.env.local` con credenziale OIDC locale: contenuto mai letto/stampato, ignorato da Git, nessuna variabile richiesta dal gioco o impostata in produzione. Lista variabili produzione vuota.
 
@@ -38,4 +38,11 @@ La CLI ha aggiunto `.vercel` a `.gitignore`; rimosso solo il pattern ridondante 
 
 ## Stato
 
-Preparazione autorizzata. Creazione, collegamento GitHub e pubblicazione ancora da eseguire.
+Collegamento GitHub riuscito tramite `vercel git connect`. Il prossimo push su `master` deve avviare la prima build: verificare deployment, SHA e dominio assegnato prima di dichiarare la pubblicazione riuscita. Nessun caricamento diretto CLI previsto.
+
+## Costi e gestione
+
+- Hobby: solo uso personale non commerciale. Quote documentate alla verifica: 100 GB/mese di trasferimento e un milione di richieste CDN/mese; non è disponibilità illimitata. Nessun piano a pagamento attivato.
+- GitHub repository privato, nessun acquisto. Progetto statico senza risorse database/storage aggiuntive.
+- Dopo verifica del collegamento, un `git push origin master` pubblica automaticamente: non usare questo comando per archiviare modifiche che non si vogliono mettere online.
+- Per fermare gli aggiornamenti automatici: scollegare il repository nelle impostazioni Git del solo progetto Vercel. Per togliere il sito: impostazioni del solo progetto Vercel; non eliminare altri progetti del team.
