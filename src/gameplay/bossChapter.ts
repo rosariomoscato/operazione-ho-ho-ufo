@@ -47,13 +47,13 @@ export class BossChapter {
   targeting(hit:THREE.Vector3):boolean {const g=this.game;if(this.boss.segments===3||distance(g.player,layout.boss)>bossConfig.giftRange||!g.visible(layout.boss,1.4))return false;
     const p=new THREE.Vector3(layout.boss.x,1.4,layout.boss.z).project(g.camera3);if(Math.hypot(p.x,p.y*.7)> (g.settings.aimAssist?.5:.12))return false;if(g.settings.aimAssist)hit.set(layout.boss.x,1.4,layout.boss.z);return true;
   }
-  private deny(reason:string,target:'core'|'tree'|'boss',text:string,range?:number):void {const g=this.game;this.deniedRange=reason==='out-of-range'&&target!=='boss'?target:null;g.notify(text);g.log('interact-denied',{reason,target,distance:range});}
+  private deny(reason:string,target:'core'|'tree'|'boss',text:string,range?:number):void {const g=this.game;this.deniedRange=reason==='out-of-range'&&target!=='boss'?target:null;if(this.deniedRange)g.notifyRange(target==='tree'?layout.treeInteraction:layout.core,target==='tree'?'Albero':'Nucleo libero');else g.notify(text);g.log('interact-denied',{reason,target,distance:range});}
   private clearFlights():void {for(const gift of this.game.gifts){gift.active=false;gift.blast=-1;gift.bossTag=null;gift.root.visible=gift.ring.visible=false;}}
   interact():void {const g=this.game;
     if(g.beat==='ending'){g.notify(this.portalClosed?'Mondo salvato. Natale consegnato.':'Nucleo restituito · il portale si sta chiudendo');return;}
     if(this.boss.segments<3){this.deny('boss-protected','boss','Prima impacchetta Squamakk: schiva il cono e colpisci il nucleo esposto.');return;}
     const target=this.coreCarried?layout.treeInteraction:layout.core,dist=distance(g.player,target);
-    if(!this.coreCarried&&distance(g.player,layout.treeInteraction)<=2.2){this.deny('no-core','tree',`Prima recupera il nucleo libero · ${distance(g.player,layout.core).toFixed(1)} m`);return;}
+    if(!this.coreCarried&&distance(g.player,layout.treeInteraction)<=2.2){this.deny('no-core','tree','Prima recupera il nucleo libero davanti al generale.');return;}
     if(this.coreCarried&&distance(g.player,layout.core)<=2.2&&dist>2.2){this.deny('already-carried','core','Nucleo già al sicuro: portalo all’albero.');return;}
     if(dist>2.2||!lineClear(g.player,target,g.world.obstacles)){this.deny('out-of-range',this.coreCarried?'tree':'core',`${this.coreCarried?'Albero':'Nucleo libero'} · ${dist.toFixed(1)} m · E entro2,2m`,dist);return;}
     this.deniedRange=null;g.feedbackUntil=0;

@@ -1,0 +1,765 @@
+[
+  {
+    "sequence": 1,
+    "command": {
+      "type": "snapshot"
+    },
+    "elapsedWallSeconds": 49.061
+  },
+  {
+    "sequence": 2,
+    "command": {
+      "type": "button",
+      "name": "Nuova partita"
+    },
+    "elapsedWallSeconds": 68.224
+  },
+  {
+    "sequence": 3,
+    "command": {
+      "type": "wait",
+      "duration": 5000
+    },
+    "elapsedWallSeconds": 146.202
+  },
+  {
+    "sequence": 4,
+    "command": {
+      "type": "wait",
+      "duration": 5000
+    },
+    "elapsedWallSeconds": 156.127
+  },
+  {
+    "sequence": 5,
+    "command": {
+      "type": "wait",
+      "duration": 5000
+    },
+    "elapsedWallSeconds": 163.932
+  },
+  {
+    "sequence": 6,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 202.927
+  },
+  {
+    "sequence": 7,
+    "command": {
+      "type": "key",
+      "key": "Space"
+    },
+    "elapsedWallSeconds": 204.767
+  },
+  {
+    "sequence": 8,
+    "command": {
+      "type": "key",
+      "key": "KeyW",
+      "duration": 2200
+    },
+    "elapsedWallSeconds": 247.891
+  },
+  {
+    "sequence": 9,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 249.834
+  },
+  {
+    "sequence": 10,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 251.602
+  },
+  {
+    "sequence": 11,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 273.669
+  },
+  {
+    "sequence": 12,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 275.78
+  },
+  {
+    "sequence": 13,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 277.755
+  },
+  {
+    "sequence": 14,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 311.959
+  },
+  {
+    "sequence": 15,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 313.808
+  },
+  {
+    "sequence": 16,
+    "command": {
+      "type": "drag",
+      "x": 640,
+      "y": 360,
+      "dx": 120,
+      "dy": 0
+    },
+    "elapsedWallSeconds": 317.206
+  },
+  {
+    "sequence": 17,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 342.935
+  },
+  {
+    "sequence": 18,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 344.74
+  },
+  {
+    "sequence": 19,
+    "command": {
+      "type": "key",
+      "key": "KeyW",
+      "duration": 800
+    },
+    "elapsedWallSeconds": 348.291
+  },
+  {
+    "sequence": 20,
+    "command": {
+      "type": "key",
+      "key": "KeyA",
+      "duration": 500
+    },
+    "elapsedWallSeconds": 406.077
+  },
+  {
+    "sequence": 21,
+    "command": {
+      "type": "key",
+      "key": "KeyE"
+    },
+    "elapsedWallSeconds": 407.995
+  },
+  {
+    "sequence": 22,
+    "command": {
+      "type": "key",
+      "key": "KeyW",
+      "duration": 1100
+    },
+    "elapsedWallSeconds": 446.252
+  },
+  {
+    "sequence": 23,
+    "command": {
+      "type": "key",
+      "key": "KeyE"
+    },
+    "elapsedWallSeconds": 448.757
+  },
+  {
+    "sequence": 24,
+    "command": {
+      "type": "key",
+      "key": "KeyA",
+      "duration": 400
+    },
+    "elapsedWallSeconds": 481.336
+  },
+  {
+    "sequence": 25,
+    "command": {
+      "type": "key",
+      "key": "KeyE"
+    },
+    "elapsedWallSeconds": 484.571
+  },
+  {
+    "sequence": 26,
+    "command": {
+      "type": "key",
+      "key": "KeyW",
+      "duration": 2200
+    },
+    "elapsedWallSeconds": 525.203
+  },
+  {
+    "sequence": 27,
+    "command": {
+      "type": "drag",
+      "x": 640,
+      "y": 360,
+      "dx": -90,
+      "dy": 0
+    },
+    "elapsedWallSeconds": 528.078
+  },
+  {
+    "sequence": 28,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 529.762
+  },
+  {
+    "sequence": 29,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 548.293
+  },
+  {
+    "sequence": 30,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 551.292
+  },
+  {
+    "sequence": 31,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 553.286
+  },
+  {
+    "sequence": 32,
+    "command": {
+      "type": "key",
+      "key": "KeyA",
+      "duration": 1200
+    },
+    "elapsedWallSeconds": 580.177
+  },
+  {
+    "sequence": 33,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 582.069
+  },
+  {
+    "sequence": 34,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 583.462
+  },
+  {
+    "sequence": 35,
+    "command": {
+      "type": "key",
+      "key": "KeyW",
+      "duration": 1900
+    },
+    "elapsedWallSeconds": 620.408
+  },
+  {
+    "sequence": 36,
+    "command": {
+      "type": "key",
+      "key": "KeyE"
+    },
+    "elapsedWallSeconds": 625.434
+  },
+  {
+    "sequence": 37,
+    "command": {
+      "type": "key",
+      "key": "KeyD",
+      "duration": 700
+    },
+    "elapsedWallSeconds": 653.689
+  },
+  {
+    "sequence": 38,
+    "command": {
+      "type": "key",
+      "key": "KeyW",
+      "duration": 1700
+    },
+    "elapsedWallSeconds": 657.374
+  },
+  {
+    "sequence": 39,
+    "command": {
+      "type": "key",
+      "key": "KeyE"
+    },
+    "elapsedWallSeconds": 658.961
+  },
+  {
+    "sequence": 40,
+    "command": {
+      "type": "key",
+      "key": "KeyW",
+      "duration": 200
+    },
+    "elapsedWallSeconds": 681.894
+  },
+  {
+    "sequence": 41,
+    "command": {
+      "type": "key",
+      "key": "KeyE"
+    },
+    "elapsedWallSeconds": 684.091
+  },
+  {
+    "sequence": 42,
+    "command": {
+      "type": "key",
+      "key": "KeyA",
+      "duration": 250
+    },
+    "elapsedWallSeconds": 719.243
+  },
+  {
+    "sequence": 43,
+    "command": {
+      "type": "key",
+      "key": "KeyE"
+    },
+    "elapsedWallSeconds": 721.528
+  },
+  {
+    "sequence": 44,
+    "command": {
+      "type": "drag",
+      "x": 640,
+      "y": 360,
+      "dx": 420,
+      "dy": 0
+    },
+    "elapsedWallSeconds": 723.683
+  },
+  {
+    "sequence": 45,
+    "command": {
+      "type": "key",
+      "key": "KeyW",
+      "duration": 1700
+    },
+    "elapsedWallSeconds": 763.48
+  },
+  {
+    "sequence": 46,
+    "command": {
+      "type": "drag",
+      "x": 640,
+      "y": 360,
+      "dx": 65,
+      "dy": 0
+    },
+    "elapsedWallSeconds": 766.219
+  },
+  {
+    "sequence": 47,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 769.747
+  },
+  {
+    "sequence": 48,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 789.104
+  },
+  {
+    "sequence": 49,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 792.028
+  },
+  {
+    "sequence": 50,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 793.513
+  },
+  {
+    "sequence": 51,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 821.797
+  },
+  {
+    "sequence": 52,
+    "command": {
+      "type": "key",
+      "key": "KeyW",
+      "duration": 1400
+    },
+    "elapsedWallSeconds": 826.846
+  },
+  {
+    "sequence": 53,
+    "command": {
+      "type": "key",
+      "key": "KeyE"
+    },
+    "elapsedWallSeconds": 830.078
+  },
+  {
+    "sequence": 54,
+    "command": {
+      "type": "key",
+      "key": "KeyD",
+      "duration": 300
+    },
+    "elapsedWallSeconds": 872.079
+  },
+  {
+    "sequence": 55,
+    "command": {
+      "type": "key",
+      "key": "KeyE"
+    },
+    "elapsedWallSeconds": 875.151
+  },
+  {
+    "sequence": 56,
+    "command": {
+      "type": "drag",
+      "x": 640,
+      "y": 360,
+      "dx": -550,
+      "dy": 0
+    },
+    "elapsedWallSeconds": 900.43
+  },
+  {
+    "sequence": 57,
+    "command": {
+      "type": "key",
+      "key": "KeyH"
+    },
+    "elapsedWallSeconds": 902.204
+  },
+  {
+    "sequence": 58,
+    "command": {
+      "type": "key",
+      "key": "KeyW",
+      "duration": 1250
+    },
+    "elapsedWallSeconds": 941.539
+  },
+  {
+    "sequence": 59,
+    "command": {
+      "type": "key",
+      "key": "KeyE"
+    },
+    "elapsedWallSeconds": 943.712
+  },
+  {
+    "sequence": 60,
+    "command": {
+      "type": "key",
+      "key": "KeyA",
+      "duration": 500
+    },
+    "elapsedWallSeconds": 994.249
+  },
+  {
+    "sequence": 61,
+    "command": {
+      "type": "key",
+      "key": "KeyE"
+    },
+    "elapsedWallSeconds": 996.653
+  },
+  {
+    "sequence": 62,
+    "command": {
+      "type": "key",
+      "key": "KeyW",
+      "duration": 150
+    },
+    "elapsedWallSeconds": 1028.285
+  },
+  {
+    "sequence": 63,
+    "command": {
+      "type": "key",
+      "key": "KeyE"
+    },
+    "elapsedWallSeconds": 1034.899
+  },
+  {
+    "sequence": 64,
+    "command": {
+      "type": "key",
+      "key": "KeyW",
+      "duration": 1000
+    },
+    "elapsedWallSeconds": 1101.302
+  },
+  {
+    "sequence": 65,
+    "command": {
+      "type": "key",
+      "key": "KeyA",
+      "duration": 700
+    },
+    "elapsedWallSeconds": 1105.244
+  },
+  {
+    "sequence": 66,
+    "command": {
+      "type": "key",
+      "key": "KeyW",
+      "duration": 1200
+    },
+    "elapsedWallSeconds": 1192.214
+  },
+  {
+    "sequence": 67,
+    "command": {
+      "type": "drag",
+      "x": 640,
+      "y": 360,
+      "dx": 85,
+      "dy": 0
+    },
+    "elapsedWallSeconds": 1197.164
+  },
+  {
+    "sequence": 68,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 1202.8
+  },
+  {
+    "sequence": 69,
+    "command": {
+      "type": "key",
+      "key": "KeyA",
+      "duration": 800
+    },
+    "elapsedWallSeconds": 1247.906
+  },
+  {
+    "sequence": 70,
+    "command": {
+      "type": "drag",
+      "x": 640,
+      "y": 360,
+      "dx": 90,
+      "dy": 0
+    },
+    "elapsedWallSeconds": 1250.515
+  },
+  {
+    "sequence": 71,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 1272.702
+  },
+  {
+    "sequence": 72,
+    "command": {
+      "type": "key",
+      "key": "Space"
+    },
+    "elapsedWallSeconds": 1302.345
+  },
+  {
+    "sequence": 73,
+    "command": {
+      "type": "key",
+      "key": "KeyD",
+      "duration": 900
+    },
+    "elapsedWallSeconds": 1307.031
+  },
+  {
+    "sequence": 74,
+    "command": {
+      "type": "click",
+      "x": 640,
+      "y": 360
+    },
+    "elapsedWallSeconds": 1347.557
+  },
+  {
+    "sequence": 75,
+    "command": {
+      "type": "drag",
+      "x": 640,
+      "y": 360,
+      "dx": -120,
+      "dy": 0
+    },
+    "elapsedWallSeconds": 1388.554
+  },
+  {
+    "sequence": 76,
+    "command": {
+      "type": "key",
+      "key": "KeyW",
+      "duration": 1100
+    },
+    "elapsedWallSeconds": 1391.965
+  },
+  {
+    "sequence": 77,
+    "command": {
+      "type": "key",
+      "key": "KeyE"
+    },
+    "elapsedWallSeconds": 1398.275
+  },
+  {
+    "sequence": 78,
+    "command": {
+      "type": "drag",
+      "x": 640,
+      "y": 360,
+      "dx": 420,
+      "dy": 0
+    },
+    "elapsedWallSeconds": 1434.951
+  },
+  {
+    "sequence": 79,
+    "command": {
+      "type": "key",
+      "key": "KeyW",
+      "duration": 1300
+    },
+    "elapsedWallSeconds": 1439.449
+  },
+  {
+    "sequence": 80,
+    "command": {
+      "type": "key",
+      "key": "KeyE"
+    },
+    "elapsedWallSeconds": 1444.002
+  },
+  {
+    "sequence": 81,
+    "command": {
+      "type": "key",
+      "key": "KeyA",
+      "duration": 300
+    },
+    "elapsedWallSeconds": 1486.842
+  },
+  {
+    "sequence": 82,
+    "command": {
+      "type": "key",
+      "key": "KeyE"
+    },
+    "elapsedWallSeconds": 1488.903
+  },
+  {
+    "sequence": 83,
+    "command": {
+      "type": "wait",
+      "duration": 3000
+    },
+    "elapsedWallSeconds": 1533.869
+  },
+  {
+    "sequence": 84,
+    "command": {
+      "type": "wait",
+      "duration": 3000
+    },
+    "elapsedWallSeconds": 1577.333
+  },
+  {
+    "sequence": 85,
+    "command": {
+      "type": "button",
+      "name": "Nuova avventura"
+    },
+    "elapsedWallSeconds": 1615.065
+  },
+  {
+    "sequence": 86,
+    "command": {
+      "type": "close"
+    },
+    "elapsedWallSeconds": 1651.663
+  }
+]

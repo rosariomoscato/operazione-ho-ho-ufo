@@ -33,9 +33,10 @@ export async function hold(page, key, milliseconds) {
   finally { await page.keyboard.up(key); }
 }
 
-export async function walk(page, goal, { obstacles = [], stop = 1.5, maxSteps = 100 } = {}) {
+export async function walk(page, goal, { obstacles = [], stop = 1.5, maxSteps = 100, beforeStep } = {}) {
   for (let step = 0; step < maxSteps; step++) {
     const s = await live(page);
+    if (beforeStep && await beforeStep(s)) continue;
     if (math.distance(s.player, goal) <= stop) return;
     const waypoint = math.nextWaypoint(s.player, goal, obstacles, .55);
     await face(page, waypoint);
@@ -46,5 +47,8 @@ export async function walk(page, goal, { obstacles = [], stop = 1.5, maxSteps = 
 
 export async function gift(page) {
   await live(page);
-  const size = page.viewportSize(); await page.mouse.click(size.width / 2, size.height / 2);
+  // Gifts use the reticle, not the clicked pixel. This canvas corner is outside
+  // every menu button: if death races the guard, the click hits only the inert
+  // overlay, never Title/Retry. Avoid locator scrolling/actionability latency.
+  await page.mouse.click(8,8);
 }

@@ -1,0 +1,312 @@
+{
+  "pass": false,
+  "kind": "real-input-new-game-to-ending",
+  "shots": 9,
+  "deaths": [
+    {
+      "chapter": "courtyard",
+      "time": 35.96889999999938,
+      "checkpoint": {
+        "version": 3,
+        "chapter": "courtyard",
+        "boundary": "C",
+        "healed": false,
+        "firstWrapped": true,
+        "disabledAnchors": [],
+        "clearedArenas": [],
+        "activatedArenas": [],
+        "defeatedEnemies": [],
+        "bossSegments": 0,
+        "bossDefeated": false,
+        "coreCarried": false,
+        "coreReturned": false
+      }
+    },
+    {
+      "chapter": "courtyard",
+      "time": 17.83570000000022,
+      "checkpoint": {
+        "version": 3,
+        "chapter": "courtyard",
+        "boundary": "C",
+        "healed": true,
+        "firstWrapped": true,
+        "disabledAnchors": [],
+        "clearedArenas": [],
+        "activatedArenas": [],
+        "defeatedEnemies": [],
+        "bossSegments": 0,
+        "bossDefeated": false,
+        "coreCarried": false,
+        "coreReturned": false
+      }
+    }
+  ],
+  "boundaries": [],
+  "errors": [
+    "locator.click: Timeout 1500ms exceeded.\nCall log:\n\u001b[2m  - waiting for locator('canvas')\u001b[22m\n\u001b[2m    - locator resolved to <canvas width=\"1280\" height=\"720\" tabindex=\"0\" data-engine=\"three.js r186\" aria-label=\"Gioco desktop. W/A/S/D: muovi. Clic: regalo. Spazio: schiva. E: usa. H: aiuto. Esc: pausa. Destro trascinato: guarda.\"></canvas>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m    - element is visible, enabled and stable\u001b[22m\n\u001b[2m    - scrolling into view if needed\u001b[22m\n\n    at gift (C:\\Users\\rosar\\kDrive\\Lavoro\\Progetti\\game-test\\tools\\input-driver.mjs:52:32)\n    at async giftOrRetry (C:\\Users\\rosar\\kDrive\\Lavoro\\Progetti\\game-test\\tools\\playthrough-acts.mjs:50:9)\n    at async firstTwoActs (C:\\Users\\rosar\\kDrive\\Lavoro\\Progetti\\game-test\\tools\\playthrough-acts.mjs:83:10)\n    at async file:///C:/Users/rosar/kDrive/Lavoro/Progetti/game-test/tools/full-playthrough.mjs:24:3"
+  ],
+  "started": 1792583217308,
+  "html": "<!doctype html>\n<html lang=\"it\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"icon\" href=\"data:,\"><title>Operazione Ho Ho UFO · Il cortile</title>  <script type=\"module\" crossorigin src=\"/assets/index-TmJx2Hx1.js\"></script>\n  <link rel=\"modulepreload\" crossorigin href=\"/assets/three-DjPfJOhV.js\">\n  <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CfZ1PVhC.css\">\n</head><body><div id=\"app\"></div></body></html>\n",
+  "failure": {
+    "settings": {
+      "master": 0.7,
+      "music": 0.3,
+      "effects": 0.65,
+      "reducedMotion": false,
+      "aimAssist": true,
+      "sensitivity": 1,
+      "invertY": false,
+      "fov": 53,
+      "keyBindings": {
+        "forward": "KeyW",
+        "backward": "KeyS",
+        "left": "KeyA",
+        "right": "KeyD",
+        "dodge": "Space",
+        "interact": "KeyE",
+        "help": "KeyH"
+      }
+    },
+    "cameraDiagnostics": {
+      "position": [
+        1.3087708354042231,
+        4.211921756621386,
+        4.559183308026259
+      ],
+      "look": [
+        0.20794453777049765,
+        1.1,
+        -9.195840554637085
+      ],
+      "distance": 9.015666969857964,
+      "compressed": false,
+      "occluded": []
+    },
+    "chapter": "courtyard",
+    "act": "courtyard",
+    "actTitle": "Il cortile del laboratorio",
+    "beat": "battle",
+    "group": 3,
+    "player": {
+      "x": 0,
+      "z": -4,
+      "hp": 6,
+      "invulnerableUntil": 1.25,
+      "dodgeUntil": 0,
+      "dodgeReady": 0,
+      "dx": -0.3746321506897417,
+      "dz": -0.9271735283481612
+    },
+    "camera": {
+      "yaw": -0.04,
+      "pitch": 0.3,
+      "view": "player"
+    },
+    "worldFallback": false,
+    "boss": null,
+    "bossSegments": 0,
+    "bossDefeated": false,
+    "coreCarried": false,
+    "coreReturned": false,
+    "gifts": [],
+    "disabledAnchors": [],
+    "clearedArenas": [],
+    "activatedArenas": [],
+    "defeatedEnemies": [],
+    "anchorCount": 0,
+    "arenas": [],
+    "anchors": [
+      {
+        "id": "courtyard",
+        "name": "Laboratorio",
+        "x": 0,
+        "z": -9,
+        "disabled": false
+      }
+    ],
+    "bolts": [],
+    "systemConfigs": [
+      {
+        "id": "ranged",
+        "windup": 1.2,
+        "lock": 0.2,
+        "recovery": 1.2,
+        "speed": 6,
+        "radius": 0.18,
+        "range": 12,
+        "travel": 18,
+        "lifetime": 3,
+        "pool": 3
+      }
+    ],
+    "committed": 1,
+    "lastProgress": 11.53233333333345,
+    "hintStage": 0,
+    "rangedLearned": false,
+    "droneHit": true,
+    "dodgeUsed": true,
+    "remaining": 3,
+    "pending": 0,
+    "neutralized": 3,
+    "healAvailable": false,
+    "healed": true,
+    "firstWrapped": true,
+    "review": false,
+    "preview": false,
+    "playing": true,
+    "time": 3.0003999999999893,
+    "enemies": [
+      {
+        "id": 4,
+        "key": "courtyard:4",
+        "kind": "melee",
+        "x": 3.9285639995310766,
+        "z": -7.286104319342026,
+        "hp": 2,
+        "status": "approach",
+        "since": 0,
+        "attackId": 0,
+        "angle": -0.8742129926303296,
+        "hit": false
+      },
+      {
+        "id": 5,
+        "key": "courtyard:5",
+        "kind": "melee",
+        "x": 2.747966872568635,
+        "z": -7.16468950528354,
+        "hp": 2,
+        "status": "approach",
+        "since": 0,
+        "attackId": 0,
+        "angle": 0.15839191553647247,
+        "hit": false
+      },
+      {
+        "id": 6,
+        "key": "courtyard:6",
+        "kind": "melee",
+        "x": 0.6138339201629393,
+        "z": -6.516545356714116,
+        "hp": 2,
+        "status": "windup",
+        "since": 3.0003999999999893,
+        "attackId": 17,
+        "angle": -0.23924749103572776,
+        "hit": false
+      }
+    ],
+    "objective": "Libera il cortile · 3 difensori",
+    "checkpoint": {
+      "version": 3,
+      "chapter": "courtyard",
+      "boundary": "C",
+      "healed": true,
+      "firstWrapped": true,
+      "disabledAnchors": [],
+      "clearedArenas": [],
+      "activatedArenas": [],
+      "defeatedEnemies": [],
+      "bossSegments": 0,
+      "bossDefeated": false,
+      "coreCarried": false,
+      "coreReturned": false
+    },
+    "eventLog": [
+      {
+        "time": 0,
+        "type": "group-enter",
+        "group": 3
+      },
+      {
+        "time": 0,
+        "type": "retry",
+        "chapter": "courtyard",
+        "boundary": "C"
+      },
+      {
+        "time": 3,
+        "type": "attack-windup",
+        "id": 6,
+        "attackId": 17
+      }
+    ],
+    "storageAvailable": true,
+    "transitions": [
+      {
+        "action": "menu-action",
+        "chapter": "courtyard",
+        "boundary": "training",
+        "menu": "title",
+        "hp": 6,
+        "time": 0,
+        "button": "new",
+        "clickDetail": 1
+      },
+      {
+        "action": "new-game",
+        "chapter": "courtyard",
+        "boundary": "training",
+        "menu": "title",
+        "hp": 6,
+        "time": 0
+      },
+      {
+        "action": "open-menu",
+        "chapter": "courtyard",
+        "boundary": "C",
+        "menu": "none",
+        "hp": 0,
+        "time": 35.96889999999938,
+        "nextMenu": "dead"
+      },
+      {
+        "action": "menu-action",
+        "chapter": "courtyard",
+        "boundary": "C",
+        "menu": "dead",
+        "hp": 0,
+        "time": 35.96889999999938,
+        "button": "retry",
+        "clickDetail": 1
+      },
+      {
+        "action": "retry",
+        "chapter": "courtyard",
+        "boundary": "C",
+        "menu": "dead",
+        "hp": 0,
+        "time": 35.96889999999938
+      },
+      {
+        "action": "open-menu",
+        "chapter": "courtyard",
+        "boundary": "C",
+        "menu": "none",
+        "hp": 0,
+        "time": 17.83570000000022,
+        "nextMenu": "dead"
+      },
+      {
+        "action": "menu-action",
+        "chapter": "courtyard",
+        "boundary": "C",
+        "menu": "dead",
+        "hp": 0,
+        "time": 17.83570000000022,
+        "button": "retry",
+        "clickDetail": 1
+      },
+      {
+        "action": "retry",
+        "chapter": "courtyard",
+        "boundary": "C",
+        "menu": "dead",
+        "hp": 0,
+        "time": 17.83570000000022
+      }
+    ]
+  },
+  "wallSeconds": 92.267
+}

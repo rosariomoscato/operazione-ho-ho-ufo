@@ -1,0 +1,386 @@
+{
+  "pass": false,
+  "errors": [
+    "AssertionError [ERR_ASSERTION]: Expected values to be strictly equal:\n\n'53°' !== '53?'\n\n    at file:///C:/Users/rosar/kDrive/Lavoro/Progetti/game-test/[eval1]:3:743"
+  ],
+  "html": "<!doctype html>\n<html lang=\"it\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"icon\" href=\"data:,\"><title>Operazione Ho Ho UFO · Il cortile</title>  <script type=\"module\" crossorigin src=\"/assets/index-TmJx2Hx1.js\"></script>\n  <link rel=\"modulepreload\" crossorigin href=\"/assets/three-DjPfJOhV.js\">\n  <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CfZ1PVhC.css\">\n</head><body><div id=\"app\"></div></body></html>\n",
+  "training": {
+    "state": {
+      "settings": {
+        "master": 0.7,
+        "music": 0.3,
+        "effects": 0.65,
+        "reducedMotion": false,
+        "aimAssist": true,
+        "sensitivity": 1,
+        "invertY": false,
+        "fov": 53,
+        "keyBindings": {
+          "forward": "KeyW",
+          "backward": "KeyS",
+          "left": "KeyA",
+          "right": "KeyD",
+          "dodge": "Space",
+          "interact": "KeyE",
+          "help": "KeyH"
+        }
+      },
+      "cameraDiagnostics": {
+        "position": [
+          1.65,
+          4.211921756621386,
+          17.5
+        ],
+        "look": [
+          0,
+          1.1,
+          3.8
+        ],
+        "distance": 9.015666969857964,
+        "compressed": false,
+        "occluded": []
+      },
+      "chapter": "courtyard",
+      "act": "courtyard",
+      "actTitle": "Il cortile del laboratorio",
+      "beat": "training",
+      "group": 0,
+      "player": {
+        "x": 0,
+        "z": 9,
+        "hp": 6,
+        "invulnerableUntil": 1.25,
+        "dodgeUntil": 0,
+        "dodgeReady": 0,
+        "dx": 0,
+        "dz": -1
+      },
+      "camera": {
+        "yaw": 0,
+        "pitch": 0.3,
+        "view": "player"
+      },
+      "worldFallback": false,
+      "boss": null,
+      "bossSegments": 0,
+      "bossDefeated": false,
+      "coreCarried": false,
+      "coreReturned": false,
+      "gifts": [],
+      "disabledAnchors": [],
+      "clearedArenas": [],
+      "activatedArenas": [],
+      "defeatedEnemies": [],
+      "anchorCount": 0,
+      "arenas": [],
+      "anchors": [
+        {
+          "id": "courtyard",
+          "name": "Laboratorio",
+          "x": 0,
+          "z": -9,
+          "disabled": false
+        }
+      ],
+      "bolts": [],
+      "systemConfigs": [
+        {
+          "id": "ranged",
+          "windup": 1.2,
+          "lock": 0.2,
+          "recovery": 1.2,
+          "speed": 6,
+          "radius": 0.18,
+          "range": 12,
+          "travel": 18,
+          "lifetime": 3,
+          "pool": 3
+        }
+      ],
+      "committed": 0,
+      "lastProgress": 0,
+      "hintStage": 0,
+      "rangedLearned": false,
+      "droneHit": false,
+      "dodgeUsed": false,
+      "remaining": 6,
+      "pending": 0,
+      "neutralized": 0,
+      "healAvailable": false,
+      "healed": false,
+      "firstWrapped": false,
+      "review": false,
+      "preview": false,
+      "playing": true,
+      "time": 1.0670000000000013,
+      "enemies": [],
+      "objective": "Allinea il drone al + centrale e lancia",
+      "checkpoint": {
+        "version": 3,
+        "chapter": "courtyard",
+        "boundary": "training",
+        "healed": false,
+        "firstWrapped": false,
+        "disabledAnchors": [],
+        "clearedArenas": [],
+        "activatedArenas": [],
+        "defeatedEnemies": [],
+        "bossSegments": 0,
+        "bossDefeated": false,
+        "coreCarried": false,
+        "coreReturned": false
+      },
+      "eventLog": [
+        {
+          "time": 0,
+          "type": "checkpoint",
+          "chapter": "courtyard",
+          "boundary": "training",
+          "persisted": true
+        },
+        {
+          "time": 0,
+          "type": "dialogue",
+          "id": "vo.squamakk.battery"
+        },
+        {
+          "time": 0.234,
+          "type": "beat",
+          "beat": "training"
+        },
+        {
+          "time": 0.234,
+          "type": "dialogue",
+          "id": "vo.briciola.training"
+        }
+      ],
+      "storageAvailable": true,
+      "transitions": [
+        {
+          "action": "menu-action",
+          "chapter": "courtyard",
+          "boundary": "training",
+          "menu": "title",
+          "hp": 6,
+          "time": 0,
+          "button": "new",
+          "clickDetail": 1
+        },
+        {
+          "action": "new-game",
+          "chapter": "courtyard",
+          "boundary": "training",
+          "menu": "title",
+          "hp": 6,
+          "time": 0
+        }
+      ]
+    },
+    "selfTest": {
+      "pass": true,
+      "checks": [
+        {
+          "name": "santa feet floor (m)",
+          "value": 0,
+          "limit": 0.002,
+          "pass": true
+        },
+        {
+          "name": "player collider penetration",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "enemy collider penetration",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "committed attacks including flying bolts",
+          "value": 0,
+          "limit": 1,
+          "pass": true
+        },
+        {
+          "name": "unique level registry",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "level registry contains courtyard",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "swept collider regression",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "wall ray regression",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "unique acts registry",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "unique cast registry",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "unique systems registry",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "unique scenarios registry",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "active world lights",
+          "value": 3,
+          "limit": 3,
+          "pass": true
+        },
+        {
+          "name": "maximum live defenders",
+          "value": 0,
+          "limit": 6,
+          "pass": true
+        },
+        {
+          "name": "bounded hostile bolt pool",
+          "value": 0,
+          "limit": 1,
+          "pass": true
+        },
+        {
+          "name": "live bolt finite and unexpired",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "draw calls",
+          "value": 42,
+          "limit": 150,
+          "pass": true
+        },
+        {
+          "name": "triangles",
+          "value": 70956,
+          "limit": 150000,
+          "pass": true
+        },
+        {
+          "name": "lights",
+          "value": 3,
+          "limit": 6,
+          "pass": true
+        },
+        {
+          "name": "shadow lights",
+          "value": 0,
+          "limit": 2,
+          "pass": true
+        },
+        {
+          "name": "telegraph < 1 s",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "recovery < 1.2 s",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "observed ranged telegraph < 1.2 s",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "observed ranged locked time < .8 s",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "duplicate damage by attack ID",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        }
+      ],
+      "stats": {
+        "cameraDiagnostics": {
+          "position": [
+            1.65,
+            4.211921756621386,
+            17.5
+          ],
+          "look": [
+            0,
+            1.1,
+            3.8
+          ],
+          "distance": 9.015666969857964,
+          "compressed": false,
+          "occluded": []
+        },
+        "renderFrame": 41,
+        "drawCalls": 42,
+        "triangles": 70956,
+        "geometries": 38,
+        "textures": 3,
+        "lights": 3,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "shipHeight": null,
+        "storyNodes": {
+          "Nave di Squamakk": null,
+          "Portale alieno": null,
+          "Slitta delle consegne": null,
+          "Albero della Stella Polare": null
+        },
+        "audio": {
+          "loaded": true,
+          "activeEffects": 1,
+          "error": null
+        }
+      },
+      "evidence": {
+        "meleeReleases": 0,
+        "rangedReleases": 0,
+        "bossReleases": 0,
+        "bossWindowHits": 0,
+        "damageEvents": 0,
+        "handContactsMeasured": 0,
+        "scarfContactsMeasured": 0
+      },
+      "notes": [
+        "Empty attack logs are NOT timing evidence.",
+        "Only cast exposing root.userData.measureHandContacts has measured hand contacts; scarf/deck/muzzle are separate real support checks.",
+        "Performance is draw/triangle budget, not a laptop FPS claim."
+      ]
+    }
+  }
+}

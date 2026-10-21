@@ -1,6 +1,6 @@
 # Operazione Ho Ho UFO — Backlog
 
-Raccogliere qui feedback, parole dell'utente, causa, soluzione e verifica. M1 approvato; M2 in verifica prima del playtest utente.
+Raccogliere qui feedback, parole dell'utente, causa, soluzione e verifica. M1/M2/avventura completa approvati; rifinitura passo9 in verifica. Gli stati nelle sezioni storiche sotto sono aggiornati dal riepilogo passo9 finale, senza alterare le copie conservate.
 
 | ID | Fonte | Nota | Causa | Soluzione | Stato |
 |---|---|---|---|---|---|
@@ -50,3 +50,19 @@ Stati: aperto, in corso, risolto (con verifica), non risolto (motivazione approv
 | M3-F1 | Fresh-eyes | Camera molto vicina presso tronco, Santa in parte sotto chioma nel quadro finale | Collisione camera/chioma e composizione | Rifinire pivot/inquadratura nel passo9, senza cambiare collider o obiettivo | MINOR aperto, recuperabile senza danno o stallo |
 | M3-F2 | Fresh-eyes | Messaggio fuori portata mantiene distanza vecchia finché si entra nel raggio | Feedback temporaneo dopo E | Aggiornare il valore o abbreviarlo durante movimento | MINOR aperto; il prompt si sblocca in portata |
 | M3-F3 | Fresh-eyes | MIRATO permissivo e «riallinea davanti» poco preciso | Assistenza e soglia di acquisizione rispetto alla proiezione camera | Chiarire aggancio e «centra meglio con il destro» in rifinitura | MINOR aperto, completato0morti/5HP |
+
+## Verifica rifinitura — TmJx2Hx1
+
+| Riferimenti | Esito sorgente rifinito | Prova / limite |
+|---|---|---|
+| M1-F3/F4 | Etichette impilate fuori dai volumi facciali, pannelli inferiori compattati senza ridurre font | Catture1080/M2 e audit PASS; non garantisce ogni possibile incrocio di6NPC |
+| M2-C1 | Bocca reale/cue/bolt raccordati, sweep root→mouth conserva ripari/player | `step-09/controls/muzzle.json`3/3; timing invariato |
+| M2-F1, M3-F1 camera gameplay | Risolto boom dentro testa: volumi3D e trasparenza locale clone-only |864pose main/288viste, clearance≥.28m;2712pose builder/FOV45/53/75;nessuna geometria/collider spostata |
+| M3-F1 quadro finale | MINOR residuo: Santa vicino all'albero ancora in parte sotto chioma nella ripresa ampia | Freshfull083/084; payoff testuale leggibile e finale completato. Non dichiarato risolto dalla camera gameplay |
+| M2-F2, M3-F2 | Feedback range live con coordinate/condizione strutturate, pronto locale preferito nei pareggi limitati | Prove builder e freshfull: E fuori2.2m spiegato, riposizionamento/E riuscito |
+| M2-F3, M3-F3 | AGGANCIATO·assistenza distinto da MIRATO·tiro al+; OFF non devia la traiettoria | UI7/7, catture ON/OFF e nuovo fullfresh completato senza coaching |
+| POLISH-UI1/2 | Focus rimappatura preservato; sensibilità×/FOVgameplay° mostrati e aggiornati | Main browser7/7 inclusi focus dopo successo/rifiuto/annullo e valori live |
+| POLISH-T1 | Fullbot finale PASS:25lanci2morti,Nuova partita→tutti atti→finale; precedenti problemi del driver corretti | Report falliti preservati in step-09/pre-integration; gift clicca angolo canvas fuori dai pulsanti e bot affronta minacceM2 prima di avanzare. Nessun cambio gioco/difficoltà, limite retry12 invariato;279.762swall non tempo umano |
+| POLISH-F1 | FreshfullPASS: tutti gli atti da Nuova partita, finale non saltato,0morti/retry,riavvio verificato |85richiesteUI, pausaEsc fraazioni/audio muto; non misura difficoltà continua/durataumana. Sciarpa letta ma dettaglio visivo non distinto dal tester; screenshot controllato1.5 lo mostra |
+
+M2-T2 storico non attribuito retroattivamente a una causa: nel bot passo9 è invece misurato un distinto clickTitle dopo morte, corretto nel driver. Nessuna regressione di progressione osservata nel freshfull. Review/freeze finale ancora da chiudere.

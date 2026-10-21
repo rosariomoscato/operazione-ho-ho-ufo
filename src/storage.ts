@@ -2,11 +2,16 @@ import type { ActId, AudioSettings } from './contracts';
 export type Boundary = 'training' | 'A' | 'B' | 'C' | 'anchor' | 'complete' | 'street' | 'street-complete' | 'square' | 'boss' | 'core' | 'return-core' | 'ending';
 export interface BossCheckpoint { bossSegments:number; bossDefeated:boolean; coreCarried:boolean; coreReturned:boolean }
 export interface Checkpoint extends BossCheckpoint { version: 3; chapter: ActId; boundary: Boundary; healed: boolean; firstWrapped: boolean; disabledAnchors: string[]; clearedArenas: string[]; activatedArenas: string[]; defeatedEnemies: string[] }
-export interface Settings extends AudioSettings { reducedMotion: boolean; aimAssist: boolean }
+export type ControlAction='forward'|'backward'|'left'|'right'|'dodge'|'interact'|'help';
+export type KeyBindings=Record<ControlAction,string>;
+export const defaultKeyBindings:Readonly<KeyBindings>=Object.freeze({forward:'KeyW',backward:'KeyS',left:'KeyA',right:'KeyD',dodge:'Space',interact:'KeyE',help:'KeyH'});
+export const validBinding=(code:unknown):code is string=>typeof code==='string'&&/^(Key[A-Z]|Digit[0-9]|Arrow(Up|Down|Left|Right)|Space|Shift(Left|Right))$/.test(code);
+export interface Settings extends AudioSettings { reducedMotion: boolean; aimAssist: boolean; sensitivity:number; invertY:boolean; fov:number; keyBindings:KeyBindings }
 export const SAVE_KEY='ho-ho-ufo.checkpoint.v3', LEGACY_V2_KEY='ho-ho-ufo.checkpoint.v2', LEGACY_KEY='ho-ho-ufo.checkpoint.v1';
 const PREFS='ho-ho-ufo.settings.v1';
 let notice='';
-export const defaultSettings: Settings = {master:.7,music:.3,effects:.65,reducedMotion:false,aimAssist:true};
+export const defaultSettings: Readonly<Settings> = Object.freeze({master:.7,music:.3,effects:.65,reducedMotion:false,aimAssist:true,sensitivity:1,invertY:false,fov:53,keyBindings:defaultKeyBindings});
+export const freshSettings=():Settings=>({...defaultSettings,keyBindings:{...defaultKeyBindings}});
 export const emptyBossCheckpoint=():BossCheckpoint=>({bossSegments:0,bossDefeated:false,coreCarried:false,coreReturned:false});
 export function emptyCheckpoint(chapter:ActId='courtyard',boundary:Boundary=chapter==='courtyard'?'training':chapter==='toystreet'?'street':'square'):Checkpoint {const square=chapter==='square';return {version:3,chapter,boundary,healed:false,firstWrapped:chapter!=='courtyard',disabledAnchors:square?['workshop','carousel']:[],clearedArenas:square?['workshop','carousel']:[],activatedArenas:square?['workshop','carousel']:[],defeatedEnemies:[],...emptyBossCheckpoint()};}
 function strings(value:unknown,allowed?:string[]):value is string[] {return Array.isArray(value)&&value.every(v=>typeof v==='string'&&(!allowed||allowed.includes(v)))&&new Set(value).size===value.length;}
@@ -42,6 +47,8 @@ export function readCheckpoint():Checkpoint|null {
 export const storageNotice=():string=>notice;
 export function writeCheckpoint(save:Checkpoint):boolean {try{localStorage.setItem(SAVE_KEY,JSON.stringify(save));return true;}catch{return false;}}
 export function clearCheckpoint():boolean {let ok=true;for(const key of [SAVE_KEY,LEGACY_V2_KEY,LEGACY_KEY])try{localStorage.removeItem(key);}catch{ok=false;}return ok;}
-export function readSettings():Settings {try{const s=JSON.parse(localStorage.getItem(PREFS)??'{}') as Partial<Settings>;return{master:volume(s.master,.7),music:volume(s.music,.3),effects:volume(s.effects,.65),reducedMotion:s.reducedMotion===true,aimAssist:s.aimAssist!==false};}catch{return{...defaultSettings};}}
+export function normalizeSettings(value:unknown):Settings {const s=(value&&typeof value==='object'?value:{}) as Partial<Settings>;const keyBindings={...defaultKeyBindings},candidate=s.keyBindings;if(candidate&&Object.keys(defaultKeyBindings).every(k=>validBinding(candidate[k as ControlAction]))&&new Set(Object.keys(defaultKeyBindings).map(k=>candidate[k as ControlAction])).size===7)for(const k of Object.keys(defaultKeyBindings) as ControlAction[])keyBindings[k]=candidate[k];return{master:volume(s.master,.7),music:volume(s.music,.3),effects:volume(s.effects,.65),reducedMotion:s.reducedMotion===true,aimAssist:s.aimAssist!==false,sensitivity:finiteRange(s.sensitivity,1,.25,2),invertY:s.invertY===true,fov:finiteRange(s.fov,53,45,75),keyBindings};}
+function finiteRange(n:unknown,fallback:number,min:number,max:number):number{return typeof n==='number'&&Number.isFinite(n)?Math.max(min,Math.min(max,n)):fallback;}
+export function readSettings():Settings {try{return normalizeSettings(JSON.parse(localStorage.getItem(PREFS)??'{}'));}catch{return freshSettings();}}
 function volume(n:unknown,fallback:number):number{return typeof n==='number'&&Number.isFinite(n)?Math.max(0,Math.min(1,n)):fallback;}
-export function writeSettings(settings:Settings):void {try{localStorage.setItem(PREFS,JSON.stringify(settings));}catch{/* Preferences are optional. */}}
+export function writeSettings(settings:Settings):void {try{localStorage.setItem(PREFS,JSON.stringify(normalizeSettings(settings)));}catch{/* Preferences are optional. */}}

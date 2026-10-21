@@ -1,8 +1,9 @@
-import { Fog, Group, type Scene } from 'three';
+import { Box3, Fog, Group, Vector3, type Scene } from 'three';
 import type { CourtyardWorld, Obstacle } from '../contracts';
 import { squareLayout as layout } from '../acts/square';
 import { addLighting, Batch, palette } from '../visual/style';
 import { SquareBatch } from '../visual/square-batch';
+import { cameraProp, cameraRegion } from '../engine/camera-props';
 
 export const id = 'square';
 export const OBSTACLES: readonly Obstacle[] = [
@@ -12,7 +13,8 @@ export const OBSTACLES: readonly Obstacle[] = [
 type StoryState = 'battle' | 'core' | 'carrying' | 'ending';
 const ease = (x: number): number => { const t = Math.max(0, Math.min(1, x)); return t * t * (3 - 2 * t); };
 
-function surroundings(): Group {
+function surroundings(): { root: Group; regions: Box3[] } {
+  const regions: Box3[] = [];
   const b = new SquareBatch()
     .shape('cube', 'snow', [0, -.15, -1], [32, .3, 30])
     .shape('cube', 'timber', [0, -.47, -1], [32, .34, 30]);
@@ -20,6 +22,7 @@ function surroundings(): Group {
   for (const side of [-1, 1]) {
     for (const z of [-12, -3, 7]) {
       const x = side * 20;
+      regions.push(cameraRegion(x, z, 3, 3, 5.2));
       b.shape('cube', 'cabin', [x, 1.65, z], [5, 3.3, 5]);
       b.shape('roof', 'roof', [x, 4.05, z], [3.9, 1.6, 3.9], [0, Math.PI / 4, 0]);
       b.shape('roof', 'snow', [x, 4.21, z], [3.85, 1.52, 3.85], [0, Math.PI / 4, 0]);
@@ -37,6 +40,7 @@ function surroundings(): Group {
     for (const y of [.4, .9]) b.shape('cube', 'roof', [x, y, -1], [.12, .12, 30]);
     for (let i = 0; i < 3; i++) {
       const z = -17 + i * 14, tx = side * 25;
+      regions.push(cameraRegion(tx, z, 1.7, 1.7, 5));
       b.shape('ball', 'snow', [side * 21, -.5, z], [4.8, 1.4, 4]);
       b.shape('cylinder', 'timber', [tx, .4, z], [.18, .8, .18]);
       for (let j = 0; j < 3; j++) {
@@ -54,7 +58,8 @@ function surroundings(): Group {
     for (let x = -1.5; x <= 1.5; x += .5) b.shape('cube', 'roof', [x, .8, z], [.1, 1.6, .12]);
     b.shape('cube', 'roof', [0, 1.65, z], [4, .13, .14]);
   }
-  return b.build();
+  const root = b.build(); root.userData.cameraNoFade = true;
+  return { root, regions };
 }
 function christmasTree(): { root: Group; accents: Group } {
   const root = new Group(); root.name = 'Albero della Stella Polare';
@@ -134,7 +139,7 @@ function ship(): Group {
 export function createWorld(scene: Scene): CourtyardWorld {
   const root = new Group(); root.name = 'La piazza della Stella Polare'; scene.add(root);
   root.add(addLighting(scene)); scene.fog = new Fog(palette.sky, 35, 78);
-  root.add(surroundings());
+  const environment = surroundings(); root.add(environment.root);
   const tree = christmasTree(); tree.root.position.set(layout.tree.x, 0, layout.tree.z); root.add(tree.root);
   const sled = deliveriesSled(); sled.position.set(layout.sled.x, 0, layout.sled.z); root.add(sled);
   const saucer = ship(); saucer.position.set(layout.ship.x, layout.ship.y, layout.ship.z); root.add(saucer);
@@ -142,11 +147,18 @@ export function createWorld(scene: Scene): CourtyardWorld {
     .shape('ring', 'purple', [0, 0, 0], [3.5, 3.5, 3.5])
     .shape('ring', 'glow', [0, 0, .06], [3.2, 3.2, 3.2]).build();
   portal.name = 'Portale alieno'; portal.position.set(0, 6, -19); root.add(portal);
+  const cameraOccluders = [
+    cameraProp('square-background', environment.root, [0, 1.5, 2.5, 3.5, 4.5, 5.2], environment.regions),
+    cameraProp('square-tree', tree.root, [0, 1.1, 1.9, 3.1, 3.3, 3.6, 4.1, 4.6, 5.1, 5.6, 5.9, 6.4, 6.9, 7.4, 7.9, 8.4, 8.9, 9.1]),
+    cameraProp('square-sled', sled, [0, .3, .8, 1.2, 1.6, 1.9]),
+    cameraProp('square-ship', saucer, [-.7, -.2, .2, .4, .8, 1.1]),
+    cameraProp('square-portal', portal, [-3.9, -3, -2, -1, 0, 1, 2, 3, 3.9], [-3.9, -2.5, -1, 1, 2.5].map((x, i) => new Box3(new Vector3(x, -3.9, -.4), new Vector3([-2.5, -1, 1, 2.5, 3.9][i], 3.9, .4)))),
+  ];
   const anchor = new Group(); anchor.name = 'Nessun altro ancoraggio'; root.add(anchor);
   let story: StoryState = 'battle';
   let endingStart = 0;
   return {
-    root, anchor, obstacles: OBSTACLES.map(item => ({ ...item })),
+    root, anchor, cameraOccluders, obstacles: OBSTACLES.map(item => ({ ...item })),
     setStoryState(next, time) {
       if (next !== story) { endingStart = next === 'ending' ? time : 0; story = next; }
     },

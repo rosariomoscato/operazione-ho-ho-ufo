@@ -1,0 +1,2759 @@
+{
+  "pass": false,
+  "kind": "real-input-new-game-to-ending",
+  "shots": 20,
+  "deaths": [
+    {
+      "chapter": "courtyard",
+      "time": 33.382733333332936,
+      "checkpoint": {
+        "version": 3,
+        "chapter": "courtyard",
+        "boundary": "B",
+        "healed": false,
+        "firstWrapped": true,
+        "disabledAnchors": [],
+        "clearedArenas": [],
+        "activatedArenas": [],
+        "defeatedEnemies": [],
+        "bossSegments": 0,
+        "bossDefeated": false,
+        "coreCarried": false,
+        "coreReturned": false
+      }
+    },
+    {
+      "chapter": "toystreet",
+      "time": 87.55539999999732,
+      "checkpoint": {
+        "version": 3,
+        "chapter": "toystreet",
+        "boundary": "street",
+        "healed": true,
+        "firstWrapped": true,
+        "disabledAnchors": [
+          "workshop"
+        ],
+        "clearedArenas": [
+          "workshop"
+        ],
+        "activatedArenas": [
+          "workshop",
+          "carousel"
+        ],
+        "defeatedEnemies": [
+          "workshop:0",
+          "workshop:1",
+          "workshop:2"
+        ],
+        "bossSegments": 0,
+        "bossDefeated": false,
+        "coreCarried": false,
+        "coreReturned": false
+      }
+    },
+    {
+      "chapter": "toystreet",
+      "time": 18.080600000000185,
+      "checkpoint": {
+        "version": 3,
+        "chapter": "toystreet",
+        "boundary": "street",
+        "healed": true,
+        "firstWrapped": true,
+        "disabledAnchors": [
+          "workshop"
+        ],
+        "clearedArenas": [
+          "workshop"
+        ],
+        "activatedArenas": [
+          "workshop",
+          "carousel"
+        ],
+        "defeatedEnemies": [
+          "workshop:0",
+          "workshop:1",
+          "workshop:2"
+        ],
+        "bossSegments": 0,
+        "bossDefeated": false,
+        "coreCarried": false,
+        "coreReturned": false
+      }
+    },
+    {
+      "chapter": "toystreet",
+      "time": 19.967766666666886,
+      "checkpoint": {
+        "version": 3,
+        "chapter": "toystreet",
+        "boundary": "street",
+        "healed": true,
+        "firstWrapped": true,
+        "disabledAnchors": [
+          "workshop"
+        ],
+        "clearedArenas": [
+          "workshop"
+        ],
+        "activatedArenas": [
+          "workshop",
+          "carousel"
+        ],
+        "defeatedEnemies": [
+          "workshop:0",
+          "workshop:1",
+          "workshop:2"
+        ],
+        "bossSegments": 0,
+        "bossDefeated": false,
+        "coreCarried": false,
+        "coreReturned": false
+      }
+    },
+    {
+      "chapter": "toystreet",
+      "time": 16.129066666666844,
+      "checkpoint": {
+        "version": 3,
+        "chapter": "toystreet",
+        "boundary": "street",
+        "healed": true,
+        "firstWrapped": true,
+        "disabledAnchors": [
+          "workshop"
+        ],
+        "clearedArenas": [
+          "workshop"
+        ],
+        "activatedArenas": [
+          "workshop",
+          "carousel"
+        ],
+        "defeatedEnemies": [
+          "workshop:0",
+          "workshop:1",
+          "workshop:2"
+        ],
+        "bossSegments": 0,
+        "bossDefeated": false,
+        "coreCarried": false,
+        "coreReturned": false
+      }
+    },
+    {
+      "chapter": "toystreet",
+      "time": 23.42866666666669,
+      "checkpoint": {
+        "version": 3,
+        "chapter": "toystreet",
+        "boundary": "street",
+        "healed": true,
+        "firstWrapped": true,
+        "disabledAnchors": [
+          "workshop"
+        ],
+        "clearedArenas": [
+          "workshop"
+        ],
+        "activatedArenas": [
+          "workshop",
+          "carousel"
+        ],
+        "defeatedEnemies": [
+          "workshop:0",
+          "workshop:1",
+          "workshop:2"
+        ],
+        "bossSegments": 0,
+        "bossDefeated": false,
+        "coreCarried": false,
+        "coreReturned": false
+      }
+    },
+    {
+      "chapter": "toystreet",
+      "time": 18.73500000000036,
+      "checkpoint": {
+        "version": 3,
+        "chapter": "toystreet",
+        "boundary": "street",
+        "healed": true,
+        "firstWrapped": true,
+        "disabledAnchors": [
+          "workshop"
+        ],
+        "clearedArenas": [
+          "workshop"
+        ],
+        "activatedArenas": [
+          "workshop",
+          "carousel"
+        ],
+        "defeatedEnemies": [
+          "workshop:0",
+          "workshop:1",
+          "workshop:2"
+        ],
+        "bossSegments": 0,
+        "bossDefeated": false,
+        "coreCarried": false,
+        "coreReturned": false
+      }
+    },
+    {
+      "chapter": "toystreet",
+      "time": 14.955066666666857,
+      "checkpoint": {
+        "version": 3,
+        "chapter": "toystreet",
+        "boundary": "street",
+        "healed": true,
+        "firstWrapped": true,
+        "disabledAnchors": [
+          "workshop"
+        ],
+        "clearedArenas": [
+          "workshop"
+        ],
+        "activatedArenas": [
+          "workshop",
+          "carousel"
+        ],
+        "defeatedEnemies": [
+          "workshop:0",
+          "workshop:1",
+          "workshop:2"
+        ],
+        "bossSegments": 0,
+        "bossDefeated": false,
+        "coreCarried": false,
+        "coreReturned": false
+      }
+    },
+    {
+      "chapter": "toystreet",
+      "time": 18.125699999999878,
+      "checkpoint": {
+        "version": 3,
+        "chapter": "toystreet",
+        "boundary": "street",
+        "healed": true,
+        "firstWrapped": true,
+        "disabledAnchors": [
+          "workshop"
+        ],
+        "clearedArenas": [
+          "workshop"
+        ],
+        "activatedArenas": [
+          "workshop",
+          "carousel"
+        ],
+        "defeatedEnemies": [
+          "workshop:0",
+          "workshop:1",
+          "workshop:2"
+        ],
+        "bossSegments": 0,
+        "bossDefeated": false,
+        "coreCarried": false,
+        "coreReturned": false
+      }
+    }
+  ],
+  "boundaries": [
+    {
+      "name": "M1 complete",
+      "state": {
+        "settings": {
+          "master": 0.7,
+          "music": 0.3,
+          "effects": 0.65,
+          "reducedMotion": false,
+          "aimAssist": true,
+          "sensitivity": 1,
+          "invertY": false,
+          "fov": 53,
+          "keyBindings": {
+            "forward": "KeyW",
+            "backward": "KeyS",
+            "left": "KeyA",
+            "right": "KeyD",
+            "dodge": "Space",
+            "interact": "KeyE",
+            "help": "KeyH"
+          }
+        },
+        "cameraDiagnostics": {
+          "position": [
+            -0.018580510934651073,
+            4.211921756621386,
+            -0.5036730649832403
+          ],
+          "look": [
+            1.0310519109195015,
+            1.1,
+            -14.262698167765507
+          ],
+          "distance": 9.015666969857962,
+          "compressed": false,
+          "occluded": [
+            "courtyard-anchor"
+          ]
+        },
+        "chapter": "courtyard",
+        "act": "courtyard",
+        "actTitle": "Il cortile del laboratorio",
+        "beat": "complete",
+        "group": 3,
+        "player": {
+          "x": 0.018364985876441493,
+          "z": -9.162260422645307,
+          "hp": 5,
+          "invulnerableUntil": 16.30136666666691,
+          "dodgeUntil": 0,
+          "dodgeReady": 0,
+          "dx": -0.3746321506897417,
+          "dz": -0.9271735283481612
+        },
+        "camera": {
+          "yaw": -0.1959999999999997,
+          "pitch": 0.3,
+          "view": "player"
+        },
+        "worldFallback": false,
+        "boss": null,
+        "bossSegments": 0,
+        "bossDefeated": false,
+        "coreCarried": false,
+        "coreReturned": false,
+        "gifts": [],
+        "disabledAnchors": [
+          "courtyard"
+        ],
+        "clearedArenas": [],
+        "activatedArenas": [],
+        "defeatedEnemies": [],
+        "anchorCount": 1,
+        "arenas": [],
+        "anchors": [
+          {
+            "id": "courtyard",
+            "name": "Laboratorio",
+            "x": 0,
+            "z": -9,
+            "disabled": true
+          }
+        ],
+        "bolts": [],
+        "systemConfigs": [
+          {
+            "id": "ranged",
+            "windup": 1.2,
+            "lock": 0.2,
+            "recovery": 1.2,
+            "speed": 6,
+            "radius": 0.18,
+            "range": 12,
+            "travel": 18,
+            "lifetime": 3,
+            "pool": 3
+          }
+        ],
+        "committed": 0,
+        "lastProgress": 65.9748999999982,
+        "hintStage": 0,
+        "rangedLearned": false,
+        "droneHit": true,
+        "dodgeUsed": true,
+        "remaining": 0,
+        "pending": 0,
+        "neutralized": 6,
+        "healAvailable": false,
+        "healed": true,
+        "firstWrapped": true,
+        "review": false,
+        "preview": false,
+        "playing": true,
+        "time": 71.0927999999981,
+        "enemies": [
+          {
+            "id": 2,
+            "key": "courtyard:2",
+            "kind": "melee",
+            "x": -3.487342809694228,
+            "z": -1.6137231573014272,
+            "hp": 0,
+            "status": "gone",
+            "since": 6.051533333333312,
+            "attackId": 0,
+            "angle": 1.971970166059469,
+            "hit": false
+          },
+          {
+            "id": 3,
+            "key": "courtyard:3",
+            "kind": "melee",
+            "x": -2.3410633011232056,
+            "z": -1.5478303932072037,
+            "hp": 0,
+            "status": "gone",
+            "since": 6.051533333333312,
+            "attackId": 9,
+            "angle": 0.36365633406807246,
+            "hit": true
+          },
+          {
+            "id": 4,
+            "key": "courtyard:4",
+            "kind": "melee",
+            "x": -2.6375803233636583,
+            "z": 1.923403444094109,
+            "hp": 0,
+            "status": "gone",
+            "since": 18.483400000000206,
+            "attackId": 12,
+            "angle": 0.2661414134296949,
+            "hit": true
+          },
+          {
+            "id": 5,
+            "key": "courtyard:5",
+            "kind": "melee",
+            "x": -3.5635212354276784,
+            "z": 1.2739165945978694,
+            "hp": 0,
+            "status": "gone",
+            "since": 18.483400000000206,
+            "attackId": 10,
+            "angle": 0.057414397684298846,
+            "hit": true
+          },
+          {
+            "id": 6,
+            "key": "courtyard:6",
+            "kind": "melee",
+            "x": -0.2574468404496122,
+            "z": -3.555294247330147,
+            "hp": 0,
+            "status": "gone",
+            "since": 43.50846666666581,
+            "attackId": 13,
+            "angle": -0.5177761643109822,
+            "hit": false
+          }
+        ],
+        "objective": "Ancoraggio 1/3 · Entra nella via",
+        "checkpoint": {
+          "version": 3,
+          "chapter": "courtyard",
+          "boundary": "complete",
+          "healed": true,
+          "firstWrapped": true,
+          "disabledAnchors": [
+            "courtyard"
+          ],
+          "clearedArenas": [],
+          "activatedArenas": [],
+          "defeatedEnemies": [],
+          "bossSegments": 0,
+          "bossDefeated": false,
+          "coreCarried": false,
+          "coreReturned": false
+        },
+        "eventLog": [
+          {
+            "time": 0,
+            "type": "group-enter",
+            "group": 2
+          },
+          {
+            "time": 0,
+            "type": "retry",
+            "chapter": "courtyard",
+            "boundary": "B"
+          },
+          {
+            "time": 2.752,
+            "type": "throw",
+            "target": 2,
+            "x": -5.248491369811501,
+            "z": -4.612991085205522,
+            "bossWindowId": null
+          },
+          {
+            "time": 3.334,
+            "type": "progress",
+            "reason": "gift-hit"
+          },
+          {
+            "time": 3.334,
+            "type": "enemy-hit",
+            "id": 2,
+            "key": "courtyard:2",
+            "hp": 1
+          },
+          {
+            "time": 3.334,
+            "type": "progress",
+            "reason": "gift-hit"
+          },
+          {
+            "time": 3.334,
+            "type": "enemy-hit",
+            "id": 3,
+            "key": "courtyard:3",
+            "hp": 1
+          },
+          {
+            "time": 3.334,
+            "type": "explosion",
+            "x": -4.116166953660703,
+            "z": -2.9913724564945383,
+            "radius": 2,
+            "hits": 2
+          },
+          {
+            "time": 4.985,
+            "type": "attack-windup",
+            "id": 3,
+            "attackId": 9
+          },
+          {
+            "time": 5.201,
+            "type": "attack-lock",
+            "id": 3,
+            "attackId": 9,
+            "angle": 0.36365633406807246
+          },
+          {
+            "time": 5.418,
+            "type": "throw",
+            "target": 3,
+            "x": -2.3410633011232056,
+            "z": -1.5478303932072037,
+            "bossWindowId": null
+          },
+          {
+            "time": 5.985,
+            "type": "attack-active",
+            "id": 3,
+            "attackId": 9,
+            "windup": 1.0000666666666556,
+            "angle": 0.36365633406807246
+          },
+          {
+            "time": 6.002,
+            "type": "player-hurt",
+            "hp": 5,
+            "attackId": 9,
+            "kind": "melee"
+          },
+          {
+            "time": 6.052,
+            "type": "progress",
+            "reason": "gift-hit"
+          },
+          {
+            "time": 6.052,
+            "type": "enemy-hit",
+            "id": 2,
+            "key": "courtyard:2",
+            "hp": 0
+          },
+          {
+            "time": 6.052,
+            "type": "wrap",
+            "id": 2,
+            "key": "courtyard:2"
+          },
+          {
+            "time": 6.052,
+            "type": "progress",
+            "reason": "gift-hit"
+          },
+          {
+            "time": 6.052,
+            "type": "enemy-hit",
+            "id": 3,
+            "key": "courtyard:3",
+            "hp": 0
+          },
+          {
+            "time": 6.052,
+            "type": "wrap",
+            "id": 3,
+            "key": "courtyard:3"
+          },
+          {
+            "time": 6.052,
+            "type": "explosion",
+            "x": -2.1248625994776753,
+            "z": -0.9797527043164862,
+            "radius": 2,
+            "hits": 2
+          },
+          {
+            "time": 6.052,
+            "type": "group-enter",
+            "group": 3
+          },
+          {
+            "time": 6.052,
+            "type": "checkpoint",
+            "chapter": "courtyard",
+            "boundary": "C",
+            "persisted": true
+          },
+          {
+            "time": 6.052,
+            "type": "dialogue",
+            "id": "vo.briciola.heal"
+          },
+          {
+            "time": 7.053,
+            "type": "teleport",
+            "id": 2
+          },
+          {
+            "time": 7.053,
+            "type": "teleport",
+            "id": 3
+          },
+          {
+            "time": 11.571,
+            "type": "attack-windup",
+            "id": 5,
+            "attackId": 10
+          },
+          {
+            "time": 11.786,
+            "type": "attack-lock",
+            "id": 5,
+            "attackId": 10,
+            "angle": -0.4782463230808979
+          },
+          {
+            "time": 12.585,
+            "type": "attack-active",
+            "id": 5,
+            "attackId": 10,
+            "windup": 1.0141333333333673,
+            "angle": -0.4782463230808979
+          },
+          {
+            "time": 12.587,
+            "type": "player-hurt",
+            "hp": 4,
+            "attackId": 10,
+            "kind": "melee"
+          },
+          {
+            "time": 12.801,
+            "type": "attack-recovery",
+            "id": 5,
+            "attackId": 10
+          },
+          {
+            "time": 13.352,
+            "type": "throw",
+            "target": 6,
+            "x": 2.9112960000000143,
+            "z": -9.118271999999982,
+            "bossWindowId": null
+          },
+          {
+            "time": 13.402,
+            "type": "attack-windup",
+            "id": 4,
+            "attackId": 11
+          },
+          {
+            "time": 13.419,
+            "type": "progress",
+            "reason": "gift-hit"
+          },
+          {
+            "time": 13.419,
+            "type": "enemy-hit",
+            "id": 4,
+            "key": "courtyard:4",
+            "hp": 1
+          },
+          {
+            "time": 13.419,
+            "type": "progress",
+            "reason": "gift-hit"
+          },
+          {
+            "time": 13.419,
+            "type": "enemy-hit",
+            "id": 5,
+            "key": "courtyard:5",
+            "hp": 1
+          },
+          {
+            "time": 13.419,
+            "type": "explosion",
+            "x": -0.8684368666359676,
+            "z": -1.3955582271703153,
+            "radius": 2,
+            "hits": 2
+          },
+          {
+            "time": 14.002,
+            "type": "recovery-end",
+            "id": 5,
+            "elapsed": 1.2007666666667056
+          },
+          {
+            "time": 14.019,
+            "type": "attack-windup",
+            "id": 4,
+            "attackId": 12
+          },
+          {
+            "time": 14.235,
+            "type": "attack-lock",
+            "id": 4,
+            "attackId": 12,
+            "angle": -1.0227174843303783
+          },
+          {
+            "time": 15.035,
+            "type": "attack-active",
+            "id": 4,
+            "attackId": 12,
+            "windup": 1.0157333333333778,
+            "angle": -1.0227174843303783
+          },
+          {
+            "time": 15.051,
+            "type": "player-hurt",
+            "hp": 3,
+            "attackId": 12,
+            "kind": "melee"
+          },
+          {
+            "time": 15.25,
+            "type": "attack-recovery",
+            "id": 4,
+            "attackId": 12
+          },
+          {
+            "time": 16.451,
+            "type": "recovery-end",
+            "id": 4,
+            "elapsed": 1.2010000000000147
+          },
+          {
+            "time": 18.45,
+            "type": "throw",
+            "target": "ground",
+            "x": 1.3024659625194008,
+            "z": -0.8790810702164418,
+            "bossWindowId": null
+          },
+          {
+            "time": 18.483,
+            "type": "progress",
+            "reason": "gift-hit"
+          },
+          {
+            "time": 18.483,
+            "type": "enemy-hit",
+            "id": 4,
+            "key": "courtyard:4",
+            "hp": 0
+          },
+          {
+            "time": 18.483,
+            "type": "wrap",
+            "id": 4,
+            "key": "courtyard:4"
+          },
+          {
+            "time": 18.483,
+            "type": "progress",
+            "reason": "gift-hit"
+          },
+          {
+            "time": 18.483,
+            "type": "enemy-hit",
+            "id": 5,
+            "key": "courtyard:5",
+            "hp": 0
+          },
+          {
+            "time": 18.483,
+            "type": "wrap",
+            "id": 5,
+            "key": "courtyard:5"
+          },
+          {
+            "time": 18.483,
+            "type": "explosion",
+            "x": -3.1948008280521814,
+            "z": 1.9417106761405982,
+            "radius": 2,
+            "hits": 2
+          },
+          {
+            "time": 19.499,
+            "type": "teleport",
+            "id": 4
+          },
+          {
+            "time": 19.499,
+            "type": "teleport",
+            "id": 5
+          },
+          {
+            "time": 39.639,
+            "type": "throw",
+            "target": 6,
+            "x": 2.9112960000000143,
+            "z": -9.118271999999982,
+            "bossWindowId": null
+          },
+          {
+            "time": 40.423,
+            "type": "progress",
+            "reason": "gift-hit"
+          },
+          {
+            "time": 40.423,
+            "type": "enemy-hit",
+            "id": 6,
+            "key": "courtyard:6",
+            "hp": 1
+          },
+          {
+            "time": 40.423,
+            "type": "explosion",
+            "x": 2.6543446177155046,
+            "z": -8.667173600685361,
+            "radius": 2,
+            "hits": 1
+          },
+          {
+            "time": 43.058,
+            "type": "throw",
+            "target": 6,
+            "x": 0.23734379938768765,
+            "z": -4.423938204961497,
+            "bossWindowId": null
+          },
+          {
+            "time": 43.458,
+            "type": "attack-windup",
+            "id": 6,
+            "attackId": 13
+          },
+          {
+            "time": 43.508,
+            "type": "progress",
+            "reason": "gift-hit"
+          },
+          {
+            "time": 43.508,
+            "type": "enemy-hit",
+            "id": 6,
+            "key": "courtyard:6",
+            "hp": 0
+          },
+          {
+            "time": 43.508,
+            "type": "wrap",
+            "id": 6,
+            "key": "courtyard:6"
+          },
+          {
+            "time": 43.508,
+            "type": "explosion",
+            "x": -0.5638779229522943,
+            "z": -3.0173303352926957,
+            "radius": 2,
+            "hits": 1
+          },
+          {
+            "time": 43.508,
+            "type": "checkpoint",
+            "chapter": "courtyard",
+            "boundary": "anchor",
+            "persisted": true
+          },
+          {
+            "time": 43.508,
+            "type": "dialogue",
+            "id": "vo.briciola.clear"
+          },
+          {
+            "time": 43.508,
+            "type": "beat",
+            "beat": "anchor"
+          },
+          {
+            "time": 44.509,
+            "type": "teleport",
+            "id": 6
+          },
+          {
+            "time": 65.975,
+            "type": "heal",
+            "hp": 5
+          },
+          {
+            "time": 65.975,
+            "type": "progress",
+            "reason": "heal"
+          },
+          {
+            "time": 70.308,
+            "type": "checkpoint",
+            "chapter": "courtyard",
+            "boundary": "complete",
+            "persisted": true
+          },
+          {
+            "time": 70.308,
+            "type": "anchor-off",
+            "anchors": 1
+          },
+          {
+            "time": 70.308,
+            "type": "dialogue",
+            "id": "vo.briciola.route"
+          }
+        ],
+        "storageAvailable": true,
+        "transitions": [
+          {
+            "action": "menu-action",
+            "chapter": "courtyard",
+            "boundary": "training",
+            "menu": "title",
+            "hp": 6,
+            "time": 0,
+            "button": "new",
+            "clickDetail": 1
+          },
+          {
+            "action": "new-game",
+            "chapter": "courtyard",
+            "boundary": "training",
+            "menu": "title",
+            "hp": 6,
+            "time": 0
+          },
+          {
+            "action": "open-menu",
+            "chapter": "courtyard",
+            "boundary": "B",
+            "menu": "none",
+            "hp": 0,
+            "time": 33.382733333332936,
+            "nextMenu": "dead"
+          },
+          {
+            "action": "menu-action",
+            "chapter": "courtyard",
+            "boundary": "B",
+            "menu": "dead",
+            "hp": 0,
+            "time": 33.382733333332936,
+            "button": "retry",
+            "clickDetail": 1
+          },
+          {
+            "action": "retry",
+            "chapter": "courtyard",
+            "boundary": "B",
+            "menu": "dead",
+            "hp": 0,
+            "time": 33.382733333332936
+          }
+        ]
+      }
+    },
+    {
+      "name": "workshop disabled",
+      "state": {
+        "settings": {
+          "master": 0.7,
+          "music": 0.3,
+          "effects": 0.65,
+          "reducedMotion": false,
+          "aimAssist": true,
+          "sensitivity": 1,
+          "invertY": false,
+          "fov": 53,
+          "keyBindings": {
+            "forward": "KeyW",
+            "backward": "KeyS",
+            "left": "KeyA",
+            "right": "KeyD",
+            "dodge": "Space",
+            "interact": "KeyE",
+            "help": "KeyH"
+          }
+        },
+        "cameraDiagnostics": {
+          "position": [
+            1.5908338864909064,
+            5.775117078135726,
+            -6.574251750934053
+          ],
+          "look": [
+            -11.612340310968623,
+            1.1,
+            -10.585322818808429
+          ],
+          "distance": 9.56969587816214,
+          "compressed": false,
+          "occluded": []
+        },
+        "chapter": "toystreet",
+        "act": "toystreet",
+        "actTitle": "La via dei giocattoli",
+        "beat": "street",
+        "group": 0,
+        "player": {
+          "x": -6.853308524375544,
+          "z": -8.489704424587602,
+          "hp": 1,
+          "invulnerableUntil": 49.38839999999899,
+          "dodgeUntil": 45.92149999999908,
+          "dodgeReady": 46.92149999999908,
+          "dx": 0.7758113701699154,
+          "dz": -0.6309649102090215
+        },
+        "camera": {
+          "yaw": 1.1560000000000001,
+          "pitch": 0.5,
+          "view": "player"
+        },
+        "worldFallback": false,
+        "boss": null,
+        "bossSegments": 0,
+        "bossDefeated": false,
+        "coreCarried": false,
+        "coreReturned": false,
+        "gifts": [],
+        "disabledAnchors": [
+          "workshop"
+        ],
+        "clearedArenas": [
+          "workshop"
+        ],
+        "activatedArenas": [
+          "workshop"
+        ],
+        "defeatedEnemies": [
+          "workshop:0",
+          "workshop:1",
+          "workshop:2"
+        ],
+        "anchorCount": 2,
+        "arenas": [
+          {
+            "id": "workshop",
+            "name": "Officina",
+            "x": -8,
+            "z": -4,
+            "active": true,
+            "clear": true,
+            "remaining": 0
+          },
+          {
+            "id": "carousel",
+            "name": "Giostra",
+            "x": 8,
+            "z": -4,
+            "active": false,
+            "clear": false,
+            "remaining": 3
+          }
+        ],
+        "anchors": [
+          {
+            "id": "workshop",
+            "name": "Officina dei trenini",
+            "x": -8,
+            "z": -9,
+            "arenaId": "workshop",
+            "disabled": true
+          },
+          {
+            "id": "carousel",
+            "name": "Giostra dei regali",
+            "x": 8,
+            "z": -9,
+            "arenaId": "carousel",
+            "disabled": false
+          }
+        ],
+        "bolts": [],
+        "systemConfigs": [
+          {
+            "id": "ranged",
+            "windup": 1.2,
+            "lock": 0.2,
+            "recovery": 1.2,
+            "speed": 6,
+            "radius": 0.18,
+            "range": 12,
+            "travel": 18,
+            "lifetime": 3,
+            "pool": 3
+          }
+        ],
+        "committed": 0,
+        "lastProgress": 56.265233333332006,
+        "hintStage": 0,
+        "rangedLearned": true,
+        "droneHit": true,
+        "dodgeUsed": true,
+        "remaining": 3,
+        "pending": 0,
+        "neutralized": 3,
+        "healAvailable": true,
+        "healed": false,
+        "firstWrapped": true,
+        "review": false,
+        "preview": false,
+        "playing": true,
+        "time": 57.18233333333195,
+        "enemies": [
+          {
+            "id": 1,
+            "key": "workshop:0",
+            "kind": "ranged",
+            "arenaId": "workshop",
+            "x": -10.775167302876712,
+            "z": -3.7490321980241452,
+            "hp": 0,
+            "status": "gone",
+            "since": 21.674600000000023,
+            "attackId": 3,
+            "angle": 1.4645719026514767,
+            "hit": false
+          },
+          {
+            "id": 2,
+            "key": "workshop:1",
+            "kind": "ranged",
+            "arenaId": "workshop",
+            "x": -7.058039278505208,
+            "z": -8.412504072865792,
+            "hp": 0,
+            "status": "gone",
+            "since": 29.775099999999696,
+            "attackId": 5,
+            "angle": -0.6979041171501673,
+            "hit": false
+          },
+          {
+            "id": 3,
+            "key": "workshop:2",
+            "kind": "ranged",
+            "arenaId": "workshop",
+            "x": -4.164871239006171,
+            "z": -9.243458325808458,
+            "hp": 0,
+            "status": "gone",
+            "since": 48.93029999999899,
+            "attackId": 8,
+            "angle": -0.902131786935587,
+            "hit": false
+          },
+          {
+            "id": 4,
+            "key": "carousel:0",
+            "kind": "melee",
+            "arenaId": "carousel",
+            "x": 5,
+            "z": -5,
+            "hp": 2,
+            "status": "approach",
+            "since": 0,
+            "attackId": 0,
+            "angle": 0,
+            "hit": false
+          },
+          {
+            "id": 5,
+            "key": "carousel:1",
+            "kind": "melee",
+            "arenaId": "carousel",
+            "x": 10,
+            "z": -7,
+            "hp": 2,
+            "status": "approach",
+            "since": 0,
+            "attackId": 0,
+            "angle": 0,
+            "hit": false
+          },
+          {
+            "id": 6,
+            "key": "carousel:2",
+            "kind": "melee",
+            "arenaId": "carousel",
+            "x": 6,
+            "z": -10.5,
+            "hp": 2,
+            "status": "approach",
+            "since": 0,
+            "attackId": 0,
+            "angle": 0,
+            "hit": false
+          }
+        ],
+        "objective": "Libera un lato, poi E · Ancoraggi 2/3",
+        "checkpoint": {
+          "version": 3,
+          "chapter": "toystreet",
+          "boundary": "street",
+          "healed": false,
+          "firstWrapped": true,
+          "disabledAnchors": [
+            "workshop"
+          ],
+          "clearedArenas": [
+            "workshop"
+          ],
+          "activatedArenas": [
+            "workshop"
+          ],
+          "defeatedEnemies": [
+            "workshop:0",
+            "workshop:1",
+            "workshop:2"
+          ],
+          "bossSegments": 0,
+          "bossDefeated": false,
+          "coreCarried": false,
+          "coreReturned": false
+        },
+        "eventLog": [
+          {
+            "time": 0,
+            "type": "checkpoint",
+            "chapter": "toystreet",
+            "boundary": "street",
+            "persisted": true
+          },
+          {
+            "time": 0,
+            "type": "dialogue",
+            "id": "vo.briciola.street"
+          },
+          {
+            "time": 13.656,
+            "type": "progress",
+            "reason": "arena-enter"
+          },
+          {
+            "time": 13.656,
+            "type": "arena-activated",
+            "id": "workshop",
+            "reason": "proximity"
+          },
+          {
+            "time": 13.656,
+            "type": "checkpoint",
+            "chapter": "toystreet",
+            "boundary": "street",
+            "persisted": true
+          },
+          {
+            "time": 13.656,
+            "type": "ranged-windup",
+            "id": 2,
+            "attackId": 1,
+            "windup": 1.2,
+            "lock": 0.2
+          },
+          {
+            "time": 13.873,
+            "type": "ranged-lock",
+            "id": 2,
+            "attackId": 1,
+            "angle": 0.32821076850829245,
+            "lockedAt": 13.872500000000176
+          },
+          {
+            "time": 14.872,
+            "type": "ranged-release",
+            "id": 2,
+            "attackId": 1,
+            "boltId": 1,
+            "angle": 0.32821076850829245,
+            "windup": 1.2160666666667126,
+            "lockedFor": 0.9998000000000307,
+            "x": -6.6631444361592695,
+            "z": -7.010781455334796,
+            "speed": 6
+          },
+          {
+            "time": 15.773,
+            "type": "player-hurt",
+            "hp": 5,
+            "attackId": 1,
+            "kind": "ranged"
+          },
+          {
+            "time": 15.773,
+            "type": "bolt-end",
+            "id": 1,
+            "attackId": 1,
+            "reason": "player",
+            "collider": "player",
+            "x": -4.949010108571295,
+            "z": -1.9770113564713927,
+            "age": 0.9008333333333343
+          },
+          {
+            "time": 16.074,
+            "type": "recovery-end",
+            "id": 2,
+            "elapsed": 1.2012000000000231
+          },
+          {
+            "time": 16.373,
+            "type": "ranged-windup",
+            "id": 1,
+            "attackId": 2,
+            "windup": 1.2,
+            "lock": 0.2
+          },
+          {
+            "time": 16.573,
+            "type": "ranged-lock",
+            "id": 1,
+            "attackId": 2,
+            "angle": 0.8832643860247603,
+            "lockedAt": 16.573466666666896
+          },
+          {
+            "time": 17.574,
+            "type": "ranged-release",
+            "id": 1,
+            "attackId": 2,
+            "boltId": 2,
+            "angle": 0.8832643860247603,
+            "windup": 1.2000999999999529,
+            "lockedFor": 1.0000333333332954,
+            "x": -6.26810883643362,
+            "z": -2.7092716767411553,
+            "speed": 6
+          },
+          {
+            "time": 18.774,
+            "type": "recovery-end",
+            "id": 1,
+            "elapsed": 1.2003333333332833
+          },
+          {
+            "time": 19.558,
+            "type": "throw",
+            "target": 1,
+            "x": -8.479504227580243,
+            "z": -3.508912418957449,
+            "bossWindowId": null
+          },
+          {
+            "time": 19.575,
+            "type": "dodge"
+          },
+          {
+            "time": 20.408,
+            "type": "progress",
+            "reason": "gift-hit"
+          },
+          {
+            "time": 20.408,
+            "type": "enemy-hit",
+            "id": 1,
+            "key": "workshop:0",
+            "hp": 1
+          },
+          {
+            "time": 20.408,
+            "type": "explosion",
+            "x": -8.479504227580243,
+            "z": -3.508912418957449,
+            "radius": 2,
+            "hits": 1
+          },
+          {
+            "time": 20.575,
+            "type": "bolt-end",
+            "id": 2,
+            "attackId": 2,
+            "reason": "expired",
+            "x": 7.64734678110593,
+            "z": 8.718034803628102,
+            "age": 3.0010333333333397
+          },
+          {
+            "time": 20.879,
+            "type": "throw",
+            "target": 1,
+            "x": -10.216732767525167,
+            "z": -3.6894886868188546,
+            "bossWindowId": null
+          },
+          {
+            "time": 21.191,
+            "type": "ranged-windup",
+            "id": 1,
+            "attackId": 3,
+            "windup": 1.2,
+            "lock": 0.2
+          },
+          {
+            "time": 21.391,
+            "type": "ranged-lock",
+            "id": 1,
+            "attackId": 3,
+            "angle": 1.4645719026514767,
+            "lockedAt": 21.39103333333338
+          },
+          {
+            "time": 21.675,
+            "type": "progress",
+            "reason": "gift-hit"
+          },
+          {
+            "time": 21.675,
+            "type": "enemy-hit",
+            "id": 1,
+            "key": "workshop:0",
+            "hp": 0
+          },
+          {
+            "time": 21.675,
+            "type": "wrap",
+            "id": 1,
+            "key": "workshop:0"
+          },
+          {
+            "time": 21.675,
+            "type": "progress",
+            "reason": "wrapped"
+          },
+          {
+            "time": 21.675,
+            "type": "checkpoint",
+            "chapter": "toystreet",
+            "boundary": "street",
+            "persisted": true
+          },
+          {
+            "time": 21.675,
+            "type": "explosion",
+            "x": -10.130327568537167,
+            "z": -3.68027566611823,
+            "radius": 2,
+            "hits": 1
+          },
+          {
+            "time": 21.675,
+            "type": "ranged-windup",
+            "id": 2,
+            "attackId": 4,
+            "windup": 1.2,
+            "lock": 0.2
+          },
+          {
+            "time": 21.875,
+            "type": "ranged-lock",
+            "id": 2,
+            "attackId": 4,
+            "angle": -0.24109007585133999,
+            "lockedAt": 21.875333333333337
+          },
+          {
+            "time": 22.875,
+            "type": "ranged-release",
+            "id": 2,
+            "attackId": 4,
+            "boltId": 3,
+            "angle": -0.24109007585133999,
+            "windup": 1.2005999999999517,
+            "lockedFor": 0.9998666666666374,
+            "x": -7.307544854833358,
+            "z": -7.397727266183082,
+            "speed": 6
+          },
+          {
+            "time": 23.075,
+            "type": "teleport",
+            "id": 1
+          },
+          {
+            "time": 23.442,
+            "type": "player-hurt",
+            "hp": 4,
+            "attackId": 4,
+            "kind": "ranged"
+          },
+          {
+            "time": 23.442,
+            "type": "bolt-end",
+            "id": 3,
+            "attackId": 4,
+            "reason": "player",
+            "collider": "player",
+            "x": -8.112743430603889,
+            "z": -4.122863227107493,
+            "age": 0.5663333333333335
+          },
+          {
+            "time": 23.742,
+            "type": "throw",
+            "target": "ground",
+            "x": -13.742044651097368,
+            "z": -3.9667573309847577,
+            "bossWindowId": null
+          },
+          {
+            "time": 23.759,
+            "type": "dodge"
+          },
+          {
+            "time": 24.092,
+            "type": "recovery-end",
+            "id": 2,
+            "elapsed": 1.216499999999943
+          },
+          {
+            "time": 24.575,
+            "type": "explosion",
+            "x": -13.742044651097368,
+            "z": -3.9667573309847577,
+            "radius": 2,
+            "hits": 0
+          },
+          {
+            "time": 25.609,
+            "type": "ranged-windup",
+            "id": 2,
+            "attackId": 5,
+            "windup": 1.2,
+            "lock": 0.2
+          },
+          {
+            "time": 25.81,
+            "type": "ranged-lock",
+            "id": 2,
+            "attackId": 5,
+            "angle": -0.6979041171501673,
+            "lockedAt": 25.810033333333198
+          },
+          {
+            "time": 26.81,
+            "type": "ranged-release",
+            "id": 2,
+            "attackId": 5,
+            "boltId": 4,
+            "angle": -0.6979041171501673,
+            "windup": 1.2007333333332468,
+            "lockedFor": 0.9996999999999439,
+            "x": -7.729570128781709,
+            "z": -7.611834779632362,
+            "speed": 6
+          },
+          {
+            "time": 26.893,
+            "type": "throw",
+            "target": "ground",
+            "x": -7.482672863512497,
+            "z": -7.977409169086645,
+            "bossWindowId": null
+          },
+          {
+            "time": 27.546,
+            "type": "player-hurt",
+            "hp": 3,
+            "attackId": 5,
+            "kind": "ranged"
+          },
+          {
+            "time": 27.546,
+            "type": "bolt-end",
+            "id": 4,
+            "attackId": 5,
+            "reason": "player",
+            "collider": "player",
+            "x": -10.553344163118888,
+            "z": -4.245036129365254,
+            "age": 0.7365666666666613
+          },
+          {
+            "time": 27.726,
+            "type": "progress",
+            "reason": "gift-hit"
+          },
+          {
+            "time": 27.726,
+            "type": "enemy-hit",
+            "id": 2,
+            "key": "workshop:1",
+            "hp": 1
+          },
+          {
+            "time": 27.726,
+            "type": "explosion",
+            "x": -7.484454524242318,
+            "z": -7.975248590035049,
+            "radius": 2,
+            "hits": 1
+          },
+          {
+            "time": 28.026,
+            "type": "recovery-end",
+            "id": 2,
+            "elapsed": 1.2165666666666333
+          },
+          {
+            "time": 28.943,
+            "type": "throw",
+            "target": "ground",
+            "x": -7.482672863512497,
+            "z": -7.977409169086645,
+            "bossWindowId": null
+          },
+          {
+            "time": 29.775,
+            "type": "progress",
+            "reason": "gift-hit"
+          },
+          {
+            "time": 29.775,
+            "type": "enemy-hit",
+            "id": 2,
+            "key": "workshop:1",
+            "hp": 0
+          },
+          {
+            "time": 29.775,
+            "type": "wrap",
+            "id": 2,
+            "key": "workshop:1"
+          },
+          {
+            "time": 29.775,
+            "type": "progress",
+            "reason": "wrapped"
+          },
+          {
+            "time": 29.775,
+            "type": "checkpoint",
+            "chapter": "toystreet",
+            "boundary": "street",
+            "persisted": true
+          },
+          {
+            "time": 29.775,
+            "type": "explosion",
+            "x": -7.487332591575312,
+            "z": -7.971758423874531,
+            "radius": 2,
+            "hits": 1
+          },
+          {
+            "time": 30.775,
+            "type": "teleport",
+            "id": 2
+          },
+          {
+            "time": 33.143,
+            "type": "throw",
+            "target": "ground",
+            "x": -7.482672863512497,
+            "z": -7.977409169086645,
+            "bossWindowId": null
+          },
+          {
+            "time": 33.992,
+            "type": "explosion",
+            "x": -7.482672863512497,
+            "z": -7.977409169086645,
+            "radius": 2,
+            "hits": 0
+          },
+          {
+            "time": 41.922,
+            "type": "ranged-windup",
+            "id": 3,
+            "attackId": 6,
+            "windup": 1.2,
+            "lock": 0.2
+          },
+          {
+            "time": 42.137,
+            "type": "ranged-lock",
+            "id": 3,
+            "attackId": 6,
+            "angle": -0.8937762490759097,
+            "lockedAt": 42.13736666666584
+          },
+          {
+            "time": 43.138,
+            "type": "ranged-release",
+            "id": 3,
+            "attackId": 6,
+            "boltId": 5,
+            "angle": -0.8937762490759097,
+            "windup": 1.215933333333325,
+            "lockedFor": 1.0004666666666466,
+            "x": -5.143647879989643,
+            "z": -8.459015944240027,
+            "speed": 6
+          },
+          {
+            "time": 43.588,
+            "type": "player-hurt",
+            "hp": 2,
+            "attackId": 6,
+            "kind": "ranged"
+          },
+          {
+            "time": 43.588,
+            "type": "bolt-end",
+            "id": 5,
+            "attackId": 6,
+            "reason": "player",
+            "collider": "player",
+            "x": -7.242472842754872,
+            "z": -6.772096679889594,
+            "age": 0.449899999999994
+          },
+          {
+            "time": 44.354,
+            "type": "recovery-end",
+            "id": 3,
+            "elapsed": 1.2164999999999537
+          },
+          {
+            "time": 44.354,
+            "type": "ranged-windup",
+            "id": 3,
+            "attackId": 7,
+            "windup": 1.2,
+            "lock": 0.2
+          },
+          {
+            "time": 44.555,
+            "type": "ranged-lock",
+            "id": 3,
+            "attackId": 7,
+            "angle": -0.8937762490759097,
+            "lockedAt": 44.55509999999909
+          },
+          {
+            "time": 44.788,
+            "type": "help",
+            "stage": 1,
+            "reason": "no-progress",
+            "stalled": 15.01276666666606,
+            "text": "Due percorsi, scegli tu. Destro: allinea al +. Clic quando è MIRATO; riparo o Spazio contro i tiri."
+          },
+          {
+            "time": 45.555,
+            "type": "throw",
+            "target": 3,
+            "x": -4.3291299262585765,
+            "z": -9.113680364420135,
+            "bossWindowId": null
+          },
+          {
+            "time": 45.555,
+            "type": "ranged-release",
+            "id": 3,
+            "attackId": 7,
+            "boltId": 6,
+            "angle": -0.8937762490759097,
+            "windup": 1.2004666666666282,
+            "lockedFor": 0.9996999999999758,
+            "x": -5.143647879989643,
+            "z": -8.459015944240027,
+            "speed": 6
+          },
+          {
+            "time": 45.571,
+            "type": "dodge"
+          },
+          {
+            "time": 45.771,
+            "type": "hit-avoided",
+            "attackId": 7,
+            "kind": "ranged"
+          },
+          {
+            "time": 45.771,
+            "type": "bolt-end",
+            "id": 6,
+            "attackId": 7,
+            "reason": "player",
+            "collider": "player",
+            "x": -6.078823612895362,
+            "z": -7.7073734836351955,
+            "age": 0.21653333333331584
+          },
+          {
+            "time": 46.272,
+            "type": "progress",
+            "reason": "gift-hit"
+          },
+          {
+            "time": 46.272,
+            "type": "enemy-hit",
+            "id": 3,
+            "key": "workshop:2",
+            "hp": 1
+          },
+          {
+            "time": 46.272,
+            "type": "explosion",
+            "x": -4.799340045024318,
+            "z": -8.735751512938695,
+            "radius": 2,
+            "hits": 1
+          },
+          {
+            "time": 46.756,
+            "type": "recovery-end",
+            "id": 3,
+            "elapsed": 1.2010999999999612
+          },
+          {
+            "time": 46.872,
+            "type": "ranged-windup",
+            "id": 3,
+            "attackId": 8,
+            "windup": 1.2,
+            "lock": 0.2
+          },
+          {
+            "time": 47.087,
+            "type": "ranged-lock",
+            "id": 3,
+            "attackId": 8,
+            "angle": -0.902131786935587,
+            "lockedAt": 47.08733333333236
+          },
+          {
+            "time": 48.088,
+            "type": "ranged-release",
+            "id": 3,
+            "attackId": 8,
+            "boltId": 7,
+            "angle": -0.902131786935587,
+            "windup": 1.2153999999999527,
+            "lockedFor": 1.0002666666666116,
+            "x": -4.98483076981147,
+            "z": -8.595622414607517,
+            "speed": 6
+          },
+          {
+            "time": 48.138,
+            "type": "player-hurt",
+            "hp": 1,
+            "attackId": 8,
+            "kind": "ranged"
+          },
+          {
+            "time": 48.138,
+            "type": "bolt-end",
+            "id": 7,
+            "attackId": 8,
+            "reason": "player",
+            "collider": "player",
+            "x": -5.221734389119996,
+            "z": -8.408448942849942,
+            "age": 0.05080000000001747
+          },
+          {
+            "time": 48.371,
+            "type": "throw",
+            "target": 3,
+            "x": -4.164871239006171,
+            "z": -9.243458325808458,
+            "bossWindowId": null
+          },
+          {
+            "time": 48.93,
+            "type": "progress",
+            "reason": "gift-hit"
+          },
+          {
+            "time": 48.93,
+            "type": "enemy-hit",
+            "id": 3,
+            "key": "workshop:2",
+            "hp": 0
+          },
+          {
+            "time": 48.93,
+            "type": "wrap",
+            "id": 3,
+            "key": "workshop:2"
+          },
+          {
+            "time": 48.93,
+            "type": "progress",
+            "reason": "wrapped"
+          },
+          {
+            "time": 48.93,
+            "type": "checkpoint",
+            "chapter": "toystreet",
+            "boundary": "street",
+            "persisted": true
+          },
+          {
+            "time": 48.93,
+            "type": "explosion",
+            "x": -4.671811540031891,
+            "z": -8.842933520008671,
+            "radius": 2,
+            "hits": 1
+          },
+          {
+            "time": 48.93,
+            "type": "progress",
+            "reason": "arena-clear"
+          },
+          {
+            "time": 48.93,
+            "type": "arena-clear",
+            "id": "workshop"
+          },
+          {
+            "time": 48.93,
+            "type": "checkpoint",
+            "chapter": "toystreet",
+            "boundary": "street",
+            "persisted": true
+          },
+          {
+            "time": 49.946,
+            "type": "teleport",
+            "id": 3
+          },
+          {
+            "time": 56.265,
+            "type": "progress",
+            "reason": "anchor-off"
+          },
+          {
+            "time": 56.265,
+            "type": "anchor-off",
+            "id": "workshop",
+            "anchors": 2
+          },
+          {
+            "time": 56.265,
+            "type": "dialogue",
+            "id": "vo.squamakk.gifts"
+          },
+          {
+            "time": 56.265,
+            "type": "checkpoint",
+            "chapter": "toystreet",
+            "boundary": "street",
+            "persisted": true
+          }
+        ],
+        "storageAvailable": true,
+        "transitions": [
+          {
+            "action": "menu-action",
+            "chapter": "courtyard",
+            "boundary": "training",
+            "menu": "title",
+            "hp": 6,
+            "time": 0,
+            "button": "new",
+            "clickDetail": 1
+          },
+          {
+            "action": "new-game",
+            "chapter": "courtyard",
+            "boundary": "training",
+            "menu": "title",
+            "hp": 6,
+            "time": 0
+          },
+          {
+            "action": "open-menu",
+            "chapter": "courtyard",
+            "boundary": "B",
+            "menu": "none",
+            "hp": 0,
+            "time": 33.382733333332936,
+            "nextMenu": "dead"
+          },
+          {
+            "action": "menu-action",
+            "chapter": "courtyard",
+            "boundary": "B",
+            "menu": "dead",
+            "hp": 0,
+            "time": 33.382733333332936,
+            "button": "retry",
+            "clickDetail": 1
+          },
+          {
+            "action": "retry",
+            "chapter": "courtyard",
+            "boundary": "B",
+            "menu": "dead",
+            "hp": 0,
+            "time": 33.382733333332936
+          }
+        ]
+      }
+    }
+  ],
+  "errors": [
+    "Error: Could not reach target after real checkpoint retries\n    at safeWalk (file:///C:/Users/rosar/kDrive/Lavoro/Progetti/game-test/tools/playthrough-acts.mjs:38:9)\n    at async firstTwoActs (file:///C:/Users/rosar/kDrive/Lavoro/Progetti/game-test/tools/playthrough-acts.mjs:102:9)\n    at async file:///C:/Users/rosar/kDrive/Lavoro/Progetti/game-test/tools/full-playthrough.mjs:24:3"
+  ],
+  "started": 1792583574664,
+  "html": "<!doctype html>\n<html lang=\"it\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"icon\" href=\"data:,\"><title>Operazione Ho Ho UFO · Il cortile</title>  <script type=\"module\" crossorigin src=\"/assets/index-TmJx2Hx1.js\"></script>\n  <link rel=\"modulepreload\" crossorigin href=\"/assets/three-DjPfJOhV.js\">\n  <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CfZ1PVhC.css\">\n</head><body><div id=\"app\"></div></body></html>\n",
+  "failure": {
+    "settings": {
+      "master": 0.7,
+      "music": 0.3,
+      "effects": 0.65,
+      "reducedMotion": false,
+      "aimAssist": true,
+      "sensitivity": 1,
+      "invertY": false,
+      "fov": 53,
+      "keyBindings": {
+        "forward": "KeyW",
+        "backward": "KeyS",
+        "left": "KeyA",
+        "right": "KeyD",
+        "dodge": "Space",
+        "interact": "KeyE",
+        "help": "KeyH"
+      }
+    },
+    "cameraDiagnostics": {
+      "position": [
+        -2.3100548617233096,
+        5.775117078135726,
+        15.480879892561493
+      ],
+      "look": [
+        2.13711867067947,
+        1.1,
+        2.4181409924419546
+      ],
+      "distance": 9.56969587816214,
+      "compressed": false,
+      "occluded": []
+    },
+    "chapter": "toystreet",
+    "act": "toystreet",
+    "actTitle": "La via dei giocattoli",
+    "beat": "street",
+    "group": 0,
+    "player": {
+      "x": -0.1153329394375113,
+      "z": 7.1049801985681285,
+      "hp": 0,
+      "invulnerableUntil": 15.78416666666677,
+      "dodgeUntil": 0,
+      "dodgeReady": 0,
+      "dx": 0,
+      "dz": -1
+    },
+    "camera": {
+      "yaw": -0.44799999999999995,
+      "pitch": 0.5,
+      "view": "player"
+    },
+    "worldFallback": false,
+    "boss": null,
+    "bossSegments": 0,
+    "bossDefeated": false,
+    "coreCarried": false,
+    "coreReturned": false,
+    "gifts": [],
+    "disabledAnchors": [
+      "workshop"
+    ],
+    "clearedArenas": [
+      "workshop"
+    ],
+    "activatedArenas": [
+      "workshop",
+      "carousel"
+    ],
+    "defeatedEnemies": [
+      "workshop:0",
+      "workshop:1",
+      "workshop:2"
+    ],
+    "anchorCount": 2,
+    "arenas": [
+      {
+        "id": "workshop",
+        "name": "Officina",
+        "x": -8,
+        "z": -4,
+        "active": true,
+        "clear": true,
+        "remaining": 0
+      },
+      {
+        "id": "carousel",
+        "name": "Giostra",
+        "x": 8,
+        "z": -4,
+        "active": true,
+        "clear": false,
+        "remaining": 3
+      }
+    ],
+    "anchors": [
+      {
+        "id": "workshop",
+        "name": "Officina dei trenini",
+        "x": -8,
+        "z": -9,
+        "arenaId": "workshop",
+        "disabled": true
+      },
+      {
+        "id": "carousel",
+        "name": "Giostra dei regali",
+        "x": 8,
+        "z": -9,
+        "arenaId": "carousel",
+        "disabled": false
+      }
+    ],
+    "bolts": [],
+    "systemConfigs": [
+      {
+        "id": "ranged",
+        "windup": 1.2,
+        "lock": 0.2,
+        "recovery": 1.2,
+        "speed": 6,
+        "radius": 0.18,
+        "range": 12,
+        "travel": 18,
+        "lifetime": 3,
+        "pool": 3
+      }
+    ],
+    "committed": 1,
+    "lastProgress": 0,
+    "hintStage": 0,
+    "rangedLearned": true,
+    "droneHit": true,
+    "dodgeUsed": true,
+    "remaining": 3,
+    "pending": 0,
+    "neutralized": 3,
+    "healAvailable": false,
+    "healed": true,
+    "firstWrapped": true,
+    "review": false,
+    "preview": false,
+    "playing": false,
+    "time": 14.53416666666677,
+    "enemies": [
+      {
+        "id": 1,
+        "key": "carousel:0",
+        "kind": "melee",
+        "arenaId": "carousel",
+        "x": 0.5160890004010579,
+        "z": 6.457348553398232,
+        "hp": 2,
+        "status": "approach",
+        "since": 12.900033333333381,
+        "attackId": 5,
+        "angle": -1.6998864612305704,
+        "hit": true
+      },
+      {
+        "id": 2,
+        "key": "carousel:1",
+        "kind": "melee",
+        "arenaId": "carousel",
+        "x": 0.15181786181078116,
+        "z": 3.678544222261194,
+        "hp": 2,
+        "status": "approach",
+        "since": 11.05140000000009,
+        "attackId": 4,
+        "angle": 2.630195334380368,
+        "hit": true
+      },
+      {
+        "id": 3,
+        "key": "carousel:2",
+        "kind": "melee",
+        "arenaId": "carousel",
+        "x": -0.6183110095378248,
+        "z": 6.3586471221215835,
+        "hp": 2,
+        "status": "active",
+        "since": 14.517500000000103,
+        "attackId": 6,
+        "angle": 0.3792789157111027,
+        "hit": true
+      }
+    ],
+    "objective": "Libera un lato, poi E · Ancoraggi 2/3",
+    "checkpoint": {
+      "version": 3,
+      "chapter": "toystreet",
+      "boundary": "street",
+      "healed": true,
+      "firstWrapped": true,
+      "disabledAnchors": [
+        "workshop"
+      ],
+      "clearedArenas": [
+        "workshop"
+      ],
+      "activatedArenas": [
+        "workshop",
+        "carousel"
+      ],
+      "defeatedEnemies": [
+        "workshop:0",
+        "workshop:1",
+        "workshop:2"
+      ],
+      "bossSegments": 0,
+      "bossDefeated": false,
+      "coreCarried": false,
+      "coreReturned": false
+    },
+    "eventLog": [
+      {
+        "time": 0,
+        "type": "retry",
+        "chapter": "toystreet",
+        "boundary": "street"
+      },
+      {
+        "time": 4.169,
+        "type": "attack-windup",
+        "id": 1,
+        "attackId": 1
+      },
+      {
+        "time": 4.384,
+        "type": "attack-lock",
+        "id": 1,
+        "attackId": 1,
+        "angle": -0.32326206011789566
+      },
+      {
+        "time": 5.184,
+        "type": "attack-active",
+        "id": 1,
+        "attackId": 1,
+        "windup": 1.0150333333332853,
+        "angle": -0.32326206011789566
+      },
+      {
+        "time": 5.184,
+        "type": "player-hurt",
+        "hp": 5,
+        "attackId": 1,
+        "kind": "melee"
+      },
+      {
+        "time": 5.4,
+        "type": "attack-recovery",
+        "id": 1,
+        "attackId": 1
+      },
+      {
+        "time": 6.187,
+        "type": "attack-windup",
+        "id": 2,
+        "attackId": 2
+      },
+      {
+        "time": 6.401,
+        "type": "attack-lock",
+        "id": 2,
+        "attackId": 2,
+        "angle": -0.7082684896189225
+      },
+      {
+        "time": 6.601,
+        "type": "recovery-end",
+        "id": 1,
+        "elapsed": 1.2010000000000574
+      },
+      {
+        "time": 7.201,
+        "type": "attack-active",
+        "id": 2,
+        "attackId": 2,
+        "windup": 1.0138666666666758,
+        "angle": -0.7082684896189225
+      },
+      {
+        "time": 7.218,
+        "type": "player-hurt",
+        "hp": 4,
+        "attackId": 2,
+        "kind": "melee"
+      },
+      {
+        "time": 7.401,
+        "type": "attack-recovery",
+        "id": 2,
+        "attackId": 2
+      },
+      {
+        "time": 8.018,
+        "type": "attack-windup",
+        "id": 1,
+        "attackId": 3
+      },
+      {
+        "time": 8.218,
+        "type": "attack-lock",
+        "id": 1,
+        "attackId": 3,
+        "angle": -0.36758638512622566
+      },
+      {
+        "time": 8.618,
+        "type": "recovery-end",
+        "id": 2,
+        "elapsed": 1.2166000000000068
+      },
+      {
+        "time": 9.018,
+        "type": "attack-active",
+        "id": 1,
+        "attackId": 3,
+        "windup": 1.0005666666666766,
+        "angle": -0.36758638512622566
+      },
+      {
+        "time": 9.035,
+        "type": "player-hurt",
+        "hp": 3,
+        "attackId": 3,
+        "kind": "melee"
+      },
+      {
+        "time": 9.218,
+        "type": "attack-recovery",
+        "id": 1,
+        "attackId": 3
+      },
+      {
+        "time": 9.835,
+        "type": "attack-windup",
+        "id": 2,
+        "attackId": 4
+      },
+      {
+        "time": 10.035,
+        "type": "attack-lock",
+        "id": 2,
+        "attackId": 4,
+        "angle": -0.16868029852469932
+      },
+      {
+        "time": 10.435,
+        "type": "recovery-end",
+        "id": 1,
+        "elapsed": 1.2163666666666746
+      },
+      {
+        "time": 10.835,
+        "type": "attack-active",
+        "id": 2,
+        "attackId": 4,
+        "windup": 1.0007000000000037,
+        "angle": -0.16868029852469932
+      },
+      {
+        "time": 10.852,
+        "type": "player-hurt",
+        "hp": 2,
+        "attackId": 4,
+        "kind": "melee"
+      },
+      {
+        "time": 11.051,
+        "type": "attack-recovery",
+        "id": 2,
+        "attackId": 4
+      },
+      {
+        "time": 11.668,
+        "type": "attack-windup",
+        "id": 1,
+        "attackId": 5
+      },
+      {
+        "time": 11.868,
+        "type": "attack-lock",
+        "id": 1,
+        "attackId": 5,
+        "angle": -1.6998864612305704
+      },
+      {
+        "time": 12.268,
+        "type": "recovery-end",
+        "id": 2,
+        "elapsed": 1.2162666666666997
+      },
+      {
+        "time": 12.684,
+        "type": "attack-active",
+        "id": 1,
+        "attackId": 5,
+        "windup": 1.015933333333182,
+        "angle": -1.6998864612305704
+      },
+      {
+        "time": 12.7,
+        "type": "player-hurt",
+        "hp": 1,
+        "attackId": 5,
+        "kind": "melee"
+      },
+      {
+        "time": 12.9,
+        "type": "attack-recovery",
+        "id": 1,
+        "attackId": 5
+      },
+      {
+        "time": 13.516,
+        "type": "attack-windup",
+        "id": 3,
+        "attackId": 6
+      },
+      {
+        "time": 13.717,
+        "type": "attack-lock",
+        "id": 3,
+        "attackId": 6,
+        "angle": 0.3792789157111027
+      },
+      {
+        "time": 14.117,
+        "type": "recovery-end",
+        "id": 1,
+        "elapsed": 1.2166000000000263
+      },
+      {
+        "time": 14.518,
+        "type": "attack-active",
+        "id": 3,
+        "attackId": 6,
+        "windup": 1.0010333333333854,
+        "angle": 0.3792789157111027
+      },
+      {
+        "time": 14.534,
+        "type": "player-hurt",
+        "hp": 0,
+        "attackId": 6,
+        "kind": "melee"
+      }
+    ],
+    "storageAvailable": true,
+    "transitions": [
+      {
+        "action": "menu-action",
+        "chapter": "courtyard",
+        "boundary": "training",
+        "menu": "title",
+        "hp": 6,
+        "time": 0,
+        "button": "new",
+        "clickDetail": 1
+      },
+      {
+        "action": "new-game",
+        "chapter": "courtyard",
+        "boundary": "training",
+        "menu": "title",
+        "hp": 6,
+        "time": 0
+      },
+      {
+        "action": "open-menu",
+        "chapter": "courtyard",
+        "boundary": "B",
+        "menu": "none",
+        "hp": 0,
+        "time": 33.382733333332936,
+        "nextMenu": "dead"
+      },
+      {
+        "action": "menu-action",
+        "chapter": "courtyard",
+        "boundary": "B",
+        "menu": "dead",
+        "hp": 0,
+        "time": 33.382733333332936,
+        "button": "retry",
+        "clickDetail": 1
+      },
+      {
+        "action": "retry",
+        "chapter": "courtyard",
+        "boundary": "B",
+        "menu": "dead",
+        "hp": 0,
+        "time": 33.382733333332936
+      },
+      {
+        "action": "open-menu",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "none",
+        "hp": 0,
+        "time": 87.55539999999732,
+        "nextMenu": "dead"
+      },
+      {
+        "action": "menu-action",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "dead",
+        "hp": 0,
+        "time": 87.55539999999732,
+        "button": "retry",
+        "clickDetail": 1
+      },
+      {
+        "action": "retry",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "dead",
+        "hp": 0,
+        "time": 87.55539999999732
+      },
+      {
+        "action": "open-menu",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "none",
+        "hp": 0,
+        "time": 18.080600000000185,
+        "nextMenu": "dead"
+      },
+      {
+        "action": "menu-action",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "dead",
+        "hp": 0,
+        "time": 18.080600000000185,
+        "button": "retry",
+        "clickDetail": 1
+      },
+      {
+        "action": "retry",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "dead",
+        "hp": 0,
+        "time": 18.080600000000185
+      },
+      {
+        "action": "open-menu",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "none",
+        "hp": 0,
+        "time": 19.967766666666886,
+        "nextMenu": "dead"
+      },
+      {
+        "action": "menu-action",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "dead",
+        "hp": 0,
+        "time": 19.967766666666886,
+        "button": "retry",
+        "clickDetail": 1
+      },
+      {
+        "action": "retry",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "dead",
+        "hp": 0,
+        "time": 19.967766666666886
+      },
+      {
+        "action": "open-menu",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "none",
+        "hp": 0,
+        "time": 16.129066666666844,
+        "nextMenu": "dead"
+      },
+      {
+        "action": "menu-action",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "dead",
+        "hp": 0,
+        "time": 16.129066666666844,
+        "button": "retry",
+        "clickDetail": 1
+      },
+      {
+        "action": "retry",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "dead",
+        "hp": 0,
+        "time": 16.129066666666844
+      },
+      {
+        "action": "open-menu",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "none",
+        "hp": 0,
+        "time": 23.42866666666669,
+        "nextMenu": "dead"
+      },
+      {
+        "action": "menu-action",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "dead",
+        "hp": 0,
+        "time": 23.42866666666669,
+        "button": "retry",
+        "clickDetail": 1
+      },
+      {
+        "action": "retry",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "dead",
+        "hp": 0,
+        "time": 23.42866666666669
+      },
+      {
+        "action": "open-menu",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "none",
+        "hp": 0,
+        "time": 18.73500000000036,
+        "nextMenu": "dead"
+      },
+      {
+        "action": "menu-action",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "dead",
+        "hp": 0,
+        "time": 18.73500000000036,
+        "button": "retry",
+        "clickDetail": 1
+      },
+      {
+        "action": "retry",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "dead",
+        "hp": 0,
+        "time": 18.73500000000036
+      },
+      {
+        "action": "open-menu",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "none",
+        "hp": 0,
+        "time": 14.955066666666857,
+        "nextMenu": "dead"
+      },
+      {
+        "action": "menu-action",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "dead",
+        "hp": 0,
+        "time": 14.955066666666857,
+        "button": "retry",
+        "clickDetail": 1
+      },
+      {
+        "action": "retry",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "dead",
+        "hp": 0,
+        "time": 14.955066666666857
+      },
+      {
+        "action": "open-menu",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "none",
+        "hp": 0,
+        "time": 18.125699999999878,
+        "nextMenu": "dead"
+      },
+      {
+        "action": "menu-action",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "dead",
+        "hp": 0,
+        "time": 18.125699999999878,
+        "button": "retry",
+        "clickDetail": 1
+      },
+      {
+        "action": "retry",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "dead",
+        "hp": 0,
+        "time": 18.125699999999878
+      },
+      {
+        "action": "open-menu",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "menu": "none",
+        "hp": 0,
+        "time": 14.53416666666677,
+        "nextMenu": "dead"
+      }
+    ]
+  },
+  "wallSeconds": 395.38
+}

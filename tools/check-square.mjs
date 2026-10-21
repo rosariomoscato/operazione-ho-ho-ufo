@@ -15,7 +15,10 @@ const browser = await chromium.launch({executablePath:await findBrowser(),headle
 const page = await browser.newPage({viewport:{width:1280,height:720}});page.on('pageerror',e=>report.errors.push(e.message));
 try {
   await page.route(/\/src\/main\.ts(?:\?.*)?$/,route=>route.fulfill({contentType:'application/javascript',body:"import '/src/style.css'; import {Game} from '/src/game.ts'; import {SAVE_KEY} from '/src/storage.ts'; window.__saveKey=SAVE_KEY; window.__testGame=new Game(document.querySelector('#app'));"}));
-  await page.goto(url);await page.waitForFunction(()=>window.__testGame&&window.LC?.ready);
+  // These are simulation/input fixtures; media loading is audited separately.
+  // Wait for the explicit Game readiness contract, not the document's optional
+  // audio/network load event on a cold development server.
+  await page.goto(url,{waitUntil:'domcontentloaded',timeout:60000});await page.waitForFunction(()=>window.__testGame&&window.LC?.ready);
   report.tests=await page.evaluate(()=>{
     const g=window.__testGame,tests=[];
     const check=(ok,message)=>{if(!ok)throw Error(message);};

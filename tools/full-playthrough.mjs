@@ -4,7 +4,7 @@ import { mkdir, writeFile } from 'node:fs/promises';
 import { serve } from './serve.mjs';
 import { findBrowser } from './capture.mjs';
 import { state, hold, gift, math } from './input-driver.mjs';
-import { firstTwoActs, recover, safeWalk, aimOrRetry } from './playthrough-acts.mjs';
+import { firstTwoActs, recover, safeWalk, aimOrRetry, giftOrRetry } from './playthrough-acts.mjs';
 
 // Informed integration bot: state may be read, never mutated. No checkpoint
 // seeds, debug jumps, injected damage, clock seeks or artificial game pauses.
@@ -34,12 +34,13 @@ try {
     if (boss.phase === 'vulnerable') {
       if (!await aimOrRetry(page, report, { x: 0, z: -8 })) continue;
       if (math.distance(s.player, { x: 0, z: -8 }) > 10) { await hold(page, 'KeyW', 250); continue; }
-      await gift(page); report.shots++; await page.waitForTimeout(750);
+      if (!await giftOrRetry(page, report)) continue; await page.waitForTimeout(750);
     } else {
       if (!await aimOrRetry(page, report, { x: 0, z: -8 })) continue;
       const live = await state(page);
       if (live.player.x < -5) side = 'KeyD'; else if (live.player.x > 5) side = 'KeyA';
-      await hold(page, side, 300);
+      try { await hold(page, side, 300); }
+      catch(error) { if((await state(page)).player.hp>0)throw error;await recover(page,report);continue; }
       if (['active', 'beam'].includes(boss.phase)) await page.keyboard.press('Space');
     }
   }

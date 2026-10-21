@@ -1,0 +1,652 @@
+{
+  "pass": false,
+  "kind": "real-input-new-game-to-ending",
+  "shots": 4,
+  "deaths": [
+    {
+      "chapter": "courtyard",
+      "time": 35.00159999999943,
+      "checkpoint": {
+        "version": 3,
+        "chapter": "courtyard",
+        "boundary": "B",
+        "healed": false,
+        "firstWrapped": true,
+        "disabledAnchors": [],
+        "clearedArenas": [],
+        "activatedArenas": [],
+        "defeatedEnemies": [],
+        "bossSegments": 0,
+        "bossDefeated": false,
+        "coreCarried": false,
+        "coreReturned": false
+      }
+    }
+  ],
+  "boundaries": [],
+  "errors": [
+    "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Ricomincia checkpoint', exact: true })\u001b[22m\n\n    at recover (C:\\Users\\rosar\\kDrive\\Lavoro\\Progetti\\game-test\\tools\\playthrough-acts.mjs:22:84)\n    at async firstTwoActs (C:\\Users\\rosar\\kDrive\\Lavoro\\Progetti\\game-test\\tools\\playthrough-acts.mjs:73:15)\n    at async file:///C:/Users/rosar/kDrive/Lavoro/Progetti/game-test/tools/full-playthrough.mjs:24:3"
+  ],
+  "started": 1792582896487,
+  "html": "<!doctype html>\n<html lang=\"it\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"icon\" href=\"data:,\"><title>Operazione Ho Ho UFO · Il cortile</title>  <script type=\"module\" crossorigin src=\"/assets/index-TmJx2Hx1.js\"></script>\n  <link rel=\"modulepreload\" crossorigin href=\"/assets/three-DjPfJOhV.js\">\n  <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CfZ1PVhC.css\">\n</head><body><div id=\"app\"></div></body></html>\n",
+  "failure": {
+    "settings": {
+      "master": 0.7,
+      "music": 0.3,
+      "effects": 0.65,
+      "reducedMotion": false,
+      "aimAssist": true,
+      "sensitivity": 1,
+      "invertY": false,
+      "fov": 53,
+      "keyBindings": {
+        "forward": "KeyW",
+        "backward": "KeyS",
+        "left": "KeyA",
+        "right": "KeyD",
+        "dodge": "Space",
+        "interact": "KeyE",
+        "help": "KeyH"
+      }
+    },
+    "cameraDiagnostics": {
+      "position": [
+        2.9402741105840384,
+        4.211921756621386,
+        5.784238960364077
+      ],
+      "look": [
+        -2.022123900614517,
+        1.1,
+        -7.091595225367451
+      ],
+      "distance": 9.015666969857966,
+      "compressed": false,
+      "occluded": []
+    },
+    "chapter": "courtyard",
+    "act": "courtyard",
+    "actTitle": "Il cortile del laboratorio",
+    "beat": "battle",
+    "group": 2,
+    "player": {
+      "x": -0.745702567959315,
+      "z": -2.050687709697011,
+      "hp": 0,
+      "invulnerableUntil": 36.25159999999943,
+      "dodgeUntil": 12.985300000000162,
+      "dodgeReady": 13.985300000000162,
+      "dx": -0.3746321506897417,
+      "dz": -0.9271735283481612
+    },
+    "camera": {
+      "yaw": 0.24800000000000005,
+      "pitch": 0.3,
+      "view": "player"
+    },
+    "worldFallback": false,
+    "boss": null,
+    "bossSegments": 0,
+    "bossDefeated": false,
+    "coreCarried": false,
+    "coreReturned": false,
+    "gifts": [],
+    "disabledAnchors": [],
+    "clearedArenas": [],
+    "activatedArenas": [],
+    "defeatedEnemies": [],
+    "anchorCount": 0,
+    "arenas": [],
+    "anchors": [
+      {
+        "id": "courtyard",
+        "name": "Laboratorio",
+        "x": 0,
+        "z": -9,
+        "disabled": false
+      }
+    ],
+    "bolts": [],
+    "systemConfigs": [
+      {
+        "id": "ranged",
+        "windup": 1.2,
+        "lock": 0.2,
+        "recovery": 1.2,
+        "speed": 6,
+        "radius": 0.18,
+        "range": 12,
+        "travel": 18,
+        "lifetime": 3,
+        "pool": 3
+      }
+    ],
+    "committed": 1,
+    "lastProgress": 24.501099999999987,
+    "hintStage": 0,
+    "rangedLearned": false,
+    "droneHit": true,
+    "dodgeUsed": true,
+    "remaining": 5,
+    "pending": 3,
+    "neutralized": 1,
+    "healAvailable": false,
+    "healed": false,
+    "firstWrapped": true,
+    "review": false,
+    "preview": false,
+    "playing": false,
+    "time": 35.00159999999943,
+    "enemies": [
+      {
+        "id": 1,
+        "key": "courtyard:1",
+        "kind": "melee",
+        "x": -0.45993123477531916,
+        "z": -4.131625645448471,
+        "hp": 0,
+        "status": "gone",
+        "since": 24.501099999999987,
+        "attackId": 3,
+        "angle": -0.054935094178861776,
+        "hit": true
+      },
+      {
+        "id": 2,
+        "key": "courtyard:2",
+        "kind": "melee",
+        "x": -1.6433562318776926,
+        "z": -1.9857423507103018,
+        "hp": 2,
+        "status": "active",
+        "since": 35.000766666666095,
+        "attackId": 7,
+        "angle": 1.643020611564072,
+        "hit": true
+      },
+      {
+        "id": 3,
+        "key": "courtyard:3",
+        "kind": "melee",
+        "x": -1.1133673780566689,
+        "z": -3.0028543574477498,
+        "hp": 2,
+        "status": "approach",
+        "since": 33.38406666666622,
+        "attackId": 6,
+        "angle": -0.1787447370636688,
+        "hit": true
+      }
+    ],
+    "objective": "Libera il cortile · 5 difensori",
+    "checkpoint": {
+      "version": 3,
+      "chapter": "courtyard",
+      "boundary": "B",
+      "healed": false,
+      "firstWrapped": true,
+      "disabledAnchors": [],
+      "clearedArenas": [],
+      "activatedArenas": [],
+      "defeatedEnemies": [],
+      "bossSegments": 0,
+      "bossDefeated": false,
+      "coreCarried": false,
+      "coreReturned": false
+    },
+    "eventLog": [
+      {
+        "time": 0,
+        "type": "checkpoint",
+        "chapter": "courtyard",
+        "boundary": "training",
+        "persisted": true
+      },
+      {
+        "time": 0,
+        "type": "dialogue",
+        "id": "vo.squamakk.battery"
+      },
+      {
+        "time": 0.299,
+        "type": "beat",
+        "beat": "training"
+      },
+      {
+        "time": 0.299,
+        "type": "dialogue",
+        "id": "vo.briciola.training"
+      },
+      {
+        "time": 10.752,
+        "type": "throw",
+        "target": "drone",
+        "x": -2,
+        "z": 4,
+        "bossWindowId": null
+      },
+      {
+        "time": 11.501,
+        "type": "drone-hit"
+      },
+      {
+        "time": 11.501,
+        "type": "explosion",
+        "x": -1.8036862745098,
+        "z": 4.4907843137255,
+        "radius": 2,
+        "hits": 1
+      },
+      {
+        "time": 12.635,
+        "type": "dodge"
+      },
+      {
+        "time": 12.635,
+        "type": "dialogue",
+        "id": "vo.briciola.anchors"
+      },
+      {
+        "time": 12.635,
+        "type": "group-enter",
+        "group": 1
+      },
+      {
+        "time": 12.635,
+        "type": "checkpoint",
+        "chapter": "courtyard",
+        "boundary": "A",
+        "persisted": true
+      },
+      {
+        "time": 17.553,
+        "type": "attack-windup",
+        "id": 1,
+        "attackId": 1
+      },
+      {
+        "time": 17.753,
+        "type": "attack-lock",
+        "id": 1,
+        "attackId": 1,
+        "angle": -0.054935094178861776
+      },
+      {
+        "time": 18.553,
+        "type": "attack-active",
+        "id": 1,
+        "attackId": 1,
+        "windup": 1.0002666666666258,
+        "angle": -0.054935094178861776
+      },
+      {
+        "time": 18.553,
+        "type": "player-hurt",
+        "hp": 5,
+        "attackId": 1,
+        "kind": "melee"
+      },
+      {
+        "time": 18.753,
+        "type": "attack-recovery",
+        "id": 1,
+        "attackId": 1
+      },
+      {
+        "time": 19.97,
+        "type": "recovery-end",
+        "id": 1,
+        "elapsed": 1.2164666666666228
+      },
+      {
+        "time": 19.97,
+        "type": "attack-windup",
+        "id": 1,
+        "attackId": 2
+      },
+      {
+        "time": 20.17,
+        "type": "attack-lock",
+        "id": 1,
+        "attackId": 2,
+        "angle": -0.054935094178861776
+      },
+      {
+        "time": 20.554,
+        "type": "throw",
+        "target": 1,
+        "x": -0.45993123477531916,
+        "z": -4.131625645448471,
+        "bossWindowId": null
+      },
+      {
+        "time": 20.97,
+        "type": "attack-active",
+        "id": 1,
+        "attackId": 2,
+        "windup": 1.0002333333332984,
+        "angle": -0.054935094178861776
+      },
+      {
+        "time": 20.971,
+        "type": "player-hurt",
+        "hp": 4,
+        "attackId": 2,
+        "kind": "melee"
+      },
+      {
+        "time": 21.17,
+        "type": "attack-recovery",
+        "id": 1,
+        "attackId": 2
+      },
+      {
+        "time": 21.187,
+        "type": "progress",
+        "reason": "gift-hit"
+      },
+      {
+        "time": 21.187,
+        "type": "enemy-hit",
+        "id": 1,
+        "key": "courtyard:1",
+        "hp": 1
+      },
+      {
+        "time": 21.187,
+        "type": "explosion",
+        "x": -0.4935533378248875,
+        "z": -3.5202082186278982,
+        "radius": 2,
+        "hits": 1
+      },
+      {
+        "time": 22.384,
+        "type": "recovery-end",
+        "id": 1,
+        "elapsed": 1.2136999999999567
+      },
+      {
+        "time": 22.401,
+        "type": "attack-windup",
+        "id": 1,
+        "attackId": 3
+      },
+      {
+        "time": 22.602,
+        "type": "attack-lock",
+        "id": 1,
+        "attackId": 3,
+        "angle": -0.054935094178861776
+      },
+      {
+        "time": 23.417,
+        "type": "attack-active",
+        "id": 1,
+        "attackId": 3,
+        "windup": 1.0165666666666304,
+        "angle": -0.054935094178861776
+      },
+      {
+        "time": 23.434,
+        "type": "player-hurt",
+        "hp": 3,
+        "attackId": 3,
+        "kind": "melee"
+      },
+      {
+        "time": 23.617,
+        "type": "attack-recovery",
+        "id": 1,
+        "attackId": 3
+      },
+      {
+        "time": 23.867,
+        "type": "throw",
+        "target": 1,
+        "x": -0.45993123477531916,
+        "z": -4.131625645448471,
+        "bossWindowId": null
+      },
+      {
+        "time": 24.501,
+        "type": "progress",
+        "reason": "gift-hit"
+      },
+      {
+        "time": 24.501,
+        "type": "enemy-hit",
+        "id": 1,
+        "key": "courtyard:1",
+        "hp": 0
+      },
+      {
+        "time": 24.501,
+        "type": "wrap",
+        "id": 1,
+        "key": "courtyard:1"
+      },
+      {
+        "time": 24.501,
+        "type": "dialogue",
+        "id": "vo.santa.wrapped"
+      },
+      {
+        "time": 24.501,
+        "type": "explosion",
+        "x": -0.49345820204728297,
+        "z": -3.5219382612803694,
+        "radius": 2,
+        "hits": 1
+      },
+      {
+        "time": 24.501,
+        "type": "group-enter",
+        "group": 2
+      },
+      {
+        "time": 24.501,
+        "type": "checkpoint",
+        "chapter": "courtyard",
+        "boundary": "B",
+        "persisted": true
+      },
+      {
+        "time": 25.902,
+        "type": "teleport",
+        "id": 1
+      },
+      {
+        "time": 28.485,
+        "type": "attack-windup",
+        "id": 3,
+        "attackId": 4
+      },
+      {
+        "time": 28.702,
+        "type": "attack-lock",
+        "id": 3,
+        "attackId": 4,
+        "angle": 0.44477608303648963
+      },
+      {
+        "time": 29.502,
+        "type": "attack-active",
+        "id": 3,
+        "attackId": 4,
+        "windup": 1.016466666666613,
+        "angle": 0.44477608303648963
+      },
+      {
+        "time": 29.518,
+        "type": "player-hurt",
+        "hp": 2,
+        "attackId": 4,
+        "kind": "melee"
+      },
+      {
+        "time": 29.718,
+        "type": "attack-recovery",
+        "id": 3,
+        "attackId": 4
+      },
+      {
+        "time": 30.334,
+        "type": "attack-windup",
+        "id": 2,
+        "attackId": 5
+      },
+      {
+        "time": 30.534,
+        "type": "attack-lock",
+        "id": 2,
+        "attackId": 5,
+        "angle": 0.9463837788645405
+      },
+      {
+        "time": 30.934,
+        "type": "recovery-end",
+        "id": 3,
+        "elapsed": 1.2160666666666131
+      },
+      {
+        "time": 31.335,
+        "type": "attack-active",
+        "id": 2,
+        "attackId": 5,
+        "windup": 1.0003333333332876,
+        "angle": 0.9463837788645405
+      },
+      {
+        "time": 31.551,
+        "type": "attack-recovery",
+        "id": 2,
+        "attackId": 5
+      },
+      {
+        "time": 32.151,
+        "type": "attack-windup",
+        "id": 3,
+        "attackId": 6
+      },
+      {
+        "time": 32.367,
+        "type": "attack-lock",
+        "id": 3,
+        "attackId": 6,
+        "angle": -0.1787447370636688
+      },
+      {
+        "time": 32.767,
+        "type": "recovery-end",
+        "id": 2,
+        "elapsed": 1.216399999999954
+      },
+      {
+        "time": 33.168,
+        "type": "attack-active",
+        "id": 3,
+        "attackId": 6,
+        "windup": 1.0165666666665985,
+        "angle": -0.1787447370636688
+      },
+      {
+        "time": 33.168,
+        "type": "player-hurt",
+        "hp": 1,
+        "attackId": 6,
+        "kind": "melee"
+      },
+      {
+        "time": 33.384,
+        "type": "attack-recovery",
+        "id": 3,
+        "attackId": 6
+      },
+      {
+        "time": 33.984,
+        "type": "attack-windup",
+        "id": 2,
+        "attackId": 7
+      },
+      {
+        "time": 34.2,
+        "type": "attack-lock",
+        "id": 2,
+        "attackId": 7,
+        "angle": 1.643020611564072
+      },
+      {
+        "time": 34.601,
+        "type": "recovery-end",
+        "id": 3,
+        "elapsed": 1.2165999999999073
+      },
+      {
+        "time": 35.001,
+        "type": "attack-active",
+        "id": 2,
+        "attackId": 7,
+        "windup": 1.0165666666665985,
+        "angle": 1.643020611564072
+      },
+      {
+        "time": 35.002,
+        "type": "player-hurt",
+        "hp": 0,
+        "attackId": 7,
+        "kind": "melee"
+      }
+    ],
+    "storageAvailable": true,
+    "transitions": [
+      {
+        "action": "menu-action",
+        "chapter": "courtyard",
+        "boundary": "training",
+        "menu": "title",
+        "hp": 6,
+        "time": 0,
+        "button": "new",
+        "clickDetail": 1
+      },
+      {
+        "action": "new-game",
+        "chapter": "courtyard",
+        "boundary": "training",
+        "menu": "title",
+        "hp": 6,
+        "time": 0
+      },
+      {
+        "action": "open-menu",
+        "chapter": "courtyard",
+        "boundary": "B",
+        "menu": "none",
+        "hp": 0,
+        "time": 35.00159999999943,
+        "nextMenu": "dead"
+      },
+      {
+        "action": "menu-action",
+        "chapter": "courtyard",
+        "boundary": "B",
+        "menu": "dead",
+        "hp": 0,
+        "time": 35.00159999999943,
+        "button": "title",
+        "clickDetail": 1
+      },
+      {
+        "action": "open-menu",
+        "chapter": "courtyard",
+        "boundary": "B",
+        "menu": "dead",
+        "hp": 0,
+        "time": 35.00159999999943,
+        "nextMenu": "title"
+      }
+    ]
+  },
+  "wallSeconds": 91.381
+}

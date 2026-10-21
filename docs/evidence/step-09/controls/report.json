@@ -1,0 +1,48 @@
+{
+  "pass": true,
+  "sourceHashes": {
+    "src/game.ts": "78ac5571694ebf03286e1a7152087200d76a0148566b2b7c70397f7f01ab4128",
+    "src/input.ts": "01faaa538d084864e08f9d8e75ff062a9c573e1c779c197f600f07220f0576a4",
+    "src/storage.ts": "7ff96e2d9b99a722134ef623b9329531a4528f4718b0973be57ad23b0ed2a75e",
+    "src/style.css": "12b7a167eeb47a506df2db68a6d351887151d58726f025235e43cf5ac035ba04",
+    "src/ui/controls.ts": "00682e06d29344a820944c583a253da83ac0daabb9cc0783931a1499cf70113f"
+  },
+  "tests": [
+    {
+      "name": "all sliders and checkboxes persist through a real reload",
+      "pass": true
+    },
+    {
+      "name": "conflicting and reserved remaps explain rejection; Escape cancels without closing settings",
+      "pass": true
+    },
+    {
+      "name": "all seven actions can be remapped through their UI controls",
+      "pass": true
+    },
+    {
+      "name": "remapped forward key is used by actual input and keyup releases it",
+      "pass": true
+    },
+    {
+      "name": "sensitivity, inverted pitch and FOV affect the real game camera",
+      "pass": true
+    },
+    {
+      "name": "real DOM key events map every action and HUD uses the configured controls",
+      "pass": true
+    },
+    {
+      "name": "Escape opens pause; reset restores settings without deleting checkpoint",
+      "pass": true
+    }
+  ],
+  "errors": [],
+  "sourceHashesAfter": {
+    "src/game.ts": "78ac5571694ebf03286e1a7152087200d76a0148566b2b7c70397f7f01ab4128",
+    "src/input.ts": "01faaa538d084864e08f9d8e75ff062a9c573e1c779c197f600f07220f0576a4",
+    "src/storage.ts": "7ff96e2d9b99a722134ef623b9329531a4528f4718b0973be57ad23b0ed2a75e",
+    "src/style.css": "12b7a167eeb47a506df2db68a6d351887151d58726f025235e43cf5ac035ba04",
+    "src/ui/controls.ts": "00682e06d29344a820944c583a253da83ac0daabb9cc0783931a1499cf70113f"
+  }
+}

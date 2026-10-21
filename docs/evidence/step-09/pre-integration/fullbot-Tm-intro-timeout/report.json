@@ -1,0 +1,194 @@
+{
+  "pass": false,
+  "kind": "real-input-new-game-to-ending",
+  "shots": 0,
+  "deaths": [],
+  "boundaries": [],
+  "errors": [
+    "locator.click: Timeout 30000ms exceeded.\nCall log:\n\u001b[2m  - waiting for getByRole('button', { name: 'Salta introduzione', exact: true })\u001b[22m\n\u001b[2m    - locator resolved to <button data-action=\"skip\">Salta introduzione</button>\u001b[22m\n\u001b[2m  - attempting click action\u001b[22m\n\u001b[2m    - waiting for element to be visible, enabled and stable\u001b[22m\n\u001b[2m  - element was detached from the DOM, retrying\u001b[22m\n\n    at firstTwoActs (C:\\Users\\rosar\\kDrive\\Lavoro\\Progetti\\game-test\\tools\\playthrough-acts.mjs:62:79)\n    at async file:///C:/Users/rosar/kDrive/Lavoro/Progetti/game-test/tools/full-playthrough.mjs:24:3"
+  ],
+  "started": 1792581065837,
+  "html": "<!doctype html>\n<html lang=\"it\"><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width, initial-scale=1\"><link rel=\"icon\" href=\"data:,\"><title>Operazione Ho Ho UFO · Il cortile</title>  <script type=\"module\" crossorigin src=\"/assets/index-TmJx2Hx1.js\"></script>\n  <link rel=\"modulepreload\" crossorigin href=\"/assets/three-DjPfJOhV.js\">\n  <link rel=\"stylesheet\" crossorigin href=\"/assets/index-CfZ1PVhC.css\">\n</head><body><div id=\"app\"></div></body></html>\n",
+  "failure": {
+    "settings": {
+      "master": 0.7,
+      "music": 0.3,
+      "effects": 0.65,
+      "reducedMotion": false,
+      "aimAssist": true,
+      "sensitivity": 1,
+      "invertY": false,
+      "fov": 53,
+      "keyBindings": {
+        "forward": "KeyW",
+        "backward": "KeyS",
+        "left": "KeyA",
+        "right": "KeyD",
+        "dodge": "Space",
+        "interact": "KeyE",
+        "help": "KeyH"
+      }
+    },
+    "cameraDiagnostics": {
+      "position": [
+        1.65,
+        4.211921756621386,
+        17.5
+      ],
+      "look": [
+        0,
+        1.1,
+        3.8
+      ],
+      "distance": 9.015666969857964,
+      "compressed": false,
+      "occluded": []
+    },
+    "chapter": "courtyard",
+    "act": "courtyard",
+    "actTitle": "Il cortile del laboratorio",
+    "beat": "training",
+    "group": 0,
+    "player": {
+      "x": 0,
+      "z": 9,
+      "hp": 6,
+      "invulnerableUntil": 1.25,
+      "dodgeUntil": 0,
+      "dodgeReady": 0,
+      "dx": 0,
+      "dz": -1
+    },
+    "camera": {
+      "yaw": 0,
+      "pitch": 0.3,
+      "view": "player"
+    },
+    "worldFallback": false,
+    "boss": null,
+    "bossSegments": 0,
+    "bossDefeated": false,
+    "coreCarried": false,
+    "coreReturned": false,
+    "gifts": [],
+    "disabledAnchors": [],
+    "clearedArenas": [],
+    "activatedArenas": [],
+    "defeatedEnemies": [],
+    "anchorCount": 0,
+    "arenas": [],
+    "anchors": [
+      {
+        "id": "courtyard",
+        "name": "Laboratorio",
+        "x": 0,
+        "z": -9,
+        "disabled": false
+      }
+    ],
+    "bolts": [],
+    "systemConfigs": [
+      {
+        "id": "ranged",
+        "windup": 1.2,
+        "lock": 0.2,
+        "recovery": 1.2,
+        "speed": 6,
+        "radius": 0.18,
+        "range": 12,
+        "travel": 18,
+        "lifetime": 3,
+        "pool": 3
+      }
+    ],
+    "committed": 0,
+    "lastProgress": 0,
+    "hintStage": 0,
+    "rangedLearned": false,
+    "droneHit": false,
+    "dodgeUsed": false,
+    "remaining": 6,
+    "pending": 0,
+    "neutralized": 0,
+    "healAvailable": false,
+    "healed": false,
+    "firstWrapped": false,
+    "review": false,
+    "preview": false,
+    "playing": true,
+    "time": 27.866199999999846,
+    "enemies": [],
+    "objective": "Allinea il drone al + centrale e lancia",
+    "checkpoint": {
+      "version": 3,
+      "chapter": "courtyard",
+      "boundary": "training",
+      "healed": false,
+      "firstWrapped": false,
+      "disabledAnchors": [],
+      "clearedArenas": [],
+      "activatedArenas": [],
+      "defeatedEnemies": [],
+      "bossSegments": 0,
+      "bossDefeated": false,
+      "coreCarried": false,
+      "coreReturned": false
+    },
+    "eventLog": [
+      {
+        "time": 0,
+        "type": "checkpoint",
+        "chapter": "courtyard",
+        "boundary": "training",
+        "persisted": true
+      },
+      {
+        "time": 0,
+        "type": "dialogue",
+        "id": "vo.squamakk.battery"
+      },
+      {
+        "time": 6.016,
+        "type": "dialogue",
+        "id": "vo.briciola.theft.short"
+      },
+      {
+        "time": 11.016,
+        "type": "dialogue",
+        "id": "vo.santa.coal"
+      },
+      {
+        "time": 18.015,
+        "type": "beat",
+        "beat": "training"
+      },
+      {
+        "time": 18.015,
+        "type": "dialogue",
+        "id": "vo.briciola.training"
+      }
+    ],
+    "storageAvailable": true,
+    "transitions": [
+      {
+        "action": "menu-action",
+        "chapter": "courtyard",
+        "boundary": "training",
+        "menu": "title",
+        "hp": 6,
+        "time": 0,
+        "button": "new",
+        "clickDetail": 1
+      },
+      {
+        "action": "new-game",
+        "chapter": "courtyard",
+        "boundary": "training",
+        "menu": "title",
+        "hp": 6,
+        "time": 0
+      }
+    ]
+  },
+  "wallSeconds": 81.044
+}

@@ -1,0 +1,150 @@
+[
+  {
+    "mode": "clear",
+    "pass": true,
+    "mouth": [
+      0,
+      1.2,
+      1.045
+    ],
+    "bolt": {
+      "x": 0,
+      "y": 1.2,
+      "z": 1.045
+    },
+    "cue": [
+      0,
+      1.2,
+      1.185
+    ],
+    "hits": [],
+    "events": [
+      {
+        "type": "ranged-lock",
+        "id": 1,
+        "attackId": 1,
+        "angle": 0,
+        "lockedAt": 1.21
+      },
+      {
+        "type": "ranged-release",
+        "id": 1,
+        "attackId": 1,
+        "boltId": 1,
+        "angle": 0,
+        "windup": 1.21,
+        "lockedFor": 0,
+        "x": 0,
+        "z": 1.045,
+        "speed": 6
+      }
+    ]
+  },
+  {
+    "mode": "cover",
+    "pass": true,
+    "mouth": [
+      0,
+      1.2,
+      1.045
+    ],
+    "bolt": {
+      "x": 0,
+      "y": 1.2,
+      "z": 0.12
+    },
+    "cue": [
+      0,
+      1.2,
+      1.185
+    ],
+    "hits": [],
+    "events": [
+      {
+        "type": "ranged-lock",
+        "id": 1,
+        "attackId": 1,
+        "angle": 0,
+        "lockedAt": 1.21
+      },
+      {
+        "type": "bolt-end",
+        "id": 1,
+        "attackId": 1,
+        "reason": "cover",
+        "collider": "muzzle-cover",
+        "x": 0,
+        "z": 0.12,
+        "age": 0
+      },
+      {
+        "type": "ranged-release",
+        "id": 1,
+        "attackId": 1,
+        "boltId": 1,
+        "angle": 0,
+        "windup": 1.21,
+        "lockedFor": 0,
+        "x": 0,
+        "z": 0.12,
+        "speed": 6
+      }
+    ]
+  },
+  {
+    "mode": "player-before-mouth",
+    "pass": true,
+    "mouth": [
+      0,
+      1.2,
+      1.045
+    ],
+    "bolt": {
+      "x": 0,
+      "y": 1.2,
+      "z": 0.09000000000000019
+    },
+    "cue": [
+      0,
+      1.2,
+      1.185
+    ],
+    "hits": [
+      [
+        1,
+        "ranged"
+      ]
+    ],
+    "events": [
+      {
+        "type": "ranged-lock",
+        "id": 1,
+        "attackId": 1,
+        "angle": 0,
+        "lockedAt": 1.21
+      },
+      {
+        "type": "bolt-end",
+        "id": 1,
+        "attackId": 1,
+        "reason": "player",
+        "collider": "player",
+        "x": 0,
+        "z": 0.09000000000000019,
+        "age": 0
+      },
+      {
+        "type": "ranged-release",
+        "id": 1,
+        "attackId": 1,
+        "boltId": 1,
+        "angle": 0,
+        "windup": 1.21,
+        "lockedFor": 0,
+        "x": 0,
+        "z": 0.09000000000000019,
+        "speed": 6
+      }
+    ]
+  }
+]

@@ -1,4 +1,4 @@
-import type { Group, Scene, Vector3 } from 'three';
+import type { Box3, Group, Scene, Vector3 } from 'three';
 
 export type Beat = 'intro' | 'training' | 'battle' | 'anchor' | 'complete' | 'street' | 'street-complete' | 'square' | 'boss' | 'core' | 'return-core' | 'ending';
 export interface Obstacle { id: string; minX: number; maxX: number; minZ: number; maxZ: number }
@@ -7,10 +7,12 @@ export interface VisualActor {
   update(time: number, moving: boolean, attacking: boolean): void;
   floorError(): number;
 }
+export interface CameraOccluder { id: string; root: Group; bounds: Box3[] }
 export interface CourtyardWorld {
   root: Group;
   anchor: Group;
   obstacles: Obstacle[];
+  cameraOccluders?: CameraOccluder[];
   anchors?: Record<string, Group>;
   setAnchors?(disabled: readonly string[], time: number): void;
   setStoryState?(state: 'battle' | 'core' | 'carrying' | 'ending', time: number): void;

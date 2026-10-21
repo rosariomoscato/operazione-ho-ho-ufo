@@ -1,6 +1,7 @@
-import { Fog, Group, Vector3, type Scene } from 'three';
-import type { CourtyardWorld, Obstacle } from '../contracts';
+import { Fog, Group, Vector3, type Box3, type Scene } from 'three';
+import type { CameraOccluder, CourtyardWorld, Obstacle } from '../contracts';
 import { addLighting, Batch, palette } from '../visual/style';
+import { cameraProp, cameraRegion, compactCameraProp } from '../engine/camera-props';
 
 export const ANCHORS = {
   playerStart: new Vector3(0, 0, 9), trainingDrone: new Vector3(-2, 0, 4),
@@ -67,6 +68,8 @@ function fence(b: Batch): void {
     for (let x = -15; x <= 15; x += 2) b.shape('cylinder', 'timber', [x, .65, z], [.13, 1.3, .13]);
     for (const y of [.45, .95]) b.shape('cube', 'timber', [0, y, z], [31, .13, .13]);
   }
+}
+function gate(b: Batch): void {
   // Closed continuation gate: still closed at 1/3, arrow marks the future route.
   for (const x of [-2, 2]) {
     b.shape('cylinder', 'roof', [x, 1.8, -14.6], [.2, 3.6, .2]);
@@ -96,29 +99,46 @@ export function createWorld(scene: Scene): CourtyardWorld {
   const lights = addLighting(scene); root.add(lights);
   scene.fog = new Fog(palette.sky, 28, 65);
   const b = new Batch();
+  const cameraOccluders: CameraOccluder[] = [];
+  const sceneryRegions: Box3[] = [];
   b.shape('cube', 'snow', [0, -.16, -1], [32, .32, 30]);
   b.shape('cube', 'timber', [0, -.56, -1], [32, .48, 30]);
-  cabin(b, -10, -3, true); cabin(b, 10, -6, false);
+  for (const [name, x, z, workshop] of [['cabinWest', -10, -3, true], ['cabinEast', 10, -6, false]] as const) {
+    const batch = new Batch(); cabin(batch, x, z, workshop);
+    const prop = compactCameraProp(batch.build()); prop.name = name; root.add(prop);
+    cameraOccluders.push(cameraProp(name, prop, [0, 1.7, 3.3, 3.6, 4, 4.4, 4.9, 5.7]));
+  }
   for (const [x, z] of [[-7, 6], [6, 2]]) {
+    const b = new Batch();
     b.shape('cube', 'timber', [x, .85, z], [2, 1.7, 2]);
     b.shape('cube', 'snow', [x, 1.77, z], [2, .14, 2]);
     for (const dx of [-.8, .8]) b.shape('cube', 'cream', [x + dx, .85, z + 1.025], [.13, 1.7, .05]);
     for (const y of [.18, 1.5]) b.shape('cube', 'cream', [x, y, z + 1.03], [1.75, .12, .05]);
     b.shape('cube', 'sack', [x, .85, z + 1.04], [2.1, .13, .07], [0, 0, .65]);
+    const prop = compactCameraProp(b.build()); const name = x < 0 ? 'crateWest' : 'crateEast';
+    prop.name = name; root.add(prop); cameraOccluders.push(cameraProp(name, prop, [0, .8, 1.7, 1.9]));
   }
-  fence(b); radio(b);
+  fence(b);
+  const radioBatch = new Batch(); radio(radioBatch);
+  const radioRoot = compactCameraProp(radioBatch.build()); radioRoot.name = 'courtyard-radio'; root.add(radioRoot);
+  cameraOccluders.push(cameraProp('courtyard-radio', radioRoot, [0, .7, 1.2, 1.6, 2.1]));
+  const gateBatch = new Batch(); gate(gateBatch);
+  const gateRoot = compactCameraProp(gateBatch.build()); gateRoot.name = 'courtyard-gate'; root.add(gateRoot);
+  cameraOccluders.push(cameraProp('courtyard-gate', gateRoot, [0, 1.5, 2.5, 3.8]));
   for (let i = 0; i < 9; i++) {
     const z = -18 + i * 4;
     tree(b, -18 - (i % 2), z, 1 + (i % 3) * .2);
     tree(b, 18 + (i % 2), z - 1, .95 + (i % 3) * .17);
+    sceneryRegions.push(cameraRegion(-18 - (i % 2), z, 2, 2, 6), cameraRegion(18 + (i % 2), z - 1, 2, 2, 6));
   }
-  for (const x of [-12, -6, 7, 13]) tree(b, x, -20, 1.2);
+  for (const x of [-12, -6, 7, 13]) { tree(b, x, -20, 1.2); sceneryRegions.push(cameraRegion(x, -20, 2, 2, 6)); }
   // Banks are outside all playable ground, so no invisible bumps/colliders.
   for (let i = 0; i < 8; i++) {
     const z = -17 + i * 4.5;
     for (const side of [-1, 1]) b.shape('ball', 'snow', [side * 19, -.5, z], [3.5, 1.3 + (i % 2) * .4, 3]);
   }
-  root.add(b.build());
+  const environment = b.build(); environment.userData.cameraNoFade = true; root.add(environment);
+  cameraOccluders.push(cameraProp('courtyard-background', environment, [0, 1.5, 2.5, 3.5, 5, 6], sceneryRegions));
   const saucer = new Batch()
     .shape('ball', 'purple', [0, 0, 0], [3.15, .42, 2.3])
     .shape('ball', 'roof', [0, .43, 0], [1.35, .76, 1.15])
@@ -128,10 +148,12 @@ export function createWorld(scene: Scene): CourtyardWorld {
     saucer.shape('ball', 'glow', [Math.cos(a) * 2.65, .02, Math.sin(a) * 1.93], [.17, .1, .13]);
   }
   const ship = saucer.build(); ship.position.copy(ANCHORS.saucer); ship.name = 'Nave ancora sospesa a 8m'; root.add(ship);
+  cameraOccluders.push(cameraProp('courtyard-ship', ship, [-.6, -.2, .2, .6, 1.3]));
   const portal = new Batch()
     .shape('ring', 'purple', [0, 0, 0], [3.7, 3.7, 3.7])
     .shape('ring', 'glow', [0, 0, .06], [3.38, 3.38, 3.38]).build();
   portal.position.set(0, 10, -18); root.add(portal);
+  cameraOccluders.push(cameraProp('courtyard-portal', portal, [-4.1, -3, -2, -1, 0, 1, 2, 3, 4.1]));
   const anchor = new Group(); anchor.name = 'Primo ancoraggio'; anchor.position.copy(ANCHORS.firstAnchor); root.add(anchor);
   const pedestal = new Batch()
     .shape('cylinder', 'roof', [0, .14, 0], [.68, .28, .68])
@@ -148,8 +170,10 @@ export function createWorld(scene: Scene): CourtyardWorld {
     .link('gold', [-.32, 2.4, 0], [-.06, 2.16, 0], .065)
     .link('gold', [-.06, 2.16, 0], [.38, 2.7, 0], .065).build();
   offSymbol.visible = false; anchor.add(offSymbol);
+  const anchorOccluder = cameraProp('courtyard-anchor', anchor, [0, .5, 1.2, 1.8, 2.2, 2.7, 3.2], undefined, .065);
+  cameraOccluders.push(anchorOccluder);
   return {
-    root, anchor, obstacles: OBSTACLES.map(obstacle => ({ ...obstacle })),
+    root, anchor, cameraOccluders, obstacles: OBSTACLES.map(obstacle => ({ ...obstacle })),
     update(time, beat, reducedMotion) {
       const done = beat === 'complete';
       beacon.visible = !done; offSymbol.visible = done;

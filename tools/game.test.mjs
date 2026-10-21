@@ -49,7 +49,7 @@ test('save validation, complete checkpoint and settings round trip', () => {
     assert.equal(storage.readCheckpoint(), null);
   }
   values.set('ho-ho-ufo.settings.v1', JSON.stringify({ master: 9, music: -3, effects: .5, reducedMotion: true, aimAssist: false }));
-  assert.deepEqual(storage.readSettings(), { master: 1, music: 0, effects: .5, reducedMotion: true, aimAssist: false });
+  assert.deepEqual(storage.readSettings(), { ...storage.freshSettings(), master: 1, music: 0, effects: .5, reducedMotion: true, aimAssist: false });
 });
 test('denied storage never crashes gameplay', () => {
   globalThis.localStorage = { getItem() { throw Error('denied'); }, setItem() { throw Error('quota'); }, removeItem() { throw Error('denied'); } };

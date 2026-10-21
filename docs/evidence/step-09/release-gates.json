@@ -1,0 +1,25 @@
+{
+  "build": "TmJx2Hx1",
+  "pass": true,
+  "reviewAccepted": true,
+  "playtestCompleted": true,
+  "userApprovedPolish": false,
+  "snapshotFrozen": true,
+  "frozenSmokePass": true,
+  "unitTests": { "pass": true, "count": 45, "frozenFiles": 81 },
+  "controls": { "pass": true, "count": 7 },
+  "camera": { "pass": true, "poses": 864, "renderedViews": 288, "minimumClearanceMetres": 0.28 },
+  "controlledFinalAct": { "pass": true, "count": 9 },
+  "captures": { "pass": true, "frames": 27, "stableBuildHashes": true },
+  "fullPlaythrough": { "pass": true, "shots": 25, "deaths": 2, "wallSeconds": 279.762, "humanDuration": false },
+  "freshEyes": { "pass": true, "uiActions": 85, "deaths": 0, "retries": 0, "pauseBetweenActions": true, "audioMuted": true },
+  "audioRuntime": { "pass": true, "subjectiveListeningApproval": false },
+  "pending": ["User approval"],
+  "limitations": [
+    "No hardware 60fps guarantee or measured human duration",
+    "Fresh-eyes uses real Escape pauses between remote actions and muted audio",
+    "Fresh-eyes read the scarf beat but did not distinguish its visual detail; deterministic close-up verifies it separately",
+    "Santa remains partly beneath the tree canopy in the wide final tableau; retained MINOR",
+    "Failed preliminary bot and cold-load attempts are preserved in pre-integration"
+  ]
+}

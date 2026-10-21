@@ -11,7 +11,10 @@ import { createGameAudio } from './audio';
 import { Input } from './input';
 import { dialogueLines, type DialogueId } from './texts';
 import { blocked, clamp, distance, lineClear, move, nextWaypoint, segmentBox, type Point } from './engine/math';
-import { clearCheckpoint, emptyBossCheckpoint, emptyCheckpoint, readCheckpoint, readSettings, storageNotice, writeCheckpoint, writeSettings, type Checkpoint } from './storage';
+import { clearCheckpoint, emptyBossCheckpoint, emptyCheckpoint, freshSettings, validBinding, readCheckpoint, readSettings, storageNotice, writeCheckpoint, writeSettings, type Checkpoint, type ControlAction } from './storage';
+import { actionNames, keyLabel, controlText } from './ui/controls';
+import { resolveGameplayCamera, resetCameraOcclusion, disposeCameraOcclusion } from './engine/camera';
+import type { GameplayCameraResult } from './engine/camera-contract';
 
 interface Gift { root: THREE.Group; active: boolean; age: number; from: THREE.Vector3; to: THREE.Vector3; previous: THREE.Vector3; ring: THREE.Mesh; blast: number; bossTag:BossGift|null }
 const PALETTE = { red:'#e94750',green:'#7cbf56',purple:'#7062b8',snow:'#e1eff5',cream:'#fff0d5',skin:'#f4ba93',ink:'#202d42',gold:'#f8be55',roof:'#596a9b',timber:'#987562',mint:'#a4f8d9',sack:'#9b6547',cabin:'#a5585b',sky:'#182c49' };
@@ -53,13 +56,20 @@ export class Game {
   droneHit=false; dodgeUsed=false; healed=false; healAvailable=false;
   firstWrapped=false; firstWrapTime=-Infinity; nextAttack=0; attackSerial=0; enemySerial=0;
   throwReady=0; yaw=0; pitch=.30; view='player'; review=false; reviewScenario='intro'; playing=false; menu:'title'|'pause'|'dead'|'none'='title';
-  feedback=''; feedbackUntil=0; dialogue=''; dialogueUntil=0; audioReady=false; audioStarting=false;
+  private feedbackText='';rangeFeedback:{target:Point;name:string;radius:number;ready:boolean}|null=null;
+  get feedback():string {const r=this.rangeFeedback;if(!r)return this.feedbackText;const d=distance(this.player,r.target),clear=lineClear(this.player,r.target,this.world.obstacles);return d<=r.radius&&clear?`${r.name} · ${r.ready?'E: usa':'protetto: libera questo lato'}`:`${r.name} · ${d.toFixed(1)} m · ${clear?'E entro '+r.radius.toFixed(1)+' m':'aggira il riparo'}`;}
+  set feedback(text:string){this.feedbackText=text;this.rangeFeedback=null;}
+  feedbackUntil=0; dialogue=''; dialogueUntil=0; audioReady=false; audioStarting=false;
+  bindingAction:ControlAction|null=null;bindingMessage='';
+  controls(text:string):string{return controlText(text,this.settings.keyBindings);}
+  aimLabel():string{return this.settings.aimAssist?'AGGANCIATO · assistenza':'MIRATO · tiro al+';}
   lastFrame=0; moving=false; lastUI=0; storageAvailable=true; lastHUD=''; checkpointSoundAt=Infinity;
   readonly overlay:HTMLDivElement; readonly hud:HTMLDivElement; readonly menuElement:HTMLDivElement; readonly labels:HTMLDivElement;
   readonly healthRing:THREE.Mesh; readonly aimRing:THREE.Mesh; readonly heal:THREE.Mesh; readonly trainingSign:THREE.Mesh;
   readonly lockRing:THREE.Mesh;
   readonly lockLabel:HTMLDivElement; readonly healLabel:HTMLDivElement;
   cameraOverride:{position:THREE.Vector3;look:THREE.Vector3}|null=null;
+  cameraDiagnostics:GameplayCameraResult|null=null;
   readonly santaMaterials:{material:THREE.Material;opacity:number;transparent:boolean;depthWrite:boolean}[]=[];
   trainingCycle=-1;trainingAngle=0;
   readonly transitions:Record<string,unknown>[]=[];
@@ -84,12 +94,13 @@ export class Game {
     this.lockLabel=document.createElement('div');this.lockLabel.className='enemy-label target-lock';this.lockLabel.hidden=true;this.labels.append(this.lockLabel);
     this.healLabel=document.createElement('div');this.healLabel.className='enemy-label heal-label';this.healLabel.hidden=true;this.healLabel.textContent='✚ Cura +2';this.labels.append(this.healLabel);
     this.hud.addEventListener('click',event=>{const action=(event.target as HTMLElement).closest<HTMLButtonElement>('button')?.dataset.action;if(action==='skip')this.enterTraining();if(action==='replay')this.startNew();if(action==='skip-ending')this.square?.skipEnding();});
-    this.input=new Input(this.renderer.domElement);this.input.onGesture=()=>{void this.unlockAudio();};this.input.onPause=()=>this.togglePause();
+    this.input=new Input(this.renderer.domElement);this.input.setBindings(this.settings.keyBindings);this.input.onGesture=()=>{void this.unlockAudio();};this.input.onPause=()=>this.togglePause();
     document.addEventListener('visibilitychange',()=>{if(document.hidden){if(this.menu==='none')this.openMenu('pause');this.input.clear();this.audio.pause();this.lastFrame=0;}});
     window.addEventListener('resize',()=>this.resize());this.resize();this.reset('training');this.beat='intro';this.menu='title';this.playing=false;this.renderMenu();this.renderNow();this.installDebug();requestAnimationFrame(this.frame);
   }
   log(type:string,data:Record<string,unknown>={}):void {this.eventLog.push({time:Number(this.time.toFixed(3)),type,...data});if(this.eventLog.length>400)this.eventLog.shift();}
   notify(text:string):void {this.feedback=text;this.feedbackUntil=this.time+2.7;}
+  notifyRange(target:Point,name:string,radius=2.2,ready=true):void {this.notify('');this.rangeFeedback={target:{...target},name,radius,ready};}
   say(text:string,seconds=5):void {this.dialogue=text;this.dialogueUntil=this.time+seconds;}
   sayLine(id:DialogueId,seconds=5):void {const [speaker,text]=dialogueLines[id];this.say(`${speaker}: «${text}»`,seconds);this.log('dialogue',{id});}
   async unlockAudio():Promise<void> {if(this.audioStarting)return;this.audioStarting=true;try{this.audio.setVolumes(this.settings);const unlocked=this.audio.unlock();await unlocked;this.audioReady=true;if(this.playing&&this.menu==='none'&&!document.hidden){this.audio.resume();this.audio.music(this.combatMusic()?'music.combat':'music.village');}else this.audio.pause();}catch{this.log('audio-unavailable');}finally{this.audioStarting=false;}}
@@ -98,8 +109,12 @@ export class Game {
     this.checkpoint={version:3,chapter:this.act.id,boundary,healed:this.healed,firstWrapped:this.firstWrapped,disabledAnchors:[...this.disabledAnchors],clearedArenas:[...this.clearedArenas],activatedArenas:[...this.activatedArenas],defeatedEnemies:[...this.defeatedEnemies],...(this.square?.fields()??emptyBossCheckpoint())};
     if(this.review||this.preview)return;this.storageAvailable=writeCheckpoint(this.checkpoint);this.log('checkpoint',{chapter:this.act.id,boundary,persisted:this.storageAvailable});this.checkpointSoundAt=this.time+(boundary==='complete'||boundary==='street-complete'?1.5:.15);if(!this.storageAvailable)this.notify('Salvataggio non disponibile: puoi continuare questa partita.');
   }
-  clearActors():void {this.square?.dispose();this.square=null;for(const system of this.systems)system.reset();for(const e of this.enemies){this.scene.remove(e.actor.root,e.sign,e.parcel);e.label.remove();}this.enemies=[];for(const g of this.gifts){g.active=false;g.blast=-1;g.bossTag=null;g.root.visible=g.ring.visible=false;}}
-  switchAct(id:ActId):void {if(this.act.id===id)return;this.clearActors();this.scene.remove(this.world.root);const oldLights:THREE.Light[]=[];this.scene.traverse(o=>{if(o instanceof THREE.Light)oldLights.push(o);});for(const light of oldLights)light.removeFromParent();const act=acts.find(a=>a.id===id);if(!act)throw new Error(`Atto assente: ${id}`);this.act=act;const level=this.registry.find(l=>l.id===this.act.levelId)??(id==='square'?this.registry.find(l=>l.id==='courtyard'):undefined);if(!level)throw new Error(`Livello assente: ${this.act.levelId}`);this.worldFallback=level.id!==this.act.levelId;this.world=level.createWorld(this.scene);this.cameraOverride=null;this.lockLabel.hidden=this.healLabel.hidden=true;this.log('act-enter',{chapter:id,worldFallback:this.worldFallback});}
+  clearActors():void {disposeCameraOcclusion(this.world);this.cameraDiagnostics=null;this.square?.dispose();this.square=null;for(const system of this.systems)system.reset();for(const e of this.enemies){this.scene.remove(e.actor.root,e.sign,e.parcel);e.label.remove();}this.enemies=[];for(const g of this.gifts){g.active=false;g.blast=-1;g.bossTag=null;g.root.visible=g.ring.visible=false;}}
+  switchAct(id:ActId):void {if(this.act.id===id)return;this.clearActors();this.scene.remove(this.world.root);
+    // These three worlds allocate exclusive merged Batch/compactCameraProp geometry.
+    // Casts live outside world.root; never dispose shared palette materials/textures.
+    const ownedGeometry=new Set<THREE.BufferGeometry>();this.world.root.traverse(node=>{if(node instanceof THREE.Mesh)ownedGeometry.add(node.geometry);});for(const geometry of ownedGeometry)geometry.dispose();
+    const oldLights:THREE.Light[]=[];this.scene.traverse(o=>{if(o instanceof THREE.Light)oldLights.push(o);});for(const light of oldLights)light.removeFromParent();const act=acts.find(a=>a.id===id);if(!act)throw new Error(`Atto assente: ${id}`);this.act=act;const level=this.registry.find(l=>l.id===this.act.levelId)??(id==='square'?this.registry.find(l=>l.id==='courtyard'):undefined);if(!level)throw new Error(`Livello assente: ${this.act.levelId}`);this.worldFallback=level.id!==this.act.levelId;this.world=level.createWorld(this.scene);this.cameraOverride=null;this.lockLabel.hidden=this.healLabel.hidden=true;this.log('act-enter',{chapter:id,worldFallback:this.worldFallback});}
   reset(boundary:Checkpoint['boundary'],save?:Checkpoint):void {
     if(['square','boss','core','return-core','ending'].includes(boundary)){this.restoreSquare(save??emptyCheckpoint('square',boundary));return;}
     if(boundary==='street'||boundary==='street-complete'){this.restoreStreet(save??emptyCheckpoint('toystreet',boundary));return;}
@@ -150,7 +165,7 @@ export class Game {
   living():Enemy[] {return this.enemies.filter(e=>e.hp>0);}
   remaining():number {return this.square?3-this.square.boss.segments:this.act.id==='toystreet'?this.living().length:this.beat==='battle'?this.living().length+(this.group===1?5:this.group===2?3:0):this.beat==='intro'||this.beat==='training'?6:0;}
   anchorCount():number{return this.act.id==='square'?3:this.act.id==='toystreet'?1+this.disabledAnchors.length:this.beat==='complete'?1:0;}
-  nearestAnchor(){return this.act.anchors.filter(a=>!this.disabledAnchors.includes(a.id)).sort((a,b)=>distance(this.player,a)-distance(this.player,b))[0];}
+  nearestAnchor(){return this.act.anchors.filter(a=>!this.disabledAnchors.includes(a.id)).sort((a,b)=>{const da=distance(this.player,a),db=distance(this.player,b);if(Math.abs(da-db)<=1){const readyA=this.clearedArenas.includes(a.arenaId??''),readyB=this.clearedArenas.includes(b.arenaId??'');if(readyA!==readyB)return readyA?-1:1;}return da-db;})[0];}
   combatMusic():boolean{return this.beat==='boss'||this.beat==='battle'||(this.beat==='street'&&this.living().some(e=>this.activeEnemy(e)));}
   activeEnemy(e:Enemy):boolean{return !e.arenaId||this.activatedArenas.includes(e.arenaId);}
   committed():boolean{return !!this.boss?.committed||this.enemies.some(e=>e.hp>0&&(e.status==='windup'||e.status==='active'))||this.systems.some(s=>s.committed());}
@@ -212,23 +227,23 @@ export class Game {
     const v=this.moveDirection();if(Math.hypot(v.x,v.z)<.1){v.x=-Math.sin(this.yaw);v.z=-Math.cos(this.yaw);}this.player.dx=v.x;this.player.dz=v.z;this.player.dodgeUntil=this.time+.35;this.player.dodgeReady=this.time+1.35;this.player.invulnerableUntil=Math.max(this.player.invulnerableUntil,this.time+.35);this.dodgeUsed=true;this.effect('sfx.dodge');this.log('dodge');this.notify('Schivata · protetto');}
   moveDirection():Point {const f=Number(this.input.keys.has('KeyW'))-Number(this.input.keys.has('KeyS')),s=Number(this.input.keys.has('KeyD'))-Number(this.input.keys.has('KeyA'));const length=Math.hypot(f,s)||1;return{x:(-Math.sin(this.yaw)*f+Math.cos(this.yaw)*s)/length,z:(-Math.cos(this.yaw)*f-Math.sin(this.yaw)*s)/length};}
   interactStreet():void {
-    if(this.beat==='street-complete'){const dist=distance(this.player,this.act.exit);if(dist<=2.2&&lineClear(this.player,this.act.exit,this.world.obstacles))this.enterSquare();else{this.notify(`Entra nella piazza · cancello a ${dist.toFixed(1)}m · E entro2,2m`);this.log('interact-denied',{reason:'square-gate-out-of-range',distance:dist});}return;}
+    if(this.beat==='street-complete'){const dist=distance(this.player,this.act.exit);if(dist<=2.2&&lineClear(this.player,this.act.exit,this.world.obstacles))this.enterSquare();else{this.notifyRange(this.act.exit,'Cancello della piazza');this.log('interact-denied',{reason:'square-gate-out-of-range',distance:dist});}return;}
     const closest=[...this.act.anchors].sort((a,b)=>distance(this.player,a)-distance(this.player,b))[0];
     if(this.disabledAnchors.includes(closest.id)&&distance(this.player,closest)<=2.2){this.notify(`${closest.name}: già spento · ${this.anchorCount()}/3 ancoraggi`);return;}
     const anchor=this.nearestAnchor()!;const dist=distance(this.player,anchor);
-    if(dist>2.2||!lineClear(this.player,anchor,this.world.obstacles)){this.notify(`${anchor.name} · ${dist.toFixed(1)} m: avvicinati entro 2,2 m`);this.log('interact-denied',{id:anchor.id,reason:'out-of-range',distance:dist});return;}
+    if(dist>2.2||!lineClear(this.player,anchor,this.world.obstacles)){this.notifyRange(anchor,anchor.name,2.2,this.clearedArenas.includes(anchor.arenaId!));this.log('interact-denied',{id:anchor.id,reason:'out-of-range',distance:dist});return;}
     const guards=this.living().filter(e=>e.arenaId===anchor.arenaId).length;
     if(!this.clearedArenas.includes(anchor.arenaId!)){this.notify(`${anchor.name} protetto · ${guards} difensori locali`);this.log('interact-denied',{id:anchor.id,reason:'protected',guards});return;}
     this.disabledAnchors.push(anchor.id);this.progress('anchor-off');this.effect('sfx.anchor');this.log('anchor-off',{id:anchor.id,anchors:this.anchorCount()});
     if(this.disabledAnchors.length===2){this.beat='street-complete';this.shipDescentAt=this.time;this.sayLine('vo.briciola.square',8);this.notify('3/3 · Raggiungi il cancello: E per la piazza');this.audio.music('music.village');}else{this.sayLine('vo.squamakk.gifts',5);this.notify(`${anchor.name} spento · Ancoraggi 2/3`);}
     this.world.setAnchors?.(this.disabledAnchors,this.shipDescentAt);this.save(this.beat==='street-complete'?'street-complete':'street');
   }
-  interact():void {if(this.square){this.square.interact();return;}if(this.act.id==='toystreet'){this.interactStreet();return;}const dist=distance(this.player,this.act.anchors[0]);if(this.beat==='complete'){const gateDistance=distance(this.player,this.act.exit);if(gateDistance<=2.2&&lineClear(this.player,this.act.exit,this.world.obstacles))this.enterStreet();else{this.notify(`Entra nella via · cancello a ${gateDistance.toFixed(1)} m · E entro 2,2 m`);this.log('interact-denied',{reason:'gate-out-of-range',distance:gateDistance});}return;}if(this.beat!=='anchor'){this.notify(`Ancoraggio protetto · ${this.remaining()} difensori da impacchettare`);this.log('interact-denied',{reason:'protected'});return;}if(dist>2.2||!lineClear(this.player,this.act.anchors[0],this.world.obstacles)){this.notify(`Ancoraggio a ${dist.toFixed(1)} m · avvicinati a meno di 2,2 m`);this.log('interact-denied',{reason:'out-of-range',distance:dist});return;}
+  interact():void {if(this.square){this.square.interact();return;}if(this.act.id==='toystreet'){this.interactStreet();return;}const dist=distance(this.player,this.act.anchors[0]);if(this.beat==='complete'){const gateDistance=distance(this.player,this.act.exit);if(gateDistance<=2.2&&lineClear(this.player,this.act.exit,this.world.obstacles))this.enterStreet();else{this.notifyRange(this.act.exit,'Cancello della via');this.log('interact-denied',{reason:'gate-out-of-range',distance:gateDistance});}return;}if(this.beat!=='anchor'){this.notify(`Ancoraggio protetto · ${this.remaining()} difensori da impacchettare`);this.log('interact-denied',{reason:'protected'});return;}if(dist>2.2||!lineClear(this.player,this.act.anchors[0],this.world.obstacles)){this.notifyRange(this.act.anchors[0],'Ancoraggio');this.log('interact-denied',{reason:'out-of-range',distance:dist});return;}
     this.beat='complete';this.disabledAnchors=['courtyard'];this.effect('sfx.anchor');this.save('complete');this.log('anchor-off',{anchors:1});this.sayLine('vo.briciola.route',8);this.notify('Ancoraggio disattivato · 1/3 · checkpoint');this.audio.music('music.village');
   }
   update(dt:number):void {
     this.time+=dt;this.poseTime=this.time;if(this.time>=this.checkpointSoundAt){this.effect('sfx.checkpoint');this.checkpointSoundAt=Infinity;}
-    const orbitChanged=this.input.dx!==0||this.input.dy!==0;this.yaw-=this.input.dx*.004;this.pitch=clamp(this.pitch+this.input.dy*.002,.08,.65);this.input.dx=this.input.dy=0;if(orbitChanged)this.updateCamera();
+    const orbitChanged=this.input.dx!==0||this.input.dy!==0;this.yaw-=this.input.dx*.004*this.settings.sensitivity;this.pitch=clamp(this.pitch+this.input.dy*.002*this.settings.sensitivity*(this.settings.invertY?-1:1),.08,.65);this.input.dx=this.input.dy=0;if(orbitChanged)this.updateCamera();
     if(this.input.consume('KeyH'))this.showHelp(this.hintStage||1);
     if(this.beat==='ending'){if(this.input.consume('Enter'))this.square?.skipEnding();if(this.input.consume('KeyE'))this.interact();if(this.input.throwRequested||this.input.consume('Space'))this.notify('Finale · Invio o Salta finale per concludere');this.input.throwRequested=false;this.square?.update();return;}
     if(this.beat==='intro') {if(this.input.consume('Enter')||this.input.consume('Space')||this.time-this.introStart>=18)this.enterTraining();else if(this.time>11){if(!this.eventLog.some(event=>event.type==='dialogue'&&event.id==='vo.santa.coal'))this.sayLine('vo.santa.coal',7);}else if(this.time>6){if(!this.eventLog.some(event=>event.type==='dialogue'&&event.id==='vo.briciola.theft.short'))this.sayLine('vo.briciola.theft.short',5);}}
@@ -312,11 +327,18 @@ export class Game {
     this.lockRing.visible=this.menu==='none'&&locked!==null;
     if(locked){this.lockRing.position.set(locked.x,.04,locked.z);this.projectMarker(this.lockLabel,locked,a.boss?3.5:a.enemy?2.6:2.25,a.boss?`◎ MIRATO · ${this.boss?.phase==='vulnerable'?'nucleo esposto':this.boss?.phase==='windup'?'! Carica':'scudo del generale'}`:`◎ MIRATO${a.enemy?' '+a.enemy.hp+'/2'+(a.enemy.status==='windup'?' !':''):''}`);if(a.enemy)a.enemy.label.hidden=true;}else{this.lockLabel.hidden=true;if(this.square&&this.boss?.phase==='windup')this.projectMarker(this.lockLabel,squareLayout.boss,3.5,'! Raggio in carica');}
     if(this.square&&(this.beat==='core'||this.beat==='return-core'))this.projectMarker(this.healLabel,this.square.target(),1.2,this.beat==='core'?'◇ Nucleo libero · E':'◇ Albero · E');else if(this.heal.visible)this.projectMarker(this.healLabel,{x:0,z:this.act.id==='toystreet'?0:-4},1.4,'✚ Cura +2');else this.healLabel.hidden=true;
+    this.layoutLabels();
+  }
+  layoutLabels():void {
+    const placed:{left:number;right:number;top:number;bottom:number}[]=[],viewport=this.app.getBoundingClientRect();
+    // Protect projected NPC faces as well as other labels; never hide a label to solve overlap.
+    for(const enemy of this.enemies.filter(e=>e.hp>0)){const points=[];for(const x of [-.55,.55])for(const y of [1.2,2.25])for(const z of [-.5,.5])points.push(new THREE.Vector3(enemy.x+x,y,enemy.z+z).project(this.camera3));if(points.some(p=>p.z<=-1||p.z>=1))continue;placed.push({left:viewport.left+(Math.min(...points.map(p=>p.x))*.5+.5)*viewport.width,right:viewport.left+(Math.max(...points.map(p=>p.x))*.5+.5)*viewport.width,top:viewport.top+(-Math.max(...points.map(p=>p.y))*.5+.5)*viewport.height,bottom:viewport.top+(-Math.min(...points.map(p=>p.y))*.5+.5)*viewport.height});}
+    const labels=[this.lockLabel,...this.enemies.map(e=>e.label),this.healLabel];for(const label of labels){if(label.hidden)continue;label.style.marginTop='0px';let rect=label.getBoundingClientRect(),offset=0;for(let i=0;i<12&&placed.some(p=>rect.left<p.right+8&&rect.right>p.left-8&&rect.top<p.bottom+8&&rect.bottom>p.top-8);i++){offset-=rect.height+8;label.style.marginTop=`${offset}px`;rect=label.getBoundingClientRect();}placed.push(rect);}
   }
   projectMarker(label:HTMLDivElement,p:Point,height:number,text:string):void {
     const v=new THREE.Vector3(p.x,height,p.z).project(this.camera3);
     label.hidden=this.menu!=='none'||v.z<=-1||v.z>=1||Math.abs(v.x)>.9||Math.abs(v.y)>.85;
-    if(label.hidden)return;label.style.left=`${(v.x*.5+.5)*100}%`;label.style.top=`${(-v.y*.5+.5)*100}%`;label.textContent=text;
+    if(label.hidden)return;label.style.left=`${(v.x*.5+.5)*100}%`;label.style.top=`${(-v.y*.5+.5)*100}%`;label.textContent=this.controls(text.replace('MIRATO',this.aimLabel()));
   }
   threatHint():string {
     if(this.beat!=='battle'&&this.beat!=='street'&&!this.systems.some(s=>s.committed()))return '';
@@ -329,16 +351,13 @@ export class Game {
     return `! ${front<0?'Dietro, ':''}${side<0?'← a sinistra':'a destra →'} · Destro: gira e mira`;
   }
   updateCamera():void {
-    const camera=this.camera3;camera.fov=this.view==='face'?32:this.view==='diorama'?38:53;camera.updateProjectionMatrix();
-    if(this.cameraOverride){camera.position.copy(this.cameraOverride.position);camera.lookAt(this.cameraOverride.look);return;}
-    if(this.square?.applyCamera(camera))return;
+    const camera=this.camera3;camera.fov=this.view==='face'?32:this.view==='diorama'?38:this.settings.fov;camera.updateProjectionMatrix();
+    if(this.cameraOverride){resetCameraOcclusion(this.world);this.cameraDiagnostics=null;camera.position.copy(this.cameraOverride.position);camera.lookAt(this.cameraOverride.look);return;}
+    if(this.square?.applyCamera(camera)){resetCameraOcclusion(this.world);this.cameraDiagnostics=null;return;}
+    if(this.view!=='player'){resetCameraOcclusion(this.world);this.cameraDiagnostics=null;}
     if(this.view==='diorama'){camera.position.set(23,29,32);camera.lookAt(0,0,-2);return;}
     if(this.view==='face'){const angle=this.santa.root.rotation.y;camera.position.set(this.player.x+Math.sin(angle)*5.5+Math.cos(angle)*.7,2.5,this.player.z+Math.cos(angle)*5.5-Math.sin(angle)*.7);camera.lookAt(this.player.x,1.8,this.player.z);camera.updateMatrixWorld(true);return;}
-    const f=new THREE.Vector3(-Math.sin(this.yaw),0,-Math.cos(this.yaw)),right=new THREE.Vector3(Math.cos(this.yaw),0,-Math.sin(this.yaw));
-    const pivot=new THREE.Vector3(this.player.x,1.7,this.player.z);const desired=pivot.clone().addScaledVector(f,-8.5).addScaledVector(right,1.65);desired.y=1.7+Math.sin(this.pitch)*8.5;
-    // Conservative expanded slabs: shorten the boom before any solid cabin/crate.
-    let fraction=1;for(let i=1;i<=60;i++){const u=i/60,p=pivot.clone().lerp(desired,u);if(this.world.obstacles.some(o=>p.x>o.minX-.2&&p.x<o.maxX+.2&&p.z>o.minZ-.2&&p.z<o.maxZ+.2&&p.y<(o.id.includes('cover')?1.7:5))){fraction=Math.max(.08,(i-1)/60);break;}}
-    camera.position.copy(pivot).lerp(desired,fraction);const look=pivot.clone().addScaledVector(f,5.2);look.y=1.1;camera.lookAt(look);camera.updateMatrixWorld(true);
+    const result=resolveGameplayCamera(this.world,this.player,this.yaw,this.pitch);this.cameraDiagnostics=result;camera.position.copy(result.position);camera.lookAt(result.look);camera.updateMatrixWorld(true);
   }
   positionLabel(e:Enemy):void {
     const wrapped=e.status==='wrapped',age=this.time-e.since;
@@ -360,18 +379,18 @@ export class Game {
   }
   renderHUD():void {
     this.hud.hidden=this.menu==='title';this.overlay.querySelector<HTMLElement>('.reticle')!.hidden=this.menu!=='none'||this.beat==='intro'||this.beat==='ending';if(this.menu==='title')return;
-    if(this.square){this.square.renderHUD();return;}
-    if(this.act.id==='toystreet'){this.renderStreetHUD();return;}
+    if(this.square){this.square.renderHUD();this.formatHUD();return;}
+    if(this.act.id==='toystreet'){this.renderStreetHUD();this.formatHUD();return;}
     const t=this.targetPoint(),dist=distance(this.player,t);const v=new THREE.Vector3(t.x,1.3,t.z).project(this.camera3);let arrow=v.z>1?'↩':v.x<-.8?'←':v.x>.8?'→':'↑';
     const aim=this.aim();const target=aim.enemy?`Rettiliano ${aim.enemy.hp}/2`:aim.drone?'Drone 1/1':'Punto mirato';
     let hint=this.beat==='intro'?'Invadono la Terra con il tuo nucleo natalizio. Invio o Spazio: salta.':this.beat==='training'?`${this.droneHit?'✓':'○'} Drone · ${this.dodgeUsed?'✓':'○'} Spazio: schiva. Destro trascinato: porta il drone al +. Poi CLIC quando è MIRATO.`:this.beat==='anchor'?(dist<=2.2?'E · Disattiva ancoraggio':'Avvicinati al dispositivo per premere E'):this.beat==='complete'?(dist<=2.2?'E · Entra nella via':'Raggiungi il cancello a nord · E: Entra nella via'):'! Settore a terra: esci di lato o schiva. Due regali impacchettano un soldato.';
     if(this.time<this.helpUntil)hint=this.helpText;
     const html=`<section class="objective panel"><strong>${this.objective()}</strong><div>${arrow} ${this.beat==='training'&&!this.droneHit?'Drone':this.beat==='complete'?'Via dei giocattoli':'Ancoraggio'} · ${dist.toFixed(1)} m · ${this.beat==='complete'?'1':'0'}/3</div></section><section class="vitals panel"><div aria-label="Salute ${this.player.hp} di 6">Salute ${'▮'.repeat(this.player.hp)}${'▯'.repeat(6-this.player.hp)}</div><div>${this.time<this.player.dodgeReady?'Schivata: '+Math.max(0,this.player.dodgeReady-this.time).toFixed(1)+' s':'Spazio · Schivata pronta'}${this.time<this.player.invulnerableUntil?' · ◇ Protetto':''}</div></section><div class="target panel">${target}${this.throwReady>this.time?' · Regalo in recupero':' · Regali ∞'}</div><section class="bottom"><div class="hint panel">${this.time<this.feedbackUntil?this.feedback:hint}</div>${this.time<this.dialogueUntil?`<div class="dialogue panel">${this.dialogue}</div>`:''}<div class="controls panel">WASD: muovi · Destro trascinato: guarda · Clic: regalo · Spazio: schiva · E: dispositivo · Esc: pausa</div>${this.beat==='intro'?'<button data-action="skip">Salta introduzione</button>':''}${this.beat==='complete'?'<button data-action="replay">Rigioca il cortile</button>':''}</section>`;
-    const clearAim='Destro trascinato: mira al + · Clic: tira al +, non al mouse';
+    const clearAim='Destro trascinato: mira al + · Clic: tira al +, non al mouse · H: aiuto';
     const threat=this.threatHint();
     const destination=this.beat==='training'&&!this.droneHit?'Drone':this.beat==='complete'?'Via dei giocattoli':'Ancoraggio';
     const content=html.replace('Destro trascinato: guarda · Clic: regalo',clearAim).replace(`${arrow} ${destination} ·`,`Percorso ${arrow} ${destination} ·`)+(threat?`<aside class="threat panel">${threat}</aside>`:'');
-    if(content!==this.lastHUD){this.hud.innerHTML=content;this.lastHUD=content;}
+    if(content!==this.lastHUD){this.hud.innerHTML=content;this.lastHUD=content;}this.formatHUD();
   }
   renderStreetHUD():void {
     const aim=this.aim(),target=aim.enemy?`${aim.enemy.kind==='ranged'?'Tiratore':'Rettiliano'} ${aim.enemy.hp}/2`:'Punto mirato';
@@ -384,24 +403,44 @@ export class Game {
     const content=`<section class="objective panel"><strong>${this.objective()}</strong><div class="arena-routes">${rows}</div>${this.preview?'<div>Prova M2 · salvataggio originale invariato</div>':''}</section><section class="vitals panel"><div aria-label="Salute ${this.player.hp} di 6">Salute ${'▮'.repeat(this.player.hp)}${'▯'.repeat(6-this.player.hp)}</div><div>${this.time<this.player.dodgeReady?'Schivata: '+(this.player.dodgeReady-this.time).toFixed(1)+' s':'Spazio · Schivata pronta'}</div></section><div class="target panel">${target} · ${this.throwReady>this.time?'Regalo in recupero':'Regali ∞'}</div><section class="bottom">${tutorial}<div class="hint panel">${hint}</div>${this.time<this.dialogueUntil?`<div class="dialogue panel">${this.dialogue}</div>`:''}<div class="controls panel">WASD: muovi · Destro: mira al + · Clic: tira · Spazio: schiva · E: usa · H: aiuto · Esc: pausa</div></section>${threat?`<aside class="threat panel">${threat}</aside>`:''}`;
     if(content!==this.lastHUD){this.hud.innerHTML=content;this.lastHUD=content;}
   }
+  formatHUD():void {const walker=document.createTreeWalker(this.hud,NodeFilter.SHOW_TEXT);let node:Node|null;while((node=walker.nextNode())){const original=(node as Text & {controlSource?:string}).controlSource??node.textContent??'';(node as Text & {controlSource?:string}).controlSource=original;node.textContent=this.controls(original.replace(/MIRATO/g,this.aimLabel()));}}
   openMenu(menu:'pause'|'dead'|'title'):void {this.recordTransition('open-menu',{nextMenu:menu});this.menu=menu;this.playing=false;this.audio.pause();this.input.clear();this.renderMenu();}
   togglePause():void {if(this.menu==='none')this.openMenu('pause');else if(this.menu==='pause')this.resume();}
   resume():void {this.menu='none';this.playing=true;this.lastFrame=0;this.audio.resume();this.input.clear();this.renderMenu();this.renderer.domElement.focus();}
   retry():void {this.recordTransition('retry');const s={...this.checkpoint};this.reset(s.boundary,s);this.log('retry',{chapter:s.chapter,boundary:s.boundary});this.notify('Si riparte dal checkpoint · salute ripristinata');this.resume();}
+  renderControlSettings():void {
+    this.menuElement.querySelector('.menu-controls')!.textContent=this.controls('WASD: muovi · Destro: guarda · Clic: regalo · Spazio: schiva · E: usa · H: aiuto · Esc: pausa');
+    this.menuElement.querySelector('.settings')!.insertAdjacentHTML('beforeend',`<label title="Da 0.25 a 2×; predefinita 1×">Sensibilità <output data-value="sensitivity">${this.settings.sensitivity}×</output> <input aria-label="Sensibilità" type="range" min=".25" max="2" step=".05" data-setting="sensitivity" value="${this.settings.sensitivity}"></label><label><input type="checkbox" data-setting="invertY" ${this.settings.invertY?'checked':''}> Inverti asse Y</label><label title="Solo durante il gioco; da 45 a 75°, predefinito 53°">Campo visivo gameplay <output data-value="fov">${this.settings.fov}°</output> <input aria-label="Campo visivo" type="range" min="45" max="75" step="1" data-setting="fov" value="${this.settings.fov}"></label><fieldset class="bindings"><legend>Tastiera</legend>${(Object.keys(actionNames) as ControlAction[]).map(action=>`<button type="button" data-bind="${action}">${actionNames[action]}: ${this.bindingAction===action?'Premi un tasto…':keyLabel(this.settings.keyBindings[action])}</button>`).join('')}<p role="status">${this.bindingMessage}</p><button type="button" data-reset-controls>Ripristina impostazioni predefinite</button></fieldset>`);
+    this.menuElement.querySelectorAll<HTMLButtonElement>('[data-bind]').forEach(button=>button.onclick=()=>{this.bindingAction=button.dataset.bind as ControlAction;this.bindingMessage='Premi un tasto · Esc annulla';this.input.clear();this.input.capture=event=>this.captureBinding(event);this.renderMenu();});
+    this.menuElement.querySelector<HTMLButtonElement>('[data-reset-controls]')!.onclick=()=>{Object.assign(this.settings,freshSettings());this.input.capture=null;this.bindingAction=null;this.input.setBindings(this.settings.keyBindings);this.audio.setVolumes(this.settings);writeSettings(this.settings);this.bindingMessage='Impostazioni ripristinate · progressi invariati';this.renderMenu();};
+    if(this.bindingAction||this.bindingMessage)this.menuElement.querySelector('details')!.open=true;
+  }
+  captureBinding(event:KeyboardEvent):void {
+    if(event.repeat)return;
+    if(event.code==='Escape'){this.input.capture=null;this.bindingAction=null;this.bindingMessage='Rimappatura annullata';this.renderMenu();return;}
+    if(event.altKey||event.ctrlKey||event.metaKey||!validBinding(event.code)){this.bindingMessage='Tasto riservato: scegli lettere, numeri, frecce, Spazio o Shift';this.renderMenu();return;}
+    const action=this.bindingAction!;const conflict=(Object.keys(actionNames) as ControlAction[]).find(a=>a!==action&&this.settings.keyBindings[a]===event.code);
+    if(conflict){this.bindingMessage=`Tasto già usato: ${actionNames[conflict]}`;this.renderMenu();return;}
+    this.settings.keyBindings={...this.settings.keyBindings,[action]:event.code};this.input.setBindings(this.settings.keyBindings);writeSettings(this.settings);this.input.capture=null;this.bindingAction=null;this.bindingMessage='Comando aggiornato';this.renderMenu();
+  }
   renderMenu():void {
+    const focused=document.activeElement as HTMLElement|null;
+    const focusSelector=focused&&this.menuElement.contains(focused)?focused.dataset.bind?`[data-bind="${focused.dataset.bind}"]`:focused.hasAttribute('data-reset-controls')?'[data-reset-controls]':null:null;
     this.menuElement.hidden=this.menu==='none';if(this.menu==='none'){this.menuElement.innerHTML='';this.renderNow();return;}
     const title=this.menu==='title'?'Operazione<br>Ho Ho UFO':this.menu==='dead'?'Consegna rimandata!':'Pausa';
     this.menuElement.innerHTML=`<section class="menu panel"><div class="eyebrow">BABBO NATALE · CORTILE DEL LABORATORIO</div><h1>${title}</h1><p>${this.menu==='title'?'Il nucleo è nelle mani dei rettiliani.<br>Rispediscili al mittente.':this.menu==='dead'?'Nessun regalo perduto. Riparti dal gruppo corrente.':'Un momento per sistemare il sacco.'}</p><div class="actions">${this.menu==='title'?`<button data-do="new">Nuova partita</button><button data-do="continue" ${readCheckpoint()?'':'disabled'}>Continua</button>`:`${this.menu==='pause'?'<button data-do="resume">Riprendi</button>':''}<button data-do="retry">Ricomincia checkpoint</button><button data-do="title">Titolo</button>`}</div><details><summary>Impostazioni</summary><div class="settings">${(['master','music','effects'] as const).map((key,i)=>`<label>${['Volume generale','Musica','Effetti'][i]} <input aria-label="${['Volume generale','Musica','Effetti'][i]}" type="range" min="0" max="1" step=".05" data-setting="${key}" value="${this.settings[key]}"></label>`).join('')}<label><input type="checkbox" data-setting="reducedMotion" ${this.settings.reducedMotion?'checked':''}> Riduci movimento</label><label><input type="checkbox" data-setting="aimAssist" ${this.settings.aimAssist?'checked':''}> Mira assistita</label></div></details><p class="menu-controls">WASD: muovi · Tasto destro trascinato: guarda<br>Clic sinistro: regalo · Spazio: schiva · E: dispositivo<br>Esc: pausa · Audio e progressi salvati sul dispositivo</p>${!this.storageAvailable?'<p>Salvataggio non disponibile in questo browser.</p>':''}</section>`;
     this.menuElement.querySelector('.eyebrow')!.textContent=`BABBO NATALE · ${this.act.title.toLocaleUpperCase('it')}`;
+    this.renderControlSettings();
     if(this.menu==='title')this.menuElement.querySelector('.actions')!.insertAdjacentHTML('beforeend','<button data-do="street-preview">Prova la via dei giocattoli</button><button data-do="square-preview">Prova la piazza e Squamakk</button>');
     const note=storageNotice();if(note){const message=document.createElement('p');message.textContent=note;this.menuElement.querySelector('.menu')!.append(message);}
     this.menuElement.querySelectorAll<HTMLButtonElement>('button[data-do]').forEach(b=>b.addEventListener('click',event=>{this.recordTransition('menu-action',{button:b.dataset.do,clickDetail:event.detail});switch(b.dataset.do){case'new':this.startNew();break;case'street-preview':this.review=false;this.enterStreet(true);break;case'square-preview':this.review=false;this.enterSquare(true);break;case'continue':this.continueGame();break;case'resume':this.resume();break;case'retry':this.retry();break;case'title':this.openMenu('title');break;}}));
-    this.menuElement.querySelectorAll<HTMLInputElement>('input[data-setting]').forEach(input=>input.addEventListener('input',()=>{const key=input.dataset.setting;if(key==='reducedMotion'||key==='aimAssist')this.settings[key]=input.checked;else if(key==='master'||key==='music'||key==='effects')this.settings[key]=Number(input.value);this.audio.setVolumes(this.settings);writeSettings(this.settings);this.renderNow();}));
-    this.menuElement.querySelector<HTMLButtonElement>('button:not(:disabled)')?.focus();
+    this.menuElement.querySelectorAll<HTMLInputElement>('input[data-setting]').forEach(input=>input.addEventListener('input',()=>{const key=input.dataset.setting;if(key==='reducedMotion'||key==='aimAssist'||key==='invertY')this.settings[key]=input.checked;else if(key==='master'||key==='music'||key==='effects'||key==='sensitivity'||key==='fov')this.settings[key]=Number(input.value);if(key==='sensitivity'||key==='fov'){this.menuElement.querySelector(`[data-value="${key}"]`)!.textContent=`${this.settings[key]}${key==='fov'?'°':'×'}`;input.setAttribute('aria-valuetext',`${this.settings[key]}${key==='fov'?' gradi':' per'}`);}this.audio.setVolumes(this.settings);writeSettings(this.settings);this.lastHUD='';this.renderNow();}));
+    if(focusSelector)this.menuElement.querySelector('details')!.open=true;
+    this.menuElement.querySelector<HTMLElement>(focusSelector??'button:not(:disabled)')?.focus();
     this.renderNow();
   }
   resize():void {const w=this.app.clientWidth||innerWidth,h=this.app.clientHeight||innerHeight;this.renderer.setSize(w,h);this.camera3.aspect=w/h;this.camera3.updateProjectionMatrix();this.renderNow();}
-  renderNow():void {this.pose();this.renderHUD();this.renderer.render(this.scene,this.camera3);}
+  renderNow():void {this.renderer.domElement.setAttribute('aria-label',this.controls('Gioco desktop. WASD: muovi. Clic: regalo. Spazio: schiva. E: usa. H: aiuto. Esc: pausa. Destro trascinato: guarda.'));this.pose();this.renderHUD();this.renderer.render(this.scene,this.camera3);}
   frame=(timestamp:number):void=>{
     requestAnimationFrame(this.frame);
     if(!this.playing||this.menu!=='none'||document.hidden){this.lastFrame=0;this.input.endFrame();return;}
@@ -411,7 +450,7 @@ export class Game {
     this.input.endFrame();if(!this.playing)return;this.pose();if(timestamp-this.lastUI>100){this.renderHUD();this.lastUI=timestamp;}this.renderer.render(this.scene,this.camera3);
   };
   state():Record<string,unknown> {
-    return {chapter:this.act.id,act:this.act.id,actTitle:this.act.title,beat:this.beat,group:this.group,player:{...this.player},camera:{yaw:this.yaw,pitch:this.pitch,view:this.view},worldFallback:this.worldFallback,
+    return {settings:structuredClone(this.settings),cameraDiagnostics:this.cameraDiagnostics?{...this.cameraDiagnostics,position:this.cameraDiagnostics.position.toArray(),look:this.cameraDiagnostics.look.toArray()}:null,chapter:this.act.id,act:this.act.id,actTitle:this.act.title,beat:this.beat,group:this.group,player:{...this.player},camera:{yaw:this.yaw,pitch:this.pitch,view:this.view},worldFallback:this.worldFallback,
       boss:this.square?.state()??null,...(this.square?.fields()??emptyBossCheckpoint()),gifts:this.gifts.filter(g=>g.active).map(g=>({x:g.root.position.x,y:g.root.position.y,z:g.root.position.z,age:g.age,bossTag:g.bossTag?{...g.bossTag}:null})),
       disabledAnchors:[...this.disabledAnchors],clearedArenas:[...this.clearedArenas],activatedArenas:[...this.activatedArenas],defeatedEnemies:[...this.defeatedEnemies],anchorCount:this.anchorCount(),
       arenas:this.act.arenas.map(a=>({id:a.id,name:a.name,x:a.x,z:a.z,active:this.activatedArenas.includes(a.id),clear:this.clearedArenas.includes(a.id),remaining:this.living().filter(e=>e.arenaId===a.id).length})),anchors:this.act.anchors.map(a=>({...a,disabled:this.disabledAnchors.includes(a.id)})),
@@ -421,7 +460,7 @@ export class Game {
       healAvailable:this.healAvailable,healed:this.healed,firstWrapped:this.firstWrapped,review:this.review,preview:this.preview,playing:this.playing,time:this.time,
       enemies:this.enemies.map(e=>({id:e.id,key:e.key,kind:e.kind,arenaId:e.arenaId,x:e.x,z:e.z,hp:e.hp,status:e.status,since:e.since,attackId:e.attackId,angle:e.angle,hit:e.hit})),objective:this.objective(),checkpoint:structuredClone(this.checkpoint),eventLog:[...this.eventLog],storageAvailable:this.storageAvailable};
   }
-  getStats():Record<string,unknown> {let lights=0,shadowLights=0;this.scene.traverse(o=>{if(o instanceof THREE.Light){lights++;if(o.castShadow)shadowLights++;}});const storyNodes=Object.fromEntries(['Nave di Squamakk','Portale alieno','Slitta delle consegne','Albero della Stella Polare'].map(name=>{const node=this.world.root.getObjectByName(name);return [name,node?{visible:node.visible,position:node.position.toArray(),scale:node.scale.toArray()}:null];}));return{renderFrame:this.renderer.info.render.frame,drawCalls:this.renderer.info.render.calls,triangles:this.renderer.info.render.triangles,geometries:this.renderer.info.memory.geometries,textures:this.renderer.info.memory.textures,lights,shadowLights,postPasses:0,shipHeight:(this.world.root.getObjectByName('Nave di Squamakk')??this.world.root.getObjectByName('Nave verso la piazza'))?.position.y??null,storyNodes,audio:this.audio.stats()};}
+  getStats():Record<string,unknown> {let lights=0,shadowLights=0;this.scene.traverse(o=>{if(o instanceof THREE.Light){lights++;if(o.castShadow)shadowLights++;}});const storyNodes=Object.fromEntries(['Nave di Squamakk','Portale alieno','Slitta delle consegne','Albero della Stella Polare'].map(name=>{const node=this.world.root.getObjectByName(name);return [name,node?{visible:node.visible,position:node.position.toArray(),scale:node.scale.toArray()}:null];}));return{cameraDiagnostics:this.cameraDiagnostics?{...this.cameraDiagnostics,position:this.cameraDiagnostics.position.toArray(),look:this.cameraDiagnostics.look.toArray()}:null,renderFrame:this.renderer.info.render.frame,drawCalls:this.renderer.info.render.calls,triangles:this.renderer.info.render.triangles,geometries:this.renderer.info.memory.geometries,textures:this.renderer.info.memory.textures,lights,shadowLights,postPasses:0,shipHeight:(this.world.root.getObjectByName('Nave di Squamakk')??this.world.root.getObjectByName('Nave verso la piazza'))?.position.y??null,storyNodes,audio:this.audio.stats()};}
   selfTest():Record<string,unknown> {
     this.renderNow();const s=this.getStats();const checks:{name:string;value:number;limit:number;pass?:boolean}[]=[];
     const add=(name:string,value:number,limit:number)=>checks.push({name,value,limit,pass:Number.isFinite(value)&&value<=limit});

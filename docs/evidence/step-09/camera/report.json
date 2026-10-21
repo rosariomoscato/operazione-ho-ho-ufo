@@ -1,0 +1,1305 @@
+{
+  "pass": true,
+  "sourceHashes": {
+    "src/game.ts": "78ac5571694ebf03286e1a7152087200d76a0148566b2b7c70397f7f01ab4128",
+    "src/engine/camera.ts": "5fe412f9150397ba19d3d750aea4a9486a5d8ac10006d5488700795e0eca7a37",
+    "src/engine/camera-props.ts": "c4f8d430a8421b1af93f75b4ae2478e05155309fc0a7c44eb419ccf9548186e5",
+    "src/levels/courtyard.ts": "32ca7d9bec25a96c9d6606dea4bd392d031cb3cb127559aadee1ea841d096db5",
+    "src/levels/toystreet.ts": "4eec60af3285dfeea2d9580581c901deae84e19c5384cd843319113dc56fbb35",
+    "src/levels/square.ts": "1c92e0325bd82f1144d72ce2ddb680f7552b34c1f22fa8c1cdd23ccb85286348"
+  },
+  "kind": "controlled geometry grid; rendered budget/visual checks in separate named snapshots",
+  "errors": [],
+  "grids": [
+    {
+      "scenario": "battle-c",
+      "poses": 384,
+      "minDistance": 6.600736434935709,
+      "minClearance": 0.27999999999999936,
+      "maxHeadFraction": 0.12456425557966574,
+      "renderedViews": 128,
+      "maxDrawCalls": 74,
+      "maxTriangles": 93314
+    },
+    {
+      "scenario": "street-both-active",
+      "poses": 288,
+      "minDistance": 8.079684303620002,
+      "minClearance": 0.28,
+      "maxHeadFraction": 0.10257497011911867,
+      "renderedViews": 96,
+      "maxDrawCalls": 110,
+      "maxTriangles": 85990
+    },
+    {
+      "scenario": "square-entry",
+      "poses": 192,
+      "minDistance": 7.184308273238285,
+      "minClearance": 0.27999999999999936,
+      "maxHeadFraction": 0.11447087469265466,
+      "renderedViews": 64,
+      "maxDrawCalls": 52,
+      "maxTriangles": 51000
+    }
+  ],
+  "right-shop": {
+    "stats": {
+      "cameraDiagnostics": {
+        "position": [
+          17.8,
+          4.211921756621386,
+          -0.14999999999999947
+        ],
+        "look": [
+          4.1000000000000005,
+          1.1,
+          1.4999999999999998
+        ],
+        "distance": 9.015666969857962,
+        "compressed": false,
+        "occluded": [
+          "street-east-shop"
+        ]
+      },
+      "renderFrame": 300,
+      "drawCalls": 79,
+      "triangles": 66908,
+      "geometries": 65,
+      "textures": 4,
+      "lights": 3,
+      "shadowLights": 0,
+      "postPasses": 0,
+      "shipHeight": 8,
+      "storyNodes": {
+        "Nave di Squamakk": null,
+        "Portale alieno": null,
+        "Slitta delle consegne": null,
+        "Albero della Stella Polare": null
+      },
+      "audio": {
+        "loaded": false,
+        "activeEffects": 0,
+        "error": null
+      }
+    },
+    "test": {
+      "pass": true,
+      "checks": [
+        {
+          "name": "santa feet floor (m)",
+          "value": 0,
+          "limit": 0.002,
+          "pass": true
+        },
+        {
+          "name": "alien 1 feet floor (m)",
+          "value": 0,
+          "limit": 0.002,
+          "pass": true
+        },
+        {
+          "name": "alien 2 feet floor (m)",
+          "value": 0,
+          "limit": 0.002,
+          "pass": true
+        },
+        {
+          "name": "alien 3 feet floor (m)",
+          "value": 0,
+          "limit": 0.002,
+          "pass": true
+        },
+        {
+          "name": "alien 4 feet floor (m)",
+          "value": 0,
+          "limit": 0.002,
+          "pass": true
+        },
+        {
+          "name": "alien 5 feet floor (m)",
+          "value": 0,
+          "limit": 0.002,
+          "pass": true
+        },
+        {
+          "name": "alien 6 feet floor (m)",
+          "value": 0,
+          "limit": 0.002,
+          "pass": true
+        },
+        {
+          "name": "Rettiliano tiratore: shooter-left-hand-handle (m)",
+          "value": 1.7763568394002505e-15,
+          "limit": 0.001,
+          "pass": true
+        },
+        {
+          "name": "Rettiliano tiratore: shooter-right-hand-handle (m)",
+          "value": 1.7763568394002505e-15,
+          "limit": 0.001,
+          "pass": true
+        },
+        {
+          "name": "Rettiliano tiratore: shooter-left-hand-handle (m)",
+          "value": 0,
+          "limit": 0.001,
+          "pass": true
+        },
+        {
+          "name": "Rettiliano tiratore: shooter-right-hand-handle (m)",
+          "value": 0,
+          "limit": 0.001,
+          "pass": true
+        },
+        {
+          "name": "Rettiliano tiratore: shooter-left-hand-handle (m)",
+          "value": 0,
+          "limit": 0.001,
+          "pass": true
+        },
+        {
+          "name": "Rettiliano tiratore: shooter-right-hand-handle (m)",
+          "value": 0,
+          "limit": 0.001,
+          "pass": true
+        },
+        {
+          "name": "player collider penetration",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "enemy collider penetration",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "committed attacks including flying bolts",
+          "value": 0,
+          "limit": 1,
+          "pass": true
+        },
+        {
+          "name": "unique level registry",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "level registry contains courtyard",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "swept collider regression",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "wall ray regression",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "unique acts registry",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "unique cast registry",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "unique systems registry",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "unique scenarios registry",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "active world lights",
+          "value": 3,
+          "limit": 3,
+          "pass": true
+        },
+        {
+          "name": "maximum live defenders",
+          "value": 6,
+          "limit": 6,
+          "pass": true
+        },
+        {
+          "name": "anchor count matches unique local IDs",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "disabled anchor without cleared arena",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "chapter completion agrees with anchors",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "workshop spawn collider",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "workshop spawn collider",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "workshop spawn collider",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "carousel spawn collider",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "carousel spawn collider",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "carousel spawn collider",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "bounded hostile bolt pool",
+          "value": 0,
+          "limit": 1,
+          "pass": true
+        },
+        {
+          "name": "live bolt finite and unexpired",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "draw calls",
+          "value": 79,
+          "limit": 150,
+          "pass": true
+        },
+        {
+          "name": "triangles",
+          "value": 66908,
+          "limit": 150000,
+          "pass": true
+        },
+        {
+          "name": "lights",
+          "value": 3,
+          "limit": 6,
+          "pass": true
+        },
+        {
+          "name": "shadow lights",
+          "value": 0,
+          "limit": 2,
+          "pass": true
+        },
+        {
+          "name": "telegraph < 1 s",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "recovery < 1.2 s",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "observed ranged telegraph < 1.2 s",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "observed ranged locked time < .8 s",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "duplicate damage by attack ID",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        }
+      ],
+      "stats": {
+        "cameraDiagnostics": {
+          "position": [
+            17.8,
+            4.211921756621386,
+            -0.14999999999999947
+          ],
+          "look": [
+            4.1000000000000005,
+            1.1,
+            1.4999999999999998
+          ],
+          "distance": 9.015666969857962,
+          "compressed": false,
+          "occluded": [
+            "street-east-shop"
+          ]
+        },
+        "renderFrame": 301,
+        "drawCalls": 79,
+        "triangles": 66908,
+        "geometries": 65,
+        "textures": 4,
+        "lights": 3,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "shipHeight": 8,
+        "storyNodes": {
+          "Nave di Squamakk": null,
+          "Portale alieno": null,
+          "Slitta delle consegne": null,
+          "Albero della Stella Polare": null
+        },
+        "audio": {
+          "loaded": false,
+          "activeEffects": 0,
+          "error": null
+        }
+      },
+      "evidence": {
+        "meleeReleases": 0,
+        "rangedReleases": 0,
+        "bossReleases": 0,
+        "bossWindowHits": 0,
+        "damageEvents": 0,
+        "handContactsMeasured": 6,
+        "scarfContactsMeasured": 0
+      },
+      "notes": [
+        "Empty attack logs are NOT timing evidence.",
+        "Only cast exposing root.userData.measureHandContacts has measured hand contacts; scarf/deck/muzzle are separate real support checks.",
+        "Performance is draw/triangle budget, not a laptop FPS claim."
+      ]
+    },
+    "state": {
+      "settings": {
+        "master": 0.7,
+        "music": 0.3,
+        "effects": 0.65,
+        "reducedMotion": false,
+        "aimAssist": true,
+        "sensitivity": 1,
+        "invertY": false,
+        "fov": 53,
+        "keyBindings": {
+          "forward": "KeyW",
+          "backward": "KeyS",
+          "left": "KeyA",
+          "right": "KeyD",
+          "dodge": "Space",
+          "interact": "KeyE",
+          "help": "KeyH"
+        }
+      },
+      "cameraDiagnostics": {
+        "position": [
+          17.8,
+          4.211921756621386,
+          -0.14999999999999947
+        ],
+        "look": [
+          4.1000000000000005,
+          1.1,
+          1.4999999999999998
+        ],
+        "distance": 9.015666969857962,
+        "compressed": false,
+        "occluded": [
+          "street-east-shop"
+        ]
+      },
+      "chapter": "toystreet",
+      "act": "toystreet",
+      "actTitle": "La via dei giocattoli",
+      "beat": "street",
+      "group": 0,
+      "player": {
+        "x": 9.3,
+        "z": 1.5,
+        "hp": 6,
+        "invulnerableUntil": 1.25,
+        "dodgeUntil": 0,
+        "dodgeReady": 0,
+        "dx": 0,
+        "dz": -1
+      },
+      "camera": {
+        "yaw": 1.5707963267948966,
+        "pitch": 0.3,
+        "view": "player"
+      },
+      "worldFallback": false,
+      "boss": null,
+      "bossSegments": 0,
+      "bossDefeated": false,
+      "coreCarried": false,
+      "coreReturned": false,
+      "gifts": [],
+      "disabledAnchors": [],
+      "clearedArenas": [],
+      "activatedArenas": [
+        "workshop",
+        "carousel"
+      ],
+      "defeatedEnemies": [],
+      "anchorCount": 1,
+      "arenas": [
+        {
+          "id": "workshop",
+          "name": "Officina",
+          "x": -8,
+          "z": -4,
+          "active": true,
+          "clear": false,
+          "remaining": 3
+        },
+        {
+          "id": "carousel",
+          "name": "Giostra",
+          "x": 8,
+          "z": -4,
+          "active": true,
+          "clear": false,
+          "remaining": 3
+        }
+      ],
+      "anchors": [
+        {
+          "id": "workshop",
+          "name": "Officina dei trenini",
+          "x": -8,
+          "z": -9,
+          "arenaId": "workshop",
+          "disabled": false
+        },
+        {
+          "id": "carousel",
+          "name": "Giostra dei regali",
+          "x": 8,
+          "z": -9,
+          "arenaId": "carousel",
+          "disabled": false
+        }
+      ],
+      "bolts": [],
+      "systemConfigs": [
+        {
+          "id": "ranged",
+          "windup": 1.2,
+          "lock": 0.2,
+          "recovery": 1.2,
+          "speed": 6,
+          "radius": 0.18,
+          "range": 12,
+          "travel": 18,
+          "lifetime": 3,
+          "pool": 3
+        }
+      ],
+      "committed": 0,
+      "lastProgress": 0,
+      "hintStage": 0,
+      "rangedLearned": false,
+      "droneHit": true,
+      "dodgeUsed": true,
+      "remaining": 6,
+      "pending": 0,
+      "neutralized": 0,
+      "healAvailable": false,
+      "healed": false,
+      "firstWrapped": true,
+      "review": true,
+      "preview": false,
+      "playing": false,
+      "time": 0,
+      "enemies": [
+        {
+          "id": 1,
+          "key": "workshop:0",
+          "kind": "ranged",
+          "arenaId": "workshop",
+          "x": -11,
+          "z": -5,
+          "hp": 2,
+          "status": "approach",
+          "since": 0,
+          "attackId": 0,
+          "angle": 0,
+          "hit": false
+        },
+        {
+          "id": 2,
+          "key": "workshop:1",
+          "kind": "ranged",
+          "arenaId": "workshop",
+          "x": -7,
+          "z": -8,
+          "hp": 2,
+          "status": "approach",
+          "since": 0,
+          "attackId": 0,
+          "angle": 0,
+          "hit": false
+        },
+        {
+          "id": 3,
+          "key": "workshop:2",
+          "kind": "ranged",
+          "arenaId": "workshop",
+          "x": -4.5,
+          "z": -10.5,
+          "hp": 2,
+          "status": "approach",
+          "since": 0,
+          "attackId": 0,
+          "angle": 0,
+          "hit": false
+        },
+        {
+          "id": 4,
+          "key": "carousel:0",
+          "kind": "melee",
+          "arenaId": "carousel",
+          "x": 5,
+          "z": -5,
+          "hp": 2,
+          "status": "approach",
+          "since": 0,
+          "attackId": 0,
+          "angle": 0,
+          "hit": false
+        },
+        {
+          "id": 5,
+          "key": "carousel:1",
+          "kind": "melee",
+          "arenaId": "carousel",
+          "x": 10,
+          "z": -7,
+          "hp": 2,
+          "status": "approach",
+          "since": 0,
+          "attackId": 0,
+          "angle": 0,
+          "hit": false
+        },
+        {
+          "id": 6,
+          "key": "carousel:2",
+          "kind": "melee",
+          "arenaId": "carousel",
+          "x": 6,
+          "z": -10.5,
+          "hp": 2,
+          "status": "approach",
+          "since": 0,
+          "attackId": 0,
+          "angle": 0,
+          "hit": false
+        }
+      ],
+      "objective": "Libera un lato, poi E · Ancoraggi 1/3",
+      "checkpoint": {
+        "version": 3,
+        "chapter": "toystreet",
+        "boundary": "street",
+        "healed": false,
+        "firstWrapped": true,
+        "disabledAnchors": [],
+        "clearedArenas": [],
+        "activatedArenas": [
+          "workshop",
+          "carousel"
+        ],
+        "defeatedEnemies": [],
+        "bossSegments": 0,
+        "bossDefeated": false,
+        "coreCarried": false,
+        "coreReturned": false
+      },
+      "eventLog": [],
+      "storageAvailable": true
+    }
+  },
+  "tree": {
+    "stats": {
+      "cameraDiagnostics": {
+        "position": [
+          6.350000000000001,
+          4.211921756621386,
+          -12.9
+        ],
+        "look": [
+          7.999999999999999,
+          1.1,
+          0.7999999999999998
+        ],
+        "distance": 9.015666969857962,
+        "compressed": false,
+        "occluded": [
+          "square-tree"
+        ]
+      },
+      "renderFrame": 304,
+      "drawCalls": 24,
+      "triangles": 31402,
+      "geometries": 60,
+      "textures": 4,
+      "lights": 3,
+      "shadowLights": 0,
+      "postPasses": 0,
+      "shipHeight": 4.4,
+      "storyNodes": {
+        "Nave di Squamakk": {
+          "visible": true,
+          "position": [
+            0,
+            4.4,
+            -12
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "Portale alieno": {
+          "visible": true,
+          "position": [
+            0,
+            6,
+            -19
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "Slitta delle consegne": {
+          "visible": true,
+          "position": [
+            -9,
+            0,
+            -7
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        },
+        "Albero della Stella Polare": {
+          "visible": true,
+          "position": [
+            8,
+            0,
+            -6
+          ],
+          "scale": [
+            1,
+            1,
+            1
+          ]
+        }
+      },
+      "audio": {
+        "loaded": false,
+        "activeEffects": 0,
+        "error": null
+      }
+    },
+    "test": {
+      "pass": true,
+      "checks": [
+        {
+          "name": "santa feet floor (m)",
+          "value": 0,
+          "limit": 0.002,
+          "pass": true
+        },
+        {
+          "name": "player collider penetration",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "enemy collider penetration",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "committed attacks including flying bolts",
+          "value": 0,
+          "limit": 1,
+          "pass": true
+        },
+        {
+          "name": "unique level registry",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "level registry contains courtyard",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "swept collider regression",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "wall ray regression",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "unique acts registry",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "unique cast registry",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "unique systems registry",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "unique scenarios registry",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "active world lights",
+          "value": 3,
+          "limit": 3,
+          "pass": true
+        },
+        {
+          "name": "maximum live defenders",
+          "value": 0,
+          "limit": 6,
+          "pass": true
+        },
+        {
+          "name": "bounded hostile bolt pool",
+          "value": 0,
+          "limit": 1,
+          "pass": true
+        },
+        {
+          "name": "live bolt finite and unexpired",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "square world is real, not fallback",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "squamakk cast is real, not fallback",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "squamakk feet floor (m)",
+          "value": 0,
+          "limit": 0.002,
+          "pass": true
+        },
+        {
+          "name": "boss segment bounds",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "boss defeated agrees with segments",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "core progression order",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "no M2 danger in square",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "boss visual includes sampled hurt boundary",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "boss far range boundary includes body margin",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "boss beyond expanded boundary is safe",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "observed boss windup too short",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "boss window consumed at most once",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "boss contact consumed once per attack",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "draw calls",
+          "value": 24,
+          "limit": 150,
+          "pass": true
+        },
+        {
+          "name": "triangles",
+          "value": 31402,
+          "limit": 150000,
+          "pass": true
+        },
+        {
+          "name": "lights",
+          "value": 3,
+          "limit": 6,
+          "pass": true
+        },
+        {
+          "name": "shadow lights",
+          "value": 0,
+          "limit": 2,
+          "pass": true
+        },
+        {
+          "name": "telegraph < 1 s",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "recovery < 1.2 s",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "observed ranged telegraph < 1.2 s",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "observed ranged locked time < .8 s",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        },
+        {
+          "name": "duplicate damage by attack ID",
+          "value": 0,
+          "limit": 0,
+          "pass": true
+        }
+      ],
+      "stats": {
+        "cameraDiagnostics": {
+          "position": [
+            6.350000000000001,
+            4.211921756621386,
+            -12.9
+          ],
+          "look": [
+            7.999999999999999,
+            1.1,
+            0.7999999999999998
+          ],
+          "distance": 9.015666969857962,
+          "compressed": false,
+          "occluded": [
+            "square-tree"
+          ]
+        },
+        "renderFrame": 305,
+        "drawCalls": 24,
+        "triangles": 31402,
+        "geometries": 60,
+        "textures": 4,
+        "lights": 3,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "shipHeight": 4.4,
+        "storyNodes": {
+          "Nave di Squamakk": {
+            "visible": true,
+            "position": [
+              0,
+              4.4,
+              -12
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "Portale alieno": {
+            "visible": true,
+            "position": [
+              0,
+              6,
+              -19
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "Slitta delle consegne": {
+            "visible": true,
+            "position": [
+              -9,
+              0,
+              -7
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          },
+          "Albero della Stella Polare": {
+            "visible": true,
+            "position": [
+              8,
+              0,
+              -6
+            ],
+            "scale": [
+              1,
+              1,
+              1
+            ]
+          }
+        },
+        "audio": {
+          "loaded": false,
+          "activeEffects": 0,
+          "error": null
+        }
+      },
+      "evidence": {
+        "meleeReleases": 0,
+        "rangedReleases": 0,
+        "bossReleases": 0,
+        "bossWindowHits": 0,
+        "damageEvents": 0,
+        "handContactsMeasured": 0,
+        "scarfContactsMeasured": 0
+      },
+      "notes": [
+        "Empty attack logs are NOT timing evidence.",
+        "Only cast exposing root.userData.measureHandContacts has measured hand contacts; scarf/deck/muzzle are separate real support checks.",
+        "Performance is draw/triangle budget, not a laptop FPS claim."
+      ]
+    },
+    "state": {
+      "settings": {
+        "master": 0.7,
+        "music": 0.3,
+        "effects": 0.65,
+        "reducedMotion": false,
+        "aimAssist": true,
+        "sensitivity": 1,
+        "invertY": false,
+        "fov": 53,
+        "keyBindings": {
+          "forward": "KeyW",
+          "backward": "KeyS",
+          "left": "KeyA",
+          "right": "KeyD",
+          "dodge": "Space",
+          "interact": "KeyE",
+          "help": "KeyH"
+        }
+      },
+      "cameraDiagnostics": {
+        "position": [
+          6.350000000000001,
+          4.211921756621386,
+          -12.9
+        ],
+        "look": [
+          7.999999999999999,
+          1.1,
+          0.7999999999999998
+        ],
+        "distance": 9.015666969857962,
+        "compressed": false,
+        "occluded": [
+          "square-tree"
+        ]
+      },
+      "chapter": "square",
+      "act": "square",
+      "actTitle": "La piazza dell’albero",
+      "beat": "square",
+      "group": 0,
+      "player": {
+        "x": 8,
+        "z": -4.4,
+        "hp": 6,
+        "invulnerableUntil": 1.25,
+        "dodgeUntil": 0,
+        "dodgeReady": 0,
+        "dx": 0,
+        "dz": -1
+      },
+      "camera": {
+        "yaw": 3.141592653589793,
+        "pitch": 0.3,
+        "view": "player"
+      },
+      "worldFallback": false,
+      "boss": {
+        "phase": "approach",
+        "segments": 0,
+        "cycle": 1,
+        "cone": 0,
+        "pattern": 1,
+        "attempt": 0,
+        "windowId": 0,
+        "windowConsumed": false,
+        "windowStarted": 0,
+        "windowUntil": 0,
+        "remaining": 0,
+        "since": 0,
+        "until": 0,
+        "angle": 0,
+        "attackId": 0,
+        "lockedAt": null,
+        "attackContactConsumed": false,
+        "defeated": false,
+        "defeatedAt": null,
+        "committed": false,
+        "config": {
+          "segments": 3,
+          "range": 22,
+          "halfAngle": 0.2,
+          "bodyRadius": 0.48,
+          "windup": 1.4,
+          "tracking": 0.3,
+          "minimumLocked": 0.8,
+          "active": 0.35,
+          "gap": 0.5,
+          "window": 5.5,
+          "giftRange": 12,
+          "giftRadius": 2
+        },
+        "bossSegments": 0,
+        "bossDefeated": false,
+        "coreCarried": false,
+        "coreReturned": false,
+        "completed": false,
+        "endingStarted": -8,
+        "endingElapsed": null,
+        "portalClosed": false,
+        "visual": {
+          "castFallback": false,
+          "scarfVisible": false,
+          "onShip": false,
+          "signal": {
+            "baseRange": 22,
+            "baseHalfAngle": 0.2,
+            "bodyMargin": 0.48,
+            "visualMargin": 0.49144293825640945
+          },
+          "parcel": {
+            "width": 1.6,
+            "height": 1.15,
+            "depth": 1.25
+          },
+          "scarf": {
+            "width": 0.42,
+            "thickness": 0.055,
+            "length": 0.55,
+            "tail": 0.76
+          }
+        }
+      },
+      "bossSegments": 0,
+      "bossDefeated": false,
+      "coreCarried": false,
+      "coreReturned": false,
+      "gifts": [],
+      "disabledAnchors": [
+        "workshop",
+        "carousel"
+      ],
+      "clearedArenas": [
+        "workshop",
+        "carousel"
+      ],
+      "activatedArenas": [
+        "workshop",
+        "carousel"
+      ],
+      "defeatedEnemies": [],
+      "anchorCount": 3,
+      "arenas": [],
+      "anchors": [],
+      "bolts": [],
+      "systemConfigs": [
+        {
+          "id": "ranged",
+          "windup": 1.2,
+          "lock": 0.2,
+          "recovery": 1.2,
+          "speed": 6,
+          "radius": 0.18,
+          "range": 12,
+          "travel": 18,
+          "lifetime": 3,
+          "pool": 3
+        }
+      ],
+      "committed": 0,
+      "lastProgress": 0,
+      "hintStage": 0,
+      "rangedLearned": false,
+      "droneHit": true,
+      "dodgeUsed": true,
+      "remaining": 3,
+      "pending": 0,
+      "neutralized": 0,
+      "healAvailable": false,
+      "healed": false,
+      "firstWrapped": true,
+      "review": true,
+      "preview": false,
+      "playing": false,
+      "time": 0,
+      "enemies": [],
+      "objective": "Avvicinati al generale nella piazza",
+      "checkpoint": {
+        "version": 3,
+        "chapter": "square",
+        "boundary": "square",
+        "healed": false,
+        "firstWrapped": true,
+        "disabledAnchors": [
+          "workshop",
+          "carousel"
+        ],
+        "clearedArenas": [
+          "workshop",
+          "carousel"
+        ],
+        "activatedArenas": [
+          "workshop",
+          "carousel"
+        ],
+        "defeatedEnemies": [],
+        "bossSegments": 0,
+        "bossDefeated": false,
+        "coreCarried": false,
+        "coreReturned": false
+      },
+      "eventLog": [],
+      "storageAvailable": true
+    }
+  },
+  "sourceHashesAfter": {
+    "src/game.ts": "78ac5571694ebf03286e1a7152087200d76a0148566b2b7c70397f7f01ab4128",
+    "src/engine/camera.ts": "5fe412f9150397ba19d3d750aea4a9486a5d8ac10006d5488700795e0eca7a37",
+    "src/engine/camera-props.ts": "c4f8d430a8421b1af93f75b4ae2478e05155309fc0a7c44eb419ccf9548186e5",
+    "src/levels/courtyard.ts": "32ca7d9bec25a96c9d6606dea4bd392d031cb3cb127559aadee1ea841d096db5",
+    "src/levels/toystreet.ts": "4eec60af3285dfeea2d9580581c901deae84e19c5384cd843319113dc56fbb35",
+    "src/levels/square.ts": "1c92e0325bd82f1144d72ce2ddb680f7552b34c1f22fa8c1cdd23ccb85286348"
+  }
+}

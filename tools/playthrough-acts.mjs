@@ -32,7 +32,17 @@ export async function recover(page, report) {
 export async function safeWalk(page, report, goal, options) {
   for (let attempt = 0; attempt < 4; attempt++) {
     await recover(page, report);
-    try { await walk(page, goal, options); return; }
+    try { await walk(page, goal, {...options,beforeStep:async s=>{
+      // Checkpoint-restored M2 defenders can already be pursuing the player.
+      // Do not march past them repeatedly while trying to reach another arena.
+      if(s.chapter!=='toystreet')return false;
+      const enemy=s.enemies.filter(e=>e.hp>0&&math.distance(e,s.player)<=8&&math.lineClear(s.player,e,streetObstacles,.2)).sort((a,b)=>math.distance(a,s.player)-math.distance(b,s.player))[0];
+      if(!enemy)return false;
+      if(s.enemies.some(e=>e.status==='windup'||e.status==='active'))await page.keyboard.press('Space');
+      if(!await aimOrRetry(page,report,enemy))return true;
+      if(!await giftOrRetry(page,report))return true;
+      await page.waitForTimeout(650);return true;
+    }}); return; }
     catch (error) { if ((await state(page)).player.hp > 0) throw error; }
   }
   throw Error('Could not reach target after real checkpoint retries');
@@ -46,10 +56,23 @@ export async function aimOrRetry(page, report, target) {
   }
 }
 
+export async function giftOrRetry(page, report) {
+  try { await gift(page); report.shots++; return true; }
+  catch (error) {
+    // The simulation can advance between a read and the guarded click. Keep
+    // the no-menu-click guard, count the death and use the real retry button.
+    if ((await state(page)).player.hp > 0) throw error;
+    await recover(page, report); return false;
+  }
+}
+
 export async function firstTwoActs(page, report) {
   // Fresh browser storage and explicit New game; no seeded checkpoints/debug jumps.
   await page.getByRole('button', { name: 'Nuova partita', exact: true }).click();
-  await page.getByRole('button', { name: 'Salta introduzione', exact: true }).click();
+  // Intro HUD is refreshed while playing. Use its advertised keyboard skip
+  // instead of racing Playwright's stability checks against replaced buttons.
+  await page.keyboard.press('Enter');
+  await page.waitForFunction(() => LC.state().beat === 'training');
   await face(page, { x: -2, z: 4 });
   for (let i = 0; i < 5 && !(await state(page)).droneHit; i++) {
     await gift(page); report.shots++; await page.waitForTimeout(900);
@@ -67,7 +90,7 @@ export async function firstTwoActs(page, report) {
       if (await aimOrRetry(page, report, waypoint)) await hold(page, 'KeyW', 220); continue;
     }
     if (!await aimOrRetry(page, report, enemy)) continue;
-    await gift(page); report.shots++; await page.waitForTimeout(700);
+    if (!await giftOrRetry(page, report)) continue; await page.waitForTimeout(700);
   }
   assert.equal((await state(page)).beat, 'anchor', 'M1 defenders not all cleared');
   await safeWalk(page, report, { x: 0, z: -9 }, { obstacles: courtyardObstacles, stop: 1.7 });
@@ -83,14 +106,14 @@ export async function firstTwoActs(page, report) {
       const s = await recover(page, report);
       assert.equal(s.chapter, 'toystreet');
       if (s.clearedArenas.includes(id)) break;
-      const enemy = s.enemies.filter(e => e.arenaId === id && e.hp > 0).sort((a,b)=>math.distance(a,s.player)-math.distance(b,s.player))[0];
+      const enemy = s.enemies.filter(e => e.hp > 0).sort((a,b)=>math.distance(a,s.player)-math.distance(b,s.player))[0];
       if (!enemy) { await page.waitForTimeout(120); continue; }
       if (math.distance(s.player, enemy) > 8 || !math.lineClear(s.player, enemy, streetObstacles, .2)) {
         await safeWalk(page, report, enemy, { obstacles: streetObstacles, stop: 5 }); continue;
       }
       if (!await aimOrRetry(page, report, enemy)) continue;
       if ((await state(page)).player.hp <= 0) continue;
-      await gift(page); report.shots++;
+      if (!await giftOrRetry(page, report)) continue;
       if (s.bolts.length || s.enemies.some(e=>e.status==='windup')) await page.keyboard.press('Space');
       await page.waitForTimeout(650);
     }

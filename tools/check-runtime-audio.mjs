@@ -31,6 +31,16 @@ try {
   await page.locator('#unlock').click();
   await page.waitForFunction(() => window.__audioElements.filter(audio => !audio.paused).length === 2);
   report.checks.push('Real mixer initializes and starts one music loop plus ambience after user gesture');
+  const busVolumes=await page.evaluate(async()=>{
+    const index=await (await fetch('/audio/index.json')).json();
+    __mixer.setVolumes({master:.4,music:.25,effects:.5});
+    const loopVolumes=__audioElements.filter(a=>a.loop).map(a=>({id:index.assets.find(asset=>new URL(asset.file,location.href).href===a.src)?.id,volume:a.volume}));
+    __mixer.setVolumes({master:0,music:1,effects:1});
+    return{loopVolumes,allMuted:__audioElements.every(a=>a.volume===0)};
+  });
+  assert.equal(busVolumes.allMuted,true);
+  for(const track of busVolumes.loopVolumes){assert.ok(track.id);assert.ok(Math.abs(track.volume-(track.id==='ambience.snow'?.04:.1))<1e-8,JSON.stringify(track));}
+  report.checks.push('Music and effects buses scale real HTMLAudio volumes independently; master zero mutes every track');
   await page.evaluate(() => { __mixer.setVolumes({ master: 1, music: 1, effects: 1 }); for (let i = 0; i < 8; i++) __mixer.effect('sfx.wrap'); });
   const active = await page.evaluate(() => ({ stats: __mixer.stats(), count: __audioElements.filter(audio => !audio.paused).length }));
   assert.ok(active.stats.activeEffects <= 8);

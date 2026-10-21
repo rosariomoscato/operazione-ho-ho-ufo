@@ -61,6 +61,10 @@ export async function capture(options) {
     const args = options.gpu === 'swiftshader' ? ['--use-gl=angle', '--use-angle=swiftshader', '--enable-unsafe-swiftshader'] : [];
     browser = await chromium.launch({ executablePath: await findBrowser(), headless: true, args });
     const page = await browser.newPage({ viewport: { width: options.size[0], height: options.size[1] }, deviceScaleFactor: 1 });
+    if (options.preferences) {
+      report.requestedPreferences = options.preferences;
+      await page.addInitScript(preferences => localStorage.setItem('ho-ho-ufo.settings.v1', JSON.stringify(preferences)), options.preferences);
+    }
     page.on('pageerror', error => report.errors.push(error.message));
     page.on('console', message => {
       if (message.type() === 'error') report.errors.push(message.text());

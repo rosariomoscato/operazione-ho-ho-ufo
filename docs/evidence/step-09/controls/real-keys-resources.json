@@ -1,0 +1,98 @@
+{
+  "errors": [],
+  "conflict": {
+    "message": "Tasto già usato: Schiva",
+    "pass": true,
+    "menu": "pause"
+  },
+  "reserved": true,
+  "cancelled": true,
+  "changed": true,
+  "reset": true,
+  "resources": [
+    {
+      "i": 0,
+      "name": "street-start",
+      "geometries": 58,
+      "textures": 4,
+      "pass": true
+    },
+    {
+      "i": 0,
+      "name": "square-entry",
+      "geometries": 59,
+      "textures": 4,
+      "pass": true
+    },
+    {
+      "i": 0,
+      "name": "training",
+      "geometries": 60,
+      "textures": 4,
+      "pass": true
+    },
+    {
+      "i": 1,
+      "name": "street-start",
+      "geometries": 65,
+      "textures": 4,
+      "pass": true
+    },
+    {
+      "i": 1,
+      "name": "square-entry",
+      "geometries": 60,
+      "textures": 4,
+      "pass": true
+    },
+    {
+      "i": 1,
+      "name": "training",
+      "geometries": 60,
+      "textures": 4,
+      "pass": true
+    },
+    {
+      "i": 2,
+      "name": "street-start",
+      "geometries": 65,
+      "textures": 4,
+      "pass": true
+    },
+    {
+      "i": 2,
+      "name": "square-entry",
+      "geometries": 60,
+      "textures": 4,
+      "pass": true
+    },
+    {
+      "i": 2,
+      "name": "training",
+      "geometries": 60,
+      "textures": 4,
+      "pass": true
+    },
+    {
+      "i": 3,
+      "name": "street-start",
+      "geometries": 65,
+      "textures": 4,
+      "pass": true
+    },
+    {
+      "i": 3,
+      "name": "square-entry",
+      "geometries": 60,
+      "textures": 4,
+      "pass": true
+    },
+    {
+      "i": 3,
+      "name": "training",
+      "geometries": 60,
+      "textures": 4,
+      "pass": true
+    }
+  ]
+}

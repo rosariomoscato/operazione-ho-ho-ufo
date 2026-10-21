@@ -1,0 +1,797 @@
+{
+  "page": "index.html",
+  "scenario": "first-wrap",
+  "size": [
+    1280,
+    720
+  ],
+  "gpu": "default",
+  "frames": [
+    {
+      "view": "player",
+      "time": 0.5,
+      "file": "00-player-0.5.png",
+      "stats": {
+        "cameraDiagnostics": {
+          "position": [
+            1.65,
+            4.211921756621386,
+            11.5
+          ],
+          "look": [
+            0,
+            1.1,
+            -2.2
+          ],
+          "distance": 9.015666969857964,
+          "compressed": false,
+          "occluded": []
+        },
+        "renderFrame": 8,
+        "drawCalls": 53,
+        "triangles": 78330,
+        "geometries": 48,
+        "textures": 4,
+        "lights": 3,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "shipHeight": null,
+        "storyNodes": {
+          "Nave di Squamakk": null,
+          "Portale alieno": null,
+          "Slitta delle consegne": null,
+          "Albero della Stella Polare": null
+        },
+        "audio": {
+          "loaded": false,
+          "activeEffects": 0,
+          "error": null
+        }
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "santa feet floor (m)",
+            "value": 0,
+            "limit": 0.002,
+            "pass": true
+          },
+          {
+            "name": "player collider penetration",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "enemy collider penetration",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "committed attacks including flying bolts",
+            "value": 0,
+            "limit": 1,
+            "pass": true
+          },
+          {
+            "name": "unique level registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "level registry contains courtyard",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "swept collider regression",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "wall ray regression",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "unique acts registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "unique cast registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "unique systems registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "unique scenarios registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "active world lights",
+            "value": 3,
+            "limit": 3,
+            "pass": true
+          },
+          {
+            "name": "maximum live defenders",
+            "value": 0,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "bounded hostile bolt pool",
+            "value": 0,
+            "limit": 1,
+            "pass": true
+          },
+          {
+            "name": "live bolt finite and unexpired",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "draw calls",
+            "value": 53,
+            "limit": 150,
+            "pass": true
+          },
+          {
+            "name": "triangles",
+            "value": 78330,
+            "limit": 150000,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "telegraph < 1 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "recovery < 1.2 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "observed ranged telegraph < 1.2 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "observed ranged locked time < .8 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "duplicate damage by attack ID",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          }
+        ],
+        "stats": {
+          "cameraDiagnostics": {
+            "position": [
+              1.65,
+              4.211921756621386,
+              11.5
+            ],
+            "look": [
+              0,
+              1.1,
+              -2.2
+            ],
+            "distance": 9.015666969857964,
+            "compressed": false,
+            "occluded": []
+          },
+          "renderFrame": 9,
+          "drawCalls": 53,
+          "triangles": 78330,
+          "geometries": 48,
+          "textures": 4,
+          "lights": 3,
+          "shadowLights": 0,
+          "postPasses": 0,
+          "shipHeight": null,
+          "storyNodes": {
+            "Nave di Squamakk": null,
+            "Portale alieno": null,
+            "Slitta delle consegne": null,
+            "Albero della Stella Polare": null
+          },
+          "audio": {
+            "loaded": false,
+            "activeEffects": 0,
+            "error": null
+          }
+        },
+        "evidence": {
+          "meleeReleases": 0,
+          "rangedReleases": 0,
+          "bossReleases": 0,
+          "bossWindowHits": 0,
+          "damageEvents": 0,
+          "handContactsMeasured": 0,
+          "scarfContactsMeasured": 0
+        },
+        "notes": [
+          "Empty attack logs are NOT timing evidence.",
+          "Only cast exposing root.userData.measureHandContacts has measured hand contacts; scarf/deck/muzzle are separate real support checks.",
+          "Performance is draw/triangle budget, not a laptop FPS claim."
+        ]
+      },
+      "state": {
+        "settings": {
+          "master": 0.7,
+          "music": 0.3,
+          "effects": 0.65,
+          "reducedMotion": false,
+          "aimAssist": true,
+          "sensitivity": 1,
+          "invertY": false,
+          "fov": 53,
+          "keyBindings": {
+            "forward": "KeyW",
+            "backward": "KeyS",
+            "left": "KeyA",
+            "right": "KeyD",
+            "dodge": "Space",
+            "interact": "KeyE",
+            "help": "KeyH"
+          }
+        },
+        "cameraDiagnostics": {
+          "position": [
+            1.65,
+            4.211921756621386,
+            11.5
+          ],
+          "look": [
+            0,
+            1.1,
+            -2.2
+          ],
+          "distance": 9.015666969857964,
+          "compressed": false,
+          "occluded": []
+        },
+        "chapter": "courtyard",
+        "act": "courtyard",
+        "actTitle": "Il cortile del laboratorio",
+        "beat": "battle",
+        "group": 1,
+        "player": {
+          "x": 0,
+          "z": 3,
+          "hp": 6,
+          "invulnerableUntil": 1.25,
+          "dodgeUntil": 0,
+          "dodgeReady": 0,
+          "dx": 0,
+          "dz": -1
+        },
+        "camera": {
+          "yaw": 0,
+          "pitch": 0.3,
+          "view": "player"
+        },
+        "worldFallback": false,
+        "boss": null,
+        "bossSegments": 0,
+        "bossDefeated": false,
+        "coreCarried": false,
+        "coreReturned": false,
+        "gifts": [],
+        "disabledAnchors": [],
+        "clearedArenas": [],
+        "activatedArenas": [],
+        "defeatedEnemies": [],
+        "anchorCount": 0,
+        "arenas": [],
+        "anchors": [
+          {
+            "id": "courtyard",
+            "name": "Laboratorio",
+            "x": 0,
+            "z": -9,
+            "disabled": false
+          }
+        ],
+        "bolts": [],
+        "systemConfigs": [
+          {
+            "id": "ranged",
+            "windup": 1.2,
+            "lock": 0.2,
+            "recovery": 1.2,
+            "speed": 6,
+            "radius": 0.18,
+            "range": 12,
+            "travel": 18,
+            "lifetime": 3,
+            "pool": 3
+          }
+        ],
+        "committed": 0,
+        "lastProgress": 0,
+        "hintStage": 0,
+        "rangedLearned": false,
+        "droneHit": true,
+        "dodgeUsed": true,
+        "remaining": 5,
+        "pending": 5,
+        "neutralized": 1,
+        "healAvailable": false,
+        "healed": false,
+        "firstWrapped": true,
+        "review": true,
+        "preview": false,
+        "playing": false,
+        "time": 0.5,
+        "enemies": [
+          {
+            "id": 1,
+            "key": "courtyard:1",
+            "kind": "melee",
+            "x": 0,
+            "z": -1,
+            "hp": 0,
+            "status": "wrapped",
+            "since": 0,
+            "attackId": 0,
+            "angle": 0,
+            "hit": false
+          }
+        ],
+        "objective": "Libera il cortile · 5 difensori",
+        "checkpoint": {
+          "version": 3,
+          "chapter": "courtyard",
+          "boundary": "A",
+          "healed": false,
+          "firstWrapped": false,
+          "disabledAnchors": [],
+          "clearedArenas": [],
+          "activatedArenas": [],
+          "defeatedEnemies": [],
+          "bossSegments": 0,
+          "bossDefeated": false,
+          "coreCarried": false,
+          "coreReturned": false
+        },
+        "eventLog": [
+          {
+            "time": 0,
+            "type": "group-enter",
+            "group": 1
+          },
+          {
+            "time": 0,
+            "type": "wrap",
+            "id": 1,
+            "key": "courtyard:1"
+          },
+          {
+            "time": 0,
+            "type": "dialogue",
+            "id": "vo.santa.wrapped"
+          }
+        ],
+        "storageAvailable": true,
+        "transitions": []
+      },
+      "budgetPass": true
+    },
+    {
+      "view": "diorama",
+      "time": 0.5,
+      "file": "01-diorama-0.5.png",
+      "stats": {
+        "cameraDiagnostics": null,
+        "renderFrame": 12,
+        "drawCalls": 53,
+        "triangles": 78330,
+        "geometries": 48,
+        "textures": 4,
+        "lights": 3,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "shipHeight": null,
+        "storyNodes": {
+          "Nave di Squamakk": null,
+          "Portale alieno": null,
+          "Slitta delle consegne": null,
+          "Albero della Stella Polare": null
+        },
+        "audio": {
+          "loaded": false,
+          "activeEffects": 0,
+          "error": null
+        }
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "santa feet floor (m)",
+            "value": 0,
+            "limit": 0.002,
+            "pass": true
+          },
+          {
+            "name": "player collider penetration",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "enemy collider penetration",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "committed attacks including flying bolts",
+            "value": 0,
+            "limit": 1,
+            "pass": true
+          },
+          {
+            "name": "unique level registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "level registry contains courtyard",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "swept collider regression",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "wall ray regression",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "unique acts registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "unique cast registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "unique systems registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "unique scenarios registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "active world lights",
+            "value": 3,
+            "limit": 3,
+            "pass": true
+          },
+          {
+            "name": "maximum live defenders",
+            "value": 0,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "bounded hostile bolt pool",
+            "value": 0,
+            "limit": 1,
+            "pass": true
+          },
+          {
+            "name": "live bolt finite and unexpired",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "draw calls",
+            "value": 53,
+            "limit": 150,
+            "pass": true
+          },
+          {
+            "name": "triangles",
+            "value": 78330,
+            "limit": 150000,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "telegraph < 1 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "recovery < 1.2 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "observed ranged telegraph < 1.2 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "observed ranged locked time < .8 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "duplicate damage by attack ID",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          }
+        ],
+        "stats": {
+          "cameraDiagnostics": null,
+          "renderFrame": 13,
+          "drawCalls": 53,
+          "triangles": 78330,
+          "geometries": 48,
+          "textures": 4,
+          "lights": 3,
+          "shadowLights": 0,
+          "postPasses": 0,
+          "shipHeight": null,
+          "storyNodes": {
+            "Nave di Squamakk": null,
+            "Portale alieno": null,
+            "Slitta delle consegne": null,
+            "Albero della Stella Polare": null
+          },
+          "audio": {
+            "loaded": false,
+            "activeEffects": 0,
+            "error": null
+          }
+        },
+        "evidence": {
+          "meleeReleases": 0,
+          "rangedReleases": 0,
+          "bossReleases": 0,
+          "bossWindowHits": 0,
+          "damageEvents": 0,
+          "handContactsMeasured": 0,
+          "scarfContactsMeasured": 0
+        },
+        "notes": [
+          "Empty attack logs are NOT timing evidence.",
+          "Only cast exposing root.userData.measureHandContacts has measured hand contacts; scarf/deck/muzzle are separate real support checks.",
+          "Performance is draw/triangle budget, not a laptop FPS claim."
+        ]
+      },
+      "state": {
+        "settings": {
+          "master": 0.7,
+          "music": 0.3,
+          "effects": 0.65,
+          "reducedMotion": false,
+          "aimAssist": true,
+          "sensitivity": 1,
+          "invertY": false,
+          "fov": 53,
+          "keyBindings": {
+            "forward": "KeyW",
+            "backward": "KeyS",
+            "left": "KeyA",
+            "right": "KeyD",
+            "dodge": "Space",
+            "interact": "KeyE",
+            "help": "KeyH"
+          }
+        },
+        "cameraDiagnostics": null,
+        "chapter": "courtyard",
+        "act": "courtyard",
+        "actTitle": "Il cortile del laboratorio",
+        "beat": "battle",
+        "group": 1,
+        "player": {
+          "x": 0,
+          "z": 3,
+          "hp": 6,
+          "invulnerableUntil": 1.25,
+          "dodgeUntil": 0,
+          "dodgeReady": 0,
+          "dx": 0,
+          "dz": -1
+        },
+        "camera": {
+          "yaw": 0,
+          "pitch": 0.3,
+          "view": "diorama"
+        },
+        "worldFallback": false,
+        "boss": null,
+        "bossSegments": 0,
+        "bossDefeated": false,
+        "coreCarried": false,
+        "coreReturned": false,
+        "gifts": [],
+        "disabledAnchors": [],
+        "clearedArenas": [],
+        "activatedArenas": [],
+        "defeatedEnemies": [],
+        "anchorCount": 0,
+        "arenas": [],
+        "anchors": [
+          {
+            "id": "courtyard",
+            "name": "Laboratorio",
+            "x": 0,
+            "z": -9,
+            "disabled": false
+          }
+        ],
+        "bolts": [],
+        "systemConfigs": [
+          {
+            "id": "ranged",
+            "windup": 1.2,
+            "lock": 0.2,
+            "recovery": 1.2,
+            "speed": 6,
+            "radius": 0.18,
+            "range": 12,
+            "travel": 18,
+            "lifetime": 3,
+            "pool": 3
+          }
+        ],
+        "committed": 0,
+        "lastProgress": 0,
+        "hintStage": 0,
+        "rangedLearned": false,
+        "droneHit": true,
+        "dodgeUsed": true,
+        "remaining": 5,
+        "pending": 5,
+        "neutralized": 1,
+        "healAvailable": false,
+        "healed": false,
+        "firstWrapped": true,
+        "review": true,
+        "preview": false,
+        "playing": false,
+        "time": 0.5,
+        "enemies": [
+          {
+            "id": 1,
+            "key": "courtyard:1",
+            "kind": "melee",
+            "x": 0,
+            "z": -1,
+            "hp": 0,
+            "status": "wrapped",
+            "since": 0,
+            "attackId": 0,
+            "angle": 0,
+            "hit": false
+          }
+        ],
+        "objective": "Libera il cortile · 5 difensori",
+        "checkpoint": {
+          "version": 3,
+          "chapter": "courtyard",
+          "boundary": "A",
+          "healed": false,
+          "firstWrapped": false,
+          "disabledAnchors": [],
+          "clearedArenas": [],
+          "activatedArenas": [],
+          "defeatedEnemies": [],
+          "bossSegments": 0,
+          "bossDefeated": false,
+          "coreCarried": false,
+          "coreReturned": false
+        },
+        "eventLog": [
+          {
+            "time": 0,
+            "type": "group-enter",
+            "group": 1
+          },
+          {
+            "time": 0,
+            "type": "wrap",
+            "id": 1,
+            "key": "courtyard:1"
+          },
+          {
+            "time": 0,
+            "type": "dialogue",
+            "id": "vo.santa.wrapped"
+          }
+        ],
+        "storageAvailable": true,
+        "transitions": []
+      },
+      "budgetPass": true
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "pass": true,
+  "deterministic": true,
+  "fpsProbe": {
+    "samples": 45,
+    "meanMs": 24.079999999999966,
+    "fps": 41.528239202657865,
+    "note": "Headless single-frame seek/render smoke test only; not proof of laptop performance."
+  }
+}

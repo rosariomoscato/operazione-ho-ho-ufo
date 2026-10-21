@@ -6,12 +6,21 @@ import { Batch } from '../../visual/style';
 // One source of truth for both rendered primitives and contact measurements.
 const HAND_RADIUS = .12;
 const HANDLE_SIZE: [number, number, number] = [.04, .2, .18];
+const MUZZLE_POSITION: [number, number, number] = [0, .15, 1.045];
 const GRIPS = ([-1, 1] as const).map(side => ({
   name: side < 0 ? 'shooter-left-hand-handle' : 'shooter-right-hand-handle',
   hand: [side * .34, .04, .66] as [number, number, number],
   handle: [side * .2, .04, .66] as [number, number, number],
 }));
 const guns = new WeakMap<Group, Group>();
+
+/** Actual animated gun mouth, including gun/root/parent affine transforms once. */
+export function getShooterMuzzleWorld(actor: VisualActor, target = new Vector3()): Vector3 {
+  const gun = guns.get(actor.root);
+  if (!gun) throw new Error('getShooterMuzzleWorld requires a createShooter actor');
+  gun.updateWorldMatrix(true, false);
+  return target.set(...MUZZLE_POSITION).applyMatrix4(gun.matrixWorld);
+}
 
 /** Sphere → handle AABB in the common gun frame, then world-normal separation.
  * Never compare world AABBs: rotating a handle would inflate its contact surface.
@@ -55,7 +64,7 @@ function equipment(): Group {
     // A soft toy barrel, mint muzzle and forked sight distinguish ranged units.
     b.shape('ball', 'purple', [0, .15, .65], [.23, .23, .38]);
     b.shape('cylinder', 'purple', [0, .15, .86], [.18, .34, .18], [Math.PI / 2, 0, 0]);
-    b.shape('ring', 'glow', [0, .15, 1.045], [.2, .2, .2]);
+    b.shape('ring', 'glow', MUZZLE_POSITION, [.2, .2, .2]);
     b.shape('cube', 'glow', [0, .43, .77], [.08, .17, .07]);
     b.shape('cube', 'glow', [0, .5, .77], [.28, .05, .07]);
     template = b.build(); template.name = 'Cannone giocattolo e presa a due mani';
@@ -79,6 +88,7 @@ export function createShooter(): VisualActor {
   };
   guns.set(base.root, gun);
   base.root.userData.measureHandContacts = () => measureShooterContacts(actor);
+  base.root.userData.getMuzzleWorld = (target?: Vector3) => getShooterMuzzleWorld(actor, target);
   return actor;
 }
 export default { id: 'shooter', create: createShooter };

@@ -9,7 +9,7 @@ const url = process.argv[2] ?? 'http://127.0.0.1:5175/';
 const target = new URL(url);
 if (target.protocol !== 'http:' || !['localhost', '127.0.0.1'].includes(target.hostname)) throw Error('Local game URL required');
 const stepped = process.env.PLAYTEST_STEP_MODE === '1';
-const area = process.env.PLAYTEST_AREA === 'm3' ? 'm3' : 'm2';
+const area = ['m2','m3','polish'].includes(process.env.PLAYTEST_AREA) ? process.env.PLAYTEST_AREA : 'm2';
 const directory = resolve(`captures/playtest-${area}${stepped ? '-stepped' : ''}`);
 await mkdir(directory, { recursive: true });
 const browser = await chromium.launch({ executablePath: await findBrowser(), headless: true, args: ['--mute-audio'] });

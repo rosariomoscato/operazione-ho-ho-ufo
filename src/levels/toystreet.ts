@@ -1,7 +1,8 @@
-import { Fog, Group, type Scene } from 'three';
-import type { CourtyardWorld, Obstacle } from '../contracts';
+import { Fog, Group, type Box3, type Scene } from 'three';
+import type { CameraOccluder, CourtyardWorld, Obstacle } from '../contracts';
 import act from '../acts/toystreet';
 import { addLighting, Batch, palette } from '../visual/style';
+import { cameraProp, cameraRegion, compactCameraProp } from '../engine/camera-props';
 
 export const id = 'toystreet';
 export const OBSTACLES: readonly Obstacle[] = [
@@ -11,8 +12,7 @@ export const OBSTACLES: readonly Obstacle[] = [
   { id: 'street-carousel-cover', minX: 6, maxX: 10, minZ: -2, maxZ: -.5 },
 ];
 
-function shops(b: Batch): void {
-  for (const side of [-1, 1]) {
+function shops(b: Batch, side: number): void {
     const x = side * 12;
     b.shape('cube', side < 0 ? 'cabin' : 'purple', [x, 1.55, 1.5], [4, 3.1, 5]);
     b.shape('roof', 'roof', [x, 3.7, 1.5], [3.1, 1.25, 3.8], [0, Math.PI / 4, 0]);
@@ -34,10 +34,10 @@ function shops(b: Batch): void {
       b.shape('cube', 'purple', [facade - side * .16, 3.05, 1.5], [.07, .31, .42]);
       b.shape('cube', 'gold', [facade - side * .21, 3.05, 1.5], [.035, .33, .07]);
     }
-  }
 }
 
-function covers(b: Batch): void {
+function covers(b: Batch, side: number): void {
+  if (side < 0) {
   // Continuous chassis backs each visible cover, matching the full AABB to y=1.6.
   b.shape('cube', 'red', [-8, .8, -1.25], [4, 1.6, 1.5]);
   b.shape('cube', 'timber', [-8, .57, -1.25], [4.01, .13, 1.52]);
@@ -50,6 +50,7 @@ function covers(b: Batch): void {
     b.shape('cylinder', 'ink', [x, .36, z], [.31, .08, .31], [Math.PI / 2, 0, 0]);
     b.shape('cylinder', 'gold', [x, .36, z + (z < -1 ? -.045 : .045)], [.12, .03, .12], [Math.PI / 2, 0, 0]);
   }
+  } else {
   // Package carousel is a closed static toy counter, not a rideable platform.
   b.shape('cube', 'purple', [8, .8, -1.25], [4, 1.6, 1.5]);
   b.shape('cube', 'cream', [8, .18, -1.25], [4.02, .16, 1.52]);
@@ -59,6 +60,7 @@ function covers(b: Batch): void {
     b.shape('cube', 'gold', [x, 1.1, -.425], [.1, .76, .025]);
   }
   b.shape('cube', 'gold', [8, 1.62, -1.25], [4, .04, 1.5]);
+  }
 }
 
 function borders(b: Batch): void {
@@ -138,22 +140,43 @@ export function createWorld(scene: Scene): CourtyardWorld {
   const root = new Group(); root.name = 'La via dei giocattoli'; scene.add(root);
   root.add(addLighting(scene)); scene.fog = new Fog(palette.sky, 32, 72);
   const b = new Batch();
+  const cameraOccluders: CameraOccluder[] = [];
+  const sceneryRegions: Box3[] = [];
   b.shape('cube', 'snow', [0, -.15, -1], [32, .3, 30]);
   b.shape('cube', 'timber', [0, -.47, -1], [32, .34, 30]);
-  shops(b); covers(b); borders(b); backdrop(b);
+  for (const side of [-1, 1]) {
+    for (const kind of ['shop', 'cover'] as const) {
+      const batch = new Batch(); if (kind === 'shop') shops(batch, side); else covers(batch, side);
+      const prop = compactCameraProp(batch.build()); root.add(prop);
+      const name = kind === 'shop' ? `street-${side < 0 ? 'west' : 'east'}-shop` : `street-${side < 0 ? 'train' : 'carousel'}-cover`;
+      prop.name = name;
+      cameraOccluders.push(cameraProp(name, prop, kind === 'shop' ? [0, 1.5, 2.5, 3.1, 3.4, 3.7, 4.1, 4.5] : [0, .8, 1.6, 1.9]));
+    }
+    for (let i = 0; i < 5; i++) sceneryRegions.push(cameraRegion(side * (18 + i % 2), -18 + i * 7, 1.6, 1.6, 4.6));
+  }
+  borders(b); backdrop(b);
+  sceneryRegions.push(cameraRegion(21, -8, 3.4, 3.4, 4.8));
+  for (const x of [-10, -5, 5, 10]) sceneryRegions.push(cameraRegion(x, -25, 2, 2, 4.2));
+  const gateBatch = new Batch();
   // Simple arrow gate at the actual act exit. Bars stay closed: M2 ends here.
-  for (const side of [-1, 1]) b.shape('cylinder', 'roof', [side * 2, 1.75, act.exit.z - .6], [.17, 3.5, .17]);
-  b.shape('cube', 'roof', [0, 3.05, act.exit.z - .6], [4.15, .65, .2]);
-  b.shape('cube', 'gold', [0, 3.05, act.exit.z - .475], [.12, .42, .04]);
-  for (const side of [-1, 1]) b.shape('cube', 'gold', [side * .11, 3.13, act.exit.z - .475], [.1, .28, .04], [0, 0, side * .7]);
-  for (let x = -1.6; x <= 1.61; x += .4) b.shape('cube', 'roof', [x, 1.1, act.exit.z - .6], [.1, 2.2, .12]);
+  for (const side of [-1, 1]) gateBatch.shape('cylinder', 'roof', [side * 2, 1.75, act.exit.z - .6], [.17, 3.5, .17]);
+  gateBatch.shape('cube', 'roof', [0, 3.05, act.exit.z - .6], [4.15, .65, .2]);
+  gateBatch.shape('cube', 'gold', [0, 3.05, act.exit.z - .475], [.12, .42, .04]);
+  for (const side of [-1, 1]) gateBatch.shape('cube', 'gold', [side * .11, 3.13, act.exit.z - .475], [.1, .28, .04], [0, 0, side * .7]);
+  for (let x = -1.6; x <= 1.61; x += .4) gateBatch.shape('cube', 'roof', [x, 1.1, act.exit.z - .6], [.1, 2.2, .12]);
+  const gateRoot = compactCameraProp(gateBatch.build()); gateRoot.name = 'street-gate'; root.add(gateRoot);
+  cameraOccluders.push(cameraProp('street-gate', gateRoot, [0, 1.5, 2.5, 3.6]));
   // Three stars describe all anchors, not boss defeat or a closed portal.
   b.shape('ring', 'purple', [0, 10, -26], [3.3, 3.3, 3.3]);
   b.shape('ring', 'glow', [0, 10, -25.94], [3, 3, 3]);
-  root.add(b.build());
+  const environment = b.build(); environment.userData.cameraNoFade = true; root.add(environment);
+  cameraOccluders.push(cameraProp('street-background', environment, [0, 1.5, 2.5, 3.5, 4.8], sceneryRegions));
   const rigs = new Map(act.anchors.map(position => {
     const rig = beacon(position.id); rig.root.position.set(position.x, 0, position.z);
-    rig.root.name = position.name; root.add(rig.root); return [position.id, rig] as const;
+    rig.root.name = position.name; root.add(rig.root);
+    const occluder = cameraProp(`street-anchor-${position.id}`, rig.root, [0, .5, 1.2, 1.8, 2.2, 2.7, 3], undefined, .05);
+    cameraOccluders.push(occluder);
+    return [position.id, rig] as const;
   }));
   const anchors = Object.fromEntries([...rigs].map(([key, rig]) => [key, rig.root]));
   const shipBatch = new Batch()
@@ -165,10 +188,11 @@ export function createWorld(scene: Scene): CourtyardWorld {
     shipBatch.shape('cylinder', 'glow', [Math.cos(a) * 2.55, .05, Math.sin(a) * 1.8], [.14, .08, .14]);
   }
   const ship = shipBatch.build(); ship.position.set(0, 8, -20); ship.name = 'Nave verso la piazza'; root.add(ship);
+  cameraOccluders.push(cameraProp('street-ship', ship, [-.6, -.2, .2, .6, 1.3]));
   let disabled = new Set<string>();
   let descentStart: number | null = null;
   return {
-    root, anchor: anchors.workshop!, anchors, obstacles: OBSTACLES.map(item => ({ ...item })),
+    root, anchor: anchors.workshop!, anchors, cameraOccluders, obstacles: OBSTACLES.map(item => ({ ...item })),
     setAnchors(ids, time) {
       const next = new Set(ids.filter(key => rigs.has(key)));
       const both = next.size === rigs.size;
