@@ -18,6 +18,8 @@
 |---|---|---|---|
 | Repository GitHub privato | https://github.com/rosariomoscato/operazione-ho-ho-ufo | Nessun acquisto | Impostazioni GitHub → eliminazione repository, solo con consenso |
 | Progetto Vercel | `operazione-ho-ho-ufo`, team `ros-projects-592f0548` | Hobby gratuito entro quote, uso personale non commerciale | Settings del progetto → eliminazione, solo con consenso |
+| Collegamento GitHub | Repository privato → progetto Vercel, produzione `master` | Nessun acquisto | Project Settings → Git → Disconnect |
+| Primo deployment produzione | `dpl_CskRf1MFZxtVmPWbG8uFqjjRBZFM`, commit `ec48093` | Incluso nel piano Hobby entro quote | Gestione deployment del solo progetto, solo con consenso |
 
 Repository e progetto Vercel creati, remote locale `origin` aggiunto. Primo push `3596a9e` completato prima del collegamento Vercel/GitHub.
 
@@ -38,7 +40,29 @@ La CLI ha aggiunto `.vercel` a `.gitignore`; rimosso solo il pattern ridondante 
 
 ## Stato
 
-Collegamento GitHub riuscito tramite `vercel git connect`. Il prossimo push su `master` deve avviare la prima build: verificare deployment, SHA e dominio assegnato prima di dichiarare la pubblicazione riuscita. Nessun caricamento diretto CLI previsto.
+Collegamento GitHub riuscito tramite `vercel git connect`. Push `ec48093` ha avviato la prima build GitHub, arrivata READY/Production. Log: clone branch `master`, commit `ec48093`; `npm ci`, typecheck e Vite riusciti. Nessun caricamento diretto CLI e nessun secondo deployment.
+
+Indirizzi letti da `vercel inspect`:
+- Pubblico: https://operazione-ho-ho-ufo.vercel.app
+- Deployment immutabile: https://operazione-ho-ho-hrpt59zhu-ros-projects-592f0548.vercel.app
+
+Verifica HTTP/browser PASS. Nessun rollback a un deployment precedente disponibile per questa prima pubblicazione.
+
+## Gate pubblico — prove
+
+Fonti in `docs/evidence/step-10/`:
+
+- `deployment.txt`: READY, target production, ID e alias letti dalla piattaforma.
+- `build-log.txt`: clone GitHub `master`/`ec48093`, install e typecheck/build completati, bundle `TmJx2Hx1`. Nessuna migrazione necessaria.
+- `github-status.json`: SHA completo `ec48093b00fd84ed0974f4ec873ccea70afdc7e1`, stato Vercel `success`. Coincide con HEAD al momento della pubblicazione; successive modifiche al registro/prove sono solo documentali.
+- `http.json`: tutti i 27 file pubblici rispondono 200 e hanno SHA256 identico a `snapshots/polished-1/`, inclusi 11 WAV, CSS, JS, indice e HTML. HTTPS valido tramite client con verifica certificato; HTTP → HTTPS 308.
+- File non pubblici verificati: `/.env`, `/.env.local`, `/.git/config`, `/src/game.ts`, `/docs/HANDOFF.md` tutti 404. Nessun sorgente/documento/credenziale locale servito su questi percorsi.
+- `browser.json`: Edge headless sul dominio pubblico, 1920×1080, titolo → Nuova partita → Invio → tutorial → Esc pausa/riprendi → movimento W reale. `LC.selfTest()` PASS; zero pageerror, errori console o risposte HTTP fallite nel run. Audio caricato, errore mixer nullo.
+- `title.png` e `training-paused.png` osservate: titolo, istruzioni e menu pausa leggibili. Un secondo browser desktop integrato ha aperto il dominio e letto titolo/canvas/LC; non è un ulteriore playtest.
+
+Non eseguiti sul sito pubblico: playthrough completo e valutazione d'ascolto umano, prestazioni su laptop utente, mobile (gioco progettato per desktop), rollback reale. Nessun ramo auth/database/pagamenti/email/jobs/MCP presente, quindi relativi check non applicabili. Non dichiarare 60fps o durata umana garantiti.
+
+Due tentativi di archiviare log con redirezione PowerShell hanno restituito exit1 per gestione stderr, non per un build fallito; acquisizione rieseguita con `spawnSync`, exit0 per entrambi, file UTF8 corretti. Nessun deployment ripetuto per questo.
 
 ## Costi e gestione
 
@@ -46,3 +70,15 @@ Collegamento GitHub riuscito tramite `vercel git connect`. Il prossimo push su `
 - GitHub repository privato, nessun acquisto. Progetto statico senza risorse database/storage aggiuntive.
 - Dopo verifica del collegamento, un `git push origin master` pubblica automaticamente: non usare questo comando per archiviare modifiche che non si vogliono mettere online.
 - Per fermare gli aggiornamenti automatici: scollegare il repository nelle impostazioni Git del solo progetto Vercel. Per togliere il sito: impostazioni del solo progetto Vercel; non eliminare altri progetti del team.
+- Per tornare a questa prima release dopo un aggiornamento: dashboard Vercel → Deployments → questa release → Instant Rollback, oppure `npx --yes vercel@latest rollback https://operazione-ho-ho-hrpt59zhu-ros-projects-592f0548.vercel.app --scope ros-projects-592f0548`. Comando verificato tramite help, non eseguito. Allineare anche i sorgenti con un revert Git revisionato prima di un nuovo push, altrimenti il prossimo push rimette online le modifiche.
+- Nessun passo manuale rimasto. Prima pubblicazione unica, nessuna risorsa orfana nota o servizio a pagamento creato.
+
+## Revisione e chiusura
+
+Due reviewer indipendenti hanno ricevuto piano e prove, senza accesso mutativo: piano/risorse e claim/segreti. Entrambi senza rilievi; verbatim in `docs/reviews/deploy-final-review.md`.
+
+Il commit finale contiene solo registro, handoff e prove: rimane locale, senza push, per conservare l'unico deployment verificato. Nessun sorgente applicativo cambiato. Il prossimo `git push origin master` sincronizza anche questi documenti e avvia automaticamente la pubblicazione.
+
+### Aggiornamenti necessari ai riferimenti upstream
+
+L'help ha segnalato `link --team` e argomento posizionale di `env ls` come deprecati: usare `--scope` e `--environment` nei comandi futuri. Il collegamento è comunque riuscito; nessuna configurazione globale modificata. Riferimenti upstream da aggiornare: `preflight.md`, `project-and-url.md` (URL non disponibile prima del primo deploy), `env.md` (sintassi ambiente), `deploy.md` (ramo statico e workflow Git). Nessun file upstream della skill modificato in questa esecuzione.

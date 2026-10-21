@@ -15,11 +15,11 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | 7 | Playtest | Completato | Utente: «va bene»; snapshot M1 congelato e verificato su5176 |
 | 8 | Gioco completo | Completato | Avventura completa approvata dall'utente: «mi sembra ok»; copia5179 conservata |
 | 9 | Rifinitura | Completato | polished-1 TmJx2Hx1 approvata: «si, mi sembra pronta»; copia5181 conservata |
-| 10 | Deploy | In preparazione | Piano Vercel gratuito autorizzato; richiesto GitHub per deploy automatici. Registro in DEPLOYMENT.md |
+| 10 | Deploy | Completato | https://operazione-ho-ho-ufo.vercel.app — GitHub privato collegato, push master pubblica. Prove e gestione in DEPLOYMENT.md |
 
 ## 2. Decisioni
 
-**Aggiornamento deploy 2026-10-21:** l'utente ha scelto l'indirizzo gratuito Vercel e autorizzato il piano, chiedendo di collegare GitHub per automatizzare le pubblicazioni future. Repository privato nell'account personale; nessun acquisto. Preparazione e controlli locali completati, pubblicazione non ancora eseguita. Stato corrente del passo10 e registro risorse in `docs/DEPLOYMENT.md`; le indicazioni di deploy non autorizzato nelle sezioni precedenti/storiche descrivono lo stato prima di questo consenso.
+**Stato corrente autorevole, 2026-10-21 — passo10 completato:** gioco pubblico su **https://operazione-ho-ho-ufo.vercel.app**. L'utente ha scelto indirizzo gratuito e autorizzato il piano, chiedendo GitHub per automatizzare le pubblicazioni. Repository **privato** https://github.com/rosariomoscato/operazione-ho-ho-ufo, produzione da `master`, team Vercel Ros' projects/Hobby, nessun acquisto. Unico deployment `dpl_CskRf1MFZxtVmPWbG8uFqjjRBZFM`, SHA `ec48093b00fd84ed0974f4ec873ccea70afdc7e1`, READY e GitHub status success. 45test+1hashPASS, 27file pubblici SHA256 identici a polished-1, HTTPS/404 privati e smoke browser/selfTest PASS, zero errori nel run. Due review indipendenti senza rilievi. Fonti `docs/DEPLOYMENT.md`, `docs/evidence/step-10/`. Tutte le copie congelate intatte. Nessun passo manuale pendente. Prove/documenti conclusivi salvati in un commit locale successivo, non pushato per evitare una seconda build documentale; il prossimo push li sincronizzerà e pubblicherà automaticamente. Le indicazioni di deploy non autorizzato nelle sezioni storiche sotto descrivono lo stato prima del nuovo consenso e non lo stato corrente.
 
 | Data | Decisione | Fonte |
 |---|---|---|
@@ -43,7 +43,7 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | 2026-10-21 | Avventura completa approvata dopo consegna della release candidate5179 | Utente: «mi sembra ok»; nessuna nuova modifica richiesta |
 | 2026-10-21 | Versione rifinita polished-1 TmJx2Hx1 approvata; passo9 completato | Utente: «si, mi sembra pronta»; nessuna pubblicazione autorizzata |
 
-**Passo corrente:** **9 completato**, rifinitura approvata con «si, mi sembra pronta». Copia approvata immutabile **http://127.0.0.1:5181/** (`npm.cmd run snapshot:polish`), `snapshots/polished-1/`, build **TmJx2Hx1**. Review finale **SHIP / LANDS / ON TRACK**, freeze27file byte-identici, smoke5181PASS. La RC approvata5179/D86qgQyq e M1/M2 su5176/5177 restano intatte. Prossimo passo10, **non avviato**: pubblicazione e scelta host richiedono consenso esplicito; nessuna spesa autorizzata.
+**Chiusura storica passo9 (precedente al deploy):** rifinitura approvata con «si, mi sembra pronta». Copia approvata immutabile **http://127.0.0.1:5181/** (`npm.cmd run snapshot:polish`), `snapshots/polished-1/`, build **TmJx2Hx1**. Review finale **SHIP / LANDS / ON TRACK**, freeze27file byte-identici, smoke5181PASS. La RC approvata5179/D86qgQyq e M1/M2 su5176/5177 restano intatte. Allora la pubblicazione non era ancora autorizzata; per lo stato corrente vedere l'aggiornamento passo10 sopra.
 
 ### Consegna rifinitura — riepilogo finale autorevole
 
@@ -152,6 +152,7 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 
 | Demo | Come aprirla | File |
 |---|---|---|
+| Gioco pubblico | https://operazione-ho-ho-ufo.vercel.app | Deploy GitHub/Vercel, dettagli `docs/DEPLOYMENT.md` |
 | Laboratorio visivo tecnico | `npm.cmd run dev:labs`, poi http://127.0.0.1:5173/tools/testscene.html | `tools/testscene.html`, `tools/testscene.mjs` |
 | Contact sheet passo 2 | Aprire PNG | `docs/evidence/step-02/contact-sheet.png` |
 | Report positivo, negativo e software | Aprire JSON | `docs/evidence/step-02/` |
@@ -214,8 +215,8 @@ Percorso gratuito esplicitamente scelto: **0 crediti, 0 API, nessun account rich
 
 1. Approvazione dell'avventura registrata; non richiederla di nuovo. La consegna5179 resta la copia di riferimento, senza modificare i suoi file.
 2. Registrare feedback in BACKLOG, chiarire ambiguità e verificare le correzioni. M1/M2/RC restano intatti; cambiare solo sorgente e nuove milestone, mai sovrascrivere copie congelate.
-3. Rifinitura5181 approvata e passo9 chiuso. Quando l'utente chiede di proseguire, leggere `references/10-deploy.md` della skill e concordare host/pubblicazione prima di qualsiasi deploy. Eventuali nuove correzioni solo nel sorgente/nuova milestone, mai nelle quattro copie congelate.
-4. Nessuna pubblicazione o spesa autorizzata. Non garantire durata umana o60fps: prestazioni reali da giudicare sul PC utente. Deploy solo dopo consenso esplicito.
+3. Passo10 completato e sito pubblico verificato. Per aggiornare: controlli locali, commit e `git push origin master`, che avvia produzione. Il commit conclusivo di documenti/prove è locale, non pushato per non creare una seconda build solo documentale. Eventuali correzioni solo nel sorgente/nuova milestone, mai nelle quattro copie congelate.
+4. Nessuna spesa autorizzata. Restano limiti dichiarati: non ripetuto playthrough completo sul pubblico, nessun ascolto umano/benchmark laptop/rollback reale. Non garantire durata umana o60fps. Registro, quote, rimozione e rollback in `docs/DEPLOYMENT.md`.
 
 ## 7. Evidenze M1
 

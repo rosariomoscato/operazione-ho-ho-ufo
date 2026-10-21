@@ -1,0 +1,42 @@
+Vercel CLI 65.0.0 (Node.js 22.23.1)
+> Fetched deployment "operazione-ho-ho-hrpt59zhu-ros-projects-592f0548.vercel.app" in ros-projects-592f0548 [1s]
+
+  General
+
+    id		dpl_CskRf1MFZxtVmPWbG8uFqjjRBZFM
+    name	operazione-ho-ho-ufo
+    target	production
+    status	● Ready
+    url		https://operazione-ho-ho-hrpt59zhu-ros-projects-592f0548.vercel.app
+    created	Wed Oct 21 2026 15:06:10 GMT+0200 (Ora legale dell’Europa centrale) [4m ago]
+
+
+  Build Machine
+
+    requested build machine basic
+    actual assigned cores   2 vCPU (actual assignment)
+    memory                  8192 MiB
+    selection type          fixed
+    selection source        plan-default
+
+
+  Duration
+
+    build duration	11s
+    post-build duration	12s
+    billable duration	1m
+    CPU Minutes Usage	2 minutes (1m x 2vCPU)
+
+
+  Aliases
+
+    ╶ https://operazione-ho-ho-ufo.vercel.app
+    ╶ https://operazione-ho-ho-ufo-ros-projects-592f0548.vercel.app
+    ╶ https://operazione-ho-ho-ufo-git-master-ros-projects-592f0548.vercel.app
+    
+
+  Builds
+
+    ╶ .        [0ms]
+    
+
