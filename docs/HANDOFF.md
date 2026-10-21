@@ -15,9 +15,11 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | 7 | Playtest | Completato | Utente: «va bene»; snapshot M1 congelato e verificato su5176 |
 | 8 | Gioco completo | Completato | Avventura completa approvata dall'utente: «mi sembra ok»; copia5179 conservata |
 | 9 | Rifinitura | Completato | polished-1 TmJx2Hx1 approvata: «si, mi sembra pronta»; copia5181 conservata |
-| 10 | Deploy | Non iniziato | Nessuna pubblicazione autorizzata |
+| 10 | Deploy | In preparazione | Piano Vercel gratuito autorizzato; richiesto GitHub per deploy automatici. Registro in DEPLOYMENT.md |
 
 ## 2. Decisioni
+
+**Aggiornamento deploy 2026-10-21:** l'utente ha scelto l'indirizzo gratuito Vercel e autorizzato il piano, chiedendo di collegare GitHub per automatizzare le pubblicazioni future. Repository privato nell'account personale; nessun acquisto. Preparazione e controlli locali completati, pubblicazione non ancora eseguita. Stato corrente del passo10 e registro risorse in `docs/DEPLOYMENT.md`; le indicazioni di deploy non autorizzato nelle sezioni precedenti/storiche descrivono lo stato prima di questo consenso.
 
 | Data | Decisione | Fonte |
 |---|---|---|
