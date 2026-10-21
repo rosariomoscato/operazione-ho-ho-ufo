@@ -9,8 +9,10 @@
     "build": "tsc --noEmit && vite build",
     "preview": "vite preview --host 127.0.0.1 --port 5175 --strictPort",
     "snapshot:m1": "node tools/serve-snapshot.mjs",
+    "test:street": "node --test tools/street.test.mjs tools/street-runtime.test.mjs",
+    "capture:street": "node tools/capture-street.mjs",
     "capture": "node tools/capture.mjs tools/testscene.html --times 0,2.4,5 --views diorama,fp --out captures/testscene --selftest",
-    "test": "node --test tools/capture.test.mjs tools/audio/audio.test.mjs tools/game.test.mjs",
+    "test": "node --test tools/capture.test.mjs tools/audio/audio.test.mjs tools/game.test.mjs tools/street.test.mjs tools/street-runtime.test.mjs",
     "audio:plan": "node tools/gen-audio.mjs tools/audio/manifest/opening.json --dry-run",
     "audio:build": "node tools/gen-audio.mjs tools/audio/manifest/opening.json"
   },

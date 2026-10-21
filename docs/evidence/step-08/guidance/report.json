@@ -1,0 +1,308 @@
+{
+  "pass": true,
+  "checks": [
+    "H displays an immediate hint without a required delay",
+    "Pause freezes hint clock and stage",
+    "Hint 1 triggered after 15.01s without progress",
+    "Hint 2 triggered after 30.01s without progress",
+    "Hint 3 triggered after 45.01s without progress",
+    "Actual arena entry resets hint ladder"
+  ],
+  "errors": [],
+  "final": {
+    "chapter": "toystreet",
+    "act": "toystreet",
+    "actTitle": "La via dei giocattoli",
+    "beat": "street",
+    "group": 0,
+    "player": {
+      "x": -3.6562900000000775,
+      "z": -1.6779400000001372,
+      "hp": 5,
+      "invulnerableUntil": 55.099233333331966,
+      "dodgeUntil": 0,
+      "dodgeReady": 0,
+      "dx": 0,
+      "dz": -1
+    },
+    "camera": {
+      "yaw": 0,
+      "pitch": 0.5,
+      "view": "player"
+    },
+    "disabledAnchors": [],
+    "clearedArenas": [],
+    "activatedArenas": [
+      "workshop"
+    ],
+    "defeatedEnemies": [],
+    "anchorCount": 1,
+    "arenas": [
+      {
+        "id": "workshop",
+        "name": "Officina",
+        "x": -8,
+        "z": -4,
+        "active": true,
+        "clear": false,
+        "remaining": 3
+      },
+      {
+        "id": "carousel",
+        "name": "Giostra",
+        "x": 8,
+        "z": -4,
+        "active": false,
+        "clear": false,
+        "remaining": 3
+      }
+    ],
+    "anchors": [
+      {
+        "id": "workshop",
+        "name": "Officina dei trenini",
+        "x": -8,
+        "z": -9,
+        "arenaId": "workshop",
+        "disabled": false
+      },
+      {
+        "id": "carousel",
+        "name": "Giostra dei regali",
+        "x": 8,
+        "z": -9,
+        "arenaId": "carousel",
+        "disabled": false
+      }
+    ],
+    "bolts": [],
+    "systemConfigs": [
+      {
+        "id": "ranged",
+        "windup": 1.2,
+        "lock": 0.2,
+        "recovery": 1.2,
+        "speed": 6,
+        "radius": 0.18,
+        "range": 12,
+        "travel": 18,
+        "lifetime": 3,
+        "pool": 3
+      }
+    ],
+    "committed": 0,
+    "lastProgress": 51.48499999999874,
+    "hintStage": 0,
+    "rangedLearned": false,
+    "droneHit": true,
+    "dodgeUsed": true,
+    "remaining": 6,
+    "pending": 0,
+    "neutralized": 0,
+    "healAvailable": false,
+    "healed": false,
+    "firstWrapped": true,
+    "review": true,
+    "preview": false,
+    "playing": true,
+    "time": 54.06539999999862,
+    "enemies": [
+      {
+        "id": 1,
+        "key": "workshop:0",
+        "kind": "ranged",
+        "arenaId": "workshop",
+        "x": -11,
+        "z": -5,
+        "hp": 2,
+        "status": "approach",
+        "since": 52.70053333333202,
+        "attackId": 1,
+        "angle": 1.1459748487013042,
+        "hit": false
+      },
+      {
+        "id": 2,
+        "key": "workshop:1",
+        "kind": "ranged",
+        "arenaId": "workshop",
+        "x": -7,
+        "z": -8,
+        "hp": 2,
+        "status": "approach",
+        "since": 0,
+        "attackId": 0,
+        "angle": 0,
+        "hit": false
+      },
+      {
+        "id": 3,
+        "key": "workshop:2",
+        "kind": "ranged",
+        "arenaId": "workshop",
+        "x": -4.5,
+        "z": -10.5,
+        "hp": 2,
+        "status": "approach",
+        "since": 0,
+        "attackId": 0,
+        "angle": 0,
+        "hit": false
+      },
+      {
+        "id": 4,
+        "key": "carousel:0",
+        "kind": "melee",
+        "arenaId": "carousel",
+        "x": 5,
+        "z": -5,
+        "hp": 2,
+        "status": "approach",
+        "since": 0,
+        "attackId": 0,
+        "angle": 0,
+        "hit": false
+      },
+      {
+        "id": 5,
+        "key": "carousel:1",
+        "kind": "melee",
+        "arenaId": "carousel",
+        "x": 10,
+        "z": -7,
+        "hp": 2,
+        "status": "approach",
+        "since": 0,
+        "attackId": 0,
+        "angle": 0,
+        "hit": false
+      },
+      {
+        "id": 6,
+        "key": "carousel:2",
+        "kind": "melee",
+        "arenaId": "carousel",
+        "x": 6,
+        "z": -10.5,
+        "hp": 2,
+        "status": "approach",
+        "since": 0,
+        "attackId": 0,
+        "angle": 0,
+        "hit": false
+      }
+    ],
+    "objective": "La via dei giocattoli · Ancoraggi 1/3",
+    "checkpoint": {
+      "version": 2,
+      "chapter": "toystreet",
+      "boundary": "street",
+      "healed": false,
+      "firstWrapped": true,
+      "disabledAnchors": [],
+      "clearedArenas": [],
+      "activatedArenas": [
+        "workshop"
+      ],
+      "defeatedEnemies": []
+    },
+    "eventLog": [
+      {
+        "time": 0.017,
+        "type": "help",
+        "stage": 1,
+        "reason": "no-progress",
+        "stalled": 0.016666666666666666,
+        "text": "Due percorsi, scegli tu. Destro: allinea al +. Clic quando è MIRATO; riparo o Spazio contro i tiri."
+      },
+      {
+        "time": 15.009,
+        "type": "help",
+        "stage": 1,
+        "reason": "no-progress",
+        "stalled": 15.008500000000275,
+        "text": "Due percorsi, scegli tu. Destro: allinea al +. Clic quando è MIRATO; riparo o Spazio contro i tiri."
+      },
+      {
+        "time": 30.007,
+        "type": "help",
+        "stage": 2,
+        "reason": "no-progress",
+        "stalled": 30.00739999999974,
+        "text": "Aggira il riparo dalle estremità libere. Destro: ritrova il nemico; non tirare attraverso il trenino."
+      },
+      {
+        "time": 45.008,
+        "type": "help",
+        "stage": 3,
+        "reason": "no-progress",
+        "stalled": 45.00763333333239,
+        "text": "Aggira il riparo dalle estremità libere. Destro: ritrova il nemico; non tirare attraverso il trenino."
+      },
+      {
+        "time": 51.485,
+        "type": "progress",
+        "reason": "arena-enter"
+      },
+      {
+        "time": 51.485,
+        "type": "arena-activated",
+        "id": "workshop",
+        "reason": "proximity"
+      },
+      {
+        "time": 51.485,
+        "type": "ranged-windup",
+        "id": 1,
+        "attackId": 1,
+        "windup": 1.2,
+        "lock": 0.2
+      },
+      {
+        "time": 51.685033333332065,
+        "type": "ranged-lock",
+        "id": 1,
+        "attackId": 1,
+        "angle": 1.1459748487013042
+      },
+      {
+        "time": 52.701,
+        "type": "ranged-release",
+        "id": 1,
+        "attackId": 1,
+        "boltId": 1,
+        "angle": 1.1459748487013042,
+        "windup": 1.2155333333332763,
+        "lockedFor": 1.0155333333332763,
+        "x": -10.526221590101327,
+        "z": -4.785677769902687,
+        "speed": 6
+      },
+      {
+        "time": 53.849,
+        "type": "player-hurt",
+        "hp": 5,
+        "attackId": 1,
+        "kind": "ranged"
+      },
+      {
+        "time": 53.849,
+        "type": "bolt-end",
+        "id": 1,
+        "attackId": 1,
+        "reason": "player",
+        "collider": "player",
+        "x": -4.257624135640697,
+        "z": -1.9499643689698112,
+        "age": 1.1487000000000125
+      },
+      {
+        "time": 53.916,
+        "type": "recovery-end",
+        "id": 1,
+        "elapsed": 1.2158333333332791
+      }
+    ],
+    "storageAvailable": true
+  }
+}

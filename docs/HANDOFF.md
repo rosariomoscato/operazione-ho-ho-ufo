@@ -13,7 +13,7 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | 5 | Demo personaggio parlante | Saltato | Percorso gratuito scelto: dialoghi solo a testo, niente voci o labiale |
 | 6 | Vertical slice | Completato | Build/test/catture/review/fresh-eyes e rerun finali PASS |
 | 7 | Playtest | Completato | Utente: «va bene»; snapshot M1 congelato e verificato su5176 |
-| 8 | Gioco completo | Non iniziato | |
+| 8 | Gioco completo | In corso | M2 pronto per playtest utente; gate superati, attendere feedback prima di M3 |
 | 9 | Rifinitura | Non iniziato | |
 | 10 | Deploy | Non iniziato | Nessuna pubblicazione autorizzata |
 
@@ -34,12 +34,44 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | 2026-10-20 | Audio proposto approvato | Utente: «va bene» |
 | 2026-10-20 | Primo segmento: il cortile; revisioni snelle; TypeScript + Vite + Three.js | Utente |
 | 2026-10-20 | Primo cortile approvato dopo consegna del link giocabile | Utente: «va bene» |
+| 2026-10-21 | Avviare M2 e fermarsi per prova prima del boss; restano review snella e audio gratuito | Utente: «prosegui», «continua»; continuità delle scelte precedenti |
+| 2026-10-21 | Cartella unica con proprietà separate, nessun nuovo worktree dopo questionario interrotto | Default conservativo dell'integratore, come M1 |
 
-**Passo corrente:** 7 completato; prossimo8, ancora da iniziare. L'utente ha approvato il cortile con «va bene». Snapshot immutabile **http://127.0.0.1:5176/**, cartella `snapshots/m1-slice/`: non rigenerare, correggere o sovrascrivere. La preview corrente5175 può cambiare con le prossime build; M1 congelato deve restare indipendente. Nessuna approvazione di pubblicazione o spesa.
+**Passo corrente:** 8, **M2 pronto per il playtest utente**. Build finale `index-DpZTJjdp.js` su **http://127.0.0.1:5175/**: scegliere **Prova la via dei giocattoli** (non sostituisce il salvataggio), oppure entrare dal cancello dopo il cortile. Due arene in ordine libero, fine segmento a3/3. Gate tecnici e review superati; aspettare feedback prima di M3. Nessuna autorizzazione a spesa/pubblicazione. Snapshot M1 su5176 intatto,27hash PASS.
+
+### Consegna M2 — riepilogo verificato
+
+- **SHIP / LANDS / ON TRACK**: review `docs/reviews/m2-final-review.md`, condizioni finali chiuse con audit UI e test aggiornati; nessun BLOCKER/MAJOR aperto.
+- Build finale e **22test PASS**, compresi hash M1/migrazione/save/unit ranged/mondo. Due ordini reali finali PASS:12/10lanci,clear-prima-E/ancoraggi/retry/Continua; tutorial ranged appreso al restore. Prove `docs/evidence/step-08/integration-final/`.
+- M1 regressione+ingresso a piedi/E in M2 PASS (`m1-regression/`). Combattimento controllato vero Game.update **7/7 PASS** (`combat/`): lock/slot, riparo/sweep, danno, schivata, cura+persistenza, nave, interazioni indipendenti. Non è un playthrough.
+- Suite completa **32frame PASS** sulla candidata meccanicamente equivalente MP92z05e (`captures/`); audit1080/software/determinismo,6misuremani/contatti/budget. Massimo campionato107call/86.070triangoli; non garanzia60fps né picco di ogni sovrapposizione possibile.
+- Ultime3patch solo obiettivo/singolare/memoria tutorial: audit DpZTJjdp PASS (`final-ui/`, `final-clear/`, `final-singular/`), nuovo verbo e «1difensore» osservati, palette/contrasto/font/determinismo conformi. Nessun nuovo schema save o cambio meccanico.
+- Fresh-eyes iniziale fallito per latenza; **retest UI-only completato3/3**, Giostra→Officina,0morti/retry,3HP finali. PauseEsc reali fra azioni per escludere attese del tester, non bilanciamento umano continuo o durata; audio muto, nessuna nuova approvazione d'ascolto. Report `docs/reviews/m2-fresh-eyes-retest.md`, PNGpermanenti `fresh-eyes/`.
+- MINOR in BACKLOG: camera stretta vicino riparo destro, feedbackE vecchio, aggancio permissivo/clic driver da isolare, muzzle arretrato. Vecchio ritornoCOURTYARD non riprodotto nei successivi quattro completamenti bot; causa non dimostrata, traccia mantenuta.
+- Nessun M2 congelato finché l'utente non lo approva; nessun M3/boss o pubblicazione. Le prove permanenti sopra sono sotto `docs/evidence/step-08/`.
+
+### Cronologia integrazione M2 (gli stati intermedi sotto sono storici)
+
+- Visuale completato: `src/levels/toystreet.ts`, shooter e contatti mani separati. Scena isolata104call/85.830triangoli con Santa e6difensori; non sostituisce il budget integrato. Immagini conservate in `docs/evidence/step-08/visual/`, status `docs/production/status/visual-m2.md`.
+- Gameplay in lavorazione al collaboratore persistente `ses_ea5402239ffeHy4Z4AqMv6HIKM`: possiede game/storage/input/UI/testi/registri/sistemi/scenari. Non sovrascriverli finché non libera ownership. Reviewer visuale parziale attivo `ses_ea543ccebffeuVAiKb5J2usMih`, report previsto `docs/reviews/m2-visual-review.md`; visual builder libero.
+- Test integratore eseguiti:11test comuni PASS;6test M2 PASS (dati, navigazione, segmenti proiettile, immutabilità27file M1, migrazione v1 non distruttiva, roundtripcheckpoint entrambi ordini). Non sono prove di completamento giocabile.
+- Strumenti pronti: `npm.cmd run capture:street`, `tools/playtest-driver.mjs` e client UI-only per fresh-eyes (solo input/screenshot/testo visibile, niente LC/eval). Driver non ancora avviato. Ogni screenshot/playtest va verificato prima del link utente.
+- Restano: build finale, catture e selfTest integrato (anche mani shooter), regressioneM1, integrazioneM2 entrambiordini, tiro/riparo/schivata, retry/Continua/cura, scalaaiuti15/30/45/pausa/progresso, review completa e fresh-eyes. Nessuna approvazione M2 o claim60fps.
+- Verifiche successive: review visuale parziale conclusa senza BLOCKER/MAJOR (`docs/reviews/m2-visual-review.md`). Build CCPcB_n9 PASS;32fotogrammi cattura, selfTest/budget/audit1080/software PASS, ma determinismo `street-start` FAIL → suite complessiva FAIL. Osservati contact sheet Officina, completamento/nave e audit. Nessun sign-off di atto.
+- Aggiunti `tools/street-runtime.test.mjs` (4test PASS: telegraph/lock, visibilità/cover, sweep colpo-riparo, danno singolo/pool/expiry), `tools/check-street.mjs` (integrazione con input reali da checkpoint M2), `tools/check-street-guidance.mjs` (debug preset per misurare scalaaiuti con input). Bot integrazione ancora FAIL: primo run Officina+retry/Continua superati, successivo ritorno inatteso al cortile; secondo run morto in combattimento. Aiuti H/pausa15/30/45 osservati PASS, reset al progresso da rieseguire con camminata basata su stato. Riscontri inviati al builder; dettagli in BACKLOG M2-T1..4. Non nascondere questi FAIL dietro i soli unit test.
+- Rerun guida completato: **PASS**, H immediato, pausa congela clock, aiuti a15.01/30.01/45.01s e ingresso reale in arena azzera scala.0errori. Report `docs/evidence/step-08/guidance/report.json`; questo chiude M2-T4, non i gate combattimento/determinismo ancora aperti.
+- Ulteriore rerun mirato `street-start` con2frame player PASS/deterministico (`captures/street-determinism/report.json`): primo FAIL non riprodotto, causa ancora non dimostrata. `capture.mjs` ora conserva prima/dopoPNG e stato nei futuri FAIL. Runtime test aggiunto per mondo: beacon/ID indipendenti, discesa seek-safe8→5.5→3, setter ripetuto e restore già a3,3luci PASS (5test runtime totali).
+- Playtester iniziale fresh-eyes attivo `ses_ea2c6727affencuvI80D9dBNtm`: solo screenshot/testo/input tramite driver su5190, buildstatica5175, nessun accesso a codice/docs/LC; report previsto `docs/reviews/m2-fresh-eyes-initial.md`. Non cambiare dist durante il tentativo. Audio muto: nessuna approvazione d'ascolto. Questo primo tentativo serve anche a distinguere limiti del bot da problemi del gioco; non è ancora sign-off finale.
+- Gameplay builder concluso, **ownership core libera**; status `docs/production/status/gameplay-m2.md`. Determinismo riprodotto come4pixel nell'ombraCSS del pannello e corretto rimuovendo shadow (non allentato confronto); contatti mani integrati. Traccia `LC.state().transitions` conserva azioni menu/reset per diagnosi del ritorno al cortile ancora non accertato.
+- Typecheck finale dell'integratore PASS; build candidata separata PASS in `C:/Users/rosar/AppData/Local/Temp/opencode/m2-candidate-20261021/` (`index-MP92z05e.js`), senza cambiare dist servita al playtester. Review codice/narrativa integrata affidata al reviewer persistente, report previsto `docs/reviews/m2-integration-review.md`.
+- Bot integrazione aggiornato per ispezionare HP/playing anche **dopo** la rotazione e prima del clic: possibile morte durante la decisione, seguita da clic involontari sul menu. Ipotesi, non causa provata. Tool accetta `GAME_ROOT` per usare candidata separata. Ultimo `npm.cmd test` timeout120s dopo6test emessi (nessunFAIL emesso), non contare come suite finale PASS; carico ambiente segnalato anche dal builder. Test M2 separati più recenti:6dati/save+5runtime PASS.
+- **Nuovi PASS integratore:** build standard completa MP92z05e PASS,11test comuni PASS (rerun7s), `street-start` corretto4frame player/diorama selfTest+determinismo PASS. Bot candidata **entrambiordini PASS**,13lanciOfficina→Giostra /12lanciGiostra→Officina,36.633/40.034swallcomprensiviretry/reload (non durata umana). Clear-prima-E,ancore,checkpoint/retry/Continua perogni lato verificati,3/3,selfTest,0errori. Prove permanenti `docs/evidence/step-08/integration/` e `final-start/`. Ritorno al cortile non riprodotto nella nuova prova; causa vecchia non dimostrata.
+- Fresh-eyes iniziale **non completato**:2morti osservate e grandi intervalli fra input,nessunMAJOR sostanziato; report `docs/reviews/m2-fresh-eyes-initial.md`. Driver ora offre pausaEsc reale fra le decisioni (nessuna manipolazione stato), screenshot prima della pausa e resume prima dell'input; directory distinta `captures/playtest-m2-stepped/`. Retest stesso playtester attivo, report previsto `docs/reviews/m2-fresh-eyes-retest.md`. Non cambiare dist MP92z05e mentre gioca. Review completa ancora attesa, niente consegna anticipata.
+- Review statica completa conclusa: `docs/reviews/m2-integration-review.md`, CODE PASS provvisorio/ON TRACK,nessunnuovoBLOCKER/MAJOR provato; MINOR C1muzzle arretrato,C2verboobiettivo,C3memoriatutorial. Ilreportprecede iPASSbotentrambiordini e rerunstartfinale: per sign-off fornireleprovepiùrecenti. Builder gameplay riutilizzato solo per tool controllato `tools/check-street-combat.mjs`+status/report dedicati, nessun core/dist durante fresh-eyes; atteso output per cover/dodge/cura/nave/slot. Non duplicare la sua area.
 
 ## 3. Domande aperte
 
-- All'avvio del passo8: scegliere autonomia con check-in per atto oppure check-in a ogni decisione; scegliere isolamento Git per collaboratori. Non ripetere domande su stile, audio gratuito, PC o review snella già scelti.
+- Nessuna domanda bloccante per M2. Si mantengono impostazioni precedenti; il questionario interrotto non conta come scelta di worktree o aumento dei costi. Far provare M2 prima del boss.
 
 ## 4. Demo
 
@@ -55,6 +87,7 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | Ascolto audio gratuito | http://127.0.0.1:5173/tools/audio/audition.html | `tools/audio/audition.html`, `tools/audio/audition.mjs`, `public/audio/` |
 | Primo cortile giocabile (verifica M1) | `npm.cmd run dev`, http://127.0.0.1:5174/ | `index.html`, `src/`; build produzione `dist/` |
 | Preview stabile per l'utente | `npm.cmd run build`, poi `npm.cmd run preview`, http://127.0.0.1:5175/ | Build statica senza HMR |
+| Via dei giocattoli M2 | http://127.0.0.1:5175/ → **Prova la via dei giocattoli** | Prova non distruttiva; fine3/3, boss escluso |
 | Cortile M1 approvato, congelato | `npm.cmd run snapshot:m1`, http://127.0.0.1:5176/ | `snapshots/m1-slice/`, server read-only `tools/serve-snapshot.mjs` |
 
 Il cortile è giocabile; l'avventura completa non è ancora implementata. A è il riferimento grafico scelto; B/C restano come confronto storico. Il laboratorio tecnico conserva `?lift=0.05` per riprodurre l'errore senza alterare la scena corretta.
@@ -101,10 +134,10 @@ Percorso gratuito esplicitamente scelto: **0 crediti, 0 API, nessun account rich
 
 ## 6. Prossimi passi
 
-1. All'avvio passo8 raccogliere scelte su autonomia/check-in e isolamento Git; mantenere review snella e audio gratuito già scelti. Riferimento08-full-build letto, rileggerlo se serve nella nuova sessione.
-2. Pianificare M2 via dei giocattoli con due ancoraggi, poi M3 piazza/Squamakk/finale; far giocare l'utente dopo ogni atto, non consegnare tutto senza check-in.
-3. Prima del parallelo ridurre accoppiamento del gameplay M1: registri add-a-file per atti/cast/sistemi, contratti/coordinate espliciti, proprietà dei file e suite per area. Pochi collaboratori persistenti, non micro-agenti.
-4. Conservare M1 congelato intatto. Nessuna pubblicazione o spesa autorizzata. Non garantire5minuti o60fps: durata fresh non misurata, prestazioni reali da giudicare sul PC utente.
+1. Consegnare link stabile5175 e pulsante **Prova la via dei giocattoli**; raccogliere feedback su mira/scontri/fluidità/chiarezza/audio prima di sviluppare altro.
+2. Registrare feedback in BACKLOG e verificare le correzioni. All'approvazione congelare M2 su cartella/porta nuova, senza toccare M1.
+3. Solo dopo approvazione M2 pianificare M3 piazza/Squamakk/finale. Mantenere registri modulari, pochi collaboratori persistenti e review snella.
+4. Conservare M1 intatto. Nessuna pubblicazione o spesa autorizzata. Non garantire durata umana o60fps: prestazioni reali da giudicare sul PC utente.
 
 ## 7. Evidenze M1
 

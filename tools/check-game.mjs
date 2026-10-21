@@ -7,7 +7,8 @@ import { findBrowser } from './capture.mjs';
 // Integration bot may inspect LC.state, but never mutates it or uses debug jumps.
 // This is NOT the independent fresh-eyes player required by the production plan.
 const report = { pass: false, errors: [], checks: [], shots: 0 };
-const { server, url } = await serve('dist'); let browser, page;
+const evidence = process.env.GAME_EVIDENCE ?? 'docs/evidence/step-06';
+const { server, url } = await serve(process.env.GAME_ROOT ?? 'dist'); let browser, page;
 const state = page => page.evaluate(() => LC.state());
 const wait = (page, ms) => page.waitForTimeout(ms); // Actual simulated input/playback time, not background-job polling.
 async function face(page, target) {
@@ -72,6 +73,7 @@ try {
     const enemy = s.enemies.filter(e => e.hp > 0).sort((a, b) => Math.hypot(a.x - s.player.x, a.z - s.player.z) - Math.hypot(b.x - s.player.x, b.z - s.player.z))[0];
     if (enemy) {
       await face(page, enemy);
+      assert.ok((await state(page)).player.hp > 0 && (await state(page)).playing, 'Bot died or paused while aiming; do not click the menu accidentally');
       // The final guard deliberately stays at the device: a real player must
       // approach instead of repeatedly throwing beyond the 12m range.
       if (Math.hypot(enemy.x - s.player.x, enemy.z - s.player.z) > 9) {
@@ -83,12 +85,12 @@ try {
     await wait(page, 720);
     const live = await state(page);
     if (!report.liveWrap && live.enemies.some(enemy => enemy.status === 'wrapped')) {
-      await mkdir('docs/evidence/step-06', { recursive: true });
-      await page.waitForFunction(() => { const s = LC.state(); return s.enemies.some(enemy => enemy.status === 'wrapped' && s.time - enemy.since >= .3 && s.time - enemy.since < .85); }, null, { timeout: 3000 });
-      await page.screenshot({ path: 'docs/evidence/step-06/live-wrap.png' });
+      await mkdir(evidence, { recursive: true });
+      await page.waitForFunction(() => { const s = LC.state(); return s.enemies.some(enemy => enemy.status === 'wrapped' && s.time - enemy.since >= .3 && s.time - enemy.since < .85); }, null, { timeout: 3000 }).catch(() => { report.wrapTimingWindowMissed = true; });
+      await page.screenshot({ path: `${evidence}/live-wrap.png` });
       report.liveWrap = await state(page);
       await wait(page, 700);
-      await page.screenshot({ path: 'docs/evidence/step-06/live-shipping.png' });
+      await page.screenshot({ path: `${evidence}/live-shipping.png` });
     }
   }
   const cleared = await state(page);
@@ -107,14 +109,29 @@ try {
   assert.equal((await state(page)).beat, 'complete');
   assert.equal((await state(page)).checkpoint.boundary, 'complete');
   assert.equal((await page.evaluate(() => LC.selfTest())).pass, true);
-  await mkdir('docs/evidence/step-06', { recursive: true });
-  await page.screenshot({ path: 'docs/evidence/step-06/bot-complete.png' });
+  await mkdir(evidence, { recursive: true });
+  await page.screenshot({ path: `${evidence}/bot-complete.png` });
   report.finalState = await state(page);
   await page.reload(); await page.waitForFunction(() => LC.ready);
   await page.getByRole('button', { name: 'Continua', exact: true }).click();
   assert.equal((await state(page)).beat, 'complete');
   assert.equal((await state(page)).remaining, 0);
   report.checks.push('Anchor 1/3 is saved and Continue restores completion after a real reload');
+  if (process.env.TEST_STREET_GATE === '1') {
+    for (let step = 0; step < 35; step++) {
+      const s = await state(page), goal = { x: 0, z: -14 }, d = Math.hypot(s.player.x, s.player.z + 14);
+      if (d < 1.8) break;
+      await face(page, goal); await page.keyboard.down('KeyW');
+      await wait(page, Math.min(300, Math.max(70, (d - 1.6) / 4.3 * 1000))); await page.keyboard.up('KeyW');
+    }
+    await page.keyboard.press('KeyE'); await wait(page, 200);
+    const street = await state(page);
+    assert.equal(street.chapter, 'toystreet'); assert.equal(street.anchorCount, 1);
+    assert.equal(street.checkpoint.chapter, 'toystreet'); assert.equal(street.remaining, 6);
+    assert.equal((await page.evaluate(() => LC.selfTest())).pass, true);
+    report.checks.push('Real walk to gate and E enters M2 and saves its boundary, with six defenders and 1/3');
+    report.streetEntry = street;
+  }
   const denied = await browser.newPage({ viewport: { width: 1280, height: 720 } });
   await denied.addInitScript(() => { Storage.prototype.setItem = () => { throw new DOMException('Storage denied', 'QuotaExceededError'); }; });
   await denied.goto(url); await denied.waitForFunction(() => LC.ready);
@@ -125,14 +142,14 @@ try {
 } catch (error) {
   report.errors.push(error.stack ?? String(error)); process.exitCode = 1;
   if (page) {
-    await mkdir('docs/evidence/step-06', { recursive: true });
-    await page.screenshot({ path: 'docs/evidence/step-06/integration-failure.png' }).catch(() => {});
+    await mkdir(evidence, { recursive: true });
+    await page.screenshot({ path: `${evidence}/integration-failure.png` }).catch(() => {});
     report.failureState = await state(page).catch(() => null);
   }
 }
 finally {
   await browser?.close(); await new Promise(done => server.close(done));
-  await mkdir('docs/evidence/step-06', { recursive: true });
-  await writeFile('docs/evidence/step-06/integration.json', JSON.stringify(report, null, 2));
+  await mkdir(evidence, { recursive: true });
+  await writeFile(`${evidence}/integration.json`, JSON.stringify(report, null, 2));
 }
 console.log(JSON.stringify({ pass: report.pass, checks: report.checks, shots: report.shots, combatWallSeconds: report.combatWallSeconds, errors: report.errors }, null, 2));

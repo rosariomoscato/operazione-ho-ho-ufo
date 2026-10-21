@@ -1,6 +1,6 @@
 # Operazione Ho Ho UFO
 
-Action comico 3D per browser. **Primo cortile giocabile approvato e congelato** (passo 7 completato), non ancora l'avventura completa.
+Action comico 3D per browser. **Primo cortile approvato e congelato**; **secondo atto pronto per il playtest utente**. Non è ancora l'avventura completa.
 
 ## Avvio locale
 
@@ -18,9 +18,11 @@ npm.cmd run build
 npm.cmd run preview
 ```
 
-Aprire **http://127.0.0.1:5175/**. Build, 11 test, suite visiva, review combinata e playtest indipendente completati; stato e limiti in `docs/HANDOFF.md`.
+Aprire **http://127.0.0.1:5175/** e scegliere **Prova la via dei giocattoli**. Build,22test,prove dei due ordini,review e retest indipendente superati; limiti in `docs/HANDOFF.md`.
 
-Comandi: **WASD** muovi, **destro trascinato** guarda, **clic sinistro** regalo, **Spazio** schiva, **E** dispositivo, **Esc** pausa. Finisce al primo ancoraggio **1/3**; la via dei giocattoli e il boss non sono ancora implementati. Progressi e opzioni restano nel browser locale.
+Comandi: **WASD** muovi, **destro trascinato** mira al +, **clic sinistro** regalo, **Spazio** schiva, **E** dispositivo/cancello, **H** aiuto, **Esc** pausa. La versione corrente collega il cortile alla via dei giocattoli: due arene in ordine libero, fine al terzo ancoraggio **3/3**. La piazza e il boss non sono ancora implementati. Progressi e opzioni restano nel browser locale; i vecchi salvataggi del cortile vengono migrati senza modificare la copia congelata.
+
+**Prova la via dei giocattoli**, sul titolo, avvia una prova esplicita M2 senza sostituire il salvataggio. **Nuova partita** riparte invece dal cortile e cancella i progressi precedenti.
 
 ### Copia approvata, immutabile
 
@@ -67,6 +69,9 @@ Stato e prossimi passi in `docs/HANDOFF.md`; regole in `AGENTS.md`.
 npm.cmd run build
 npm.cmd run preview
 node tools/capture-game.mjs
+npm.cmd run test:street
+npm.cmd run capture:street
+node tools/check-street.mjs
 ```
 
 Preview produzione su porta 5175. Cattura di uno scenario specifico: `node tools/capture.mjs index.html --build --scenario battle-c --views player,diorama --times 0,1 --out captures/game/manual --selftest`. `--url http://127.0.0.1:5174/` usa invece il server di sviluppo già acceso; non combinarlo con `--build`.

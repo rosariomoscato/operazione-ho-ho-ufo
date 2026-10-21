@@ -14,6 +14,7 @@ Progetto basato sulla pipeline in 10 passi della skill `build-a-game`. Iniziare 
 - `design/styles/vinyl.html`: riferimento grafico eseguibile; sorgente `tools/build-style-mockups.mjs`. Conservare anche le varianti B e C.
 - `docs/TECH_PLAN.md`, `docs/LEVEL_LAYOUT.md`: architettura, proprietà dei file, gate e coordinate condivise del cortile (passo 6).
 - `docs/set-pieces/courtyard.md`: specifica dell'incontro e dei segnali di combattimento prima dell'implementazione.
+- `docs/ACT_02_PLAN.md`, `docs/set-pieces/toystreet.md`: piano e incontri M2, due arene in ordine libero; fermarsi al playtest prima di M3.
 - `.claude/agents/*.md`: tre prospettive di review; nel percorso snello un singolo reviewer le combina.
 - `docs/BACKLOG.md`: feedback e difetti da verificare.
 - Reviewer dal passo 6: critico, direttore degli incontri/comicità, direttore narrativo.
@@ -34,6 +35,9 @@ Progetto basato sulla pipeline in 10 passi della skill `build-a-game`. Iniziare 
 12. Quando previsti dalla skill, pochi collaboratori persistenti per area, non decine di micro-agenti.
 13. Se si approva il doppiaggio, misurare la chiarezza delle voci rispetto al mix e abbassare musica/effetti durante le battute (obiettivo almeno 8 dB di margine).
 14. Prima di creare qualunque asset visivo leggere DESIGN_SYSTEM, riusare le funzioni materiali del mockup A, catturare ogni mood implementato da distanza gameplay e da vicino, verificare contatti e budget con selfTest e ottenere revisione prevista per il passo. Non reinventare lo stile o introdurre blur nel gameplay.
+15. Dal passo8: obiettivo persistente in parole semplici, scheda del nuovo comando finché usato una volta, indicatore di destinazione distinto dalla mira e aiuti a15/30/45s senza progresso più tasto aiuto. Verificare che gli aiuti scattino davvero e che pausa/progresso fermino o azzerino il timer; mai introdurre attese per mostrarli.
+16. Progressione e interazioni si misurano: arene/ancoraggi/cure indipendenti, nessun doppio conteggio o pickup duplicato dopo retry/Continua. Nuovi atti devono migrare i salvataggi precedenti senza alterare la copia congelata. Interagire fuori portata o con oggetto protetto dà sempre una ragione visibile.
+17. `snapshots/m1-slice/` è immutabile e approvato: non modificarlo, rigenerarlo o sovrascriverlo. Il test di hash in `tools/street.test.mjs` deve restare positivo.
 
 ## Debug visivo disponibile
 

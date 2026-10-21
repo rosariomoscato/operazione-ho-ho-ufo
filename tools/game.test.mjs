@@ -41,11 +41,11 @@ test('save validation, complete checkpoint and settings round trip', () => {
   const values = new Map();
   globalThis.localStorage = { getItem: key => values.get(key) ?? null, setItem: (key, value) => values.set(key, value), removeItem: key => values.delete(key) };
   assert.equal(storage.readCheckpoint(), null);
-  const cp = { version: 1, boundary: 'complete', healed: true, firstWrapped: true };
+  const cp = { ...storage.emptyCheckpoint('courtyard', 'complete'), healed: true, firstWrapped: true, disabledAnchors: ['courtyard'] };
   assert.equal(storage.writeCheckpoint(cp), true);
   assert.deepEqual(storage.readCheckpoint(), cp);
   for (const invalid of ['{', 'null', '{"version":99}', '{"version":1,"boundary":"boss","healed":false,"firstWrapped":false}']) {
-    values.set('ho-ho-ufo.checkpoint.v1', invalid);
+    values.set(storage.SAVE_KEY, invalid);
     assert.equal(storage.readCheckpoint(), null);
   }
   values.set('ho-ho-ufo.settings.v1', JSON.stringify({ master: 9, music: -3, effects: .5, reducedMotion: true, aimAssist: false }));

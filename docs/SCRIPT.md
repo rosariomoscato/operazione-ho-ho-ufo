@@ -145,3 +145,23 @@ Implementazione del cortile, stessi eventi della storia approvata. Le varianti b
 | ui.heal.marker | — | ✚ Cura +2 | Etichetta collegata alla cura quando feriti | UI | — |
 
 I testi tecnici di reticolo, distanza, HP e recupero sono indicatori dinamici, non battute. La presenza di una riga in questa sezione non certifica che l'interazione sia stata verificata: prove nel report M1.
+
+## Secondo segmento — varianti e testi di servizio M2
+
+Testi implementati nella versione corrente; non cambiano lo snapshot M1. Le durate indicate nei titoli della prima stesura sono obiettivi narrativi, non tempi misurati. La piazza e il boss non sono ancora giocabili.
+
+| ID | Personaggio | Testo | Direzione | Tipo | Stato |
+|---|---|---|---|---|---|
+| vo.briciola.street | Briciola | Due ancoraggi: Officina o Giostra, scegli tu. Libera un lato, poi premi E sul suo dispositivo. | Ingresso M2, ordine libero | radio | — |
+| vo.briciola.square | Briciola | Scudo spento! La nave scende verso la piazza. Il nucleo è ancora là: ci fermeremo prima del prossimo scontro. | Variante M2; non vittoria globale | radio | — |
+| ui.street.preview | — | Prova la via dei giocattoli | Partita di prova separata, non sostituisce il salvataggio | UI | — |
+| ui.street.end | — | Tre ancoraggi spenti · Fine del secondo segmento. La piazza non è ancora giocabile. | Limite esplicito della build | UI | — |
+| ui.street.protected | — | {name} protetto · {count} difensori locali | L'altra arena non blocca il dispositivo | UI | — |
+| ui.street.range | — | {name} · {distance} m: avvicinati entro 2,2 m | E fuori portata | UI | — |
+| ui.street.clear | — | {name} libera · E al suo ancoraggio | Progresso locale distinto da ancoraggio spento | UI | — |
+| ui.street.cover | — | Riparo: colpo fermato | Conferma collisione reale del proiettile | UI | — |
+| ui.street.help | — | H: aiuto | Aiuto immediato; scala automatica dopo 15/30/45s senza progresso | UI | — |
+| ui.street.goal | — | Libera un lato, poi E · Ancoraggi {count}/3 | Obiettivo operativo persistente | UI | — |
+| ui.street.goal.ready | — | Spegni l’ancoraggio pronto: E · Ancoraggi {count}/3 | Il lato indicato è libero ma ancora acceso | UI | — |
+
+`ui.slice.end` rimane testo storico della copia congelata; non descrive più il raccordo corrente dal cortile alla via. Review e prove M2 devono verificare separatamente quanto dichiarato qui.

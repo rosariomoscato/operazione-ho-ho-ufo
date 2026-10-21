@@ -42,7 +42,10 @@ export async function visualAudit(page, views, out) {
       const fps = 12, duration = lc.duration, samples = Math.ceil(duration * fps);
       let previous; const events = []; let maxAffectedFraction = 0;
       for (let i = 0; i <= samples; i++) {
-        lc.seek(i / fps); lc.renderNow(); ctx.drawImage(source, 0, 0, 96, 54);
+        const before = lc.getStats().renderFrame;
+        lc.seek(i / fps);
+        if (!Number.isFinite(before) || lc.getStats().renderFrame === before) lc.renderNow();
+        ctx.drawImage(source, 0, 0, 96, 54);
         const pixels = ctx.getImageData(0, 0, 96, 54).data;
         const values = new Float32Array(96 * 54);
         for (let p = 0; p < values.length; p++) values[p] = (pixels[p * 4] * .2126 + pixels[p * 4 + 1] * .7152 + pixels[p * 4 + 2] * .0722) / 255;

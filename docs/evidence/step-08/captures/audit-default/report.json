@@ -1,0 +1,673 @@
+{
+  "page": "index.html",
+  "scenario": "street-left",
+  "size": [
+    1920,
+    1080
+  ],
+  "gpu": "default",
+  "frames": [
+    {
+      "view": "player",
+      "time": 0,
+      "file": "00-player-0.png",
+      "stats": {
+        "renderFrame": 8,
+        "drawCalls": 70,
+        "triangles": 62306,
+        "geometries": 68,
+        "textures": 4,
+        "lights": 3,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "shipHeight": 8,
+        "audio": {
+          "loaded": false,
+          "activeEffects": 0,
+          "error": null
+        }
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "santa feet floor (m)",
+            "value": 0,
+            "limit": 0.002,
+            "pass": true
+          },
+          {
+            "name": "alien 1 feet floor (m)",
+            "value": 0,
+            "limit": 0.002,
+            "pass": true
+          },
+          {
+            "name": "alien 2 feet floor (m)",
+            "value": 0,
+            "limit": 0.002,
+            "pass": true
+          },
+          {
+            "name": "alien 3 feet floor (m)",
+            "value": 0,
+            "limit": 0.002,
+            "pass": true
+          },
+          {
+            "name": "alien 4 feet floor (m)",
+            "value": 0,
+            "limit": 0.002,
+            "pass": true
+          },
+          {
+            "name": "alien 5 feet floor (m)",
+            "value": 0,
+            "limit": 0.002,
+            "pass": true
+          },
+          {
+            "name": "alien 6 feet floor (m)",
+            "value": 0,
+            "limit": 0.002,
+            "pass": true
+          },
+          {
+            "name": "Rettiliano tiratore: shooter-left-hand-handle (m)",
+            "value": 1.7763568394002505e-15,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "Rettiliano tiratore: shooter-right-hand-handle (m)",
+            "value": 1.7763568394002505e-15,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "Rettiliano tiratore: shooter-left-hand-handle (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "Rettiliano tiratore: shooter-right-hand-handle (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "Rettiliano tiratore: shooter-left-hand-handle (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "Rettiliano tiratore: shooter-right-hand-handle (m)",
+            "value": 0,
+            "limit": 0.001,
+            "pass": true
+          },
+          {
+            "name": "player collider penetration",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "enemy collider penetration",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "committed attacks including flying bolts",
+            "value": 0,
+            "limit": 1,
+            "pass": true
+          },
+          {
+            "name": "unique level registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "level registry contains courtyard",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "swept collider regression",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "wall ray regression",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "unique acts registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "unique cast registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "unique systems registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "unique scenarios registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "active world lights",
+            "value": 3,
+            "limit": 3,
+            "pass": true
+          },
+          {
+            "name": "maximum live defenders",
+            "value": 6,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "anchor count matches unique local IDs",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "disabled anchor without cleared arena",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "chapter completion agrees with anchors",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "workshop spawn collider",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "workshop spawn collider",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "workshop spawn collider",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "carousel spawn collider",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "carousel spawn collider",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "carousel spawn collider",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "bounded hostile bolt pool",
+            "value": 0,
+            "limit": 1,
+            "pass": true
+          },
+          {
+            "name": "live bolt finite and unexpired",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "draw calls",
+            "value": 70,
+            "limit": 150,
+            "pass": true
+          },
+          {
+            "name": "triangles",
+            "value": 62306,
+            "limit": 150000,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "telegraph < 1 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "recovery < 1.2 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "observed ranged telegraph < 1.2 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "observed ranged locked time < .8 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "duplicate damage by attack ID",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          }
+        ],
+        "stats": {
+          "renderFrame": 9,
+          "drawCalls": 70,
+          "triangles": 62306,
+          "geometries": 68,
+          "textures": 4,
+          "lights": 3,
+          "shadowLights": 0,
+          "postPasses": 0,
+          "shipHeight": 8,
+          "audio": {
+            "loaded": false,
+            "activeEffects": 0,
+            "error": null
+          }
+        },
+        "evidence": {
+          "meleeReleases": 0,
+          "rangedReleases": 0,
+          "damageEvents": 0,
+          "handContactsMeasured": 6
+        },
+        "notes": [
+          "Empty attack logs are NOT timing evidence.",
+          "Only cast exposing root.userData.measureHandContacts has measured hand contacts.",
+          "Performance is draw/triangle budget, not a laptop FPS claim."
+        ]
+      },
+      "state": {
+        "chapter": "toystreet",
+        "act": "toystreet",
+        "actTitle": "La via dei giocattoli",
+        "beat": "street",
+        "group": 0,
+        "player": {
+          "x": -8,
+          "z": -4,
+          "hp": 6,
+          "invulnerableUntil": 1.25,
+          "dodgeUntil": 0,
+          "dodgeReady": 0,
+          "dx": 0,
+          "dz": -1
+        },
+        "camera": {
+          "yaw": 0,
+          "pitch": 0.5,
+          "view": "player"
+        },
+        "disabledAnchors": [],
+        "clearedArenas": [],
+        "activatedArenas": [
+          "workshop"
+        ],
+        "defeatedEnemies": [],
+        "anchorCount": 1,
+        "arenas": [
+          {
+            "id": "workshop",
+            "name": "Officina",
+            "x": -8,
+            "z": -4,
+            "active": true,
+            "clear": false,
+            "remaining": 3
+          },
+          {
+            "id": "carousel",
+            "name": "Giostra",
+            "x": 8,
+            "z": -4,
+            "active": false,
+            "clear": false,
+            "remaining": 3
+          }
+        ],
+        "anchors": [
+          {
+            "id": "workshop",
+            "name": "Officina dei trenini",
+            "x": -8,
+            "z": -9,
+            "arenaId": "workshop",
+            "disabled": false
+          },
+          {
+            "id": "carousel",
+            "name": "Giostra dei regali",
+            "x": 8,
+            "z": -9,
+            "arenaId": "carousel",
+            "disabled": false
+          }
+        ],
+        "bolts": [],
+        "systemConfigs": [
+          {
+            "id": "ranged",
+            "windup": 1.2,
+            "lock": 0.2,
+            "recovery": 1.2,
+            "speed": 6,
+            "radius": 0.18,
+            "range": 12,
+            "travel": 18,
+            "lifetime": 3,
+            "pool": 3
+          }
+        ],
+        "committed": 0,
+        "lastProgress": 0,
+        "hintStage": 0,
+        "rangedLearned": false,
+        "droneHit": true,
+        "dodgeUsed": true,
+        "remaining": 6,
+        "pending": 0,
+        "neutralized": 0,
+        "healAvailable": false,
+        "healed": false,
+        "firstWrapped": true,
+        "review": true,
+        "preview": false,
+        "playing": false,
+        "time": 0,
+        "enemies": [
+          {
+            "id": 1,
+            "key": "workshop:0",
+            "kind": "ranged",
+            "arenaId": "workshop",
+            "x": -11,
+            "z": -5,
+            "hp": 2,
+            "status": "approach",
+            "since": 0,
+            "attackId": 0,
+            "angle": 0,
+            "hit": false
+          },
+          {
+            "id": 2,
+            "key": "workshop:1",
+            "kind": "ranged",
+            "arenaId": "workshop",
+            "x": -7,
+            "z": -8,
+            "hp": 2,
+            "status": "approach",
+            "since": 0,
+            "attackId": 0,
+            "angle": 0,
+            "hit": false
+          },
+          {
+            "id": 3,
+            "key": "workshop:2",
+            "kind": "ranged",
+            "arenaId": "workshop",
+            "x": -4.5,
+            "z": -10.5,
+            "hp": 2,
+            "status": "approach",
+            "since": 0,
+            "attackId": 0,
+            "angle": 0,
+            "hit": false
+          },
+          {
+            "id": 4,
+            "key": "carousel:0",
+            "kind": "melee",
+            "arenaId": "carousel",
+            "x": 5,
+            "z": -5,
+            "hp": 2,
+            "status": "approach",
+            "since": 0,
+            "attackId": 0,
+            "angle": 0,
+            "hit": false
+          },
+          {
+            "id": 5,
+            "key": "carousel:1",
+            "kind": "melee",
+            "arenaId": "carousel",
+            "x": 10,
+            "z": -7,
+            "hp": 2,
+            "status": "approach",
+            "since": 0,
+            "attackId": 0,
+            "angle": 0,
+            "hit": false
+          },
+          {
+            "id": 6,
+            "key": "carousel:2",
+            "kind": "melee",
+            "arenaId": "carousel",
+            "x": 6,
+            "z": -10.5,
+            "hp": 2,
+            "status": "approach",
+            "since": 0,
+            "attackId": 0,
+            "angle": 0,
+            "hit": false
+          }
+        ],
+        "objective": "La via dei giocattoli · Ancoraggi 1/3",
+        "checkpoint": {
+          "version": 2,
+          "chapter": "toystreet",
+          "boundary": "street",
+          "healed": false,
+          "firstWrapped": true,
+          "disabledAnchors": [],
+          "clearedArenas": [],
+          "activatedArenas": [
+            "workshop"
+          ],
+          "defeatedEnemies": []
+        },
+        "eventLog": [],
+        "storageAvailable": true,
+        "transitions": []
+      },
+      "budgetPass": true
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "pass": true,
+  "deterministic": true,
+  "fpsProbe": {
+    "samples": 45,
+    "meanMs": 16.677777777777777,
+    "fps": 59.96002664890074,
+    "note": "Headless single-frame seek/render smoke test only; not proof of laptop performance."
+  },
+  "visualAudit": {
+    "pass": true,
+    "palette": {
+      "pass": true,
+      "allowed": [
+        "#e94750",
+        "#7cbf56",
+        "#7062b8",
+        "#e1eff5",
+        "#fff0d5",
+        "#f4ba93",
+        "#202d42",
+        "#f8be55",
+        "#596a9b",
+        "#987562",
+        "#a4f8d9",
+        "#9b6547",
+        "#a5585b",
+        "#182c49"
+      ],
+      "invalidColors": []
+    },
+    "typography": {
+      "pass": true,
+      "checks": [
+        {
+          "text": "La via dei giocattoli · Ancoraggi 1/3",
+          "contrast": 10.010112067814882,
+          "capHeight": 26,
+          "minCapHeight": 24,
+          "pass": true
+        },
+        {
+          "text": "↑ Officina dei trenini · 5.0 m · 3 difensori",
+          "contrast": 14.971145186095898,
+          "capHeight": 26,
+          "minCapHeight": 24,
+          "pass": true
+        },
+        {
+          "text": "→ Giostra dei regali · 16.8 m · 3 difensori",
+          "contrast": 14.971145186095898,
+          "capHeight": 26,
+          "minCapHeight": 24,
+          "pass": true
+        },
+        {
+          "text": "Salute ▮▮▮▮▮▮",
+          "contrast": 14.971145186095898,
+          "capHeight": 26,
+          "minCapHeight": 24,
+          "pass": true
+        },
+        {
+          "text": "Spazio · Schivata pronta",
+          "contrast": 14.971145186095898,
+          "capHeight": 26,
+          "minCapHeight": 24,
+          "pass": true
+        },
+        {
+          "text": "Tiratore 2/2 · Regali ∞",
+          "contrast": 14.971145186095898,
+          "capHeight": 26,
+          "minCapHeight": 24,
+          "pass": true
+        },
+        {
+          "text": "Percorso: scegli Officina o Giostra. Regali infiniti; due colpi impacc",
+          "contrast": 12.53369330491466,
+          "capHeight": 26,
+          "minCapHeight": 24,
+          "pass": true
+        },
+        {
+          "text": "WASD: muovi · Destro: mira al + · Clic: tira · Spazio: schiva · E: usa",
+          "contrast": 14.971145186095898,
+          "capHeight": 26,
+          "minCapHeight": 24,
+          "pass": true
+        },
+        {
+          "text": "◎ MIRATO 2/2",
+          "contrast": 14.971145186095898,
+          "capHeight": 25,
+          "minCapHeight": 24,
+          "pass": true
+        },
+        {
+          "text": "▮▮",
+          "contrast": 12.53369330491466,
+          "capHeight": 25,
+          "minCapHeight": 24,
+          "pass": true
+        },
+        {
+          "text": "▮▮",
+          "contrast": 12.53369330491466,
+          "capHeight": 25,
+          "minCapHeight": 24,
+          "pass": true
+        }
+      ],
+      "note": "Accessible DOM text only; aria-hidden graphic glyphs are excluded and require visual/outline checks. 24px cap-height gate applies at 1080p. Canvas text needs a separate measured contract."
+    },
+    "flashes": [
+      {
+        "view": "player",
+        "fps": 12,
+        "samples": 73,
+        "events": [],
+        "maxAffectedFraction": 0.0005787037037037037,
+        "maxEventsPerSecond": 0,
+        "pass": true
+      }
+    ],
+    "notes": [
+      "12 Hz full-loop screening is not a clinical photosensitivity certification; inspect new fast VFX separately.",
+      "Color-blind PNG is a diagnostic preview; gameplay must also use shape, text and position."
+    ]
+  }
+}

@@ -3,6 +3,16 @@ import type { Obstacle } from '../contracts';
 export interface Point { x: number; z: number }
 export const distance = (a: Point, b: Point): number => Math.hypot(a.x - b.x, a.z - b.z);
 export const clamp = (n: number, a: number, b: number): number => Math.max(a, Math.min(b, n));
+export function segmentBox(a:Point,b:Point,o:Obstacle,padding=0):number|null {
+  let lo=0,hi=1;
+  for(const [s,d,min,max] of [[a.x,b.x-a.x,o.minX-padding,o.maxX+padding],[a.z,b.z-a.z,o.minZ-padding,o.maxZ+padding]]){
+    if(Math.abs(d)<1e-9){if(s<min||s>max)return null;}else{let u=(min-s)/d,v=(max-s)/d;if(u>v)[u,v]=[v,u];lo=Math.max(lo,u);hi=Math.min(hi,v);if(lo>hi)return null;}
+  }return lo;
+}
+export function segmentCircle(a:Point,b:Point,center:Point,radius:number):number|null {
+  const x=a.x-center.x,z=a.z-center.z,dx=b.x-a.x,dz=b.z-a.z,c=x*x+z*z-radius*radius;
+  if(c<=0)return 0;const A=dx*dx+dz*dz;if(A<1e-12)return null;const B=2*(x*dx+z*dz),D=B*B-4*A*c;if(D<0)return null;const t=(-B-Math.sqrt(D))/(2*A);return t>=0&&t<=1?t:null;
+}
 export function blocked(p: Point, radius: number, obstacles: Obstacle[]): boolean {
   if (p.x < -15 + radius || p.x > 15 - radius || p.z < -15 + radius || p.z > 13 - radius) return true;
   return obstacles.some(o => Math.hypot(p.x - clamp(p.x, o.minX, o.maxX), p.z - clamp(p.z, o.minZ, o.maxZ)) < radius - 1e-6);

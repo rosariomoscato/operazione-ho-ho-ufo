@@ -1,0 +1,934 @@
+{
+  "pass": true,
+  "errors": [],
+  "checks": [
+    "Title, skip, drone throw and dodge tutorial complete with actual controls",
+    "Pause freezes the simulation clock and resumes explicitly",
+    "All 1+2+3 defenders defeated using only physical mouse/keyboard events",
+    "Actual A/B/C boundaries each survive checkpoint retry and reload/Continue without replaying earlier groups",
+    "Anchor 1/3 is saved and Continue restores completion after a real reload",
+    "Real walk to gate and E enters M2 and saves its boundary, with six defenders and 1/3",
+    "Storage write failure is nonfatal and reported honestly"
+  ],
+  "shots": 9,
+  "boundaries": [
+    {
+      "group": 1,
+      "checkpoint": {
+        "version": 2,
+        "chapter": "courtyard",
+        "boundary": "A",
+        "healed": false,
+        "firstWrapped": false,
+        "disabledAnchors": [],
+        "clearedArenas": [],
+        "activatedArenas": [],
+        "defeatedEnemies": []
+      },
+      "hp": 6,
+      "enemyIds": [
+        1
+      ]
+    },
+    {
+      "group": 2,
+      "checkpoint": {
+        "version": 2,
+        "chapter": "courtyard",
+        "boundary": "B",
+        "healed": false,
+        "firstWrapped": true,
+        "disabledAnchors": [],
+        "clearedArenas": [],
+        "activatedArenas": [],
+        "defeatedEnemies": []
+      },
+      "hp": 6,
+      "enemyIds": [
+        2,
+        3
+      ]
+    },
+    {
+      "group": 3,
+      "checkpoint": {
+        "version": 2,
+        "chapter": "courtyard",
+        "boundary": "C",
+        "healed": false,
+        "firstWrapped": true,
+        "disabledAnchors": [],
+        "clearedArenas": [],
+        "activatedArenas": [],
+        "defeatedEnemies": []
+      },
+      "hp": 6,
+      "enemyIds": [
+        4,
+        5,
+        6
+      ]
+    }
+  ],
+  "liveWrap": {
+    "chapter": "courtyard",
+    "act": "courtyard",
+    "actTitle": "Il cortile del laboratorio",
+    "beat": "battle",
+    "group": 2,
+    "player": {
+      "x": 0,
+      "z": -1.5876699999999977,
+      "hp": 6,
+      "invulnerableUntil": 1.25,
+      "dodgeUntil": 0,
+      "dodgeReady": 0,
+      "dx": 0,
+      "dz": -1
+    },
+    "camera": {
+      "yaw": 0,
+      "pitch": 0.3,
+      "view": "player"
+    },
+    "disabledAnchors": [],
+    "clearedArenas": [],
+    "activatedArenas": [],
+    "defeatedEnemies": [],
+    "anchorCount": 0,
+    "arenas": [],
+    "anchors": [
+      {
+        "id": "courtyard",
+        "name": "Laboratorio",
+        "x": 0,
+        "z": -9,
+        "disabled": false
+      }
+    ],
+    "bolts": [],
+    "systemConfigs": [
+      {
+        "id": "ranged",
+        "windup": 1.2,
+        "lock": 0.2,
+        "recovery": 1.2,
+        "speed": 6,
+        "radius": 0.18,
+        "range": 12,
+        "travel": 18,
+        "lifetime": 3,
+        "pool": 3
+      }
+    ],
+    "committed": 0,
+    "lastProgress": 3.4180999999999946,
+    "hintStage": 0,
+    "rangedLearned": false,
+    "droneHit": true,
+    "dodgeUsed": true,
+    "remaining": 5,
+    "pending": 3,
+    "neutralized": 1,
+    "healAvailable": false,
+    "healed": false,
+    "firstWrapped": true,
+    "review": false,
+    "preview": false,
+    "playing": true,
+    "time": 4.218699999999994,
+    "enemies": [
+      {
+        "id": 1,
+        "key": "courtyard:1",
+        "kind": "melee",
+        "x": 0,
+        "z": -7.537300000000048,
+        "hp": 0,
+        "status": "wrapped",
+        "since": 3.4180999999999946,
+        "attackId": 0,
+        "angle": 0,
+        "hit": false
+      },
+      {
+        "id": 2,
+        "key": "courtyard:2",
+        "kind": "melee",
+        "x": -7.596280805081417,
+        "z": -8.6879389894456,
+        "hp": 2,
+        "status": "approach",
+        "since": 3.4180999999999946,
+        "attackId": 0,
+        "angle": 0.8191355792682641,
+        "hit": false
+      },
+      {
+        "id": 3,
+        "key": "courtyard:3",
+        "kind": "melee",
+        "x": -5.891614347761411,
+        "z": -9.930473663963658,
+        "hp": 2,
+        "status": "approach",
+        "since": 3.4180999999999946,
+        "attackId": 0,
+        "angle": 0.6148690430854433,
+        "hit": false
+      }
+    ],
+    "objective": "Libera il cortile · 5 difensori",
+    "checkpoint": {
+      "version": 2,
+      "chapter": "courtyard",
+      "boundary": "B",
+      "healed": false,
+      "firstWrapped": true,
+      "disabledAnchors": [],
+      "clearedArenas": [],
+      "activatedArenas": [],
+      "defeatedEnemies": []
+    },
+    "eventLog": [
+      {
+        "time": 0,
+        "type": "group-enter",
+        "group": 1
+      },
+      {
+        "time": 1.801,
+        "type": "throw",
+        "target": 1,
+        "x": 0,
+        "z": -9.788620000000039
+      },
+      {
+        "time": 2.451,
+        "type": "progress",
+        "reason": "gift-hit"
+      },
+      {
+        "time": 2.451,
+        "type": "enemy-hit",
+        "id": 1,
+        "key": "courtyard:1",
+        "hp": 1
+      },
+      {
+        "time": 2.451,
+        "type": "explosion",
+        "x": 0,
+        "z": -8.021074070588273,
+        "radius": 2,
+        "hits": 1
+      },
+      {
+        "time": 2.784,
+        "type": "throw",
+        "target": 1,
+        "x": 0,
+        "z": -8.618260000000047
+      },
+      {
+        "time": 3.418,
+        "type": "progress",
+        "reason": "gift-hit"
+      },
+      {
+        "time": 3.418,
+        "type": "enemy-hit",
+        "id": 1,
+        "key": "courtyard:1",
+        "hp": 0
+      },
+      {
+        "time": 3.418,
+        "type": "wrap",
+        "id": 1,
+        "key": "courtyard:1"
+      },
+      {
+        "time": 3.418,
+        "type": "dialogue",
+        "id": "vo.santa.wrapped"
+      },
+      {
+        "time": 3.418,
+        "type": "explosion",
+        "x": 0,
+        "z": -6.966484914117683,
+        "radius": 2,
+        "hits": 1
+      },
+      {
+        "time": 3.418,
+        "type": "group-enter",
+        "group": 2
+      },
+      {
+        "time": 3.418,
+        "type": "checkpoint",
+        "chapter": "courtyard",
+        "boundary": "B",
+        "persisted": true
+      }
+    ],
+    "storageAvailable": true,
+    "transitions": [
+      {
+        "action": "menu-action",
+        "chapter": "courtyard",
+        "boundary": "training",
+        "menu": "title",
+        "hp": 6,
+        "time": 0,
+        "button": "continue",
+        "clickDetail": 1
+      }
+    ]
+  },
+  "combatWallSeconds": 22.919,
+  "finalState": {
+    "chapter": "courtyard",
+    "act": "courtyard",
+    "actTitle": "Il cortile del laboratorio",
+    "beat": "complete",
+    "group": 3,
+    "player": {
+      "x": 4.376526918647984e-17,
+      "z": -7.153619999999983,
+      "hp": 6,
+      "invulnerableUntil": 5.601899999999993,
+      "dodgeUntil": 0,
+      "dodgeReady": 0,
+      "dx": 0,
+      "dz": -1
+    },
+    "camera": {
+      "yaw": -1.3877787807814457e-17,
+      "pitch": 0.3,
+      "view": "player"
+    },
+    "disabledAnchors": [
+      "courtyard"
+    ],
+    "clearedArenas": [],
+    "activatedArenas": [],
+    "defeatedEnemies": [],
+    "anchorCount": 1,
+    "arenas": [],
+    "anchors": [
+      {
+        "id": "courtyard",
+        "name": "Laboratorio",
+        "x": 0,
+        "z": -9,
+        "disabled": true
+      }
+    ],
+    "bolts": [],
+    "systemConfigs": [
+      {
+        "id": "ranged",
+        "windup": 1.2,
+        "lock": 0.2,
+        "recovery": 1.2,
+        "speed": 6,
+        "radius": 0.18,
+        "range": 12,
+        "travel": 18,
+        "lifetime": 3,
+        "pool": 3
+      }
+    ],
+    "committed": 0,
+    "lastProgress": 7.502966666666677,
+    "hintStage": 0,
+    "rangedLearned": false,
+    "droneHit": true,
+    "dodgeUsed": true,
+    "remaining": 0,
+    "pending": 0,
+    "neutralized": 6,
+    "healAvailable": false,
+    "healed": true,
+    "firstWrapped": true,
+    "review": false,
+    "preview": false,
+    "playing": true,
+    "time": 11.371300000000133,
+    "enemies": [
+      {
+        "id": 4,
+        "key": "courtyard:4",
+        "kind": "melee",
+        "x": 1.4314183575950366,
+        "z": -6.02536085951224,
+        "hp": 0,
+        "status": "gone",
+        "since": 6.085633333333331,
+        "attackId": 2,
+        "angle": -0.6152400266445398,
+        "hit": false
+      },
+      {
+        "id": 5,
+        "key": "courtyard:5",
+        "kind": "melee",
+        "x": 1.3236831203817108,
+        "z": -4.660515063600485,
+        "hp": 0,
+        "status": "gone",
+        "since": 7.502966666666677,
+        "attackId": 3,
+        "angle": -1.1079507395015817,
+        "hit": false
+      },
+      {
+        "id": 6,
+        "key": "courtyard:6",
+        "kind": "melee",
+        "x": 0.6135145029018952,
+        "z": -6.514849539926401,
+        "hp": 0,
+        "status": "gone",
+        "since": 4.56856666666666,
+        "attackId": 1,
+        "angle": -0.2392828542287038,
+        "hit": true
+      }
+    ],
+    "objective": "Ancoraggio 1/3 · Entra nella via",
+    "checkpoint": {
+      "version": 2,
+      "chapter": "courtyard",
+      "boundary": "complete",
+      "healed": true,
+      "firstWrapped": true,
+      "disabledAnchors": [
+        "courtyard"
+      ],
+      "clearedArenas": [],
+      "activatedArenas": [],
+      "defeatedEnemies": []
+    },
+    "eventLog": [
+      {
+        "time": 0,
+        "type": "group-enter",
+        "group": 3
+      },
+      {
+        "time": 1.784,
+        "type": "throw",
+        "target": 6,
+        "x": 1.3058184344821073,
+        "z": -9.35266383052377
+      },
+      {
+        "time": 2.334,
+        "type": "progress",
+        "reason": "gift-hit"
+      },
+      {
+        "time": 2.334,
+        "type": "enemy-hit",
+        "id": 6,
+        "key": "courtyard:6",
+        "hp": 1
+      },
+      {
+        "time": 2.334,
+        "type": "explosion",
+        "x": 0.87085287438442,
+        "z": -7.569702003995577,
+        "radius": 2,
+        "hits": 1
+      },
+      {
+        "time": 3.351,
+        "type": "attack-windup",
+        "id": 6,
+        "attackId": 1
+      },
+      {
+        "time": 3.551,
+        "type": "attack-lock",
+        "id": 6,
+        "attackId": 1,
+        "angle": -0.2392828542287038
+      },
+      {
+        "time": 3.935,
+        "type": "throw",
+        "target": 6,
+        "x": 0.6135145029018952,
+        "z": -6.514849539926401
+      },
+      {
+        "time": 4.352,
+        "type": "attack-active",
+        "id": 6,
+        "attackId": 1,
+        "windup": 1.000466666666664,
+        "angle": -0.2392828542287038
+      },
+      {
+        "time": 4.352,
+        "type": "player-hurt",
+        "hp": 5,
+        "attackId": 1,
+        "kind": "melee"
+      },
+      {
+        "time": 4.352,
+        "type": "heal",
+        "hp": 6
+      },
+      {
+        "time": 4.352,
+        "type": "progress",
+        "reason": "heal"
+      },
+      {
+        "time": 4.352,
+        "type": "checkpoint",
+        "chapter": "courtyard",
+        "boundary": "C",
+        "persisted": true
+      },
+      {
+        "time": 4.552,
+        "type": "attack-recovery",
+        "id": 6,
+        "attackId": 1
+      },
+      {
+        "time": 4.569,
+        "type": "progress",
+        "reason": "gift-hit"
+      },
+      {
+        "time": 4.569,
+        "type": "enemy-hit",
+        "id": 4,
+        "key": "courtyard:4",
+        "hp": 1
+      },
+      {
+        "time": 4.569,
+        "type": "progress",
+        "reason": "gift-hit"
+      },
+      {
+        "time": 4.569,
+        "type": "enemy-hit",
+        "id": 6,
+        "key": "courtyard:6",
+        "hp": 0
+      },
+      {
+        "time": 4.569,
+        "type": "wrap",
+        "id": 6,
+        "key": "courtyard:6"
+      },
+      {
+        "time": 4.569,
+        "type": "explosion",
+        "x": 0.46935062441608516,
+        "z": -5.923909208818989,
+        "radius": 2,
+        "hits": 2
+      },
+      {
+        "time": 5.169,
+        "type": "attack-windup",
+        "id": 4,
+        "attackId": 2
+      },
+      {
+        "time": 5.369,
+        "type": "attack-lock",
+        "id": 4,
+        "attackId": 2,
+        "angle": -0.6152400266445398
+      },
+      {
+        "time": 5.519,
+        "type": "throw",
+        "target": 5,
+        "x": 1.8251925413116745,
+        "z": -4.910767198693262
+      },
+      {
+        "time": 5.569,
+        "type": "teleport",
+        "id": 6
+      },
+      {
+        "time": 6.086,
+        "type": "progress",
+        "reason": "gift-hit"
+      },
+      {
+        "time": 6.086,
+        "type": "enemy-hit",
+        "id": 4,
+        "key": "courtyard:4",
+        "hp": 0
+      },
+      {
+        "time": 6.086,
+        "type": "wrap",
+        "id": 4,
+        "key": "courtyard:4"
+      },
+      {
+        "time": 6.086,
+        "type": "progress",
+        "reason": "gift-hit"
+      },
+      {
+        "time": 6.086,
+        "type": "enemy-hit",
+        "id": 5,
+        "key": "courtyard:5",
+        "hp": 1
+      },
+      {
+        "time": 6.086,
+        "type": "explosion",
+        "x": 1.2527978451207165,
+        "z": -4.625143461910909,
+        "radius": 2,
+        "hits": 2
+      },
+      {
+        "time": 6.686,
+        "type": "attack-windup",
+        "id": 5,
+        "attackId": 3
+      },
+      {
+        "time": 6.903,
+        "type": "attack-lock",
+        "id": 5,
+        "attackId": 3,
+        "angle": -1.1079507395015817
+      },
+      {
+        "time": 7.036,
+        "type": "throw",
+        "target": 5,
+        "x": 1.3236831203817108,
+        "z": -4.660515063600485
+      },
+      {
+        "time": 7.086,
+        "type": "teleport",
+        "id": 4
+      },
+      {
+        "time": 7.503,
+        "type": "progress",
+        "reason": "gift-hit"
+      },
+      {
+        "time": 7.503,
+        "type": "enemy-hit",
+        "id": 5,
+        "key": "courtyard:5",
+        "hp": 0
+      },
+      {
+        "time": 7.503,
+        "type": "wrap",
+        "id": 5,
+        "key": "courtyard:5"
+      },
+      {
+        "time": 7.503,
+        "type": "explosion",
+        "x": 0.7530459226422532,
+        "z": -4.375768314809891,
+        "radius": 2,
+        "hits": 1
+      },
+      {
+        "time": 7.503,
+        "type": "checkpoint",
+        "chapter": "courtyard",
+        "boundary": "anchor",
+        "persisted": true
+      },
+      {
+        "time": 7.503,
+        "type": "dialogue",
+        "id": "vo.briciola.clear"
+      },
+      {
+        "time": 7.503,
+        "type": "beat",
+        "beat": "anchor"
+      },
+      {
+        "time": 8.503,
+        "type": "teleport",
+        "id": 5
+      },
+      {
+        "time": 10.354,
+        "type": "checkpoint",
+        "chapter": "courtyard",
+        "boundary": "complete",
+        "persisted": true
+      },
+      {
+        "time": 10.354,
+        "type": "anchor-off",
+        "anchors": 1
+      },
+      {
+        "time": 10.354,
+        "type": "dialogue",
+        "id": "vo.briciola.route"
+      }
+    ],
+    "storageAvailable": true,
+    "transitions": [
+      {
+        "action": "menu-action",
+        "chapter": "courtyard",
+        "boundary": "training",
+        "menu": "title",
+        "hp": 6,
+        "time": 0,
+        "button": "continue",
+        "clickDetail": 1
+      }
+    ]
+  },
+  "streetEntry": {
+    "chapter": "toystreet",
+    "act": "toystreet",
+    "actTitle": "La via dei giocattoli",
+    "beat": "street",
+    "group": 0,
+    "player": {
+      "x": 0,
+      "z": 10,
+      "hp": 6,
+      "invulnerableUntil": 1.25,
+      "dodgeUntil": 0,
+      "dodgeReady": 0,
+      "dx": 0,
+      "dz": -1
+    },
+    "camera": {
+      "yaw": 0,
+      "pitch": 0.5,
+      "view": "player"
+    },
+    "disabledAnchors": [],
+    "clearedArenas": [],
+    "activatedArenas": [],
+    "defeatedEnemies": [],
+    "anchorCount": 1,
+    "arenas": [
+      {
+        "id": "workshop",
+        "name": "Officina",
+        "x": -8,
+        "z": -4,
+        "active": false,
+        "clear": false,
+        "remaining": 3
+      },
+      {
+        "id": "carousel",
+        "name": "Giostra",
+        "x": 8,
+        "z": -4,
+        "active": false,
+        "clear": false,
+        "remaining": 3
+      }
+    ],
+    "anchors": [
+      {
+        "id": "workshop",
+        "name": "Officina dei trenini",
+        "x": -8,
+        "z": -9,
+        "arenaId": "workshop",
+        "disabled": false
+      },
+      {
+        "id": "carousel",
+        "name": "Giostra dei regali",
+        "x": 8,
+        "z": -9,
+        "arenaId": "carousel",
+        "disabled": false
+      }
+    ],
+    "bolts": [],
+    "systemConfigs": [
+      {
+        "id": "ranged",
+        "windup": 1.2,
+        "lock": 0.2,
+        "recovery": 1.2,
+        "speed": 6,
+        "radius": 0.18,
+        "range": 12,
+        "travel": 18,
+        "lifetime": 3,
+        "pool": 3
+      }
+    ],
+    "committed": 0,
+    "lastProgress": 0,
+    "hintStage": 0,
+    "rangedLearned": false,
+    "droneHit": true,
+    "dodgeUsed": true,
+    "remaining": 6,
+    "pending": 0,
+    "neutralized": 0,
+    "healAvailable": false,
+    "healed": false,
+    "firstWrapped": true,
+    "review": false,
+    "preview": false,
+    "playing": true,
+    "time": 0.05000000000000001,
+    "enemies": [
+      {
+        "id": 1,
+        "key": "workshop:0",
+        "kind": "ranged",
+        "arenaId": "workshop",
+        "x": -11,
+        "z": -5,
+        "hp": 2,
+        "status": "approach",
+        "since": 0,
+        "attackId": 0,
+        "angle": 0,
+        "hit": false
+      },
+      {
+        "id": 2,
+        "key": "workshop:1",
+        "kind": "ranged",
+        "arenaId": "workshop",
+        "x": -7,
+        "z": -8,
+        "hp": 2,
+        "status": "approach",
+        "since": 0,
+        "attackId": 0,
+        "angle": 0,
+        "hit": false
+      },
+      {
+        "id": 3,
+        "key": "workshop:2",
+        "kind": "ranged",
+        "arenaId": "workshop",
+        "x": -4.5,
+        "z": -10.5,
+        "hp": 2,
+        "status": "approach",
+        "since": 0,
+        "attackId": 0,
+        "angle": 0,
+        "hit": false
+      },
+      {
+        "id": 4,
+        "key": "carousel:0",
+        "kind": "melee",
+        "arenaId": "carousel",
+        "x": 5,
+        "z": -5,
+        "hp": 2,
+        "status": "approach",
+        "since": 0,
+        "attackId": 0,
+        "angle": 0,
+        "hit": false
+      },
+      {
+        "id": 5,
+        "key": "carousel:1",
+        "kind": "melee",
+        "arenaId": "carousel",
+        "x": 10,
+        "z": -7,
+        "hp": 2,
+        "status": "approach",
+        "since": 0,
+        "attackId": 0,
+        "angle": 0,
+        "hit": false
+      },
+      {
+        "id": 6,
+        "key": "carousel:2",
+        "kind": "melee",
+        "arenaId": "carousel",
+        "x": 6,
+        "z": -10.5,
+        "hp": 2,
+        "status": "approach",
+        "since": 0,
+        "attackId": 0,
+        "angle": 0,
+        "hit": false
+      }
+    ],
+    "objective": "La via dei giocattoli · Ancoraggi 1/3",
+    "checkpoint": {
+      "version": 2,
+      "chapter": "toystreet",
+      "boundary": "street",
+      "healed": false,
+      "firstWrapped": true,
+      "disabledAnchors": [],
+      "clearedArenas": [],
+      "activatedArenas": [],
+      "defeatedEnemies": []
+    },
+    "eventLog": [
+      {
+        "time": 0,
+        "type": "checkpoint",
+        "chapter": "toystreet",
+        "boundary": "street",
+        "persisted": true
+      },
+      {
+        "time": 0,
+        "type": "dialogue",
+        "id": "vo.briciola.street"
+      }
+    ],
+    "storageAvailable": true,
+    "transitions": [
+      {
+        "action": "menu-action",
+        "chapter": "courtyard",
+        "boundary": "training",
+        "menu": "title",
+        "hp": 6,
+        "time": 0,
+        "button": "continue",
+        "clickDetail": 1
+      }
+    ]
+  }
+}

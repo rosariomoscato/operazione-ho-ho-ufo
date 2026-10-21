@@ -1,0 +1,1755 @@
+{
+  "pass": true,
+  "errors": [],
+  "runs": [
+    {
+      "order": [
+        "workshop",
+        "carousel"
+      ],
+      "shots": 13,
+      "checks": [
+        "Remote interaction does not activate an anchor",
+        "workshop: cleared progress survives retry and reload before E",
+        "workshop: anchor survives retry/Continue, no duplicate activation",
+        "carousel: cleared progress survives retry and reload before E",
+        "carousel: anchor survives retry/Continue, no duplicate activation"
+      ],
+      "started": 1792566418967,
+      "trace": [
+        {
+          "id": "workshop",
+          "attempt": 0,
+          "chapter": "toystreet",
+          "time": 4.351699999999992,
+          "player": {
+            "x": -5.241706144378206,
+            "z": -2.260834930215319,
+            "hp": 6,
+            "invulnerableUntil": 1.25,
+            "dodgeUntil": 0,
+            "dodgeReady": 0,
+            "dx": 0,
+            "dz": -1
+          },
+          "remaining": 6,
+          "events": [
+            {
+              "time": 3.635,
+              "type": "arena-activated",
+              "id": "workshop",
+              "reason": "proximity"
+            },
+            {
+              "time": 3.635,
+              "type": "checkpoint",
+              "chapter": "toystreet",
+              "boundary": "street",
+              "persisted": true
+            },
+            {
+              "time": 3.635,
+              "type": "ranged-windup",
+              "id": 2,
+              "attackId": 1,
+              "windup": 1.2,
+              "lock": 0.2
+            },
+            {
+              "time": 3.835,
+              "type": "ranged-lock",
+              "id": 2,
+              "attackId": 1,
+              "angle": 0.3240156466309404,
+              "lockedAt": 3.834766666666657
+            }
+          ]
+        },
+        {
+          "id": "workshop",
+          "attempt": 1,
+          "chapter": "toystreet",
+          "time": 5.269099999999999,
+          "player": {
+            "x": -7.587819527910062,
+            "z": -3.3848811540180974,
+            "hp": 6,
+            "invulnerableUntil": 4.951766666666659,
+            "dodgeUntil": 4.951766666666659,
+            "dodgeReady": 5.951766666666659,
+            "dx": -0.9018359665203999,
+            "dz": -0.4320785686541468
+          },
+          "remaining": 6,
+          "events": [
+            {
+              "time": 3.835,
+              "type": "ranged-lock",
+              "id": 2,
+              "attackId": 1,
+              "angle": 0.3240156466309404,
+              "lockedAt": 3.834766666666657
+            },
+            {
+              "time": 4.602,
+              "type": "dodge"
+            },
+            {
+              "time": 4.602,
+              "type": "throw",
+              "target": 1,
+              "x": -10.040080880755367,
+              "z": -4.573754326111586
+            },
+            {
+              "time": 4.835,
+              "type": "ranged-release",
+              "id": 2,
+              "attackId": 1,
+              "boltId": 1,
+              "angle": 0.3240156466309404,
+              "windup": 1.2006333333333368,
+              "lockedFor": 1.0006333333333366,
+              "x": -6.834444579774976,
+              "z": -7.507058418436712,
+              "speed": 6
+            }
+          ]
+        },
+        {
+          "id": "workshop",
+          "attempt": 2,
+          "chapter": "toystreet",
+          "time": 6.28630000000001,
+          "player": {
+            "x": -7.587819527910062,
+            "z": -3.3848811540180974,
+            "hp": 6,
+            "invulnerableUntil": 4.951766666666659,
+            "dodgeUntil": 4.951766666666659,
+            "dodgeReady": 5.951766666666659,
+            "dx": -0.9018359665203999,
+            "dz": -0.4320785686541468
+          },
+          "remaining": 6,
+          "events": [
+            {
+              "time": 5.435,
+              "type": "enemy-hit",
+              "id": 1,
+              "key": "workshop:0",
+              "hp": 1
+            },
+            {
+              "time": 5.435,
+              "type": "explosion",
+              "x": -10.040080880755367,
+              "z": -4.573754326111586,
+              "radius": 2,
+              "hits": 1
+            },
+            {
+              "time": 5.552,
+              "type": "throw",
+              "target": 1,
+              "x": -11.33672598754385,
+              "z": -5.2013418779301395
+            },
+            {
+              "time": 6.036,
+              "type": "recovery-end",
+              "id": 2,
+              "elapsed": 1.2002666666666801
+            }
+          ]
+        },
+        {
+          "id": "workshop",
+          "attempt": 3,
+          "chapter": "toystreet",
+          "time": 7.136600000000019,
+          "player": {
+            "x": -9.933262976152516,
+            "z": -4.508606405169875,
+            "hp": 6,
+            "invulnerableUntil": 6.836400000000011,
+            "dodgeUntil": 6.836400000000011,
+            "dodgeReady": 7.836400000000012,
+            "dx": -0.9018359665203999,
+            "dz": -0.4320785686541468
+          },
+          "remaining": 5,
+          "events": [
+            {
+              "time": 6.386,
+              "type": "checkpoint",
+              "chapter": "toystreet",
+              "boundary": "street",
+              "persisted": true
+            },
+            {
+              "time": 6.386,
+              "type": "explosion",
+              "x": -11.33672598754385,
+              "z": -5.2013418779301395,
+              "radius": 2,
+              "hits": 1
+            },
+            {
+              "time": 6.47,
+              "type": "throw",
+              "target": 2,
+              "x": -6.954476992752436,
+              "z": -8.357412570863337
+            },
+            {
+              "time": 6.486,
+              "type": "dodge"
+            }
+          ]
+        },
+        {
+          "id": "workshop",
+          "attempt": 4,
+          "chapter": "toystreet",
+          "time": 8.270500000000027,
+          "player": {
+            "x": -9.933262976152516,
+            "z": -4.508606405169875,
+            "hp": 6,
+            "invulnerableUntil": 6.836400000000011,
+            "dodgeUntil": 6.836400000000011,
+            "dodgeReady": 7.836400000000012,
+            "dx": -0.9018359665203999,
+            "dz": -0.4320785686541468
+          },
+          "remaining": 5,
+          "events": [
+            {
+              "time": 7.253,
+              "type": "explosion",
+              "x": -6.991459229413207,
+              "z": -8.06705573636599,
+              "radius": 2,
+              "hits": 1
+            },
+            {
+              "time": 7.62,
+              "type": "throw",
+              "target": 2,
+              "x": -6.886649964930493,
+              "z": -8.617530997372073
+            },
+            {
+              "time": 7.787,
+              "type": "teleport",
+              "id": 1
+            },
+            {
+              "time": 7.837,
+              "type": "bolt-end",
+              "id": 1,
+              "attackId": 1,
+              "reason": "expired",
+              "x": -1.1006873009277944,
+              "z": 9.565214887343837,
+              "age": 3.001566666666661
+            }
+          ]
+        },
+        {
+          "id": "workshop",
+          "attempt": 5,
+          "chapter": "toystreet",
+          "time": 9.004200000000056,
+          "player": {
+            "x": -9.933262976152516,
+            "z": -4.508606405169875,
+            "hp": 6,
+            "invulnerableUntil": 6.836400000000011,
+            "dodgeUntil": 6.836400000000011,
+            "dodgeReady": 7.836400000000012,
+            "dx": -0.9018359665203999,
+            "dz": -0.4320785686541468
+          },
+          "remaining": 4,
+          "events": [
+            {
+              "time": 8.354,
+              "type": "checkpoint",
+              "chapter": "toystreet",
+              "boundary": "street",
+              "persisted": true
+            },
+            {
+              "time": 8.354,
+              "type": "explosion",
+              "x": -7.245911350214592,
+              "z": -8.133000164087687,
+              "radius": 2,
+              "hits": 1
+            },
+            {
+              "time": 8.437,
+              "type": "ranged-windup",
+              "id": 3,
+              "attackId": 2,
+              "windup": 1.2,
+              "lock": 0.2
+            },
+            {
+              "time": 8.637,
+              "type": "ranged-lock",
+              "id": 3,
+              "attackId": 2,
+              "angle": -0.7867691173433394,
+              "lockedAt": 8.637400000000044
+            }
+          ]
+        },
+        {
+          "id": "workshop",
+          "attempt": 6,
+          "chapter": "toystreet",
+          "time": 10.1878000000001,
+          "player": {
+            "x": -8.097357633344505,
+            "z": -6.34965273056451,
+            "hp": 6,
+            "invulnerableUntil": 9.887600000000072,
+            "dodgeUntil": 9.887600000000072,
+            "dodgeReady": 10.887600000000072,
+            "dx": 0.7061174395415357,
+            "dz": -0.7080947405363958
+          },
+          "remaining": 4,
+          "events": [
+            {
+              "time": 9.354,
+              "type": "teleport",
+              "id": 2
+            },
+            {
+              "time": 9.538,
+              "type": "dodge"
+            },
+            {
+              "time": 9.538,
+              "type": "throw",
+              "target": 3,
+              "x": -4.497001915411463,
+              "z": -9.92998213658194
+            },
+            {
+              "time": 9.638,
+              "type": "ranged-release",
+              "id": 3,
+              "attackId": 2,
+              "boltId": 2,
+              "angle": -0.7867691173433394,
+              "windup": 1.200466666666708,
+              "lockedFor": 1.0001666666666988,
+              "x": -4.86520118955859,
+              "z": -9.562791049384103,
+              "speed": 6
+            }
+          ]
+        },
+        {
+          "id": "workshop",
+          "attempt": 7,
+          "chapter": "toystreet",
+          "time": 10.938100000000135,
+          "player": {
+            "x": -8.097357633344505,
+            "z": -6.34965273056451,
+            "hp": 5,
+            "invulnerableUntil": 11.537866666666774,
+            "dodgeUntil": 9.887600000000072,
+            "dodgeReady": 10.887600000000072,
+            "dx": 0.7061174395415357,
+            "dz": -0.7080947405363958
+          },
+          "remaining": 4,
+          "events": [
+            {
+              "time": 10.305,
+              "type": "enemy-hit",
+              "id": 3,
+              "key": "workshop:2",
+              "hp": 1
+            },
+            {
+              "time": 10.305,
+              "type": "explosion",
+              "x": -4.9223093983988475,
+              "z": -9.505839211712647,
+              "radius": 2,
+              "hits": 1
+            },
+            {
+              "time": 10.838,
+              "type": "recovery-end",
+              "id": 3,
+              "elapsed": 1.2005333333333876
+            },
+            {
+              "time": 10.905,
+              "type": "ranged-windup",
+              "id": 3,
+              "attackId": 3,
+              "windup": 1.2,
+              "lock": 0.2
+            }
+          ]
+        },
+        {
+          "id": "workshop",
+          "attempt": 8,
+          "chapter": "toystreet",
+          "time": 11.705100000000169,
+          "player": {
+            "x": -6.260927746152851,
+            "z": -8.191225069194962,
+            "hp": 5,
+            "invulnerableUntil": 11.537866666666774,
+            "dodgeUntil": 11.40480000000014,
+            "dodgeReady": 12.40480000000014,
+            "dx": 0.7061174395415357,
+            "dz": -0.7080947405363958
+          },
+          "remaining": 3,
+          "events": [
+            {
+              "time": 11.005,
+              "type": "arena-clear",
+              "id": "workshop"
+            },
+            {
+              "time": 11.005,
+              "type": "checkpoint",
+              "chapter": "toystreet",
+              "boundary": "street",
+              "persisted": true
+            },
+            {
+              "time": 11.038,
+              "type": "throw",
+              "target": "ground",
+              "x": -4.222850752205983,
+              "z": -10.282577712397323
+            },
+            {
+              "time": 11.055,
+              "type": "dodge"
+            }
+          ]
+        },
+        {
+          "id": "carousel",
+          "attempt": 0,
+          "chapter": "toystreet",
+          "time": 3.584699999999991,
+          "player": {
+            "x": 4.913482039895981,
+            "z": -1.62147788122145,
+            "hp": 6,
+            "invulnerableUntil": 1.25,
+            "dodgeUntil": 0,
+            "dodgeReady": 0,
+            "dx": 0,
+            "dz": -1
+          },
+          "remaining": 3,
+          "events": [
+            {
+              "time": 3.068,
+              "type": "progress",
+              "reason": "arena-enter"
+            },
+            {
+              "time": 3.068,
+              "type": "arena-activated",
+              "id": "carousel",
+              "reason": "proximity"
+            },
+            {
+              "time": 3.068,
+              "type": "checkpoint",
+              "chapter": "toystreet",
+              "boundary": "street",
+              "persisted": true
+            },
+            {
+              "time": 3.518,
+              "type": "attack-windup",
+              "id": 1,
+              "attackId": 1
+            }
+          ]
+        },
+        {
+          "id": "carousel",
+          "attempt": 1,
+          "chapter": "toystreet",
+          "time": 4.468499999999992,
+          "player": {
+            "x": 4.895271415084173,
+            "z": -3.0262855336839967,
+            "hp": 6,
+            "invulnerableUntil": 4.151466666666657,
+            "dodgeUntil": 4.151466666666657,
+            "dodgeReady": 5.151466666666657,
+            "dx": -0.011999712002073604,
+            "dz": -0.9999280008639958
+          },
+          "remaining": 3,
+          "events": [
+            {
+              "time": 3.801,
+              "type": "throw",
+              "target": 3,
+              "x": 5.758629670616369,
+              "z": -8.756241129647838
+            },
+            {
+              "time": 4.118,
+              "type": "progress",
+              "reason": "gift-hit"
+            },
+            {
+              "time": 4.118,
+              "type": "enemy-hit",
+              "id": 1,
+              "key": "carousel:0",
+              "hp": 1
+            },
+            {
+              "time": 4.118,
+              "type": "explosion",
+              "x": 5.245045055493109,
+              "z": -4.420543431702141,
+              "radius": 2,
+              "hits": 1
+            }
+          ]
+        },
+        {
+          "id": "carousel",
+          "attempt": 2,
+          "chapter": "toystreet",
+          "time": 5.171099999999995,
+          "player": {
+            "x": 4.896471770094235,
+            "z": -2.9065315494168744,
+            "hp": 6,
+            "invulnerableUntil": 4.151466666666657,
+            "dodgeUntil": 4.151466666666657,
+            "dodgeReady": 5.151466666666657,
+            "dx": -0.011999712002073604,
+            "dz": -0.9999280008639958
+          },
+          "remaining": 2,
+          "events": [
+            {
+              "time": 4.535,
+              "type": "checkpoint",
+              "chapter": "toystreet",
+              "boundary": "street",
+              "persisted": true
+            },
+            {
+              "time": 4.535,
+              "type": "explosion",
+              "x": 4.931921866589967,
+              "z": -3.227891742339718,
+              "radius": 2,
+              "hits": 1
+            },
+            {
+              "time": 4.785,
+              "type": "attack-windup",
+              "id": 2,
+              "attackId": 2
+            },
+            {
+              "time": 4.985,
+              "type": "attack-lock",
+              "id": 2,
+              "attackId": 2,
+              "angle": -0.855381580103693
+            }
+          ]
+        },
+        {
+          "id": "carousel",
+          "attempt": 3,
+          "chapter": "toystreet",
+          "time": 6.169200000000001,
+          "player": {
+            "x": 6.145202970563049,
+            "z": -4.022393558407381,
+            "hp": 6,
+            "invulnerableUntil": 5.852099999999996,
+            "dodgeUntil": 5.852099999999996,
+            "dodgeReady": 6.8520999999999965,
+            "dx": 0.752598867991776,
+            "dz": -0.6584792661105567
+          },
+          "remaining": 2,
+          "events": [
+            {
+              "time": 5.986,
+              "type": "attack-recovery",
+              "id": 2,
+              "attackId": 2
+            },
+            {
+              "time": 6.136,
+              "type": "progress",
+              "reason": "gift-hit"
+            },
+            {
+              "time": 6.136,
+              "type": "enemy-hit",
+              "id": 2,
+              "key": "carousel:1",
+              "hp": 1
+            },
+            {
+              "time": 6.136,
+              "type": "explosion",
+              "x": 6.38317881397797,
+              "z": -4.1984619619885315,
+              "radius": 2,
+              "hits": 1
+            }
+          ]
+        },
+        {
+          "id": "carousel",
+          "attempt": 4,
+          "chapter": "toystreet",
+          "time": 7.236200000000005,
+          "player": {
+            "x": 6.145202970563049,
+            "z": -4.022393558407381,
+            "hp": 6,
+            "invulnerableUntil": 5.852099999999996,
+            "dodgeUntil": 5.852099999999996,
+            "dodgeReady": 6.8520999999999965,
+            "dx": 0.752598867991776,
+            "dz": -0.6584792661105567
+          },
+          "remaining": 1,
+          "events": [
+            {
+              "time": 6.903,
+              "type": "checkpoint",
+              "chapter": "toystreet",
+              "boundary": "street",
+              "persisted": true
+            },
+            {
+              "time": 6.903,
+              "type": "progress",
+              "reason": "gift-hit"
+            },
+            {
+              "time": 6.903,
+              "type": "enemy-hit",
+              "id": 3,
+              "key": "carousel:2",
+              "hp": 1
+            },
+            {
+              "time": 6.903,
+              "type": "explosion",
+              "x": 6.417542949191928,
+              "z": -4.247000419525163,
+              "radius": 2,
+              "hits": 2
+            }
+          ]
+        },
+        {
+          "id": "carousel",
+          "attempt": 5,
+          "chapter": "toystreet",
+          "time": 8.253300000000019,
+          "player": {
+            "x": 6.402120367008325,
+            "z": -3.548208212413261,
+            "hp": 6,
+            "invulnerableUntil": 5.852099999999996,
+            "dodgeUntil": 5.852099999999996,
+            "dodgeReady": 6.8520999999999965,
+            "dx": 0.752598867991776,
+            "dz": -0.6584792661105567
+          },
+          "remaining": 0,
+          "events": [
+            {
+              "time": 7.92,
+              "type": "explosion",
+              "x": 6.2339192791170985,
+              "z": -3.8586523168679676,
+              "radius": 2,
+              "hits": 1
+            },
+            {
+              "time": 7.92,
+              "type": "progress",
+              "reason": "arena-clear"
+            },
+            {
+              "time": 7.92,
+              "type": "arena-clear",
+              "id": "carousel"
+            },
+            {
+              "time": 7.92,
+              "type": "checkpoint",
+              "chapter": "toystreet",
+              "boundary": "street",
+              "persisted": true
+            }
+          ]
+        }
+      ],
+      "final": {
+        "chapter": "toystreet",
+        "act": "toystreet",
+        "actTitle": "La via dei giocattoli",
+        "beat": "street-complete",
+        "group": 0,
+        "player": {
+          "x": 0,
+          "z": 10,
+          "hp": 6,
+          "invulnerableUntil": 1.25,
+          "dodgeUntil": 0,
+          "dodgeReady": 0,
+          "dx": 0,
+          "dz": -1
+        },
+        "camera": {
+          "yaw": 0,
+          "pitch": 0.5,
+          "view": "player"
+        },
+        "disabledAnchors": [
+          "workshop",
+          "carousel"
+        ],
+        "clearedArenas": [
+          "workshop",
+          "carousel"
+        ],
+        "activatedArenas": [
+          "workshop",
+          "carousel"
+        ],
+        "defeatedEnemies": [
+          "workshop:0",
+          "workshop:1",
+          "workshop:2",
+          "carousel:0",
+          "carousel:1",
+          "carousel:2"
+        ],
+        "anchorCount": 3,
+        "arenas": [
+          {
+            "id": "workshop",
+            "name": "Officina",
+            "x": -8,
+            "z": -4,
+            "active": true,
+            "clear": true,
+            "remaining": 0
+          },
+          {
+            "id": "carousel",
+            "name": "Giostra",
+            "x": 8,
+            "z": -4,
+            "active": true,
+            "clear": true,
+            "remaining": 0
+          }
+        ],
+        "anchors": [
+          {
+            "id": "workshop",
+            "name": "Officina dei trenini",
+            "x": -8,
+            "z": -9,
+            "arenaId": "workshop",
+            "disabled": true
+          },
+          {
+            "id": "carousel",
+            "name": "Giostra dei regali",
+            "x": 8,
+            "z": -9,
+            "arenaId": "carousel",
+            "disabled": true
+          }
+        ],
+        "bolts": [],
+        "systemConfigs": [
+          {
+            "id": "ranged",
+            "windup": 1.2,
+            "lock": 0.2,
+            "recovery": 1.2,
+            "speed": 6,
+            "radius": 0.18,
+            "range": 12,
+            "travel": 18,
+            "lifetime": 3,
+            "pool": 3
+          }
+        ],
+        "committed": 0,
+        "lastProgress": 0,
+        "hintStage": 0,
+        "rangedLearned": false,
+        "droneHit": true,
+        "dodgeUsed": true,
+        "remaining": 0,
+        "pending": 0,
+        "neutralized": 6,
+        "healAvailable": true,
+        "healed": false,
+        "firstWrapped": true,
+        "review": false,
+        "preview": false,
+        "playing": true,
+        "time": 0.3002,
+        "enemies": [],
+        "objective": "3/3 · La nave è scesa verso la piazza",
+        "checkpoint": {
+          "version": 2,
+          "chapter": "toystreet",
+          "boundary": "street-complete",
+          "healed": false,
+          "firstWrapped": true,
+          "disabledAnchors": [
+            "workshop",
+            "carousel"
+          ],
+          "clearedArenas": [
+            "workshop",
+            "carousel"
+          ],
+          "activatedArenas": [
+            "workshop",
+            "carousel"
+          ],
+          "defeatedEnemies": [
+            "workshop:0",
+            "workshop:1",
+            "workshop:2",
+            "carousel:0",
+            "carousel:1",
+            "carousel:2"
+          ]
+        },
+        "eventLog": [],
+        "storageAvailable": true,
+        "transitions": [
+          {
+            "action": "menu-action",
+            "chapter": "courtyard",
+            "boundary": "training",
+            "menu": "title",
+            "hp": 6,
+            "time": 0,
+            "button": "continue",
+            "clickDetail": 1
+          }
+        ]
+      },
+      "wallSeconds": 36.633
+    },
+    {
+      "order": [
+        "carousel",
+        "workshop"
+      ],
+      "shots": 12,
+      "checks": [
+        "Remote interaction does not activate an anchor",
+        "carousel: cleared progress survives retry and reload before E",
+        "carousel: anchor survives retry/Continue, no duplicate activation",
+        "workshop: cleared progress survives retry and reload before E",
+        "workshop: anchor survives retry/Continue, no duplicate activation"
+      ],
+      "started": 1792566457372,
+      "trace": [
+        {
+          "id": "carousel",
+          "attempt": 0,
+          "chapter": "toystreet",
+          "time": 4.601799999999997,
+          "player": {
+            "x": 5.109398407911464,
+            "z": -2.084863667304317,
+            "hp": 6,
+            "invulnerableUntil": 1.25,
+            "dodgeUntil": 0,
+            "dodgeReady": 0,
+            "dx": 0,
+            "dz": -1
+          },
+          "remaining": 6,
+          "events": [
+            {
+              "time": 3.951,
+              "type": "arena-activated",
+              "id": "carousel",
+              "reason": "proximity"
+            },
+            {
+              "time": 3.951,
+              "type": "checkpoint",
+              "chapter": "toystreet",
+              "boundary": "street",
+              "persisted": true
+            },
+            {
+              "time": 4.385,
+              "type": "attack-windup",
+              "id": 4,
+              "attackId": 1
+            },
+            {
+              "time": 4.585,
+              "type": "attack-lock",
+              "id": 4,
+              "attackId": 1,
+              "angle": 0.11201561521792014
+            }
+          ]
+        },
+        {
+          "id": "carousel",
+          "attempt": 1,
+          "chapter": "toystreet",
+          "time": 5.735500000000008,
+          "player": {
+            "x": 4.953135655331575,
+            "z": -3.0266272700907706,
+            "hp": 6,
+            "invulnerableUntil": 5.418500000000002,
+            "dodgeUntil": 5.418500000000002,
+            "dodgeReady": 6.418500000000002,
+            "dx": -0.11574002563907285,
+            "dz": -0.9932795409475959
+          },
+          "remaining": 6,
+          "events": [
+            {
+              "time": 5.069,
+              "type": "dodge"
+            },
+            {
+              "time": 5.369,
+              "type": "progress",
+              "reason": "gift-hit"
+            },
+            {
+              "time": 5.369,
+              "type": "enemy-hit",
+              "id": 4,
+              "key": "carousel:0",
+              "hp": 1
+            },
+            {
+              "time": 5.369,
+              "type": "explosion",
+              "x": 5.334776617964565,
+              "z": -4.357886211174301,
+              "radius": 2,
+              "hits": 1
+            }
+          ]
+        },
+        {
+          "id": "carousel",
+          "attempt": 2,
+          "chapter": "toystreet",
+          "time": 6.602600000000015,
+          "player": {
+            "x": 4.983696481748246,
+            "z": -2.50744595081134,
+            "hp": 6,
+            "invulnerableUntil": 5.418500000000002,
+            "dodgeUntil": 5.418500000000002,
+            "dodgeReady": 6.418500000000002,
+            "dx": -0.11574002563907285,
+            "dz": -0.9932795409475959
+          },
+          "remaining": 5,
+          "events": [
+            {
+              "time": 6.036,
+              "type": "checkpoint",
+              "chapter": "toystreet",
+              "boundary": "street",
+              "persisted": true
+            },
+            {
+              "time": 6.036,
+              "type": "explosion",
+              "x": 5.020095195998351,
+              "z": -2.8206599601072186,
+              "radius": 2,
+              "hits": 1
+            },
+            {
+              "time": 6.036,
+              "type": "attack-windup",
+              "id": 5,
+              "attackId": 3
+            },
+            {
+              "time": 6.236,
+              "type": "attack-lock",
+              "id": 5,
+              "attackId": 3,
+              "angle": -0.8334538718550095
+            }
+          ]
+        },
+        {
+          "id": "carousel",
+          "attempt": 3,
+          "chapter": "toystreet",
+          "time": 7.63630000000002,
+          "player": {
+            "x": 6.128731500888083,
+            "z": -3.5649032519991253,
+            "hp": 6,
+            "invulnerableUntil": 7.336300000000015,
+            "dodgeUntil": 7.336300000000015,
+            "dodgeReady": 8.336300000000016,
+            "dx": 0.7392796458680209,
+            "dz": -0.6733985485618852
+          },
+          "remaining": 5,
+          "events": [
+            {
+              "time": 7.569,
+              "type": "enemy-hit",
+              "id": 5,
+              "key": "carousel:1",
+              "hp": 1
+            },
+            {
+              "time": 7.569,
+              "type": "progress",
+              "reason": "gift-hit"
+            },
+            {
+              "time": 7.569,
+              "type": "enemy-hit",
+              "id": 6,
+              "key": "carousel:2",
+              "hp": 1
+            },
+            {
+              "time": 7.569,
+              "type": "explosion",
+              "x": 6.33977910948063,
+              "z": -3.7390782880574642,
+              "radius": 2,
+              "hits": 2
+            }
+          ]
+        },
+        {
+          "id": "carousel",
+          "attempt": 4,
+          "chapter": "toystreet",
+          "time": 8.419800000000038,
+          "player": {
+            "x": 6.184278358537358,
+            "z": -3.4799709496678624,
+            "hp": 6,
+            "invulnerableUntil": 7.336300000000015,
+            "dodgeUntil": 7.336300000000015,
+            "dodgeReady": 8.336300000000016,
+            "dx": 0.7392796458680209,
+            "dz": -0.6733985485618852
+          },
+          "remaining": 3,
+          "events": [
+            {
+              "time": 8.086,
+              "type": "explosion",
+              "x": 6.393255967819039,
+              "z": -3.7982907926073515,
+              "radius": 2,
+              "hits": 2
+            },
+            {
+              "time": 8.086,
+              "type": "progress",
+              "reason": "arena-clear"
+            },
+            {
+              "time": 8.086,
+              "type": "arena-clear",
+              "id": "carousel"
+            },
+            {
+              "time": 8.086,
+              "type": "checkpoint",
+              "chapter": "toystreet",
+              "boundary": "street",
+              "persisted": true
+            }
+          ]
+        },
+        {
+          "id": "workshop",
+          "attempt": 0,
+          "chapter": "toystreet",
+          "time": 3.934699999999992,
+          "player": {
+            "x": -4.903302542280653,
+            "z": -1.4692776412668744,
+            "hp": 6,
+            "invulnerableUntil": 1.25,
+            "dodgeUntil": 0,
+            "dodgeReady": 0,
+            "dx": 0,
+            "dz": -1
+          },
+          "remaining": 3,
+          "events": [
+            {
+              "time": 3.435,
+              "type": "arena-activated",
+              "id": "workshop",
+              "reason": "proximity"
+            },
+            {
+              "time": 3.435,
+              "type": "checkpoint",
+              "chapter": "toystreet",
+              "boundary": "street",
+              "persisted": true
+            },
+            {
+              "time": 3.435,
+              "type": "ranged-windup",
+              "id": 2,
+              "attackId": 1,
+              "windup": 1.2,
+              "lock": 0.2
+            },
+            {
+              "time": 3.635,
+              "type": "ranged-lock",
+              "id": 2,
+              "attackId": 1,
+              "angle": 0.32470946660863476,
+              "lockedAt": 3.6347333333333256
+            }
+          ]
+        },
+        {
+          "id": "workshop",
+          "attempt": 1,
+          "chapter": "toystreet",
+          "time": 5.035299999999997,
+          "player": {
+            "x": -6.404498265213247,
+            "z": -2.9816115999086477,
+            "hp": 6,
+            "invulnerableUntil": 1.25,
+            "dodgeUntil": 0,
+            "dodgeReady": 0,
+            "dx": 0,
+            "dz": -1
+          },
+          "remaining": 3,
+          "events": [
+            {
+              "time": 3.435,
+              "type": "checkpoint",
+              "chapter": "toystreet",
+              "boundary": "street",
+              "persisted": true
+            },
+            {
+              "time": 3.435,
+              "type": "ranged-windup",
+              "id": 2,
+              "attackId": 1,
+              "windup": 1.2,
+              "lock": 0.2
+            },
+            {
+              "time": 3.635,
+              "type": "ranged-lock",
+              "id": 2,
+              "attackId": 1,
+              "angle": 0.32470946660863476,
+              "lockedAt": 3.6347333333333256
+            },
+            {
+              "time": 4.635,
+              "type": "ranged-release",
+              "id": 2,
+              "attackId": 1,
+              "boltId": 1,
+              "angle": 0.32470946660863476,
+              "windup": 1.2004666666666681,
+              "lockedFor": 1.0004333333333357,
+              "x": -6.8341026069333335,
+              "z": -7.507173402733087,
+              "speed": 6
+            }
+          ]
+        },
+        {
+          "id": "workshop",
+          "attempt": 2,
+          "chapter": "toystreet",
+          "time": 5.8189,
+          "player": {
+            "x": -8.792272670447517,
+            "z": -4.021674289696025,
+            "hp": 6,
+            "invulnerableUntil": 5.501866666666663,
+            "dodgeUntil": 5.501866666666663,
+            "dodgeReady": 6.501866666666663,
+            "dx": -0.916803108771767,
+            "dz": -0.39933952940627304
+          },
+          "remaining": 3,
+          "events": [
+            {
+              "time": 3.635,
+              "type": "ranged-lock",
+              "id": 2,
+              "attackId": 1,
+              "angle": 0.32470946660863476,
+              "lockedAt": 3.6347333333333256
+            },
+            {
+              "time": 4.635,
+              "type": "ranged-release",
+              "id": 2,
+              "attackId": 1,
+              "boltId": 1,
+              "angle": 0.32470946660863476,
+              "windup": 1.2004666666666681,
+              "lockedFor": 1.0004333333333357,
+              "x": -6.8341026069333335,
+              "z": -7.507173402733087,
+              "speed": 6
+            },
+            {
+              "time": 5.152,
+              "type": "dodge"
+            },
+            {
+              "time": 5.152,
+              "type": "throw",
+              "target": 1,
+              "x": -10.644061543364447,
+              "z": -4.837315978799152
+            }
+          ]
+        },
+        {
+          "id": "workshop",
+          "attempt": 3,
+          "chapter": "toystreet",
+          "time": 6.719400000000004,
+          "player": {
+            "x": -8.792272670447517,
+            "z": -4.021674289696025,
+            "hp": 6,
+            "invulnerableUntil": 5.501866666666663,
+            "dodgeUntil": 5.501866666666663,
+            "dodgeReady": 6.501866666666663,
+            "dx": -0.916803108771767,
+            "dz": -0.39933952940627304
+          },
+          "remaining": 3,
+          "events": [
+            {
+              "time": 5.986,
+              "type": "throw",
+              "target": 1,
+              "x": -12.018401803037634,
+              "z": -5.441293857574025
+            },
+            {
+              "time": 5.986,
+              "type": "progress",
+              "reason": "gift-hit"
+            },
+            {
+              "time": 5.986,
+              "type": "enemy-hit",
+              "id": 1,
+              "key": "workshop:0",
+              "hp": 1
+            },
+            {
+              "time": 5.986,
+              "type": "explosion",
+              "x": -10.644061543364447,
+              "z": -4.837315978799152,
+              "radius": 2,
+              "hits": 1
+            }
+          ]
+        },
+        {
+          "id": "workshop",
+          "attempt": 4,
+          "chapter": "toystreet",
+          "time": 7.569600000000005,
+          "player": {
+            "x": -11.177322860730014,
+            "z": -5.060550370596028,
+            "hp": 6,
+            "invulnerableUntil": 7.185966666666671,
+            "dodgeUntil": 7.185966666666671,
+            "dodgeReady": 8.18596666666667,
+            "dx": -0.916803108771767,
+            "dz": -0.39933952940627304
+          },
+          "remaining": 2,
+          "events": [
+            {
+              "time": 6.819,
+              "type": "progress",
+              "reason": "wrapped"
+            },
+            {
+              "time": 6.819,
+              "type": "checkpoint",
+              "chapter": "toystreet",
+              "boundary": "street",
+              "persisted": true
+            },
+            {
+              "time": 6.819,
+              "type": "explosion",
+              "x": -12.018401803037634,
+              "z": -5.441293857574025,
+              "radius": 2,
+              "hits": 1
+            },
+            {
+              "time": 6.836,
+              "type": "dodge"
+            }
+          ]
+        },
+        {
+          "id": "workshop",
+          "attempt": 5,
+          "chapter": "toystreet",
+          "time": 8.820200000000042,
+          "player": {
+            "x": -11.177322860730014,
+            "z": -5.060550370596028,
+            "hp": 6,
+            "invulnerableUntil": 7.185966666666671,
+            "dodgeUntil": 7.185966666666671,
+            "dodgeReady": 8.18596666666667,
+            "dx": -0.916803108771767,
+            "dz": -0.39933952940627304
+          },
+          "remaining": 2,
+          "events": [
+            {
+              "time": 8.153,
+              "type": "throw",
+              "target": 2,
+              "x": -6.728805901432179,
+              "z": -8.601972273864819
+            },
+            {
+              "time": 8.22,
+              "type": "teleport",
+              "id": 1
+            },
+            {
+              "time": 8.236,
+              "type": "ranged-windup",
+              "id": 2,
+              "attackId": 2,
+              "windup": 1.2,
+              "lock": 0.2
+            },
+            {
+              "time": 8.437,
+              "type": "ranged-lock",
+              "id": 2,
+              "attackId": 2,
+              "angle": -0.8984438020858241,
+              "lockedAt": 8.436566666666696
+            }
+          ]
+        },
+        {
+          "id": "workshop",
+          "attempt": 6,
+          "chapter": "toystreet",
+          "time": 9.65370000000007,
+          "player": {
+            "x": -9.146573867037137,
+            "z": -6.685334028070146,
+            "hp": 6,
+            "invulnerableUntil": 9.253366666666711,
+            "dodgeUntil": 9.253366666666711,
+            "dodgeReady": 10.253366666666711,
+            "dx": 0.7808342097779803,
+            "dz": -0.6247382946805783
+          },
+          "remaining": 2,
+          "events": [
+            {
+              "time": 8.903,
+              "type": "progress",
+              "reason": "gift-hit"
+            },
+            {
+              "time": 8.903,
+              "type": "enemy-hit",
+              "id": 2,
+              "key": "workshop:1",
+              "hp": 1
+            },
+            {
+              "time": 8.903,
+              "type": "explosion",
+              "x": -7.163364950279666,
+              "z": -8.25602396166707,
+              "radius": 2,
+              "hits": 1
+            },
+            {
+              "time": 9.504,
+              "type": "ranged-windup",
+              "id": 2,
+              "attackId": 3,
+              "windup": 1.2,
+              "lock": 0.2
+            }
+          ]
+        },
+        {
+          "id": "workshop",
+          "attempt": 7,
+          "chapter": "toystreet",
+          "time": 10.537900000000107,
+          "player": {
+            "x": -9.146573867037137,
+            "z": -6.685334028070146,
+            "hp": 6,
+            "invulnerableUntil": 9.253366666666711,
+            "dodgeUntil": 9.253366666666711,
+            "dodgeReady": 10.253366666666711,
+            "dx": 0.7808342097779803,
+            "dz": -0.6247382946805783
+          },
+          "remaining": 1,
+          "events": [
+            {
+              "time": 9.704,
+              "type": "explosion",
+              "x": -6.8146361109998015,
+              "z": -8.533643663025284,
+              "radius": 2,
+              "hits": 1
+            },
+            {
+              "time": 9.704,
+              "type": "ranged-windup",
+              "id": 3,
+              "attackId": 4,
+              "windup": 1.2,
+              "lock": 0.2
+            },
+            {
+              "time": 9.804,
+              "type": "throw",
+              "target": 3,
+              "x": -4.497404629279799,
+              "z": -9.870215298056388
+            },
+            {
+              "time": 9.904,
+              "type": "ranged-lock",
+              "id": 3,
+              "attackId": 4,
+              "angle": -0.9701792461920707,
+              "lockedAt": 9.90380000000008
+            }
+          ]
+        },
+        {
+          "id": "workshop",
+          "attempt": 8,
+          "chapter": "toystreet",
+          "time": 11.671200000000136,
+          "player": {
+            "x": -7.004202926218161,
+            "z": -8.159820433878618,
+            "hp": 6,
+            "invulnerableUntil": 11.354266666666785,
+            "dodgeUntil": 11.354266666666785,
+            "dodgeReady": 12.354266666666785,
+            "dx": 0.8237534652589853,
+            "dz": -0.5669481708884982
+          },
+          "remaining": 1,
+          "events": [
+            {
+              "time": 10.988,
+              "type": "throw",
+              "target": 3,
+              "x": -4.497404629279799,
+              "z": -9.870215298056388
+            },
+            {
+              "time": 11.004,
+              "type": "dodge"
+            },
+            {
+              "time": 11.154,
+              "type": "ranged-windup",
+              "id": 3,
+              "attackId": 5,
+              "windup": 1.2,
+              "lock": 0.2
+            },
+            {
+              "time": 11.354,
+              "type": "ranged-lock",
+              "id": 3,
+              "attackId": 5,
+              "angle": -0.9719920962705779,
+              "lockedAt": 11.354366666666795
+            }
+          ]
+        },
+        {
+          "id": "workshop",
+          "attempt": 9,
+          "chapter": "toystreet",
+          "time": 12.972000000000179,
+          "player": {
+            "x": -7.004202926218161,
+            "z": -8.159820433878618,
+            "hp": 6,
+            "invulnerableUntil": 11.354266666666785,
+            "dodgeUntil": 11.354266666666785,
+            "dodgeReady": 12.354266666666785,
+            "dx": 0.8237534652589853,
+            "dz": -0.5669481708884982
+          },
+          "remaining": 0,
+          "events": [
+            {
+              "time": 11.755,
+              "type": "checkpoint",
+              "chapter": "toystreet",
+              "boundary": "street",
+              "persisted": true
+            },
+            {
+              "time": 12.005,
+              "type": "throw",
+              "target": "ground",
+              "x": -2.4993009753227255,
+              "z": -11.303162785780941
+            },
+            {
+              "time": 12.755,
+              "type": "teleport",
+              "id": 3
+            },
+            {
+              "time": 12.839,
+              "type": "explosion",
+              "x": -2.4993009753227255,
+              "z": -11.303162785780941,
+              "radius": 2,
+              "hits": 0
+            }
+          ]
+        }
+      ],
+      "final": {
+        "chapter": "toystreet",
+        "act": "toystreet",
+        "actTitle": "La via dei giocattoli",
+        "beat": "street-complete",
+        "group": 0,
+        "player": {
+          "x": 0,
+          "z": 10,
+          "hp": 6,
+          "invulnerableUntil": 1.25,
+          "dodgeUntil": 0,
+          "dodgeReady": 0,
+          "dx": 0,
+          "dz": -1
+        },
+        "camera": {
+          "yaw": 0,
+          "pitch": 0.5,
+          "view": "player"
+        },
+        "disabledAnchors": [
+          "carousel",
+          "workshop"
+        ],
+        "clearedArenas": [
+          "carousel",
+          "workshop"
+        ],
+        "activatedArenas": [
+          "carousel",
+          "workshop"
+        ],
+        "defeatedEnemies": [
+          "carousel:0",
+          "carousel:1",
+          "carousel:2",
+          "workshop:0",
+          "workshop:1",
+          "workshop:2"
+        ],
+        "anchorCount": 3,
+        "arenas": [
+          {
+            "id": "workshop",
+            "name": "Officina",
+            "x": -8,
+            "z": -4,
+            "active": true,
+            "clear": true,
+            "remaining": 0
+          },
+          {
+            "id": "carousel",
+            "name": "Giostra",
+            "x": 8,
+            "z": -4,
+            "active": true,
+            "clear": true,
+            "remaining": 0
+          }
+        ],
+        "anchors": [
+          {
+            "id": "workshop",
+            "name": "Officina dei trenini",
+            "x": -8,
+            "z": -9,
+            "arenaId": "workshop",
+            "disabled": true
+          },
+          {
+            "id": "carousel",
+            "name": "Giostra dei regali",
+            "x": 8,
+            "z": -9,
+            "arenaId": "carousel",
+            "disabled": true
+          }
+        ],
+        "bolts": [],
+        "systemConfigs": [
+          {
+            "id": "ranged",
+            "windup": 1.2,
+            "lock": 0.2,
+            "recovery": 1.2,
+            "speed": 6,
+            "radius": 0.18,
+            "range": 12,
+            "travel": 18,
+            "lifetime": 3,
+            "pool": 3
+          }
+        ],
+        "committed": 0,
+        "lastProgress": 0,
+        "hintStage": 0,
+        "rangedLearned": false,
+        "droneHit": true,
+        "dodgeUsed": true,
+        "remaining": 0,
+        "pending": 0,
+        "neutralized": 6,
+        "healAvailable": true,
+        "healed": false,
+        "firstWrapped": true,
+        "review": false,
+        "preview": false,
+        "playing": true,
+        "time": 0.16670000000000007,
+        "enemies": [],
+        "objective": "3/3 · La nave è scesa verso la piazza",
+        "checkpoint": {
+          "version": 2,
+          "chapter": "toystreet",
+          "boundary": "street-complete",
+          "healed": false,
+          "firstWrapped": true,
+          "disabledAnchors": [
+            "carousel",
+            "workshop"
+          ],
+          "clearedArenas": [
+            "carousel",
+            "workshop"
+          ],
+          "activatedArenas": [
+            "carousel",
+            "workshop"
+          ],
+          "defeatedEnemies": [
+            "carousel:0",
+            "carousel:1",
+            "carousel:2",
+            "workshop:0",
+            "workshop:1",
+            "workshop:2"
+          ]
+        },
+        "eventLog": [],
+        "storageAvailable": true,
+        "transitions": [
+          {
+            "action": "menu-action",
+            "chapter": "courtyard",
+            "boundary": "training",
+            "menu": "title",
+            "hp": 6,
+            "time": 0,
+            "button": "continue",
+            "clickDetail": 1
+          }
+        ]
+      },
+      "wallSeconds": 40.034
+    }
+  ]
+}

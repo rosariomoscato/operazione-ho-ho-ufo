@@ -9,5 +9,8 @@ export const dialogueLines = {
   'vo.briciola.heal': ['Briciola', 'Campanello al centro! Se sei ferito, raccoglilo per recuperare 2 punti.'],
   'vo.briciola.clear': ['Briciola', 'Area libera! Vai al dispositivo e premi E.'],
   'vo.briciola.route': ['Briciola', 'Elfi liberi! Gli altri due ancoraggi sono lungo la via dei giocattoli.'],
+  'vo.briciola.street': ['Briciola', 'Due ancoraggi: Officina o Giostra, scegli tu. Libera un lato, poi premi E sul suo dispositivo.'],
+  'vo.squamakk.gifts': ['Squamakk', 'Smettetela di accettare pacchi dal nemico!'],
+  'vo.briciola.square': ['Briciola', 'Scudo spento! La nave scende verso la piazza. Il nucleo è ancora là: ci fermeremo prima del prossimo scontro.'],
 } as const;
 export type DialogueId = keyof typeof dialogueLines;

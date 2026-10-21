@@ -1,0 +1,460 @@
+{
+  "page": "index.html",
+  "scenario": "street-left-clear",
+  "size": [
+    1280,
+    720
+  ],
+  "gpu": "default",
+  "frames": [
+    {
+      "view": "player",
+      "time": 0,
+      "file": "00-player-0.png",
+      "stats": {
+        "renderFrame": 8,
+        "drawCalls": 32,
+        "triangles": 36658,
+        "geometries": 57,
+        "textures": 3,
+        "lights": 3,
+        "shadowLights": 0,
+        "postPasses": 0,
+        "shipHeight": 8,
+        "audio": {
+          "loaded": false,
+          "activeEffects": 0,
+          "error": null
+        }
+      },
+      "selfTest": {
+        "pass": true,
+        "checks": [
+          {
+            "name": "santa feet floor (m)",
+            "value": 0,
+            "limit": 0.002,
+            "pass": true
+          },
+          {
+            "name": "alien 1 feet floor (m)",
+            "value": 0,
+            "limit": 0.002,
+            "pass": true
+          },
+          {
+            "name": "alien 2 feet floor (m)",
+            "value": 0,
+            "limit": 0.002,
+            "pass": true
+          },
+          {
+            "name": "alien 3 feet floor (m)",
+            "value": 0,
+            "limit": 0.002,
+            "pass": true
+          },
+          {
+            "name": "player collider penetration",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "enemy collider penetration",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "committed attacks including flying bolts",
+            "value": 0,
+            "limit": 1,
+            "pass": true
+          },
+          {
+            "name": "unique level registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "level registry contains courtyard",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "swept collider regression",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "wall ray regression",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "unique acts registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "unique cast registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "unique systems registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "unique scenarios registry",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "active world lights",
+            "value": 3,
+            "limit": 3,
+            "pass": true
+          },
+          {
+            "name": "maximum live defenders",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "anchor count matches unique local IDs",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "disabled anchor without cleared arena",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "chapter completion agrees with anchors",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "workshop spawn collider",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "workshop spawn collider",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "workshop spawn collider",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "carousel spawn collider",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "carousel spawn collider",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "carousel spawn collider",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "bounded hostile bolt pool",
+            "value": 0,
+            "limit": 1,
+            "pass": true
+          },
+          {
+            "name": "live bolt finite and unexpired",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "draw calls",
+            "value": 32,
+            "limit": 150,
+            "pass": true
+          },
+          {
+            "name": "triangles",
+            "value": 36658,
+            "limit": 150000,
+            "pass": true
+          },
+          {
+            "name": "lights",
+            "value": 3,
+            "limit": 6,
+            "pass": true
+          },
+          {
+            "name": "shadow lights",
+            "value": 0,
+            "limit": 2,
+            "pass": true
+          },
+          {
+            "name": "telegraph < 1 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "recovery < 1.2 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "observed ranged telegraph < 1.2 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "observed ranged locked time < .8 s",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          },
+          {
+            "name": "duplicate damage by attack ID",
+            "value": 0,
+            "limit": 0,
+            "pass": true
+          }
+        ],
+        "stats": {
+          "renderFrame": 9,
+          "drawCalls": 32,
+          "triangles": 36658,
+          "geometries": 57,
+          "textures": 3,
+          "lights": 3,
+          "shadowLights": 0,
+          "postPasses": 0,
+          "shipHeight": 8,
+          "audio": {
+            "loaded": false,
+            "activeEffects": 0,
+            "error": null
+          }
+        },
+        "evidence": {
+          "meleeReleases": 0,
+          "rangedReleases": 0,
+          "damageEvents": 0,
+          "handContactsMeasured": 0
+        },
+        "notes": [
+          "Empty attack logs are NOT timing evidence.",
+          "Only cast exposing root.userData.measureHandContacts has measured hand contacts.",
+          "Performance is draw/triangle budget, not a laptop FPS claim."
+        ]
+      },
+      "state": {
+        "chapter": "toystreet",
+        "act": "toystreet",
+        "actTitle": "La via dei giocattoli",
+        "beat": "street",
+        "group": 0,
+        "player": {
+          "x": -8,
+          "z": -7,
+          "hp": 6,
+          "invulnerableUntil": 1.25,
+          "dodgeUntil": 0,
+          "dodgeReady": 0,
+          "dx": 0,
+          "dz": -1
+        },
+        "camera": {
+          "yaw": 0,
+          "pitch": 0.5,
+          "view": "player"
+        },
+        "disabledAnchors": [],
+        "clearedArenas": [
+          "workshop"
+        ],
+        "activatedArenas": [
+          "workshop"
+        ],
+        "defeatedEnemies": [],
+        "anchorCount": 1,
+        "arenas": [
+          {
+            "id": "workshop",
+            "name": "Officina",
+            "x": -8,
+            "z": -4,
+            "active": true,
+            "clear": true,
+            "remaining": 0
+          },
+          {
+            "id": "carousel",
+            "name": "Giostra",
+            "x": 8,
+            "z": -4,
+            "active": false,
+            "clear": false,
+            "remaining": 3
+          }
+        ],
+        "anchors": [
+          {
+            "id": "workshop",
+            "name": "Officina dei trenini",
+            "x": -8,
+            "z": -9,
+            "arenaId": "workshop",
+            "disabled": false
+          },
+          {
+            "id": "carousel",
+            "name": "Giostra dei regali",
+            "x": 8,
+            "z": -9,
+            "arenaId": "carousel",
+            "disabled": false
+          }
+        ],
+        "bolts": [],
+        "systemConfigs": [
+          {
+            "id": "ranged",
+            "windup": 1.2,
+            "lock": 0.2,
+            "recovery": 1.2,
+            "speed": 6,
+            "radius": 0.18,
+            "range": 12,
+            "travel": 18,
+            "lifetime": 3,
+            "pool": 3
+          }
+        ],
+        "committed": 0,
+        "lastProgress": 0,
+        "hintStage": 0,
+        "rangedLearned": true,
+        "droneHit": true,
+        "dodgeUsed": true,
+        "remaining": 3,
+        "pending": 0,
+        "neutralized": 3,
+        "healAvailable": true,
+        "healed": false,
+        "firstWrapped": true,
+        "review": true,
+        "preview": false,
+        "playing": false,
+        "time": 0,
+        "enemies": [
+          {
+            "id": 1,
+            "key": "carousel:0",
+            "kind": "melee",
+            "arenaId": "carousel",
+            "x": 5,
+            "z": -5,
+            "hp": 2,
+            "status": "approach",
+            "since": 0,
+            "attackId": 0,
+            "angle": 0,
+            "hit": false
+          },
+          {
+            "id": 2,
+            "key": "carousel:1",
+            "kind": "melee",
+            "arenaId": "carousel",
+            "x": 10,
+            "z": -7,
+            "hp": 2,
+            "status": "approach",
+            "since": 0,
+            "attackId": 0,
+            "angle": 0,
+            "hit": false
+          },
+          {
+            "id": 3,
+            "key": "carousel:2",
+            "kind": "melee",
+            "arenaId": "carousel",
+            "x": 6,
+            "z": -10.5,
+            "hp": 2,
+            "status": "approach",
+            "since": 0,
+            "attackId": 0,
+            "angle": 0,
+            "hit": false
+          }
+        ],
+        "objective": "Spegni l’ancoraggio pronto: E · Ancoraggi 1/3",
+        "checkpoint": {
+          "version": 2,
+          "chapter": "toystreet",
+          "boundary": "street",
+          "healed": false,
+          "firstWrapped": true,
+          "disabledAnchors": [],
+          "clearedArenas": [
+            "workshop"
+          ],
+          "activatedArenas": [
+            "workshop"
+          ],
+          "defeatedEnemies": []
+        },
+        "eventLog": [],
+        "storageAvailable": true,
+        "transitions": []
+      },
+      "budgetPass": true
+    }
+  ],
+  "errors": [],
+  "warnings": [],
+  "pass": true,
+  "deterministic": true,
+  "fpsProbe": {
+    "samples": 45,
+    "meanMs": 16.675555555555558,
+    "fps": 59.968017057569284,
+    "note": "Headless single-frame seek/render smoke test only; not proof of laptop performance."
+  }
+}

@@ -92,20 +92,32 @@ export async function capture(options) {
     // Determinism: identical inputs must yield byte-identical PNGs.
     await page.evaluate(({ view, time }) => { LC.setView(view); LC.seek(time); LC.renderNow(); }, report.frames[0]);
     const first = await page.screenshot();
+    const firstState = await page.evaluate(() => typeof LC.state === 'function' ? LC.state() : null);
     await page.evaluate(() => { LC.seek(1.123); LC.renderNow(); });
     await page.evaluate(({ view, time }) => { LC.setView(view); LC.seek(time); LC.renderNow(); }, report.frames[0]);
-    report.deterministic = first.equals(await page.screenshot());
+    const repeated = await page.screenshot();
+    report.deterministic = first.equals(repeated);
+    if (!report.deterministic) {
+      await writeFile(join(out, '_determinism-before.png'), first);
+      await writeFile(join(out, '_determinism-after.png'), repeated);
+      await writeFile(join(out, '_determinism-states.json'), JSON.stringify({ before: firstState, after: await page.evaluate(() => typeof LC.state === 'function' ? LC.state() : null) }, null, 2));
+    }
     report.fpsProbe = await page.evaluate(async () => {
       const samples = []; let previous;
       await new Promise(done => {
         const tick = now => {
           if (previous !== undefined) samples.push(now - previous);
-          previous = now; LC.seek(samples.length / 60); LC.renderNow();
+          previous = now;
+          const before = LC.getStats().renderFrame;
+          LC.seek(samples.length / 60);
+          // Some pages render in seek(), others expose a state-only seek.
+          // Do not accidentally benchmark two GPU renders per animation frame.
+          if (!Number.isFinite(before) || LC.getStats().renderFrame === before) LC.renderNow();
           if (samples.length < 45) requestAnimationFrame(tick); else done();
         }; requestAnimationFrame(tick);
       });
       const meanMs = samples.reduce((a, b) => a + b, 0) / samples.length;
-      return { samples: samples.length, meanMs, fps: 1000 / meanMs, note: 'Headless smoke test only; not proof of laptop performance.' };
+      return { samples: samples.length, meanMs, fps: 1000 / meanMs, note: 'Headless single-frame seek/render smoke test only; not proof of laptop performance.' };
     });
     if (options.visualChecks) report.visualAudit = await visualAudit(page, views, out);
     const sheet = await browser.newPage({ viewport: { width: 960, height: Math.ceil(tiles.length / 2) * 298 }, deviceScaleFactor: 1 });

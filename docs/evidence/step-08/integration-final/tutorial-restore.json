@@ -1,0 +1,22 @@
+{
+  "pass": true,
+  "source": "report.json, final state after last retry and reload/Continue in both orders",
+  "checks": [
+    {
+      "order": [
+        "workshop",
+        "carousel"
+      ],
+      "rangedLearned": true,
+      "anchors": 3
+    },
+    {
+      "order": [
+        "carousel",
+        "workshop"
+      ],
+      "rangedLearned": true,
+      "anchors": 3
+    }
+  ]
+}

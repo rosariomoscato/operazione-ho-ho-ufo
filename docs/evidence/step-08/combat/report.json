@@ -1,0 +1,362 @@
+{
+  "pass": true,
+  "kind": "controlled-real-Game-update-not-playthrough",
+  "url": "http://127.0.0.1:5174/",
+  "sourceHashes": {
+    "src/game.ts": "ea701b5d56f9964126d6ca3d60c011ef6fea53fd7c06ad408d47bcfff11ce7dd",
+    "src/gameplay/systems/ranged.ts": "925ad68baaa5eed951539eaf5679e9af34f09009db57fc839e364cea8021ad98",
+    "src/engine/math.ts": "f54bfb9c6659821857f9cc2c2c1a1478404a3542143422f81bdce9a3072b2432",
+    "src/storage.ts": "182dad83aaea41ecf902f79c08d7be59219c8ac0ea45e3e5ae9059e9a9d251cc",
+    "src/levels/toystreet.ts": "3f2efd6f7344aa9aecfcb77288c8042a651a9eaa48ae874516098fc78d92f5e6",
+    "src/contracts.ts": "4cafed25b35666ff844af9ab89453d39ffcea297dcfad64fe7617e69efdfee5c"
+  },
+  "fixtures": {
+    "viewport": [
+      960,
+      540
+    ],
+    "stepSeconds": 0.01,
+    "raf": "playing=false",
+    "review": "true except automatic persistence/Continue assertions; RAF remains stopped",
+    "mutations": "Only initial actor/player positions, initial HP, active arena fixtures and irrelevant NPC exclusion. No methods/formulas/obstacles are overridden.",
+    "entry": "Only browser response for /src/main.ts is replaced; source and dist remain untouched."
+  },
+  "pageErrors": [],
+  "tests": [
+    {
+      "name": "1: real telegraph/lock and one global melee/ranged/flying-bolt slot",
+      "pass": true,
+      "evidence": {
+        "rangedFirst": {
+          "tracked": 0.05708078240626461,
+          "locked": 0.05708078240626461,
+          "lockedSamples": 94,
+          "release": {
+            "time": 1.21,
+            "type": "ranged-release",
+            "id": 1,
+            "attackId": 1,
+            "boltId": 1,
+            "angle": 0.05708078240626461,
+            "windup": 1.2000000000000008,
+            "lockedFor": 1.0000000000000009,
+            "x": 0.029665891080026735,
+            "z": -9.480846906099533,
+            "speed": 6
+          },
+          "recovery": {
+            "time": 2.42,
+            "type": "recovery-end",
+            "id": 1,
+            "elapsed": 1.2099999999999915
+          },
+          "boltDirection": {
+            "dx": 0.05704979053851295,
+            "dz": 0.9983713344239766
+          },
+          "flightSamples": 301,
+          "maxCommitted": 1,
+          "boltEnd": {
+            "time": 4.22,
+            "type": "bolt-end",
+            "id": 1,
+            "attackId": 1,
+            "reason": "expired",
+            "x": 1.059985108205566,
+            "z": 8.549739393597465,
+            "age": 3.00999999999998
+          }
+        },
+        "meleeFirst": {
+          "meleeWindup": {
+            "time": 0.01,
+            "type": "attack-windup",
+            "id": 4,
+            "attackId": 1
+          },
+          "rangedWindups": 0,
+          "committed": 1
+        },
+        "realOffscreenAcquisitionRejected": true
+      }
+    },
+    {
+      "name": "2: actual train cover wins a large-delta sweep, no HP lost",
+      "pass": true,
+      "evidence": {
+        "manualStressDelta": 2,
+        "before": {
+          "time": 1.2100000000000009,
+          "hp": 6,
+          "bolt": {
+            "id": 2,
+            "attackId": 1,
+            "owner": 1,
+            "x": -8,
+            "y": 1.2,
+            "z": -4.48,
+            "dx": 0,
+            "dz": 1,
+            "speed": 6,
+            "age": 0,
+            "status": "flying"
+          }
+        },
+        "impact": {
+          "time": 3.21,
+          "type": "bolt-end",
+          "id": 2,
+          "attackId": 1,
+          "reason": "cover",
+          "collider": "street-train-cover",
+          "x": -8,
+          "z": -2.18,
+          "age": 2
+        },
+        "hp": 6,
+        "obstacles": [
+          {
+            "id": "street-west-shop",
+            "minX": -14,
+            "maxX": -10,
+            "minZ": -1,
+            "maxZ": 4
+          },
+          {
+            "id": "street-east-shop",
+            "minX": 10,
+            "maxX": 14,
+            "minZ": -1,
+            "maxZ": 4
+          },
+          {
+            "id": "street-train-cover",
+            "minX": -10,
+            "maxX": -6,
+            "minZ": -2,
+            "maxZ": -0.5
+          },
+          {
+            "id": "street-carousel-cover",
+            "minX": 6,
+            "maxX": 10,
+            "minZ": -2,
+            "maxZ": -0.5
+          }
+        ]
+      }
+    },
+    {
+      "name": "3: covered acquisition rejected, clear lane gives exactly one damage per bolt",
+      "pass": true,
+      "evidence": {
+        "coveredAcquisitionRejected": true,
+        "hp": 5,
+        "hits": [
+          {
+            "time": 2.02,
+            "type": "player-hurt",
+            "hp": 5,
+            "attackId": 1,
+            "kind": "ranged"
+          }
+        ],
+        "impact": {
+          "time": 2.02,
+          "type": "bolt-end",
+          "id": 3,
+          "attackId": 1,
+          "reason": "player",
+          "collider": "player",
+          "x": 0,
+          "z": -3.66,
+          "age": 0.8100000000000005
+        }
+      }
+    },
+    {
+      "name": "4: real Game.dodge during arrival avoids damage and consumes bolt",
+      "pass": true,
+      "evidence": {
+        "before": {
+          "time": 1.8800000000000014,
+          "hp": 6,
+          "player": {
+            "x": 0,
+            "z": -3,
+            "hp": 6,
+            "invulnerableUntil": 0,
+            "dodgeUntil": 0,
+            "dodgeReady": 0,
+            "dx": 0,
+            "dz": -1
+          },
+          "bolt": {
+            "id": 4,
+            "attackId": 1,
+            "owner": 1,
+            "x": 0,
+            "y": 1.2,
+            "z": -4.46000000000002,
+            "dx": 0,
+            "dz": 1,
+            "speed": 6,
+            "age": 0.6700000000000004,
+            "status": "flying"
+          }
+        },
+        "dodgeStarted": 1.8800000000000014,
+        "protectedUntil": 2.2300000000000013,
+        "hp": 6,
+        "avoided": {
+          "time": 1.94,
+          "type": "hit-avoided",
+          "attackId": 1,
+          "kind": "ranged"
+        },
+        "impact": {
+          "time": 1.94,
+          "type": "bolt-end",
+          "id": 4,
+          "attackId": 1,
+          "reason": "player",
+          "collider": "player",
+          "x": 0,
+          "z": -4.105714285714286,
+          "age": 0.7300000000000004
+        }
+      }
+    },
+    {
+      "name": "5: healing +2, cap6, no farm after actual retry/Continue",
+      "pass": true,
+      "evidence": {
+        "pickupFrom3": 5,
+        "saved": {
+          "version": 2,
+          "chapter": "toystreet",
+          "boundary": "street",
+          "healed": true,
+          "firstWrapped": true,
+          "disabledAnchors": [],
+          "clearedArenas": [
+            "workshop"
+          ],
+          "activatedArenas": [
+            "workshop"
+          ],
+          "defeatedEnemies": []
+        },
+        "retry": {
+          "chapter": "toystreet",
+          "hp": 3,
+          "healed": true,
+          "available": false
+        },
+        "continued": {
+          "chapter": "toystreet",
+          "hp": 3,
+          "healed": true,
+          "available": false
+        },
+        "fullHealthPreservedPickup": true,
+        "cappedFrom5": 6
+      }
+    },
+    {
+      "name": "6: actual ship node8/5.5/3, live E descent and completed restore already3",
+      "pass": true,
+      "evidence": {
+        "seek": [
+          {
+            "time": 0,
+            "height": 8
+          },
+          {
+            "time": 1.5,
+            "height": 5.5
+          },
+          {
+            "time": 3,
+            "height": 3
+          }
+        ],
+        "liveStart": 0.7000000000000004,
+        "live": [
+          {
+            "time": 0.7000000000000004,
+            "height": 8
+          },
+          {
+            "time": 2.199999999999997,
+            "height": 5.500000000000008
+          },
+          {
+            "time": 3.699999999999965,
+            "height": 3
+          }
+        ],
+        "restored": {
+          "time": 0,
+          "height": 3,
+          "count": 3
+        }
+      }
+    },
+    {
+      "name": "7: E gives local protected/range reasons; either cleared side works independently",
+      "pass": true,
+      "evidence": {
+        "protected": {
+          "event": {
+            "time": 0,
+            "type": "interact-denied",
+            "id": "workshop",
+            "reason": "protected",
+            "guards": 3
+          },
+          "feedback": "Officina dei trenini protetto · 3 difensori locali"
+        },
+        "far": {
+          "event": {
+            "time": 0,
+            "type": "interact-denied",
+            "id": "workshop",
+            "reason": "out-of-range",
+            "distance": 20.6155281280883
+          },
+          "feedback": "Officina dei trenini · 20.6 m: avvicinati entro 2,2 m"
+        },
+        "independent": [
+          {
+            "side": "workshop",
+            "otherLiving": 3,
+            "disabled": [
+              "workshop"
+            ],
+            "count": 2,
+            "feedback": "Officina dei trenini: già spento · 2/3 ancoraggi"
+          },
+          {
+            "side": "carousel",
+            "otherLiving": 3,
+            "disabled": [
+              "carousel"
+            ],
+            "count": 2,
+            "feedback": "Giostra dei regali: già spento · 2/3 ancoraggi"
+          }
+        ]
+      }
+    }
+  ],
+  "entryIntercepted": true,
+  "sourceHashesAfter": {
+    "src/game.ts": "ea701b5d56f9964126d6ca3d60c011ef6fea53fd7c06ad408d47bcfff11ce7dd",
+    "src/gameplay/systems/ranged.ts": "925ad68baaa5eed951539eaf5679e9af34f09009db57fc839e364cea8021ad98",
+    "src/engine/math.ts": "f54bfb9c6659821857f9cc2c2c1a1478404a3542143422f81bdce9a3072b2432",
+    "src/storage.ts": "182dad83aaea41ecf902f79c08d7be59219c8ac0ea45e3e5ae9059e9a9d251cc",
+    "src/levels/toystreet.ts": "3f2efd6f7344aa9aecfcb77288c8042a651a9eaa48ae874516098fc78d92f5e6",
+    "src/contracts.ts": "4cafed25b35666ff844af9ab89453d39ffcea297dcfad64fe7617e69efdfee5c"
+  }
+}
