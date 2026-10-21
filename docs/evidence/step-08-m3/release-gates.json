@@ -11,7 +11,8 @@
   "captureFrames": 31,
   "fullPlaythrough": "docs/evidence/step-08-m3/final/report.json",
   "sourceManifest": "docs/evidence/step-08-m3/final/source-manifest.json",
-  "userApprovedFullGame": false,
+  "userApprovedFullGame": true,
+  "userApproval": "mi sembra ok",
   "publishingAuthorized": false,
   "spendingAuthorized": false
 }

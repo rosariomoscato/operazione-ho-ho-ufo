@@ -41,7 +41,7 @@ Progetto basato sulla pipeline in 10 passi della skill `build-a-game`. Iniziare 
 16. Progressione e interazioni si misurano: arene/ancoraggi/cure indipendenti, nessun doppio conteggio o pickup duplicato dopo retry/Continua. Nuovi atti devono migrare i salvataggi precedenti senza alterare la copia congelata. Interagire fuori portata o con oggetto protetto dà sempre una ragione visibile.
 17. `snapshots/m1-slice/` è immutabile e approvato: non modificarlo, rigenerarlo o sovrascriverlo. Il test di hash in `tools/street.test.mjs` deve restare positivo.
 18. Anche `snapshots/m2-street/` è approvato e immutabile; server5177, manifest SHA256 in `docs/evidence/step-08/m2-snapshot-baseline.json`. Non cambiare i file né i testi storici della copia. Gli hash di entrambe le copie sono gate di regressione.
-19. `snapshots/release-candidate/` è congelata per il playtest dell'avventura completa su5179, non ancora approvata dall'utente. Non modificarla o sovrascriverla; hash in `tools/release.test.mjs`. Fix e polish vanno nel sorgente e in una nuova milestone, non nella RC conservata.
+19. `snapshots/release-candidate/` è congelata e approvata dall'utente («mi sembra ok») su5179. Non modificarla o sovrascriverla; hash in `tools/release.test.mjs`. Fix e polish vanno nel sorgente e in una nuova milestone, non nella RC conservata.
 
 ## Debug visivo disponibile
 

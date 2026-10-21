@@ -1,6 +1,6 @@
 # Operazione Ho Ho UFO
 
-Action comico 3D per browser. **Avventura completa pronta per il playtest utente**, dal cortile al boss Squamakk e alla restituzione del nucleo. Cortile e via dei giocattoli già approvati; rifinitura finale e pubblicazione ancora da approvare.
+Action comico 3D per browser. **Avventura completa approvata dall'utente**, dal cortile al boss Squamakk e alla restituzione del nucleo. Copia conservata su5179; rifinitura finale non ancora avviata, nessuna pubblicazione autorizzata.
 
 ## Avvio locale
 

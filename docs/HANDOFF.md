@@ -13,7 +13,7 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | 5 | Demo personaggio parlante | Saltato | Percorso gratuito scelto: dialoghi solo a testo, niente voci o labiale |
 | 6 | Vertical slice | Completato | Build/test/catture/review/fresh-eyes e rerun finali PASS |
 | 7 | Playtest | Completato | Utente: «va bene»; snapshot M1 congelato e verificato su5176 |
-| 8 | Gioco completo | In corso | Avventura completa/RC locale pronta; attesa playtest utente prima del passo9 |
+| 8 | Gioco completo | Completato | Avventura completa approvata dall'utente: «mi sembra ok»; copia5179 conservata |
 | 9 | Rifinitura | Non iniziato | |
 | 10 | Deploy | Non iniziato | Nessuna pubblicazione autorizzata |
 
@@ -38,8 +38,9 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 | 2026-10-21 | Cartella unica con proprietà separate, nessun nuovo worktree dopo questionario interrotto | Default conservativo dell'integratore, come M1 |
 | 2026-10-21 | Via dei giocattoli approvata; procedere con piazza, Squamakk e finale già previsti | Utente: «va bene, continua» |
 | 2026-10-21 | M3 usa tre cicli1/2/3coni sequenziali, segmenti persistenti e interazioni nucleo/albero; coordinate tecniche scelte dentro concept | Autonomo, DESIGN PASS reviewer `docs/set-pieces/square.md` |
+| 2026-10-21 | Avventura completa approvata dopo consegna della release candidate5179 | Utente: «mi sembra ok»; nessuna nuova modifica richiesta |
 
-**Passo corrente:** 8, **avventura completa pronta per il playtest utente**. Release candidate immutabile **http://127.0.0.1:5179/** (`npm.cmd run snapshot:release`), cartella `snapshots/release-candidate/`, build **D86qgQyq**. **Nuova partita** per percorso completo; **Prova la piazza e Squamakk** per il nuovo atto senza sostituire progressi. M1 e M2 approvati restano su5176/5177. Nessuna pubblicazione o spesa autorizzata. Non passare al9 finché l'utente non prova/approva l'avventura completa.
+**Passo corrente:** **8 completato**, avventura completa approvata con «mi sembra ok». Prossimo **9, rifinitura, non ancora avviato**; riferimento09-polish letto. Nessuna ulteriore modifica richiesta dall'utente: non inventare problemi o nuove scelte creative. Copia approvata immutabile **http://127.0.0.1:5179/** (`npm.cmd run snapshot:release`), `snapshots/release-candidate/`, build **D86qgQyq**. M1/M2 restano su5176/5177. Nessuna pubblicazione o spesa autorizzata.
 
 ### Consegna avventura completa — gate finali
 
@@ -173,9 +174,9 @@ Percorso gratuito esplicitamente scelto: **0 crediti, 0 API, nessun account rich
 
 ## 6. Prossimi passi
 
-1. Consegnare linkRC5179: Nuova partita oppure Prova la piazza e Squamakk. Lasciare giocare l'utente; raccogliere sensazioni su boss, chiarezza, fluidità, grafica e audio senza un altro ciclo di sviluppo anticipato.
+1. Approvazione dell'avventura registrata; non richiederla di nuovo. La consegna5179 resta la copia di riferimento, senza modificare i suoi file.
 2. Registrare feedback in BACKLOG, chiarire ambiguità e verificare le correzioni. M1/M2/RC restano intatti; cambiare solo sorgente e nuove milestone, mai sovrascrivere copie congelate.
-3. All'approvazione dell'avventura completa chiudere passo8 e iniziare9 leggendo il suo riferimento; affrontare i MINOR e gli aspetti di polish con review e nuovo check-in. Non ripetere concept/stile/audio/costi già scelti.
+3. Quando l'utente chiede di proseguire, avviare9 (riferimento09-polish già letto): breve rifinitura guidata dai MINOR e dai controlli di accessibilità/camera/chiarezza/performance/mix. L'utente non ha espresso fastidi prioritari; non ripetere concept/stile/audio/costi già scelti. Review e nuovo check-in prima di una nuova copia polished.
 4. Nessuna pubblicazione o spesa autorizzata. Non garantire durata umana o60fps: prestazioni reali da giudicare sul PC utente. Deploy solo dopo consenso esplicito.
 
 ## 7. Evidenze M1
