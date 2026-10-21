@@ -45,6 +45,8 @@ Concept approvato. Leggere `AGENTS.md` e questo file a ogni nuova sessione; cont
 
 ### Consegna rifinitura — riepilogo finale autorevole
 
+**Skill di progetto aggiunta su richiesta dell'utente:** `deploy-an-app`, da `https://github.com/leonvanzyl/skills/tree/main/skills/apps/deploy-an-app`, installata in `.opencode/skills/deploy-an-app/` (SKILL.md +13riferimenti). Tutti14file verificati byte-per-byte rispetto agli hash Git upstream; entry blob `3a35a13e5b9b84f3d9877758d0c1e7c09cc5eb77`, references tree `2bab0c23593b8e299e98bf4d4bd2bb34e8830455`. OpenCode la riconosce. Installazione soltanto: nessun comando della skill eseguito, nessuna configurazione globale modificata, nessun deploy o spesa autorizzati. La skill upstream è orientata a Next.js/Vercel; non implica conversione del gioco Vite/Three.js.
+
 - **45unitPASS** + testhashpolishedPASS,81fileM1/M2/RC immutati. Source manifest42file, HTMLdist/catture/fullbot/frozen identiciTmJx2Hx1.
 - Camera gameplay risolta:864pose/288viste realiPASS, clearance≥.28m; bounds pubblici world-space, nessuna geometria/collider spostata, fade locale clone-only. Fixturebuilder2712pose/FOV45/53/75 e stressM2renderizzato138call86.494tri, non misura fpshardware. Nuove preferenze7tasti/sensibilità/invertY/FOV e focus/valoriUI:7/7browserPASS, salvate senza toccare checkpoint3.
 -9/9controlliM3PASS,27framefinaliPASS inclusi audit1080/software/assistOFF/ridottomovimento; mixerHTMLAudio realePASS. Fullbot **25lanci2mortiboss con2segmenti mantenuti,279.762swall**,tuttiatti→finale,zeroerrori: non durataumana.
