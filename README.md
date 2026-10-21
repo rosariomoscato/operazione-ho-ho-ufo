@@ -25,6 +25,8 @@ Il generale **Squamakk** ha rubato il nucleo natalizio e vuole usarlo per invade
 
 Non servono armi convenzionali: i tuoi regali **impacchettano i rettiliani e li rispediscono alla nave**. L'avventura è in terza persona, con movimento, mira, schivata e interazioni guidate. Tono leggero, nessun sangue e una sorpresa natalizia anche per il generale.
 
+Questa introduzione è leggibile anche nel gioco: apri **La missione** nel menu iniziale. La lettura avviene prima della partita, senza timer o combattimento in corso.
+
 ### Tre atti, un'unica avventura
 
 | Atto | Ambientazione | Cosa ti aspetta |
@@ -186,6 +188,8 @@ Per i laboratori e i confronti originali: `npm run dev:labs`, poi [laboratorio t
 **Gioco online:** https://operazione-ho-ho-ufo.vercel.app
 
 Il [repository pubblico GitHub](https://github.com/rosariomoscato/operazione-ho-ho-ufo) è collegato a Vercel. Il branch di produzione è **`master`**: un push su quel branch avvia automaticamente una nuova pubblicazione.
+
+> Nell'aggiornamento con README, credits e MIT il trigger automatico non è partito: la build è stata avviata esplicitamente da Vercel sul commit Git pubblicato. Se dopo un push non compare un nuovo deployment, verifica l'integrazione prima di considerare il sito aggiornato. Dettagli in [DEPLOYMENT.md](docs/DEPLOYMENT.md).
 
 Configurazione: preset **Vite**, installazione `npm ci`, build `npm run build`, cartella pubblicata **`dist`**. Il gioco non richiede chiavi, database o configurazione di servizi esterni. Il dominio del sito e quelli delle preview mantengono salvataggi distinti.
 

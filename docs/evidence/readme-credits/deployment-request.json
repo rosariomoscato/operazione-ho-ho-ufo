@@ -1,0 +1,11 @@
+{
+  "name": "operazione-ho-ho-ufo",
+  "project": "prj_6fGbsacHJ7djSleYM0iFUEIE8zeR",
+  "target": "production",
+  "gitSource": {
+    "type": "github",
+    "repoId": "1428392628",
+    "ref": "master",
+    "sha": "63503dac8d63ce362a168e86e4d5ed8319144967"
+  }
+}

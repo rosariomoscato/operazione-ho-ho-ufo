@@ -1,0 +1,29 @@
+{
+  "id": "dpl_4GFke3LQDLLodYWgwUet4NypPpEZ",
+  "project": "operazione-ho-ho-ufo",
+  "target": "production",
+  "readyState": "READY",
+  "gitCommitSha": "63503dac8d63ce362a168e86e4d5ed8319144967",
+  "deploymentUrl": "https://operazione-ho-ho-d51klncem-ros-projects-592f0548.vercel.app",
+  "productionUrl": "https://operazione-ho-ho-ufo.vercel.app",
+  "aliases": [
+    "operazione-ho-ho-ufo.vercel.app",
+    "operazione-ho-ho-ufo-ros-projects-592f0548.vercel.app",
+    "operazione-ho-ho-ufo-git-master-ros-projects-592f0548.vercel.app"
+  ],
+  "source": "GitHub master, exact SHA; explicit Vercel Git-source deployment after push did not trigger an automatic build",
+  "verifiedBy": "Vercel API create response and CLI inspect --wait --json",
+  "build": {
+    "readyState": "READY",
+    "installCommand": "npm ci",
+    "buildCommand": "npm run build",
+    "outputDirectory": "dist",
+    "framework": "vite",
+    "nodeVersion": "24.x",
+    "machine": "basic, plan default"
+  },
+  "limitations": [
+    "No new public-site browser or HTTP smoke test was performed for this deployment",
+    "Automatic deployment from future pushes remains unverified after the missing triggers; no settings were silently changed"
+  ]
+}

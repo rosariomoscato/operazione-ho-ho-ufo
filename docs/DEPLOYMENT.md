@@ -14,9 +14,11 @@
 
 ## Registro risorse
 
+**Aggiornamento corrente:** repository reso pubblico su richiesta esplicita dell'utente, README/screenshot/MIT pubblicati e verificati senza login. Release con credits **dpl_4GFke3LQDLLodYWgwUet4NypPpEZ**, SHA63503dac8d63ce362a168e86e4d5ed8319144967, READY/production e alias principale assegnato. I due push non hanno prodotto un nuovo deployment automatico: creata una build dal commit Git tramite API Vercel, stesso progetto/piano, nessun upload locale. La causa dei trigger mancanti non è dimostrata e l'automatismo futuro non è ricertificato. Prove in `docs/evidence/readme-credits/`; nessun nuovo smoke pubblico HTTP/browser per questa release. Il resto del registro della prima pubblicazione resta storico.
+
 | Risorsa | Dove | Costo | Rimozione |
 |---|---|---|---|
-| Repository GitHub privato | https://github.com/rosariomoscato/operazione-ho-ho-ufo | Nessun acquisto | Impostazioni GitHub → eliminazione repository, solo con consenso |
+| Repository GitHub pubblico (inizialmente privato) | https://github.com/rosariomoscato/operazione-ho-ho-ufo | Nessun acquisto | Impostazioni GitHub → eliminazione repository, solo con consenso |
 | Progetto Vercel | `operazione-ho-ho-ufo`, team `ros-projects-592f0548` | Hobby gratuito entro quote, uso personale non commerciale | Settings del progetto → eliminazione, solo con consenso |
 | Collegamento GitHub | Repository privato → progetto Vercel, produzione `master` | Nessun acquisto | Project Settings → Git → Disconnect |
 | Primo deployment produzione | `dpl_CskRf1MFZxtVmPWbG8uFqjjRBZFM`, commit `ec48093` | Incluso nel piano Hobby entro quote | Gestione deployment del solo progetto, solo con consenso |
@@ -79,11 +81,13 @@ Due reviewer indipendenti hanno ricevuto piano e prove, senza accesso mutativo: 
 
 Il commit finale contiene solo registro, handoff e prove: rimane locale, senza push, per conservare l'unico deployment verificato. Nessun sorgente applicativo cambiato. Il prossimo `git push origin master` sincronizza anche questi documenti e avvia automaticamente la pubblicazione.
 
-### Aggiornamento post-release preparato localmente: README, credits e MIT
+### Aggiornamento post-release pubblicato: README, credits e MIT
 
 Su richiesta dell'utente sono stati preparati README completo con screenshot, credits cliccabili nei menu e nel finale completato e licenza MIT (`LICENSE`, metadati package/lockfile). Build locale **CM79yoZg**,46test+hashpolished e6controlli mirati PASS; review in `docs/reviews/readme-credits-review.md`, prove in `docs/evidence/readme-credits/`. Le quattro copie congelate restano intatte.
 
-Il campo Website del repository è stato verificato via GitHub CLI: è già `https://operazione-ho-ho-ufo.vercel.app`; nessuna modifica remota necessaria. Questo aggiornamento applicativo **non è ancora pushato o pubblicato**. Un push su `master` aggiornerà GitHub e attiverà Vercel; il sito pubblico non è stato ricertificato per i nuovi credits. La licenza MIT non cambia le condizioni d'uso personale/non commerciale del piano hosting Hobby.
+Il campo Website del repository è stato verificato via GitHub CLI: è già `https://operazione-ho-ho-ufo.vercel.app`; nessuna modifica a quel campo necessaria. L'utente ha poi autorizzato push e passaggio a repository pubblico: entrambi completati. README, LICENSE e screenshot remoti verificati anonimamente e byte-per-byte contro i file locali. Due eventi push non hanno attivato la build automatica; avviata una sola nuova produzione da Git sul commit63503da tramite `POST /v13/deployments`, senza forzare deduplicazione o cambiare configurazione. `inspect --wait` conferma READY e alias assegnati. Non è una prova di automatismo ripristinato o un nuovo smoke browser pubblico. La licenza MIT non cambia le condizioni d'uso personale/non commerciale del piano hosting Hobby.
+
+Per una pubblicazione da Git quando l'evento push non parte, verificare prima l'assenza di una build già in coda; usare poi il progetto esistente e un `gitSource` con repository/branch/SHA esatti. La richiesta non contiene credenziali ed è archiviata in `docs/evidence/readme-credits/deployment-request.json`. Autenticazione gestita dalla CLI locale, nessun token scritto nei documenti. URL immutabile di questa release: https://operazione-ho-ho-d51klncem-ros-projects-592f0548.vercel.app. Per un rollback resta disponibile la prima release documentata sopra; nessun rollback eseguito.
 
 ### Aggiornamenti necessari ai riferimenti upstream
 

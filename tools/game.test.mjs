@@ -58,3 +58,10 @@ test('denied storage never crashes gameplay', () => {
   assert.equal(storage.clearCheckpoint(), false);
   assert.deepEqual(storage.readSettings(), storage.defaultSettings);
 });
+test('mission introduction matches the README and uses an accessible disclosure',async()=>{
+  const {missionParagraphs,missionHTML}=await load('src/ui/mission.ts');
+  const readme=(await readFile('README.md','utf8')).replaceAll('**','');
+  assert.equal(missionParagraphs.length,2);
+  for(const paragraph of missionParagraphs)assert.ok(readme.includes(paragraph),'Mission and README wording differ');
+  assert.match(missionHTML,/aria-expanded="false"/);assert.match(missionHTML,/aria-controls="mission-description"/);assert.match(missionHTML,/id="mission-description"[^>]*hidden/);
+});

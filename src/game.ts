@@ -14,6 +14,7 @@ import { blocked, clamp, distance, lineClear, move, nextWaypoint, segmentBox, ty
 import { clearCheckpoint, emptyBossCheckpoint, emptyCheckpoint, freshSettings, validBinding, readCheckpoint, readSettings, storageNotice, writeCheckpoint, writeSettings, type Checkpoint, type ControlAction } from './storage';
 import { actionNames, keyLabel, controlText } from './ui/controls';
 import { creditsHTML } from './ui/credits';
+import { missionHTML } from './ui/mission';
 import { resolveGameplayCamera, resetCameraOcclusion, disposeCameraOcclusion } from './engine/camera';
 import type { GameplayCameraResult } from './engine/camera-contract';
 
@@ -431,6 +432,12 @@ export class Game {
     const title=this.menu==='title'?'Operazione<br>Ho Ho UFO':this.menu==='dead'?'Consegna rimandata!':'Pausa';
     this.menuElement.innerHTML=`<section class="menu panel"><div class="eyebrow">BABBO NATALE · CORTILE DEL LABORATORIO</div><h1>${title}</h1><p>${this.menu==='title'?'Il nucleo è nelle mani dei rettiliani.<br>Rispediscili al mittente.':this.menu==='dead'?'Nessun regalo perduto. Riparti dal gruppo corrente.':'Un momento per sistemare il sacco.'}</p><div class="actions">${this.menu==='title'?`<button data-do="new">Nuova partita</button><button data-do="continue" ${readCheckpoint()?'':'disabled'}>Continua</button>`:`${this.menu==='pause'?'<button data-do="resume">Riprendi</button>':''}<button data-do="retry">Ricomincia checkpoint</button><button data-do="title">Titolo</button>`}</div><details><summary>Impostazioni</summary><div class="settings">${(['master','music','effects'] as const).map((key,i)=>`<label>${['Volume generale','Musica','Effetti'][i]} <input aria-label="${['Volume generale','Musica','Effetti'][i]}" type="range" min="0" max="1" step=".05" data-setting="${key}" value="${this.settings[key]}"></label>`).join('')}<label><input type="checkbox" data-setting="reducedMotion" ${this.settings.reducedMotion?'checked':''}> Riduci movimento</label><label><input type="checkbox" data-setting="aimAssist" ${this.settings.aimAssist?'checked':''}> Mira assistita</label></div></details><p class="menu-controls">WASD: muovi · Tasto destro trascinato: guarda<br>Clic sinistro: regalo · Spazio: schiva · E: dispositivo<br>Esc: pausa · Audio e progressi salvati sul dispositivo</p>${!this.storageAvailable?'<p>Salvataggio non disponibile in questo browser.</p>':''}</section>`;
     this.menuElement.querySelector('.eyebrow')!.textContent=`BABBO NATALE · ${this.act.title.toLocaleUpperCase('it')}`;
+    if(this.menu==='title'){
+      this.menuElement.querySelector('.actions')!.insertAdjacentHTML('beforebegin',missionHTML);
+      const toggle=this.menuElement.querySelector<HTMLButtonElement>('[data-mission-toggle]')!;
+      const description=this.menuElement.querySelector<HTMLElement>('#mission-description')!;
+      toggle.onclick=()=>{description.hidden=!description.hidden;toggle.setAttribute('aria-expanded',String(!description.hidden));};
+    }
     this.renderControlSettings();
     this.menuElement.querySelector('.menu')!.insertAdjacentHTML('beforeend',creditsHTML);
     if(this.menu==='title')this.menuElement.querySelector('.actions')!.insertAdjacentHTML('beforeend','<button data-do="street-preview">Prova la via dei giocattoli</button><button data-do="square-preview">Prova la piazza e Squamakk</button>');
@@ -438,7 +445,7 @@ export class Game {
     this.menuElement.querySelectorAll<HTMLButtonElement>('button[data-do]').forEach(b=>b.addEventListener('click',event=>{this.recordTransition('menu-action',{button:b.dataset.do,clickDetail:event.detail});switch(b.dataset.do){case'new':this.startNew();break;case'street-preview':this.review=false;this.enterStreet(true);break;case'square-preview':this.review=false;this.enterSquare(true);break;case'continue':this.continueGame();break;case'resume':this.resume();break;case'retry':this.retry();break;case'title':this.openMenu('title');break;}}));
     this.menuElement.querySelectorAll<HTMLInputElement>('input[data-setting]').forEach(input=>input.addEventListener('input',()=>{const key=input.dataset.setting;if(key==='reducedMotion'||key==='aimAssist'||key==='invertY')this.settings[key]=input.checked;else if(key==='master'||key==='music'||key==='effects'||key==='sensitivity'||key==='fov')this.settings[key]=Number(input.value);if(key==='sensitivity'||key==='fov'){this.menuElement.querySelector(`[data-value="${key}"]`)!.textContent=`${this.settings[key]}${key==='fov'?'°':'×'}`;input.setAttribute('aria-valuetext',`${this.settings[key]}${key==='fov'?' gradi':' per'}`);}this.audio.setVolumes(this.settings);writeSettings(this.settings);this.lastHUD='';this.renderNow();}));
     if(focusSelector)this.menuElement.querySelector('details')!.open=true;
-    this.menuElement.querySelector<HTMLElement>(focusSelector??'button:not(:disabled)')?.focus();
+    this.menuElement.querySelector<HTMLElement>(focusSelector??'button[data-do]:not(:disabled)')?.focus();
     this.renderNow();
   }
   resize():void {const w=this.app.clientWidth||innerWidth,h=this.app.clientHeight||innerHeight;this.renderer.setSize(w,h);this.camera3.aspect=w/h;this.camera3.updateProjectionMatrix();this.renderNow();}

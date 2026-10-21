@@ -1,0 +1,25 @@
+{
+  "pass": true,
+  "anonymousAccess": true,
+  "repository": "https://github.com/rosariomoscato/operazione-ho-ho-ufo",
+  "visibility": "public",
+  "license": "MIT",
+  "homepage": "https://operazione-ho-ho-ufo.vercel.app",
+  "files": [
+    {
+      "path": "README.md",
+      "status": 200,
+      "sha256": "4ad4fb7084159b419e98f5e1169b99e14c91d7ad7b87fc1caf2860a3d40aabc9"
+    },
+    {
+      "path": "LICENSE",
+      "status": 200,
+      "sha256": "1b7efc294df77c02a8f53d2f2276a3238e5a0d72a5e8945e5fc7c228f2590b7a"
+    },
+    {
+      "path": "docs/images/gameplay.png",
+      "status": 200,
+      "sha256": "8f4285383a80c854ef10302dc51cee46e9857dcfbccc4771536c5e1ac751a481"
+    }
+  ]
+}
