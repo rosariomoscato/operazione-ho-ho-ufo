@@ -1,0 +1,12 @@
+{
+  "pass": true,
+  "commitsScanned": 21,
+  "sensitiveHistoricalFileNames": [],
+  "matchingFileReferences": [],
+  "ignoredLocalFiles": [
+    ".env.local",
+    ".vercel/project.json"
+  ],
+  "scope": "Tracked text across all local Git refs; common credential patterns and sensitive filenames. No secret content printed.",
+  "limitation": "Pattern scanning is not a comprehensive guarantee of absence of sensitive information."
+}

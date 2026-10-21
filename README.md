@@ -90,7 +90,7 @@ La produzione serve solo il contenuto compilato di `dist/`. Il gioco carica Java
 ### Requisiti
 
 - **Node.js 22.23.1** (ambiente verificato), oppure una release successiva compatibile con Vite e con le API Node usate dai test.
-- **npm** e accesso al repository per clonarlo; il repository GitHub è attualmente privato.
+- **npm** e Git per clonare il repository pubblico su GitHub.
 - Un browser desktop moderno con **WebGL** abilitato. Chrome o Edge installato è necessario anche per gli strumenti automatici di cattura.
 
 ```bash
@@ -185,7 +185,7 @@ Per i laboratori e i confronti originali: `npm run dev:labs`, poi [laboratorio t
 
 **Gioco online:** https://operazione-ho-ho-ufo.vercel.app
 
-Il repository GitHub `rosariomoscato/operazione-ho-ho-ufo` è collegato a Vercel. Il branch di produzione è **`master`**: un push su quel branch avvia automaticamente una nuova pubblicazione.
+Il [repository pubblico GitHub](https://github.com/rosariomoscato/operazione-ho-ho-ufo) è collegato a Vercel. Il branch di produzione è **`master`**: un push su quel branch avvia automaticamente una nuova pubblicazione.
 
 Configurazione: preset **Vite**, installazione `npm ci`, build `npm run build`, cartella pubblicata **`dist`**. Il gioco non richiede chiavi, database o configurazione di servizi esterni. Il dominio del sito e quelli delle preview mantengono salvataggi distinti.
 
