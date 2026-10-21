@@ -1,0 +1,2 @@
+# Frozen builds are byte-exact artifacts, including their text assets.
+snapshots/** -text
